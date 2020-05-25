@@ -12,7 +12,7 @@ export class BugsComponent implements OnInit {
 
   //use service to get data from bugs JSON 
   ngOnInit() {
-    this.bugService.getFish().subscribe(data=> {
+    this.bugService.getBugs().subscribe(data=> {
       this.bugs = data;
       console.log(data);
     })

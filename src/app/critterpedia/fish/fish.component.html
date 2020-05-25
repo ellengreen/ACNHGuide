@@ -10,7 +10,8 @@
                 <th>Available Times</th>
                 <th>Available Months (Northern)</th>
                 <th>Available Months (Southern)</th>
-                <th> Price</th>
+                <th>Price</th>
+                <th>CJ's Price</th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +48,9 @@
                 </td>
                 <td>
                     {{f.value['price']}}
+                </td>
+                <td>
+                    {{f.value['price'] * 1.5}}
                 </td>
             </tr>
         </tbody>
