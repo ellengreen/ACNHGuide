@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NookipediaService } from '../../shared/nookipedia.service'; 
 
 @Component({
   selector: 'app-fish',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FishComponent implements OnInit {
 
-  constructor() { }
+  fish:any;
+  constructor(private fishService: NookipediaService) { }
 
-  ngOnInit(): void {
+  //use service to get data from fish JSON 
+  ngOnInit() {
+    this.fishService.getFish().subscribe(data=> {
+      this.fish = data;
+      console.log(data);
+    })
   }
+
 
 }

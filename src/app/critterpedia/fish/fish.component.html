@@ -1,1 +1,51 @@
-<p>fish works!</p>
+<div class='container'>
+    <!-- Table View -->
+    <table class="table table-hover table-responsive">
+        <thead>
+            <tr>
+                <th></th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Location
+                </th>
+                <th>
+                    Shadow Size
+                </th>
+                <th>
+                    Available Times
+                </th>
+                <th>
+                    Available Months
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table" *ngFor="let f of fish | keyvalue">
+                <td>
+                    <img src="http://acnhapi.com/icons/fish/{{f.value['id']}}">
+                </td>
+                <td>
+                    {{f.value['name']}}
+                </td>
+                <td>
+                    {{f.value['location']}}
+                </td>
+                <td>
+                    {{f.value['shadow_size']}}
+                </td>
+                <td>
+                    {{f.value['times']['text']}}
+                </td>
+                <td>
+                    {{f.value['months']['northern']['text']}}
+                </td>
+                <td>
+                    {{f.value['price']}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
