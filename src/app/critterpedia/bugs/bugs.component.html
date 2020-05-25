@@ -1,5 +1,4 @@
 <div class="container">
-    <!-- becomes array of key value pairs --> 
 <table class="table table-hover table-responsive">
     <thead class="thead-light">
         <tr>
@@ -14,7 +13,7 @@
         </tr>
     </thead>   
     <tbody>
-    <tr class="table" *ngFor="let bug of bugs | keyvalue" >
+    <tr class="table" *ngFor="let bug of bugs | keyvalue: originalOrder" >
         <td>
             <img src="http://acnhapi.com/icons/bugs/{{bug.value['id']}}">
         </td>    

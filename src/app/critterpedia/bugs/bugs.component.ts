@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NookipediaService } from 'src/app/shared/nookipedia.service';
+import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'app-bugs',
@@ -18,5 +19,8 @@ export class BugsComponent implements OnInit {
     })
   }
 
+  originalOrder = (a: KeyValue<number,string>, b: KeyValue<number,string>): number => {
+    return 0;
+    }
 
 }
