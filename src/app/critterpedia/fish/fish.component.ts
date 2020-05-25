@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NookipediaService } from '../../shared/nookipedia.service'; 
+import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'app-fish',
@@ -19,5 +20,8 @@ export class FishComponent implements OnInit {
     })
   }
 
+  originalOrder = (a: KeyValue<number,string>, b: KeyValue<number,string>): number => {
+    return 0;
+    }
 
 }

@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="table" *ngFor="let f of fish | keyvalue">
+            <tr class="table" *ngFor="let f of fish | keyvalue: originalOrder">
                 <td>
                     <img src="http://acnhapi.com/icons/fish/{{f.value['id']}}">
                 </td>
