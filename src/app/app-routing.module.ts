@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: 'bugs', component: BugsComponent },
   { path: 'fish', component: FishComponent },
   { path: 'profile', component: ProfileComponent }
-
 ];
 
 @NgModule({
