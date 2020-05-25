@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NookipediaService } from 'src/app/shared/nookipedia.service';
 
 @Component({
   selector: 'app-bugs',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bugs.component.scss']
 })
 export class BugsComponent implements OnInit {
+  bugs:any;
+  constructor(private bugService: NookipediaService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  //use service to get data from bugs JSON 
+  ngOnInit() {
+    this.bugService.getFish().subscribe(data=> {
+      this.bugs = data;
+      console.log(data);
+    })
   }
+
 
 }
