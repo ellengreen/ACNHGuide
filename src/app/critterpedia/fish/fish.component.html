@@ -1,27 +1,16 @@
 <div class='container'>
     <!-- Table View -->
     <table class="table table-hover table-responsive">
-        <thead>
+        <thead class="thead-light">
             <tr>
                 <th></th>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Location
-                </th>
-                <th>
-                    Shadow Size
-                </th>
-                <th>
-                    Available Times
-                </th>
-                <th>
-                    Available Months
-                </th>
-                <th>
-                    Price
-                </th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Shadow Size</th>
+                <th>Available Times</th>
+                <th>Available Months (Northern)</th>
+                <th>Available Months (Southern)</th>
+                <th> Price</th>
             </tr>
         </thead>
         <tbody>
@@ -38,11 +27,23 @@
                 <td>
                     {{f.value['shadow_size']}}
                 </td>
-                <td>
+                <td *ngIf="f.value['times']['text'] == 'All Day'"> 
+                    All Day
+                </td>
+                <td *ngIf="f.value['times']['text'] !== 'All Day'"> 
                     {{f.value['times']['text']}}
                 </td>
-                <td>
-                    {{f.value['months']['northern']['text']}}
+                <td *ngIf="f.value['months']['northern']['text'] == 'Year Round'"> 
+                    All Day
+                </td>
+                <td *ngIf="f.value['months']['northern']['text'] !== 'Year Round'"> 
+                    {{f.value['times']['text']}}
+                </td>
+                <td *ngIf="f.value['months']['southern']['text'] == 'Year Round'"> 
+                    All Day
+                </td>
+                <td *ngIf="f.value['months']['southern']['text'] !== 'Year Round'"> 
+                    {{f.value['times']['text']}}
                 </td>
                 <td>
                     {{f.value['price']}}
@@ -51,4 +52,5 @@
         </tbody>
     </table>
 </div>
+
 
