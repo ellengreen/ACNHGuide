@@ -5,6 +5,11 @@ import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/crit
 import { BugsComponent } from './critterpedia/bugs/bugs.component';
 import { FishComponent } from './critterpedia/fish/fish.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './user-auth/login/login.component';
+import { RegisterComponent } from './user-auth/register/register.component';
+import { ForgotPasswordComponent } from './user-auth/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './user-auth/verify-email/verify-email.component';
+import { AuthComponent } from './user-auth/auth/auth.component';
 
 
 const routes: Routes = [
@@ -13,8 +18,16 @@ const routes: Routes = [
   { path: 'critterpedia', component: CritterpediaMainComponent },
   { path: 'bugs', component: BugsComponent },
   { path: 'fish', component: FishComponent },
-  { path: 'profile', component: ProfileComponent }
-
+  { path: 'profile', component: ProfileComponent },
+  { 
+    path: 'auth', component: AuthComponent, 
+    children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'forgot', component: ForgotPasswordComponent },
+      { path: 'verify-email', component: VerifyEmailComponent }
+    ]
+  }
 ];
 
 @NgModule({

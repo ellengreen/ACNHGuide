@@ -13,6 +13,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BugsComponent } from './critterpedia/bugs/bugs.component';
 import { FishComponent } from './critterpedia/fish/fish.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
+import { LoginComponent } from './user-auth/login/login.component';
+import { RegisterComponent } from './user-auth/register/register.component';
+import { VerifyEmailComponent } from './user-auth/verify-email/verify-email.component';
+import { ForgotPasswordComponent } from './user-auth/forgot-password/forgot-password.component';
+import { AuthComponent } from './auth/auth.component';
 
 
 @NgModule({
@@ -23,7 +28,12 @@ import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/crit
     DashboardComponent,
     BugsComponent,
     FishComponent,
-    CritterpediaMainComponent
+    CritterpediaMainComponent,
+    LoginComponent,
+    RegisterComponent,
+    VerifyEmailComponent,
+    ForgotPasswordComponent,
+    AuthComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
