@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { User, auth } from 'firebase';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
@@ -24,16 +25,27 @@ export class AuthenticationService {
    }
 
    //login with email & password
-   async login(email: string, password: string){
-    var result = await this.afAuth.signInWithEmailAndPassword(email, password)
-    this.router.navigate(['profile']);
-   }
+   async login(email, password){
+    try {
+       const result = await this.afAuth.signInWithEmailAndPassword(email, password);
+       this.router.navigate(['profile']);
+     }
+     catch (error) {
+       window.alert(error.message);
+     }
+  }
 
    //register for account
-   async register(email: string, password: string){
-    var result = await this.afAuth.createUserWithEmailAndPassword(email, password)
-    this.router.navigate(['auth/login']);;
-   }
+   signUp(email: string, password: string){
+    this.afAuth.createUserWithEmailAndPassword(email, password)
+    .then(result => {
+      window.alert('Thanks for creating an account!')
+      this.router.navigate(['login']);
+    })
+    .catch(error => {
+      window.alert(error.message)
+    })
+  }
 
    //send email to reset password
    async resetPasswordEmail(passwordResetEmail: string){

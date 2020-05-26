@@ -19,15 +19,16 @@ const routes: Routes = [
   { path: 'bugs', component: BugsComponent },
   { path: 'fish', component: FishComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'login', component: LoginComponent },
   { 
-    path: 'auth', component: AuthComponent, 
-    children: [
+    path: 'auth', component: AuthComponent }, 
+
       { path: 'login', component: LoginComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'forgot', component: ForgotPasswordComponent },
       { path: 'verify-email', component: VerifyEmailComponent }
-    ]
-  }
+    
+  
 ];
 
 @NgModule({
