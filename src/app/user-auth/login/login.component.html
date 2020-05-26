@@ -5,7 +5,8 @@
           <div class="card card-signin my-5">
             <div class="card-body">
               <h5 class="card-title text-center">Sign In</h5>
-              <form class="form-signin">
+                <img src="/assets/images/tom.png">
+              <form class="form-signin"><br>
                 <div class="form-label-group formGroup">
                   <input type="email" class="form-control" placeholder="Email address" #userName required autofocus>
                 </div>
@@ -19,10 +20,10 @@
                     Sign in
                   </button>
                 </div>
-                <hr class="my-4">
+                <Br>
                 <button class="btn btn-lg btn-google btn-block text-uppercase" (click)="authService.loginWithGoogle()" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
                 <hr class="my-4">
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" routerLink="/register" type="submit"><i class="fab fa-google mr-2"></i> No account? Sign Up</button>
+                <p class="register" routerLink="/register" type="submit">No account? Sign Up</p>
               </form>
             </div>
           </div>
