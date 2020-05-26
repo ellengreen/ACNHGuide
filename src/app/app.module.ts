@@ -13,6 +13,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BugsComponent } from './critterpedia/bugs/bugs.component';
 import { FishComponent } from './critterpedia/fish/fish.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
+import { CurrentCrittersComponent } from './dashboard/current-critters/current-critters.component';
+import { CurrentBugsComponent } from './dashboard/currentCritters/current-bugs/current-bugs.component';
+import { CurrentFishComponent } from './dashboard/currentCritters/current-fish/current-fish.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/crit
     DashboardComponent,
     BugsComponent,
     FishComponent,
-    CritterpediaMainComponent
+    CritterpediaMainComponent,
+    CurrentCrittersComponent,
+    CurrentBugsComponent,
+    CurrentFishComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
