@@ -1,1 +1,15 @@
-<p>current-bugs works!</p>
+
+<h2>CATCHABLE BUGS</h2>
+<div *ngFor="let bug of bugsList | keyvalue">
+    <div *ngIf = "bug.value['months']['northern']['array'].includes(currentMonth) && bug.value['months']['northern']['text']!== 'Year Round'"> 
+        {{bug.value['name']}}
+    </div>
+</div> 
+<hr>
+<h2>AVAILABLE YEAR ROUND</h2>
+<div *ngFor="let bug of bugsList | keyvalue">
+    <div *ngIf = "bug.value['months']['northern']['text']== 'Year Round'"> 
+        {{bug.value['name']}}
+    </div>
+</div> 
+

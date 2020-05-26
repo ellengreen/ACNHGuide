@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
@@ -16,6 +17,8 @@ import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/crit
 import { CurrentCrittersComponent } from './dashboard/current-critters/current-critters.component';
 import { CurrentBugsComponent } from './dashboard/currentCritters/current-bugs/current-bugs.component';
 import { CurrentFishComponent } from './dashboard/currentCritters/current-fish/current-fish.component';
+import { AuthenticationService } from './shared/authentication.service';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -36,9 +39,10 @@ import { CurrentFishComponent } from './dashboard/currentCritters/current-fish/c
     AngularFireModule,
     AngularFireAuthModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthenticationService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
