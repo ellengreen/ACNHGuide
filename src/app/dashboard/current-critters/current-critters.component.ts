@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CurrentCrittersComponent implements OnInit {
 
   constructor() { }
-
+  showBugs: boolean = true;
+  showFish: boolean = false;
   ngOnInit(): void {
   }
 

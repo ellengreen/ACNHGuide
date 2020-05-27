@@ -1,5 +1,15 @@
-<!-- If Bugs is chosen, display current Bugs -->
-<app-current-bugs></app-current-bugs>
-<br>
-<!-- If FIsh, display current fish
-<app-current-fish></app-current-fish> -->
+<div class='container'><h3>Catchable Critters</h3>
+    
+    <button type="button" class="btn btn-light active" (click)="showBugs=!showBugs" (click)="showFish=!showFish">Bugs</button>      
+    <button type="button" class="btn btn-light active" (click)="showFish=!showFish" (click)="showBugs=!showBugs" >Fish</button>
+    <hr>
+
+    <div *ngIf="showBugs">
+        <app-current-bugs></app-current-bugs>
+    </div>
+
+
+    <div *ngIf="showFish">
+        <app-current-fish></app-current-fish>
+    </div>
+</div>
