@@ -18,7 +18,7 @@ import { CurrentCrittersComponent } from './dashboard/current-critters/current-c
 import { CurrentBugsComponent } from './dashboard/currentCritters/current-bugs/current-bugs.component';
 import { CurrentFishComponent } from './dashboard/currentCritters/current-fish/current-fish.component';
 import { AuthenticationService } from './shared/authentication.service';
-import { DatePipe } from '@angular/common';
+import { DatePipe, KeyValuePipe } from '@angular/common';
 
 
 @NgModule({
@@ -42,7 +42,7 @@ import { DatePipe } from '@angular/common';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [AuthenticationService, DatePipe],
+  providers: [AuthenticationService, DatePipe, KeyValuePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
