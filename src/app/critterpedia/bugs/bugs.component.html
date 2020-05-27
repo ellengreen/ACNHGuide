@@ -1,4 +1,37 @@
-<div class="container">
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-2">
+            <div class="card-body">
+                <table class="table table-hover table-bordered table-responsive">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>#</th>
+                            <th></th>
+                            <th>Name</th>
+                        </tr>
+                    </thead>   
+                    <tbody>
+                    <tr class="table" *ngFor="let bug of bugs | keyvalue: originalOrder" >
+                        <td>{{bug.key}}</td>
+                        <td>
+                            <img src="http://acnhapi.com/icons/bugs/{{bug.value['id']}}">
+                        </td>    
+                        <td>
+                            {{bug.value['name']| lowercase}}
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- <div class="container">
 <table class="table table-hover table-responsive">
     <thead class="thead-light">
         <tr>
@@ -50,4 +83,4 @@
     </tr>
     </tbody>
 </table>
-</div>
+</div> -->
