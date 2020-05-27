@@ -4,7 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 import { BugsComponent } from './critterpedia/bugs/bugs.component';
 import { FishComponent } from './critterpedia/fish/fish.component';
-import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -13,8 +12,6 @@ const routes: Routes = [
   { path: 'critterpedia', component: CritterpediaMainComponent },
   { path: 'bugs', component: BugsComponent },
   { path: 'fish', component: FishComponent },
-  { path: 'profile', component: ProfileComponent }
-
 ];
 
 @NgModule({
