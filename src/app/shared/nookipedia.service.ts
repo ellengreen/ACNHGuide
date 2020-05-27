@@ -1,20 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NookipediaService {
 
-  constructor(private httpClient: HttpClient) { }
-
-
-  getFish(){
-    return this.httpClient.get("assets/fish.json")
-  }
-
-  getBugs(){
-    return this.httpClient.get("assets/bugs.json")
-  }
-
+  constructor() { }
 }
