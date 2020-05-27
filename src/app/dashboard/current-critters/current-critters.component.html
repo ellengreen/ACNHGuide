@@ -1,15 +1,15 @@
-<div class='container'><h3>Catchable Critters</h3>
-    
-    <button type="button" class="btn btn-light active" (click)="showBugs=!showBugs" (click)="showFish=!showFish">Bugs</button>      
-    <button type="button" class="btn btn-light active" (click)="showFish=!showFish" (click)="showBugs=!showBugs" >Fish</button>
-    <hr>
-
-    <div *ngIf="showBugs">
-        <app-current-bugs></app-current-bugs>
-    </div>
-
-
-    <div *ngIf="showFish">
-        <app-current-fish></app-current-fish>
-    </div>
+<div class="toggle">
+    <label class="switch">
+        <input type="checkbox" (click)="toggle()" id="bt">
+        <span class="slider round"></span>       
+    </label>
 </div>
+
+
+<ng-container *ngIf="show">
+    <app-current-fish></app-current-fish>
+</ng-container>
+            
+<ng-container *ngIf="!show">
+    <app-current-bugs></app-current-bugs>
+</ng-container>
