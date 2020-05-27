@@ -1,7 +1,9 @@
 
-<h2>CATCHABLE BUGS</h2>
+ <!-- <h2>CATCHABLE BUGS</h2>
 <div *ngFor="let bug of bugsList | keyvalue">
     <div *ngIf = "bug.value['months']['northern']['array'].includes(currentMonth) && bug.value['months']['northern']['text']!== 'Year Round'"> 
+        <img class="icon" src="http://acnhapi.com/icons/bugs/{{bug.value['id']}}">
+        <br>
         {{bug.value['name']}}
     </div>
 </div> 
@@ -9,7 +11,34 @@
 <h2>AVAILABLE YEAR ROUND</h2>
 <div *ngFor="let bug of bugsList | keyvalue">
     <div *ngIf = "bug.value['months']['northern']['text']== 'Year Round'"> 
+        <img class="icon" src="http://acnhapi.com/icons/bugs/{{bug.value['id']}}">
+        <br>
         {{bug.value['name']}}
     </div>
-</div> 
+</div>   -->
+<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div class="card card-signin my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Available Year Round</h5>
 
+              <div class="container-fluid overflow-hidden px-2">
+                <div class="row narrow-gutters">
+                  <div *ngFor="let bug of bugsList | keyvalue">
+                    <div *ngIf = "bug.value['months']['northern']['text']== 'Year Round'"> 
+                        <img class="icon" src="http://acnhapi.com/icons/bugs/{{bug.value['id']}}">
+                        <br>
+                        <!-- <p>{{bug.value['name']}} </p> -->
+                    </div>
+                  </div>
+                </div>
+
+            </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
