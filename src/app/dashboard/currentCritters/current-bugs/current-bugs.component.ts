@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NookipediaService } from 'src/app/shared/nookipedia.service';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe, KeyValuePipe } from '@angular/common';
+import { CurrentDateService } from 'src/app/shared/current-date.service';
 
 @Component({
   selector: 'app-current-bugs',
@@ -13,7 +14,12 @@ export class CurrentBugsComponent implements OnInit {
   currentBugs = [];
   alwaysBugs = [];
 
-  constructor(private nookService: NookipediaService, private httpClient: HttpClient, private datePipe: DatePipe, private kvPipe: KeyValuePipe) { }
+  constructor(
+    private nookService: NookipediaService, 
+    private dateService: CurrentDateService,
+    private httpClient: HttpClient, 
+    private datePipe: DatePipe, 
+    private kvPipe: KeyValuePipe) { }
 
   //sets bugsList as an array of key value pairs from bugs JSON
   //catchableBugs() sets currentBugs as array of whatever bugs are avaiable this month
@@ -26,9 +32,8 @@ export class CurrentBugsComponent implements OnInit {
     })
   }
 
-  //get today's date as MM/DD/YY, then split and just get month number
-  today = this.datePipe.transform(Date.now(), 'shortDate');
-  currentMonth = Number(this.today.split('/')[0]);
+  //get month number from current-date service
+  currentMonth = this.dateService.getMonth();
 
   //updates currentBugs to bugs ONLY avaiable this current month
   catchableBugs(){
