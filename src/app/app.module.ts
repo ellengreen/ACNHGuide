@@ -14,8 +14,8 @@ import { BugsComponent } from './critterpedia/bugs/bugs.component';
 import { FishComponent } from './critterpedia/fish/fish.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 import { CurrentCrittersComponent } from './dashboard/current-critters/current-critters.component';
-import { CurrentBugsComponent } from './dashboard/currentCritters/current-bugs/current-bugs.component';
-import { CurrentFishComponent } from './dashboard/currentCritters/current-fish/current-fish.component';
+import { CurrentBugsComponent } from './dashboard/current-critters/current-bugs/current-bugs.component';
+import { CurrentFishComponent } from './dashboard/current-critters/current-fish/current-fish.component';
 
 import { DatePipe, KeyValuePipe } from '@angular/common';
 

@@ -33,7 +33,7 @@ export class CurrentBugsComponent implements OnInit {
   }
 
   //get month number from current-date service
-  currentMonth = this.dateService.getMonth();
+  currentMonth = this.dateService.currentMonth;
 
   //updates currentBugs to bugs ONLY avaiable this current month
   catchableBugs(){

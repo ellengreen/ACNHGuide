@@ -1,1 +1,24 @@
+Today is <br>
+{{dateService.todayFullDate}}
+<br>
+{{dateService.todayTime}}
+
+<br>
+<h1>Events this Month</h1>
+<div *ngFor="let event of eventsList | keyvalue">
+    <div *ngIf="event.key == currentMonth">
+        <div *ngFor="let e of event.value | keyvalue">
+            {{e.value['name']}}: {{e.value['date-str']}}
+        </div>
+    </div> 
+</div>
+
+<h1>Birthdays</h1>
+<div *ngFor="let villager of villagers | keyvalue">
+    <div *ngIf="villager.value['birthday']===bdayFormat">
+        It's {{villager.value['name']['name-en']}}'s birthday!
+        <img src="https://acnhapi.com/v1/images/villagers/{{villager.value['id']}}">
+    </div> 
+</div>
+
 <app-current-critters></app-current-critters>
