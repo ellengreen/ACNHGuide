@@ -15,7 +15,6 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavigationComponent } from './navigation/navigation.component';
 import { ProfileComponent } from './profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './user-auth/login/login.component';
@@ -32,7 +31,6 @@ import { CurrentBugsComponent } from './dashboard/current-critters/current-bugs/
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
     ProfileComponent,
     DashboardComponent,
     LoginComponent,
