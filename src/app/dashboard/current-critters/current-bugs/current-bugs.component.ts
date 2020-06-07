@@ -13,6 +13,8 @@ export class CurrentBugsComponent implements OnInit {
   bugsList: any;
   currentBugs = [];
   alwaysBugs = [];
+  bugs: any;
+
 
   constructor(
     private nookService: NookipediaService, 
@@ -41,11 +43,13 @@ export class CurrentBugsComponent implements OnInit {
       //if available this month & not always
       if (this.bugsList[key]['months']['northern']['array'].includes(this.currentMonth) && this.bugsList[key]['months']['northern']['text'] !== 'Year Round'){ 
         this.currentBugs.push(this.bugsList[key])
-      }
+      };
+      this.bugs = this.currentBugs.length;
       //if available all the time
       if (this.bugsList[key]['months']['northern']['text'] == 'Year Round'){ 
         this.alwaysBugs.push(this.bugsList[key])
       }
+      this.bugs += this.alwaysBugs.length;
     });
   }
   
