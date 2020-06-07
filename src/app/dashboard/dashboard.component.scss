@@ -1,36 +1,60 @@
-.icon {
-    width: 115%;
-    height: auto;
-  }
-  
-  h3 {
-      text-align: center;
-  }
-  
-      
-      .card-signin {
-          border: 0;
-          border-radius: 1rem;
-          box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-        }
-        
-        .card-signin .card-title {
-          margin-bottom: 2rem;
-          font-weight: 300;
-          font-size: 1.5rem;
-        }
-        
-        .card-signin .card-body {
-          padding: 3rem;
-          padding-top: 1rem;
-        }
-  
-.villager {
-  border-radius: 1rem;
-  width: 50%;
-  height: auto;
+
+.profile {
+  background-color: black;
 }
 
-.small {
-  font-size: smaller;
+.current {
+  background-color: pink;
 }
+
+.today {
+  background-color: purple;
+}
+
+.events {
+  background-color: seagreen;
+}
+
+.birthday {
+  background-color: skyblue;
+}
+
+.catch {
+  background-color: steelblue;
+}
+// .icon {
+//     width: 115%;
+//     height: auto;
+//   }
+  
+//   h3 {
+//       text-align: center;
+//   }
+  
+      
+//       .card-signin {
+//           border: 0;
+//           border-radius: 1rem;
+//           box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+//         }
+        
+//         .card-signin .card-title {
+//           margin-bottom: 2rem;
+//           font-weight: 300;
+//           font-size: 1.5rem;
+//         }
+        
+//         .card-signin .card-body {
+//           padding: 3rem;
+//           padding-top: 1rem;
+//         }
+  
+// .villager {
+//   border-radius: 1rem;
+//   width: 50%;
+//   height: auto;
+// }
+
+// .small {
+//   font-size: smaller;
+// }

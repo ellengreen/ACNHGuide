@@ -16,6 +16,7 @@ import { CurrentFishComponent } from './dashboard/current-critters/current-fish/
 
 import { DatePipe, KeyValuePipe } from '@angular/common';
 import { EventsComponent } from './dashboard/events/events.component';
+import { BirthdayComponent } from './dashboard/birthday/birthday.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { EventsComponent } from './dashboard/events/events.component';
     CurrentCrittersComponent,
     CurrentBugsComponent,
     CurrentFishComponent,
-    EventsComponent
+    EventsComponent,
+    BirthdayComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
