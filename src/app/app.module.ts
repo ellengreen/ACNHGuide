@@ -9,7 +9,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { ReactiveFormsModule, FormsModule} from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
-import { DatePipe } from '@angular/common'
+import { DatePipe, KeyValuePipe } from '@angular/common'
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 
@@ -24,6 +24,9 @@ import { VerifyEmailComponent } from './user-auth/verify-email/verify-email.comp
 import { ForgotPasswordComponent } from './user-auth/forgot-password/forgot-password.component';
 
 import { AuthenticationService } from './shared/authentication.service';
+import { CurrentCrittersComponent } from './dashboard/current-critters/current-critters.component';
+import { CurrentFishComponent } from './dashboard/current-critters/current-fish/current-fish.component';
+import { CurrentBugsComponent } from './dashboard/current-critters/current-bugs/current-bugs.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { AuthenticationService } from './shared/authentication.service';
     RegisterComponent,
     VerifyEmailComponent,
     ForgotPasswordComponent,
+    CurrentCrittersComponent,
+    CurrentFishComponent,
+    CurrentBugsComponent,
 
   ],
   imports: [
@@ -50,7 +56,7 @@ import { AuthenticationService } from './shared/authentication.service';
     HttpClientModule, 
     RouterModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService, DatePipe, KeyValuePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
