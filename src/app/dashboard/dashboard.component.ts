@@ -14,29 +14,10 @@ export class DashboardComponent implements OnInit {
       public dateService: CurrentDateService
   ) { }
   
-  eventsList: any;
-  currentMonth = this.dateService.currentMonth;
-  currentDay = this.dateService.currentDay;
-  villagers: any;
-  bdayFormat = this.dateService.bdayFormat;
 
   ngOnInit() {
-    this.nookService.getEvents().subscribe(data => {
-    this.eventsList= data;
-    });
-
-    this.nookService.getVillagers().subscribe(data => {
-    this.villagers = data;
-    });  
   }
 
 
 }
 
-
-
-// this.nookipediaService.getVillagers().subscribe(data => {
-//   this.villagers = data;
-//   console.log(data);
-// })
-// }
