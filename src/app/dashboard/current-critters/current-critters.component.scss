@@ -1,11 +1,14 @@
+.row {
+  padding: 30px;
+}
+
+.col-sm-10 {
+  justify-content: right;
+  font-family: 'Nunito', sans-serif;
+}
 
 label {
   margin-bottom: 0px;
-}
-.b {
-  font-size: 25px;
-  padding-right: 10px;
-  padding-left: 10px;
 }
 
 .toggle {
