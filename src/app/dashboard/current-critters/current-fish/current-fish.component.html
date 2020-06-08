@@ -1,28 +1,29 @@
-<body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-          <div class="card card-signin my-2">
-            <div class="card-body">
-              <h3 class="card-title text-center">Fish Available This Month</h3>
-              <div class="row narrow-gutters">
-                  <div class="col-4 col-sm-3 d-flex flex-column align-items-center text-center mb-3" *ngFor="let fish of currentFish">
-                      <img class="icon" src="http://acnhapi.com/icons/fish/{{fish['id']}}">
-            
-                  </div>
-              </div>
-              <hr>
-              <h3 class="card-title text-center">Available Year Round</h3>
-              <div class="row narrow-gutters">
-                  <div class="col-4 col-sm-3 d-flex flex-column align-items-center text-center mb-3" *ngFor="let fish of alwaysFish">
-                      <img class="icon" src="http://acnhapi.com/icons/fish/{{fish['id']}}">
-          
-                  </div>
-              </div>
-            </div>
-          </div>
+<div class="container">
+  <div class="row justify-content-center">
+  <div class="col-6">
+    <h2>Available This Month</h2>
+    <div class="row justify-content-center">
+      <div *ngFor="let fish of currentFish">
+        <div class="col-md-">
+          <i><img class="icon" src="http://acnhapi.com/icons/fish/{{fish['id']}}"/></i>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+
+  <div class="col-sm-1"></div>
+ 
+  <div class="col-5">
+    <h2>Year Round</h2>
+    <div class="row justify-content-center">
+      <div *ngFor="let fish of alwaysFish">
+        <div class="col-md-">
+          <i><img class="icon" src="http://acnhapi.com/icons/fish/{{fish['id']}}"/></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
 

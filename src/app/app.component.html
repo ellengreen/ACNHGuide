@@ -1,5 +1,7 @@
-<div *ngIf="_router.url != '/login' && _router.url != '/' && _router.url != '/register'">
+<div class="container-fluid">
+    <div *ngIf="_router.url != '/login' && _router.url != '/' && _router.url != '/register'">
     <app-nav></app-nav>
+</div>
 </div>
 <router-outlet></router-outlet>
 
