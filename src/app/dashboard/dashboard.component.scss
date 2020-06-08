@@ -1,6 +1,7 @@
 body {
-  padding-top: 40px;
+  padding: 50px;
   background-color: #f0f0f0;
+  background-image: url('../../assets/images/background.jpg');
 }
 
 h4, h3 {
@@ -8,38 +9,49 @@ h4, h3 {
 }
 
 img {
+  padding-top: 20px;
   width: 80%;
 }
 
+.row {
+  width:100%; 
+  padding:0px 0px 0px 20px; 
+}
+
 .today {
-  padding: 15px;
-  padding-bottom: 15px;
-  border:20px solid #f0f0f0;
   background-color: white;
+  border-radius: 20px;
 }
 
-.now, .always {
-  border-top: 20px solid #f0f0f0;
-  border-bottom: 0px;
+.now, .events, .profile {
+  background-color: white;
+  border-radius: 20px;
 }
 
-.always {
-  border-left: 20px solid #f0f0f0;
-}
-
-.col-sm-6 {
-  background: #999;
-}
-
-.profile {
-  border: 20px solid #f0f0f0;
-  padding: 15px;
-  background: white;
+.col-lg-7 {
+  padding-right: 5px;
 }
 
 @media only screen and (max-width: 1000px) {
   img {
     display: none;
+  }
+
+  .row {
+    width:100%; 
+    padding:0px 0px 0px 30px; 
+  }
+
+  body {
+    padding: 30px;
+  }
+
+  .col-lg-7, .events {
+    padding-bottom: 30px;
+  }
+
+  .col-lg-3 {
+    padding-top: 30px;
   }
 
   .flex-container {

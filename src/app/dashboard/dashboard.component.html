@@ -1,6 +1,7 @@
-<div class="container-fluid flex-container">
+<body>
+  <div class="container-fluid flex-container">
   <div class="row">
-    <div class="col-lg-2 today flex-item text-center col-md-offset-2">
+    <div class="col-lg-2 events flex-item text-center col-md-offset-2">
       <img class="justify-content-center" src="assets/images/isabelle.png">
       <div>
         <app-events></app-events>
@@ -11,11 +12,16 @@
       </div>
     </div>
 
-    <div class="col-lg-7 flex-item today">
-      <!-- <h4 class="card-title text-center">Today is</h4> -->
-      <h1 class="card-title text-center"><strong>{{dateService.todayFullDate}}</strong></h1>
-      <h3 class="card-title text-center">{{dateService.todayTime}}</h3>
-
+    <div class="col-lg-7 flex-item">
+      <div class="row">
+        <div class="col-lg-12 flex-item today">
+          <br>
+          <!-- <h4 class="card-title text-center">Today is</h4> -->
+          <h1 class="card-title text-center"><strong>{{dateService.todayFullDate}}</strong></h1>
+          <h3 class="card-title text-center">{{dateService.todayTime}}</h3>
+        </div>
+      </div>
+      <br>
       <div class="row">
         <div class="col-lg-12 flex-item now">
               <app-current-critters></app-current-critters> 
@@ -28,6 +34,7 @@
     </div>
   </div>
 </div>
+</body>
 
 
 
