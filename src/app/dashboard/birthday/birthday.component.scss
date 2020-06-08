@@ -1,21 +1,21 @@
 .villager {
-    width: 40%;
+    width: 80%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 20%;
 }
 
-.card-signin{
-    border: 0;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-}
-.card-title, .card-signin {
-    margin-bottom: 2rem;
-    font-weight: 300;
-    font-size: 1.5rem;
+.icon {
+    text-align: center;
 }
 
-.card-body {
-    padding: 3rem;
-    padding-top: 1rem;
+h3, h6 {
+    font-family: 'Nunito', sans-serif;
+}
+@media only screen and (max-width: 1000px) {
+    .villager {
+      width: 50%;
+      border-radius: 50%;
+      text-align: center;
+    }
+
 }

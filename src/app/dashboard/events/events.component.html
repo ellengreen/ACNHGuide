@@ -1,37 +1,9 @@
-<div class="container">
-  <div class="row">
-    <h3>Events this Month</h3>
+<h3 class="text-center">Events this Month</h3>
+<div class="row events" *ngFor="let event of eventsList | keyvalue">
+  <div *ngIf="event.key == currentMonth">
+      <span class="events" *ngFor="let e of event.value | keyvalue">
+          <h6><strong>{{e.value['name']}}</strong></h6>
+          <p>{{e.value['date-str']}}</p>
+      </span>
   </div>
-  <div class="col-12">
-    <div class="row" *ngFor="let event of eventsList | keyvalue">
-        <div *ngIf="event.key == currentMonth">
-            <span *ngFor="let e of event.value | keyvalue">
-                <span><strong>{{e.value['name']}}</strong></span>
-                <br>
-                <span class="small">{{e.value['date-str']}}</span>
-            </span>
-        </div>
-
-  </div>
-
 </div>
-  <!-- <div class="container">
-      <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-          <div class="card card-signin my-2">
-            <div class="card-body">
-              <h3 class="card-title text-center">Events This Month</h3>
-              <div class="row narrow-gutters" *ngFor="let event of eventsList | keyvalue">
-                  <div class="d-flex flex-column align-items-center text-center" *ngIf="event.key == currentMonth">
-                      <span *ngFor="let e of event.value | keyvalue">
-                          <span><strong>{{e.value['name']}}</strong></span>
-                          <br>
-                          <span class="small">{{e.value['date-str']}}</span>
-                      </span>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->

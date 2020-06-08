@@ -1,69 +1,33 @@
-<div class="container-fluid">
+<div class="container-fluid flex-container">
   <div class="row">
-    <!-- Left side -->
-    <div class="col-md-8 current">
-      <div class="row">
-        <!-- Today -->
-        <div class="col-7 today">
-          <h3>Today is</h3>
-          <h2><strong>{{dateService.todayFullDate}}</strong></h2>
-          <h3>{{dateService.todayTime}}</h3>
-        </div>
-        <!-- Birthdays -->
-        <div class="col-5 birthday">
-          <app-birthday></app-birthday>
-        </div>
-      </div>
-      <!-- Events -->
-      <div class="row events">
+    <div class="col-lg-2 today flex-item text-center col-md-offset-2">
+      <img class="justify-content-center" src="assets/images/isabelle.png">
+      <div>
         <app-events></app-events>
       </div>
-    <!-- Catchable Critters -->
-    <div class="row catch">
-      <app-current-critters></app-current-critters>
-    </div>
+      <hr>
+      <div>
+        <app-birthday></app-birthday>
+      </div>
     </div>
 
-    <!-- Right Side -->
-    <div class="col-md-4 profile">
-      PROFILE GOES HERE PROFILE GOES HERE PROFILE GOES HERE PROFILES GOES HERE 
+    <div class="col-lg-7 flex-item today">
+      <!-- <h4 class="card-title text-center">Today is</h4> -->
+      <h1 class="card-title text-center"><strong>{{dateService.todayFullDate}}</strong></h1>
+      <h3 class="card-title text-center">{{dateService.todayTime}}</h3>
+
+      <div class="row">
+        <div class="col-lg-12 flex-item now">
+              <app-current-critters></app-current-critters> 
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-3 col-sm-offset-2 flex-item profile">
+      <h2>Profile</h2>
     </div>
   </div>
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- TODAY -->
-        <!-- <div class="card card-signin my-2">
-          <div class="card-body">
-            <h3 class="card-title text-center">Today is</h3>
-            <h3 class="card-title text-center"><strong>{{dateService.todayFullDate}}</strong></h3>
-            <h4 class="card-title text-center">{{dateService.todayTime}}</h4>
-          </div>
-        </div> -->
-
-<!-- EVENTS -->
-      <!-- BIRTHDAYS -->
-<!-- <app-events></app-events> -->
-
-
-<!-- CRITTERS -->
-<!-- <app-current-critters></app-current-critters> -->
-
-<!-- PROFILE -->

@@ -9,6 +9,11 @@
             "name": "Festive Season",
             "dates": [1, 2, 3, 4, 5, 6],
             "date-str": "December 15th-January 6th"
+        },
+        "3": {
+            "name": "Fishing Tournament",
+            "dates": [9],
+            "date-str": "January 9th"
         }
     },
     "2": {
@@ -34,7 +39,12 @@
             "dates": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             "date-str": "April 1st-10th"
         },
-        "3": { 
+        "3": {
+            "name": "Fishing Tournament",
+            "dates": [11],
+            "date-str": "April 11th"
+        },
+        "4": { 
             "name": "Nature Day",
             "dates": [23, 24, 25, 26, 27, 28, 29, 30, 31],
             "date-str": "April 23rd-May 4th"
@@ -67,25 +77,46 @@
             "name": "Wedding Season",
             "dates": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
             "date-str": "Entire Month of June"
+        },
+        "2": {
+            "name": "Bug Off",
+            "dates": [27],
+            "date-str": "June 27th"
         }
     },
     "7": {
         "1": {
-            "name": "No events this month"
+            "name": "Fishing Tournament",
+            "dates": [11],
+            "date-str": "July 11th"
+        },
+        "2": {
+            "name": "Bug Off",
+            "dates": [25],
+            "date-str": "July 27th"
         }
     },
     "8": {
         "1": {
-            "name": "No events this month"
+            "name": "Bug Off",
+            "dates": [22],
+            "date-str": "August 22nd"
         }
     },
     "9": {
         "1": {
-            "name": "No events this month"
+            "name": "Bug Off",
+            "dates": [26],
+            "date-str": "September 26th"
         }
     },
     "10": {
         "1": {
+            "name": "Fishing Tournament",
+            "dates": [10],
+            "date-str": "October 10th"
+        },
+        "2": {
             "name": "Halloween",
             "date-str": "October 31st"
         }

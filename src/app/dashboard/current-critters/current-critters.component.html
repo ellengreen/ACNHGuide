@@ -1,12 +1,16 @@
 <div class="container">
-    <div class="row">
-        <div class="toggle">
-            <label class="switch">
-                <input type="checkbox" (click)="toggle()" id="bt">
-                <span class="slider round"></span>       
-            </label>
-        </div>
-    </div>
+    <div class="row justify-content">
+
+            <div class="toggle">
+                <!-- <span class="b">Bugs</span> -->
+                <label class="switch">
+                    <input type="checkbox" (click)="toggle()" id="bt">
+                    <span class="slider round"></span>       
+                </label>
+                <!-- <span class="b">Fish</span> -->
+            </div>
+      
+
     <div class="row">
         <ng-container *ngIf="show">
             <app-current-fish></app-current-fish>
@@ -15,5 +19,6 @@
         <ng-container *ngIf="!show">
             <app-current-bugs></app-current-bugs>
         </ng-container>
+    </div>
     </div>
 </div>
