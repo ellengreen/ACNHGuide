@@ -26,6 +26,7 @@ import { AuthenticationService } from './shared/authentication.service';
 import { CurrentCrittersComponent } from './dashboard/current-critters/current-critters.component';
 import { CurrentFishComponent } from './dashboard/current-critters/current-fish/current-fish.component';
 import { CurrentBugsComponent } from './dashboard/current-critters/current-bugs/current-bugs.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { CurrentBugsComponent } from './dashboard/current-critters/current-bugs/
     CurrentCrittersComponent,
     CurrentFishComponent,
     CurrentBugsComponent,
+    NavComponent,
 
   ],
   imports: [

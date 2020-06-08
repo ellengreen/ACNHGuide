@@ -1,2 +1,6 @@
-<!-- <app-navigation></app-navigation> -->
+<div *ngIf="_router.url != '/login' && _router.url != '/' && _router.url != '/register'">
+    <app-nav></app-nav>
+</div>
 <router-outlet></router-outlet>
+
+
