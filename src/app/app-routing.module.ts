@@ -12,10 +12,9 @@ const routes: Routes = [
   { path: 'home', component: DashboardComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
-
-      { path: 'register', component: RegisterComponent },
-      { path: 'forgot', component: ForgotPasswordComponent },
-      { path: 'verify-email', component: VerifyEmailComponent }
+  { path: 'register', component: RegisterComponent },
+  // { path: 'forgot', component: ForgotPasswordComponent },
+  // { path: 'verify-email', component: VerifyEmailComponent }
 
 ];
 
