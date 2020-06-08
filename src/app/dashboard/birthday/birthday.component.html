@@ -1,13 +1,12 @@
 <div class="container">
   <div class="row">
-    Birthdays
-  </div>
-  <div class="row">
-      <div class="col-12" *ngFor="let villager of villagers | keyvalue">
-        <div *ngIf="villager.value['birthday']===bdayFormat">
-          <img class="villager" src="https://acnhapi.com/v1/images/villagers/{{villager.value['id']}}">
-          <P>Today is {{villager.value['name']['name-en']}}'s birthday! </P>
-        </div> 
+      <div class="col-6">
+        It's {{bday}}'s Birthday!
+        <img class="villager" src="https://acnhapi.com/v1/images/villagers/{{bdayID}}">
+      </div>
+      <div class="col-6">
+        It's {{bday}}'s Birthday!
+        <img class="villager" src="https://acnhapi.com/v1/images/villagers/{{bdayID}}">
       </div>
   </div>
 </div>
