@@ -7,8 +7,8 @@ import { FishComponent } from './critterpedia/fish/fish.component';
 
 const routes: Routes = [
   { path: 'critterpedia', component: CritterpediaMainComponent },
-  { path: 'bugs', component: BugsComponent },
-  { path: 'fish', component: FishComponent },
+  { path: 'bugs', component: BugsComponent},
+  { path: 'fish', component: FishComponent }
 ];
 
 @NgModule({
