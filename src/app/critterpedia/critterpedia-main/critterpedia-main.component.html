@@ -6,8 +6,8 @@
                 <h1><strong></strong>Critterpedia</h1>
             </div>
             <div class="col-sm-3">
-                    <a (click)="onFish()"><h4>Fish</h4></a> | 
-                    <a (click)="onBugs()"><h4>Bugs</h4></a>
+                    <a (click)="onFish()"><h4 [class.selected]="fishView">Fish</h4></a> | 
+                    <a (click)="onBugs()"><h4 [class.selected]="bugView">Bugs</h4></a>
             </div>
             <div class="col-sm-3">
                 <h4>All Critters | My Collection</h4>

@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class CritterpediaMainComponent implements OnInit {
 
   constructor() { }
-  fishView: any;
-  bugView: any;
+  fishView = true;
+  bugView: boolean;
 
   onFish(){
     this.fishView = true;
