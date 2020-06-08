@@ -1,15 +1,19 @@
-<div class="toggle">
-    <label class="switch">
-        <input type="checkbox" (click)="toggle()" id="bt">
-        <span class="slider round"></span>       
-    </label>
+<div class="container">
+    <div class="row">
+        <div class="toggle">
+            <label class="switch">
+                <input type="checkbox" (click)="toggle()" id="bt">
+                <span class="slider round"></span>       
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <ng-container *ngIf="show">
+            <app-current-fish></app-current-fish>
+        </ng-container>
+                
+        <ng-container *ngIf="!show">
+            <app-current-bugs></app-current-bugs>
+        </ng-container>
+    </div>
 </div>
-
-
-<ng-container *ngIf="show">
-    <app-current-fish></app-current-fish>
-</ng-container>
-            
-<ng-container *ngIf="!show">
-    <app-current-bugs></app-current-bugs>
-</ng-container>
