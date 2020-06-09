@@ -10,16 +10,21 @@ import { KeyValue } from '@angular/common';
 export class FishComponent implements OnInit {
 
   fish:any;
+  selectedFish: any;
+  f: any;
   constructor(private fishService: NookipediaService) { }
 
   //use service to get data from fish JSON 
   ngOnInit() {
     this.fishService.getFish().subscribe(data=> {
       this.fish = data;
-      console.log(data);
     })
   }
 
+  onSelect(f){
+    this.selectedFish = f;
+    console.log(this.selectedFish)
+  }
   originalOrder = (a: KeyValue<number,string>, b: KeyValue<number,string>): number => {
     return 0;
     }
