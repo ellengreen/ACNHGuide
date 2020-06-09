@@ -91,3 +91,30 @@ h1 {
     padding: 10px;
     background-color: white;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .options {
+        display: none;
+    }
+    .row {
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    h1 {
+        font-size: 30px;
+    }
+    .col-sm-3 {
+        padding-left: 0px;
+    }
+
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    .deets {
+        display: hidden;
+    }
+}
