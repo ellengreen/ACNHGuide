@@ -9,6 +9,7 @@ import { VerifyEmailComponent } from './user-auth/verify-email/verify-email.comp
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 import { BugsComponent } from './critterpedia/bugs/bugs.component';
 import { FishComponent } from './critterpedia/fish/fish.component';
+import { VillagersComponent } from './villagers/villagers.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'critterpedia', component: CritterpediaMainComponent },
   { path: 'critterpedia/bugs', component: BugsComponent},
   { path: 'critterpedia/fish', component: FishComponent },
+  { path: 'villagers', component: VillagersComponent},
   {
     path: '**',
     redirectTo: '/home',

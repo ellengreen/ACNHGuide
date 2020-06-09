@@ -33,6 +33,7 @@ import { BirthdayComponent } from './dashboard/birthday/birthday.component';
 import { BugsComponent } from './critterpedia/bugs/bugs.component';
 import { FishComponent } from './critterpedia/fish/fish.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
+import { VillagersComponent } from './villagers/villagers.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/crit
     BirthdayComponent,
     CritterpediaMainComponent,
     BugsComponent,
-    FishComponent
+    FishComponent,
+    VillagersComponent
     
   ],
   imports: [
