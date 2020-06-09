@@ -9,6 +9,8 @@ import { KeyValue } from '@angular/common';
 })
 export class BugsComponent implements OnInit {
   bugs:any;
+  selectedBug: any;
+  b: any;
   constructor(private bugService: NookipediaService) { }
 
   //use service to get data from bugs JSON 
@@ -19,8 +21,15 @@ export class BugsComponent implements OnInit {
     })
   }
 
+  onSelect(b){
+    this.selectedBug = b;
+    console.log(this.selectedBug)
+  }
   originalOrder = (a: KeyValue<number,string>, b: KeyValue<number,string>): number => {
     return 0;
     }
 
 }
+
+
+
