@@ -1,4 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
-// h1 {
-//     font-family: 'Fredoka One', cursive;
-// }
+body {
+    padding-top: 5px;
+    background-color: #f0f0f0;
+    margin-left: 50px;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Nunito', sans-serif;
+}
