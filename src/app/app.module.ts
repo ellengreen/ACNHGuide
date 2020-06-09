@@ -30,9 +30,9 @@ import { NavComponent } from './nav/nav.component';
 
 import { EventsComponent } from './dashboard/events/events.component';
 import { BirthdayComponent } from './dashboard/birthday/birthday.component';
-import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 import { BugsComponent } from './critterpedia/bugs/bugs.component';
 import { FishComponent } from './critterpedia/fish/fish.component';
+import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 
 
 @NgModule({
@@ -48,16 +48,12 @@ import { FishComponent } from './critterpedia/fish/fish.component';
     CurrentFishComponent,
     CurrentBugsComponent,
     NavComponent,
-
-    DashboardComponent,
-    CurrentCrittersComponent,
-    CurrentBugsComponent,
-    CurrentFishComponent,
     EventsComponent,
     BirthdayComponent,
     CritterpediaMainComponent,
     BugsComponent,
     FishComponent
+    
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
