@@ -89,6 +89,49 @@
                             </div>
                         </div>
                     </div>
+<!--If selected fish-->     
+                    <div *ngIf="selectedFish">
+                                <div class="text-center">
+                                    <img class="icon2" src="http://acnhapi.com/icons/fish/{{selectedFish.value['id']}}">
+                                </div> 
+                                <h1>{{selectedFish.value['name']}}</h1>
+                                <h6>{{selectedFish.value['price']}} bells</h6>
+                                <h6>{{selectedFish.value['price'] * 1.5}} bells from CJ</h6>
+                                <div class="deets">
+                                    <div class="row">
+                                        <div class="col-sm-6 text-left">
+                                            Location 
+                                        </div>
+                                        <div class="col-sm-6 text-right">
+                                            {{selectedFish.value['location']}} 
+                                        </div>
+                                        <div class="col-sm-6 text-left">
+                                            Shadow Size
+                                        </div>
+                                        <div class="col-sm-6 text-right">
+                                            {{selectedFish.value['shadow_size']}} 
+                                        </div>
+                                        <div class="col-sm-6 text-left">
+                                            Available Times 
+                                        </div>
+                                        <div class="col-sm-6 text-right">
+                                            {{selectedFish.value['times']['text']}} 
+                                        </div>
+                                        <div class="col-sm-6 text-left">
+                                            Nothern Months 
+                                        </div>
+                                        <div class="col-sm-6 text-right">
+                                            {{selectedFish.value['months']['northern']['text']}} 
+                                        </div>
+                                        <div class="col-sm-6 text-left">
+                                            Southern Months 
+                                        </div>
+                                        <div class="col-sm-6 text-right">
+                                            {{selectedFish.value['months']['southern']['text']}} 
+                                        </div>
+                            </div>
+                        </div>
+                    </div>        
                 </div>
 
                 
