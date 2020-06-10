@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="row justify-content-center">
+  <div class="row">
   <div class="col-sm-6">
-    <h2>Available This Month</h2>
-    <div class="row justify-content-center bugs">
+    <h4>Available This Month</h4>
+    <div class="row justify-content-center scroll bugs">
       <div *ngFor="let bug of currentBugs">
         <div class="col-sm-">
-          <a routerLink='/critterpedia/bugs'> <i><img class="icon" src="http://acnhapi.com/icons/bugs/{{bug['id']}}"/></i></a>
+          <a routerLink='/critterpedia/bugs' ><img class="icon" src="http://acnhapi.com/icons/bugs/{{bug['id']}}"/></a>
         </div>
       </div>
     </div>
@@ -14,8 +14,8 @@
   <div class="col-sm-1"></div>
  
   <div class="col-sm-5">
-    <h2>Year Round</h2>
-    <div class="row justify-content-center bugs">
+    <h4>Year Round</h4>
+    <div class="row justify-content-center scroll bugs">
       <div *ngFor="let bug of alwaysBugs">
         <div class="col-sm-">
           <i><img class="icon" src="http://acnhapi.com/icons/bugs/{{bug['id']}}"/></i>

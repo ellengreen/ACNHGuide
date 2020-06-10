@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="row justify-content-center">
-  <div class="col-6">
-    <h2>Available This Month</h2>
-    <div class="row justify-content-center">
+  <div class="row">
+  <div class="col-sm-6">
+    <h4>Available This Month</h4>
+    <div class="row justify-content-center scroll">
       <div *ngFor="let fish of currentFish">
-        <div class="col-md-">
-          <a routerLink='/critterpedia/fish'><i><img class="icon" src="http://acnhapi.com/icons/fish/{{fish['id']}}"/></i></a>
+        <div class="col-sm-">
+          <a routerLink='/critterpedia/bugs'><img class="icon" src="http://acnhapi.com/icons/fish/{{fish['id']}}"/></a>
         </div>
       </div>
     </div>
@@ -13,11 +13,11 @@
 
   <div class="col-sm-1"></div>
  
-  <div class="col-5">
-    <h2>Year Round</h2>
-    <div class="row justify-content-center">
+  <div class="col-sm-5">
+    <h4>Year Round</h4>
+    <div class="row justify-content-center scroll">
       <div *ngFor="let fish of alwaysFish">
-        <div class="col-md-">
+        <div class="col-sm-">
           <i><img class="icon" src="http://acnhapi.com/icons/fish/{{fish['id']}}"/></i>
         </div>
       </div>
