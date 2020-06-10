@@ -5,7 +5,7 @@
     <div class="row justify-content-center bugs">
       <div *ngFor="let bug of currentBugs">
         <div class="col-sm-">
-          <i><img class="icon" src="http://acnhapi.com/icons/bugs/{{bug['id']}}"/></i>
+          <a routerLink='/critterpedia/bugs'> <i><img class="icon" src="http://acnhapi.com/icons/bugs/{{bug['id']}}"/></i></a>
         </div>
       </div>
     </div>

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
       <div *ngFor="let fish of currentFish">
         <div class="col-md-">
-          <i><img class="icon" src="http://acnhapi.com/icons/fish/{{fish['id']}}"/></i>
+          <a routerLink='/critterpedia/fish'><i><img class="icon" src="http://acnhapi.com/icons/fish/{{fish['id']}}"/></i></a>
         </div>
       </div>
     </div>
