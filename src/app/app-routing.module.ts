@@ -15,7 +15,7 @@ const routes: Routes = [
   // { path: 'profile', component: ProfileComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  // { path: 'critterpedia', component: CritterpediaMainComponent },
+  { path: 'critterpedia', component: CritterpediaMainComponent },
   { path: 'critterpedia/bugs', component: BugsComponent},
   { path: 'critterpedia/fish', component: FishComponent },
   { path: 'villagers', component: VillagersComponent},
