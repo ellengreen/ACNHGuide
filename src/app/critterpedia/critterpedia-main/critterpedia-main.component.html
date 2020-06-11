@@ -1,7 +1,15 @@
-<!-- <body>
+<body>
     <div class="container-fluid">
-
         <div class="row">
+            <div class="col-sm-12">
+                header
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- 
+   <div class="row">
             <div class="col-sm-3 header">
                 <h1><strong></strong>Critterpedia</h1>
             </div>
@@ -25,3 +33,9 @@
         </div>
     </div>
 </body> -->
+<div *ngIf="fishView">
+    <app-fish></app-fish>
+</div>
+<div *ngIf="bugView">
+    <app-bugs></app-bugs>
+</div>

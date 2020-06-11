@@ -28,11 +28,26 @@
     border-radius: 50%;
 }
 
+.icon:hover{
+    background-color: 	#FFFF99;
+}
+
 p {
     margin-top: 3px;
     font-size: 13px;
     text-align: center;
-    // color: #007bff;
+    color: #007bff;
+    font-weight: 600;
+}
+
+.name {
+    text-align: center;
+    color: #007bff;
+    font-weight: 600;
+}
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .table td {
@@ -55,11 +70,10 @@ p {
   }
 
 
-.scroll {
-    // display: inline-block;
+  .scroll {
     width: 100%;
-    height: 435px;
-    overflow-y: scroll; 
+    height: 575px;
+    overflow-y: scroll;
   }
   
   /* Hide scrollbar for Chrome, Safari and Opera */
@@ -83,5 +97,11 @@ p {
 
     .footer, .flick {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .icon {
+        width: 40%;
     }
 }
