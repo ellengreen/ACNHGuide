@@ -30,8 +30,6 @@ import { NavComponent } from './nav/nav.component';
 
 import { EventsComponent } from './dashboard/events/events.component';
 import { BirthdayComponent } from './dashboard/birthday/birthday.component';
-import { BugsComponent } from './critterpedia/bugs/bugs.component';
-import { FishComponent } from './critterpedia/fish/fish.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 import { VillagersComponent } from './villagers/villagers.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
@@ -53,8 +51,6 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
     EventsComponent,
     BirthdayComponent,
     CritterpediaMainComponent,
-    BugsComponent,
-    FishComponent,
     VillagersComponent
     
   ],
