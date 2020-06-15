@@ -15,7 +15,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { ProfileComponent } from 'src/app/profile/prof';
+// import { ProfileComponent } from 'dashboard/profile/profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './user-auth/login/login.component';
 import { RegisterComponent } from './user-auth/register/register.component';
@@ -34,12 +34,13 @@ import { BugsComponent } from './critterpedia/bugs/bugs.component';
 import { FishComponent } from './critterpedia/fish/fish.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 import { VillagersComponent } from './villagers/villagers.component';
+import { ProfileComponent } from './dashboard/profile/profile.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    // ProfileComponent,
+    ProfileComponent,
     DashboardComponent,
     LoginComponent,
     RegisterComponent,
