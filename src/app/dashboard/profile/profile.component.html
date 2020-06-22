@@ -1,7 +1,7 @@
-
+<!-- 
   <input type="text"  #nameInput>
   <button type="submit" (click) = 'addName(nameInput.value)'>Add</button>
-  <br>
+  <br> -->
 
 <h3>{{displayName}}</h3>
 <h3>Bean Cove</h3>
@@ -9,7 +9,11 @@
 <h5>Lilies</h5>
 <hr>
 <h3>Collection Progress</h3>
-<h5>Bugs</h5>
-<h5>Fish</h5>
-<h5>Fossils</h5>
-<h5>Art</h5>
+<h5>Bugs</h5>{{savedBugs.length}}/80
+<progress id="bar" max="100" value="{{bugWidth}}"></progress>
+<br>
+<h5>Fish</h5>{{savedFish.length}}/80
+<progress id="bar" max="100" value="{{fishWidth}}"></progress>
+
+<!-- <h5>Fossils</h5>
+<h5>Art</h5> -->
