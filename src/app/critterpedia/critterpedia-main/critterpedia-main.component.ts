@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NookipediaService } from 'src/app/shared/nookipedia.service';
-import { CurrentDateService } from 'src/app/shared/current-date.service';
-import { KeyValuePipe } from '@angular/common';
 
 @Component({
   selector: 'app-critterpedia-main',
@@ -10,116 +7,116 @@ import { KeyValuePipe } from '@angular/common';
 })
 export class CritterpediaMainComponent implements OnInit {
 
-  constructor(public ns: NookipediaService, public ds: CurrentDateService, public kv:KeyValuePipe) { }
+  constructor() { }
 
-  bugs: any;
-  fish: any;
-  critters: any;
-  
   fishView: boolean;
   bugView: boolean;
-  name: string;
   vendor: string;
-  
-  selectedCritter: any;
-  currentMonth=this.ds.currentMonth;
-  thisMonthFish=[];
-  thisMonthBugs=[];
+
 
   ngOnInit(){
-    this.ns.getBugs().subscribe(data=> {
-      this.bugs = data;
-      // set bugs as default view options
-      this.critters = this.bugs;
-      this.name ='bugs';
-      this.vendor='Flick';
-      this.catchableBugs();
-    })
-      this.ns.getFish().subscribe(data => {
-        this.fish = data;
-        this.catchableFish();
-    })
+    this.bugView=true;
+    this.vendor='flick';
   }
 
   onFish(){
-    this.fishView = true;
-    this.bugView = false;
-    if (this.fishView){
-      this.critters=this.fish;
-      this.name = 'fish';
-      this.vendor = 'CJ';
-    } 
-    this.selectedCritter = null;
+    this.bugView=false;
+    this.fishView=true;
+    this.vendor='CJ';
   }
 
   onBugs(){
-    this.fishView = false;
-    this.bugView = true;
-    if (this.bugView){
-      this.critters=this.bugs;
-      this.name='bugs';
-      this.vendor = 'Flick';
-    }
-    this.selectedCritter = null;
+    this.bugView=true;
+    this.fishView=false;
+    this.vendor='flick'
   }
 
-  onSelect(c:any){
-    this.selectedCritter = c;
-  }
+}
 
-  showAll(){
-    if (this.fishView){
-      this.critters=this.fish;
-    } else {
-      this.critters=this.bugs;
-    }
-  }
 
-  showCurrent(){
-    if (this.fishView){
-    this.critters=this.thisMonthFish;
-    } else {
-      this.critters=this.thisMonthBugs;
-    }
-  }
 
+//   ngOnInit(){
+//     this.ns.getBugs().subscribe(data=> {
+//       this.bugs = data;
+//       // set bugs as default view options
+//       this.critters = this.bugs;
+//       this.name ='bugs';
+//       this.vendor='Flick';
+//     })
+//       this.ns.getFish().subscribe(data => {
+//         this.fish = data;
+//     })
   
-  showMine(){
-    if (this.fishView){
-      this.critters=this.myFishCP;
-      
-      } else {
-        this.critters=this.myBugsCP;
-      }
-  }
+//     this.db.fetchBugs().subscribe(bugs =>{
+//       this.loadedBugs=bugs;
+//     })
+//     this.db.fetchFish().subscribe(fish =>{
+//       this.loadedFish=fish;
+//     })
+//   }
 
-  catchableBugs(){
-    this.kv.transform(this.bugs);
-    Object.keys(this.bugs).forEach(key => {
-      if (this.bugs[key]['months']['northern']['array'].includes(this.currentMonth)){ 
-        this.thisMonthBugs.push(this.bugs[key])
-      }
-    });
-    // console.log(this.thisMonthFish)
-  }
-  catchableFish(){
-    this.kv.transform(this.fish);
-    Object.keys(this.fish).forEach(key => {
-      if (this.fish[key]['months']['northern']['array'].includes(this.currentMonth)){ 
-        this.thisMonthFish.push(this.fish[key])
-      }
-    });
-    // console.log(this.thisMonthFish)
-  }
+//   onFish(){
+//     this.bugView=false;
+//     this.fishView=true;
+//     this.vendor='CJ';
+//   }
 
-myFishCP=[];
-myBugsCP=[];
-addToFishCP(selectedCritter){
-  this.myFishCP.push(selectedCritter);
-  console.log(this.myFishCP);
-}
-addToBugsCP(selectedCritter){
-  this.myBugsCP.push(selectedCritter);
-  console.log(this.myBugsCP);
-}
-}
+//   onBugs(){
+//     this.bugView=true;
+//     this.fishView=false;
+//     this.vendor='Flick'
+//   }
+
+//   onSelect(c:any){
+//     this.selectedCritter = c;
+//   }
+
+//   showAll(){
+//     if (this.fishView){
+//       this.critters=this.fish;
+//     } else {
+//       this.critters=this.bugs;
+//     }
+//   }
+
+
+//   showMine(){
+//     if (this.fishView){
+//       this.db.fetchFish()
+//       .subscribe(fish =>{
+//       this.critters=fish;
+//       })} else {
+//         this.db.fetchBugs().subscribe(bugs=>{
+//           this.critters=bugs;
+//         })
+//       }
+//   }
+
+
+// addFish(selectedCritter){
+//   // this.myFishCP.push(selectedCritter);
+//   // this.dupes(selectedCritter)
+//   this.db.addFish(selectedCritter);
+// }
+// addBugs(selectedCritter){
+//   this.dupes(selectedCritter)
+//   // this.db.addBug(selectedCritter)
+// }
+
+// dupes(selectedCritter){
+//   this.kv.transform(this.loadedBugs);
+//   Object.keys(this.loadedBugs).forEach(key=>{
+//     if(this.loadedBugs[key]['id'] == selectedCritter['id']){
+//       console.log('stop')
+//     } else {
+//       this.db.addBug(selectedCritter)
+//       console.log(this.loadedBugs)
+//       // this.db.addBug(selectedCritter)
+//     }
+//   })
+
+ 
+// }
+
+
+// }
