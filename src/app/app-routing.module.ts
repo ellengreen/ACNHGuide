@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ProfileComponent } from './dashboard/profile/profile.component';
 import { LoginComponent } from './user-auth/login/login.component';
 import { RegisterComponent } from './user-auth/register/register.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 import { VillagersComponent } from './villagers/villagers.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'critterpedia', component: CritterpediaMainComponent },
   { path: 'villagers', component: VillagersComponent},
+  { path: 'welcome', component: WelcomeComponent},
   {
     path: '**',
     redirectTo: '/home',

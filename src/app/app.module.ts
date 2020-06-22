@@ -35,6 +35,7 @@ import { BirthdayComponent } from './dashboard/birthday/birthday.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 import { VillagersComponent } from './villagers/villagers.component';
 import { ProfileComponent } from './dashboard/profile/profile.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { ProfileComponent } from './dashboard/profile/profile.component';
     CritterpediaMainComponent,
     VillagersComponent,
     BugsComponent,
-    FishComponent
+    FishComponent,
+    WelcomeComponent
     
   ],
   imports: [

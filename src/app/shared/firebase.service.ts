@@ -22,9 +22,6 @@ id: any;
     })
   }
 
-  // removeBug(selectedCritter){
-  // }
-
   addFish(selectedCritter){
     this.http
     .post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/fish.json`, selectedCritter)
@@ -62,10 +59,25 @@ id: any;
     )
   }
 
-  // addUserInfo(name, island){
-  //   this.http
-  //   .post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/profile.json`, name, island)
-  //   .subscribe(responseData=>{
-  //   })
-  // }
+  addUserInfo(profileData: {name: string, islandName: string, nativeFruit: any, nativeFlower: any}){
+    this.http
+    .post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/profile.json`, profileData)
+    .subscribe(responseData=>{
+    })
+  }
+
+  fetchUserInfo(){
+    return this.http
+    .get(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/profile.json`)
+    .pipe(map(responseData => {
+      const loadedData =[];
+      for (const key in responseData) {
+        if (responseData.hasOwnProperty(key)){
+          loadedData.push({ ...responseData[key], newID: key})
+        }
+      }
+      return loadedData;
+    })
+    )
+  }
 }
