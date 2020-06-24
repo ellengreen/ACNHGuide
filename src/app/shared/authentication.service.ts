@@ -50,11 +50,6 @@ export class AuthenticationService {
     })
   }
 
-   //send email to reset password
-   async resetPasswordEmail(passwordResetEmail: string){
-    return await this.afAuth.sendPasswordResetEmail(passwordResetEmail)
-   }
-
    //logout of account
    async logout(){
      await this.afAuth.signOut();
@@ -70,7 +65,7 @@ export class AuthenticationService {
    //login with google account
    async loginWithGoogle(){
      await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
-     this.router.navigate(['profile']);
+     this.router.navigate(['home']);
    }
 
 
