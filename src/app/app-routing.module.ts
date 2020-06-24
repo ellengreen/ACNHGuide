@@ -4,8 +4,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './user-auth/login/login.component';
 import { RegisterComponent } from './user-auth/register/register.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
-import { VillagersComponent } from './villagers/villagers.component';
-import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
@@ -13,11 +11,9 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'critterpedia', component: CritterpediaMainComponent },
-  { path: 'villagers', component: VillagersComponent},
-  { path: 'welcome', component: WelcomeComponent},
   {
     path: '**',
-    redirectTo: '/home',
+    redirectTo: '/login',
     pathMatch: 'full'
   }
 ];
