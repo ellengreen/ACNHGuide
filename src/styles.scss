@@ -113,4 +113,14 @@ p {
   .footer {
     display: none;
   }
+
+  .key {
+    margin-left: 0px;
+  }
+
+  .dot, .dot1, .dot2 {
+    height: 1em;
+    width: 1em;
+    margin: 10px;
+  }
 }
