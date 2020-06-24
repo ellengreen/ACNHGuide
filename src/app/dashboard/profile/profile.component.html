@@ -1,5 +1,5 @@
 <div *ngIf="new">
-  <div class="container">
+  <!-- <div class="container"> -->
   <form (ngSubmit)="onSubmit()" #profileForm="ngForm">
       <div class="form-group">
         <label for="name">Name</label>
@@ -32,7 +32,7 @@
       </div>
         <button type="submit" class="btn btn-custom" (click)="update(profileForm)">Update Profile</button>
     </form>
-    </div>
+    <!-- </div> -->
   </div>
 
 <div *ngIf="!new">
