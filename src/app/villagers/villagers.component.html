@@ -1,0 +1,125 @@
+<app-nav></app-nav>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-8">
+                
+                <form [formGroup]="form" (ngSubmit)="submit()">
+                    <div class="form-row">
+                        <div class="col">
+                        <select formControlName="gender" class="form-control">
+                            <option>Gender</option>
+                            <option value={{genders}}>All</option>
+                            <option *ngFor="let g of genders">{{g}}</option>
+                        </select>
+                        </div>
+                        <div class="col">
+                        <select formControlName="species" class="form-control">
+                            <option>Species</option>
+                            <option value={{species}}>All</option>
+                            <option *ngFor="let s of species">{{s}}</option>
+                        </select>
+                        </div>
+                        <div class="col">
+                        <select formControlName="personality" class="form-control">
+                            <option>Personality</option>
+                            <option value={{personalities}}>All</option>
+                            <option *ngFor="let p of personalities">{{p}}</option>
+                        </select>
+                        </div>
+                        <div class="col"><button class="btn btn-custom" type="submit" >Submit</button></div>
+                    </div>
+                    
+                    
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8">
+
+                <div class="card card-signin my-2">
+                    <div class="card-body">
+                        <div class="row scroll">
+                            <div class="col-4 col-sm-3 align-items-center text-center" (click)="onSelect(v)" *ngFor="let v of villagers | keyvalue">
+                                <img class="icon" src="http://acnhapi.com/icons/villagers/{{v.value['id']}}">
+                                <p>{{v.value['name']['name-en']}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="!selectedVillager" class="col-sm-4">
+                <div class="card card-signin my-2">
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <td>Gender</td>
+                        
+                            </tr>
+                            <tr>
+                                <td>Species</td>
+                            
+                            </tr>
+                            <tr>
+                                <td>Birthday</td>
+                            
+                            </tr>
+                            <tr>
+                                <td>Personality</td>
+                                
+                            </tr>
+                            <tr>
+                                <td>Catch Phrase</td>
+                               
+                            </tr>
+                        </table>
+
+                        <div *ngIf="duplicate == true"><p class="text-left">This Villager lives on my Island!</p></div>
+                        <div *ngIf="!duplicate"><button (click)="addVillager(selectedVillager)" class="button btn-primary">Add to My Island!</button></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div *ngIf="selectedVillager" class="col-sm-4">
+                <div class="card card-signin my-2">
+                    <div *ngIf="selectedVillager" class="card-body">
+                        <h5 class="card-title text-center">{{selectedVillager.value['name']['name-en']}}</h5>
+                        <table class="table">
+                            <tr>
+                                <td>Gender</td>
+                                <td class="text-right">{{selectedVillager.value['gender']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Species</td>
+                                <td class="text-right">{{selectedVillager.value['species']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Birthday</td>
+                                <td class="text-right">{{selectedVillager.value['birthday-string']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Personality</td>
+                                <td class="text-right">{{selectedVillager.value['personality']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Catch Phrase</td>
+                                <td class="text-right">{{selectedVillager.value['catch-phrase']}}</td>
+                            </tr>
+                        </table>
+
+                        <div *ngIf="duplicate == true"><p class="text-left">This Villager lives on my Island!</p></div>
+                        <div *ngIf="!duplicate"><button (click)="addVillager(selectedVillager)" class="button btn-primary">Add to My Island!</button></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer"></div>
+    <img *ngIf="selectedVillager" class="vendor" src="{{selected.image}}">
+</body>
+
+   
