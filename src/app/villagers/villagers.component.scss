@@ -1,8 +1,20 @@
+@import 'src/styles.scss';
+
+.name {
+    text-align: center;
+    color: $primary-blue;
+    font-weight: 600 !important;
+}
+
+.table td {
+    padding: .25rem;
+}
+
 .button {
     display: inline-block;
     padding: 10px 15px;
     font-size: 15px;
-    cursor: pointer;
+    // cursor: pointer;
     text-align: center;
     text-decoration: none;
     outline: none;
@@ -12,12 +24,12 @@
   }
 
 .btn-custom {
-    color: white;
-    background-color: #8DDAC1;
+    color: #fff;
+    background-color: $aqua;
 }
   
 .icon{
-    background-color: #f0f0f0;
+    background-color: $icon-grey;
     border-radius: 50%;
     width: 40%;
     padding: 10px;
@@ -27,7 +39,7 @@ form {
     padding: 15px;
 }
 
-.icon:hover{
+.icon:hover, .button {
     cursor: pointer;
 }
   .scroll {
@@ -45,16 +57,7 @@ form {
   .scroll {
       -ms-overflow-style: none;
   }
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 13%;
-    background-color:  #8ddac1;
-    color: white;
-    text-align: center;
- }
+
 
 .vendor{
     width: 14%;
@@ -63,10 +66,17 @@ form {
     left:79%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 850px) {
+    .scroll {
+        height: 400px;
+    }
 
+    .icon {
+        width: 100%;
+    }
+
+    .vendor {
+        display: none;
+    }
 }
 
-@media only screen and (max-width: 1040px) {
-
-}

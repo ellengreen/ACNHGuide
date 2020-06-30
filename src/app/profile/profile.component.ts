@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   savedFish=[];
   savedBugs=[];
   userInfo=[];
+  villagers=[];
   fishWidth: number;
   bugWidth: number;
 
@@ -43,7 +44,9 @@ export class ProfileComponent implements OnInit {
         } else {
           this.new = false;
         }
-      console.log(this.userInfo)
+    })
+    this.db.fetchVillagers().subscribe(data=> {
+      this.villagers=data;
     })
   }
 

@@ -1,26 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+$primary-blue: #007bff;
+$aqua: #8DDAC1;
+$gold: #F2C14E;
+$teal: #006D77;
+$icon-grey: #f0f0f0;
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 13%;
+  background-color: $aqua;
+}
+
+.card-custom {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-custom .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+  
+.card-custom .card-body {
+  padding: 2rem;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  border: none;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
 p {
   margin-top: 3px;
   font-size: 13px;
   text-align: center;
-  color: #007bff;
+  color: $primary-blue;
   font-weight: 600;
 }
 
 .hour {
-  background-color: #8DDAC1 !important;
+  background-color: $aqua !important;
   border-radius: 50%;
 }   
 
 .new {
   border: solid;
-  border-color:#F2C14E;
+  border-color:$gold;
   border-radius: 50%;
 }
 
 .leaving {
   border:solid;
-  border-color: #006D77;
+  border-color: $teal;
   border-radius: 50%;
 }
 
@@ -40,35 +81,10 @@ p {
       -ms-overflow-style: none;
   }
 
-.card-signin {
-    border: 0;
-    border-radius: 1rem;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-}
-
-.card-signin .card-title {
-    margin-bottom: 2rem;
-    font-weight: 300;
-    font-size: 1.5rem;
-}
-    
-.card-signin .card-body {
-    padding: 2rem;
-}
-    
-.form-signin .btn {
-    font-size: 80%;
-    border-radius: 5rem;
-    border: none;
-    letter-spacing: .1rem;
-    font-weight: bold;
-    padding: 1rem;
-    transition: all 0.2s;
-}
-
 p {
     font-family: 'Roboto', sans-serif;
-    color: #006D77;
+    color: $primary-blue;
+    font-weight: 600;
 }
 
 .key {
@@ -81,7 +97,7 @@ p {
   height: 2em;
   width: 2em;
   text-align: center;
-  background:#8DDAC1;
+  background:$aqua;
   display:inline-block;
   vertical-align:middle;
   margin:0 10px;

@@ -1,0 +1,78 @@
+<body>
+
+    <div class="row justify-content-sm-center">
+
+      <div *ngIf="new">
+        <div class="col-sm-12 newForm">
+
+          <div class="card card-custom my-2 text-center">
+            <div class="card-body">
+              <div class="card-title">You're New! Update Your Profile</div>
+                <form (ngSubmit)="onSubmit()" #profileForm="ngForm">
+                    <div class="form-group">
+                      <label for="name">Name</label>
+                      <input type="text" class="form-control" id="name"
+                            [(ngModel)]="displayName" name="name">
+                    </div>
+                    <div class="form-group">
+                      <label for="islandName">Island Name</label>
+                      <input type="text" class="form-control" id="islandName"
+                            [(ngModel)]="islandName" name="islandName">
+                    </div>
+                    <div class="form-group">
+                      <label for="fruit">Native Fruit</label>
+                      <select class="form-control" id="fruit"
+                              [(ngModel)]="nativeFruit" name="fruit">
+                      <option *ngFor="let fr of fruit" [value]="fr">{{fr}}</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="flower">Native Flower</label>
+                      <select class="form-control" id="flower"
+                              [(ngModel)]="nativeFlower" name="flower"
+                              #flower="ngModel">
+                        <option *ngFor="let f of flowers" [value]="f">{{f}}</option>
+                      </select>
+                    </div>
+                    <button type="submit" class="btn btn-custom" (click)="update(profileForm)">Update Profile</button>
+                </form>
+              </div>
+
+              </div>
+            </div>
+          </div>
+
+        <div *ngIf="!new">
+          <div class="col-sm-10">
+            <div class="card card-custom my-2">
+              <div class="card-body">
+                <div class="row" *ngFor="let i of userInfo | keyvalue">
+                  <div class="col-sm-7">
+                    <h3>{{userInfo[0]['name']}}</h3>
+                    <h4>{{userInfo[0]['islandName']}}</h4>
+                  </div>
+                  <div class="col-sm-5">
+                    <img class="natives" src="/assets/images/{{userInfo[0]['flower']}}.png">
+                    <img class="natives" src="/assets/images/{{userInfo[0]['fruit']}}.png">  
+                  </div>
+                </div>
+              <hr>
+              <div class="card-title">Villagers</div>
+              <div class="row">
+                <div class="col-4 col-sm-3 align-items-center text-center" *ngFor="let v of villagers">
+                  <img class="icon" src="http://acnhapi.com/icons/villagers/{{v.value['id']}}">
+                </div></div>
+          <hr>
+          <div class="card-title">Collection Progress</div>
+          <strong>Bugs &nbsp;</strong>{{savedBugs.length}}/80 
+          <progress id="bar" max="100" value="{{bugWidth}}"></progress> 
+          <br>
+          <strong>Fish &nbsp;</strong>{{savedFish.length}}/80
+          <progress id="bar" max="100" value="{{fishWidth}}"></progress>
+        </div> 
+      </div>
+    </div>
+    </div>
+    </div>
+
+</body> 

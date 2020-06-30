@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-sm-8">
 
-                <div class="card card-signin my-2">
+                <div class="card card-custom my-2">
                     <div class="card-body">
                         <div class="row scroll">
                             <div class="col-4 col-sm-3 align-items-center text-center" (click)="onSelect(v)" *ngFor="let v of villagers | keyvalue">
@@ -51,7 +51,7 @@
             </div>
 
             <div *ngIf="!selectedVillager" class="col-sm-4">
-                <div class="card card-signin my-2">
+                <div class="card card-custom my-2">
                     <div class="card-body">
                         <table class="table">
                             <tr>
@@ -84,9 +84,9 @@
 
 
             <div *ngIf="selectedVillager" class="col-sm-4">
-                <div class="card card-signin my-2">
+                <div class="card card-custom my-2">
                     <div *ngIf="selectedVillager" class="card-body">
-                        <h5 class="card-title text-center">{{selectedVillager.value['name']['name-en']}}</h5>
+                        <h5 class="card-title text-center name">{{selectedVillager.value['name']['name-en']}}</h5>
                         <table class="table">
                             <tr>
                                 <td>Gender</td>

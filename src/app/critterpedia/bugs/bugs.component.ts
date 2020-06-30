@@ -20,7 +20,7 @@ export class BugsComponent implements OnInit {
   critterList: any;
   selectedBug: any;
   currentMonth=this.ds.currentMonth;
-  time=this.ds.todayDate;
+  time=this.ds.thisHour;
   thisHour=[];
   new = [];
   leaving = [];

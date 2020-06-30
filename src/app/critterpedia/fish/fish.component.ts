@@ -17,7 +17,7 @@ export class FishComponent implements OnInit {
   allFish: any;
   selectedFish: any;
   currentMonth=this.ds.currentMonth;
-  time=this.ds.todayDate;
+  time=this.ds.thisHour;
   thisHour=[];
   new = [];
   leaving = [];

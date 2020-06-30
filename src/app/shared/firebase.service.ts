@@ -6,6 +6,7 @@ import { AuthenticationService } from './authentication.service';
 @Injectable({
   providedIn: 'root'
 })
+
 export class FirebaseService {
 user: any;
 id: any;
@@ -15,18 +16,29 @@ id: any;
     this.id = this.user['uid'];
   }
 
-  addBug(selectedCritter){
-    this.http
-    .post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/bugs.json`, selectedCritter)
+  addBug(selectedCritter: any){
+    this.http.post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/bugs.json`, selectedCritter)
     .subscribe(responseData=>{
     })
   }
 
-  addFish(selectedCritter){
-    this.http
-    .post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/fish.json`, selectedCritter)
+  addFish(selectedCritter: any){
+    this.http.post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/fish.json`, selectedCritter)
     .subscribe(responseData=>{
     });
+  }
+
+  addUserInfo(profileData: {name: string, islandName: string, nativeFruit: any, nativeFlower: any}){
+    this.http.post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/profile.json`, profileData)
+    .subscribe(responseData=>{
+    })
+  }
+
+  addVillager(selectedVillager: any){
+    this.http
+    .post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/villagers.json`, selectedVillager)
+    .subscribe(responseData=>{
+    })
   }
 
   fetchBugs(){
@@ -59,12 +71,6 @@ id: any;
     )
   }
 
-  addUserInfo(profileData: {name: string, islandName: string, nativeFruit: any, nativeFlower: any}){
-    this.http
-    .post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/profile.json`, profileData)
-    .subscribe(responseData=>{
-    })
-  }
 
   fetchUserInfo(){
     return this.http
@@ -81,12 +87,6 @@ id: any;
     )
   }
 
-  addVillager(selectedVillager){
-    this.http
-    .post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/villagers.json`, selectedVillager)
-    .subscribe(responseData=>{
-    })
-  }
 
   fetchVillagers(){
     return this.http

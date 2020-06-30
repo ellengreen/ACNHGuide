@@ -20,26 +20,24 @@ export class AuthenticationService {
         localStorage.setItem('user', null);
       } 
     })
-   }
-
-   currentUser:any;
-   getUser(){
-    return this.currentUser = JSON.parse(localStorage.getItem('user'));
-   }
-
-   //login with email & password
-   async login(email, password){
-    try {
-      await this.afAuth.signInWithEmailAndPassword(email, password);
-       this.router.navigate(['home']);
-     }
-     catch (error) {
-       window.alert(error.message);
-     }
   }
 
-   //register for account
-   signUp(email: string, password: string){
+  currentUser:any;
+  getUser(){
+    return this.currentUser = JSON.parse(localStorage.getItem('user'));
+  }
+
+  async login(email: string, password: string){
+    try {
+      await this.afAuth.signInWithEmailAndPassword(email, password);
+        this.router.navigate(['home']);
+      }
+      catch (error) {
+        window.alert(error.message);
+      }
+  }
+
+  signUp(email: string, password: string){
     this.afAuth.createUserWithEmailAndPassword(email, password)
     .then(result => {
       window.alert('Thanks for creating an account!')
@@ -50,23 +48,15 @@ export class AuthenticationService {
     })
   }
 
-   //logout of account
-   async logout(){
-     await this.afAuth.signOut();
-     localStorage.removeItem('user');
-     this.router.navigate(['login'])
-   }
+  async logout(){
+    await this.afAuth.signOut();
+      localStorage.removeItem('user');
+      this.router.navigate(['login'])
+  }
 
-   get isLoggedIn(){
-     const user = JSON.parse(localStorage.getItem('user'));
-     return user !== null;
-   }
-
-   //login with google account
-   async loginWithGoogle(){
-     await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
-     this.router.navigate(['home']);
-   }
-
+  async loginWithGoogle(){
+    await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
+    this.router.navigate(['home']);
+  }
 
 }

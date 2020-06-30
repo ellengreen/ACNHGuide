@@ -17,7 +17,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-8">
-        <div class="card card-signin my-2">
+        <div class="card card-custom my-2">
             <div class="card-body">  
                 <div class="row scroll">
                     <div class="col-4 col-sm-3 align-items-center text-center" (click)="onSelect(b)" *ngFor="let b of bugs">
@@ -30,7 +30,7 @@
     </div>
 <!-- Detail View: Default  -->
     <div class="col-sm-4 detail">
-      <div class="card card-signin my-5">
+      <div class="card card-custom my-5">
           <div class="card-body"> 
             <div *ngIf="!selectedBug">
               <table class="table">
@@ -92,8 +92,7 @@
   </div>
 
 
-                  </div>
-              </div>
-          </div>
-
-      </div> 
+  </div>
+  </div>
+  </div>
+</div> 

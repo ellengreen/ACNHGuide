@@ -1,0 +1,56 @@
+@import 'src/styles.scss';
+
+.form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+  
+.form-label-group input {
+    height: auto;
+    border-radius: 2rem;
+}
+
+.btn-login {
+    color: white;
+    background-color: $aqua;
+}
+  
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.littleTom {
+    width: 30%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.side {
+  background-color: $aqua;
+  height: 100vh;
+}
+
+p {
+    color: $primary-blue;
+    text-align: center; 
+}
+
+.btn-google {
+    color: white;
+    background-color: $aqua;
+}
+
+@media only screen and (max-width: 580px) {
+  .sideTom, .side {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 580px) {
+  .littleTom {
+    display: none;
+  }
+}
