@@ -89,14 +89,14 @@ p {
 
 .key {
   align-self: center;
-  margin-left: 250px;
+  margin-left: 50px;
 }
 
 .dot {
   border-radius: 100%;
   height: 2em;
   width: 2em;
-  text-align: center;
+  // text-align: center;
   background:$aqua;
   display:inline-block;
   vertical-align:middle;

@@ -3,8 +3,6 @@
 
     <div class="key">
       <span class="dot"></span><h6>Available Right Now</h6>
-      <span class="dot1"></span><h6>New This Month</h6>
-      <span class="dot2"></span><h6>Leaving Next Month</h6>
     </div>
     
     <a (click)="showAll()"  class="nav-item nav-link ml-auto " id="nav-fish-tab" data-toggle="tab" href="#" role="tab" aria-controls="nav-fish" aria-selected="true">All</a>
@@ -21,7 +19,7 @@
             <div class="card-body">  
                 <div class="row scroll">
                     <div class="col-4 col-sm-3 align-items-center text-center" (click)="onSelect(f)" *ngFor="let f of fish">
-                        <img [class.hour]="hourMethod(f.id)" [class.new]="newMethod(f.id)" [class.leaving]="leavingMethod(f.id)" class="icon" src="http://acnhapi.com/icons/fish/{{f['id']}}">
+                        <img [class.hour]="hourMethod(f.id)" class="icon" src="http://acnhapi.com/icons/fish/{{f['id']}}">
                         <p>{{f['name']}}</p>
                     </div>
                 </div>

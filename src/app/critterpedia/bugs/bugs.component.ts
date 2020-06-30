@@ -3,6 +3,7 @@ import { NookipediaService } from 'src/app/shared/nookipedia.service';
 import { CurrentDateService } from 'src/app/shared/current-date.service';
 import { KeyValuePipe } from '@angular/common';
 import { FirebaseService } from 'src/app/shared/firebase.service';
+import { element } from 'protractor';
 
 
 @Component({
@@ -32,8 +33,10 @@ export class BugsComponent implements OnInit {
       this.allBugs=this.bugs;
       this.catchableBugs();
     })
-    this.load()
+    this.load();
   }
+
+
 
   load(){
     this.db.fetchBugs().subscribe(bugs=> {
@@ -74,21 +77,23 @@ export class BugsComponent implements OnInit {
   }
 
   catchableBugs(){
-    this.kv.transform(this.bugs);
     Object.keys(this.bugs).forEach(key => {
       if (this.bugs[key]['months']['northern']['array'].includes(this.currentMonth)){ 
-        this.thisMonth.push(this.bugs[key])
-      }
+        this.thisMonth.push(this.bugs[key]);
+      };
       if (this.bugs[key]['times']['array'].includes(this.time) && (this.bugs[key]['months']['northern']['array'].includes(this.currentMonth))) { 
-        this.thisHour.push(this.bugs[key])
+        this.thisHour.push(this.bugs[key]);
       };     
       if (this.bugs[key]['months']['northern']['array'][0] == this.currentMonth){
-        this.new.push(this.bugs[key]);
-      }
-      if (this.bugs[key]['months']['northern']['array'].includes(this.currentMonth +1) == false){
-        this.leaving.push(this.bugs[key])
-      }
+        this.new.push(this.bugs[key])
+      };
     });
+    Object.keys(this.thisMonth).forEach(key=>{
+      if (this.thisMonth[key]['months']['northern']['array'].includes(this.currentMonth +1)){
+        } else {
+        this.leaving.push(this.bugs[key]);
+      };
+    })
   }
 
   duplicate=[];
@@ -104,13 +109,13 @@ export class BugsComponent implements OnInit {
     return this.thisHour.some((item) => item.id == id);
   }
 
-  newMethod(id){
-    return this.new.some((item) => item.id == id);
-  }
+  // newMethod(id){
+  //   return this.new.some((item) => item.id == id);
+  // }
 
-  leavingMethod(id){
-    return this.leaving.some((item) => item.id == id);
-  }
+  // leavingMethod(id){
+  //   return this.leaving.some((item) => item.id == id);
+  // }
 }
 
 

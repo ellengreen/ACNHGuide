@@ -77,10 +77,12 @@ export class FishComponent implements OnInit {
       if (this.fish[key]['months']['northern']['array'][0] == this.currentMonth){
         this.new.push(this.fish[key]);
       }
-      if (this.fish[key]['months']['northern']['array'].includes(this.currentMonth +1) == false){
+    })
+    Object.keys(this.thisMonth).forEach(key=>{
+      if (this.thisMonth[key]['months']['northern']['array'].includes(this.currentMonth +1) == false){
         this.leaving.push(this.fish[key])
-      }
-    });
+      };
+    })
   }
 
   addFish(selectedFish){
