@@ -76,8 +76,7 @@
                             </tr>
                         </table>
 
-                        <div *ngIf="duplicate == true"><p class="text-left">This Villager lives on my Island!</p></div>
-                        <div *ngIf="!duplicate"><button (click)="addVillager(selectedVillager)" class="button btn-primary">Add to My Island!</button></div>
+                        <div *ngIf="!aDupe"><button (click)="addVillager(selectedVillager)" class="button btn-primary">Add to My Island!</button></div>
                     </div>
                 </div>
             </div>
@@ -110,8 +109,8 @@
                             </tr>
                         </table>
 
-                        <div *ngIf="duplicate == true"><p class="text-left">This Villager lives on my Island!</p></div>
-                        <div *ngIf="!duplicate"><button (click)="addVillager(selectedVillager)" class="button btn-primary">Add to My Island!</button></div>
+                        <div *ngIf="aDupe === true"><p class="text-left">This Villager lives on my Island!</p></div>
+                        <div *ngIf="aDupe == false"><button (click)="addVillager(selectedVillager)" class="button btn-primary">Add to My Island!</button></div>
                     </div>
                 </div>
             </div>

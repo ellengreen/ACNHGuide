@@ -36,6 +36,7 @@ export class VillagersComponent implements OnInit {
     this.db.fetchVillagers().subscribe(data=> {
       this.myVillagers=data;
     })
+    this.dupe();
   }
 
   form = new FormGroup({
@@ -50,6 +51,7 @@ export class VillagersComponent implements OnInit {
 
 filteredVillagers = [];
 filter(profileForm){
+
    this.filteredVillagers=[];
    Object.keys(this.allVillagers).forEach(key=>{
      if (this.form.value['gender'].includes(this.allVillagers[key]['gender'])
@@ -61,19 +63,23 @@ filter(profileForm){
 }
 
 
-  duplicate: boolean;
+  duplicate=[];
   dupe(){
     Object.keys(this.myVillagers).forEach(key=>{
       if (this.myVillagers[key]['value']['id']==(this.selectedVillager.value['id'])){
-        this.duplicate = true;
-      } else { this.duplicate = false;}
-    })
+        this.duplicate.push(this.selectedVillager.value['id'])
+    }});
   }
 
   selected:any;
   onSelect(v){
     this.selectedVillager = v;
     this.dupe();
+    if(this.duplicate.includes(this.selectedVillager.value['id'])){
+      this.aDupe=true;
+    } else {
+      this.aDupe=false;
+    }
     this.http.get(
     `http://nookipedia.com/api/villager/${this.selectedVillager.value['name']['name-en']}/?api_key=a2f61762-8c07-4aff-a16c-75ffa9e8ef8a`)
       .subscribe(data=> {
@@ -81,9 +87,10 @@ filter(profileForm){
     })
   }
 
+  aDupe: boolean;
   addVillager(selectedVillager){
     this.db.addVillager(selectedVillager);
-    this.duplicate = true;
+    this.aDupe = true;
   }
 }
 
