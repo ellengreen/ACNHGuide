@@ -61,7 +61,7 @@ p {
 
 .leaving {
   border:solid;
-  border-color: $teal;
+  border-color: $primary-blue;
   border-radius: 50%;
 }
 
@@ -108,7 +108,7 @@ p {
   height: 2em;
   width: 2em;
   text-align: center;
-  border:solid #F2C14E;
+  border:solid $gold;
   display:inline-block;
   vertical-align:middle;
   margin:0 10px;
@@ -119,7 +119,7 @@ p {
   height: 2em;
   width: 2em;
   text-align: center;
-  border:solid #006D77;
+  border:solid $primary-blue;
   display:inline-block;
   vertical-align:middle;
   margin:0 10px;
