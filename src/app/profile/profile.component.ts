@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/shared/firebase.service';
 import { FormControl } from '@angular/forms';
 import { AuthenticationService } from 'src/app/shared/authentication.service';
+import { Key } from 'protractor';
 
 @Component({
   selector: 'app-profile',
@@ -47,6 +48,7 @@ export class ProfileComponent implements OnInit {
     })
     this.db.fetchVillagers().subscribe(data=> {
       this.villagers=data;
+      console.log(this.villagers)
     })
   }
 
@@ -55,7 +57,15 @@ export class ProfileComponent implements OnInit {
   this.db.addUserInfo(profileForm.value)
   console.log(profileForm.value)
   window.location.reload();
+  }
+
+  vID: any;
+  delete(selectedVillager){
     
+    this.vID = selectedVillager['newID'];
+    console.log(this.vID)
+    this.db.deleteVillager(this.vID);
+    // window.location.reload();
   }
 }
 

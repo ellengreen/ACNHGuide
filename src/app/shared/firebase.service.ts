@@ -10,6 +10,7 @@ import { AuthenticationService } from './authentication.service';
 export class FirebaseService {
 user: any;
 id: any;
+newID: any;
 
   constructor(private http: HttpClient, private auth: AuthenticationService) { 
     this.user = this.auth.getUser()
@@ -102,5 +103,21 @@ id: any;
     })
     )
   }
+
+  deleteVillager(newID: any){
+    this.http.delete(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/villagers/${newID}.json`)
+    .subscribe(responseData=>{
+    })
+    
+  }
+
+
+
+
+
+  // deleteTodo(todo: any): void {
+  //   this.af.object('/todos/' + todo.$key).remove();
+  // }
 }
 
+// -MB68eGuv2xb7n9oZrB

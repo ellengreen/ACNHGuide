@@ -36,7 +36,7 @@ export class VillagersComponent implements OnInit {
     this.db.fetchVillagers().subscribe(data=> {
       this.myVillagers=data;
     })
-    this.dupe();
+    // this.dupe();
   }
 
   form = new FormGroup({

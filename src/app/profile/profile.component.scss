@@ -3,11 +3,24 @@ progress {
     height: 40px;
 }
 
-
+a {
+    cursor: pointer;
+    background-color: red($color: #000000);
+}
 form {
     width: 500px;
 }
 
+#villager:hover .minus{
+    display: inline-block;
+}
+
+
+.minus {
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    color: red;
+}
 .natives {
     width: 25%;
     background-color: #f0f0f0;
