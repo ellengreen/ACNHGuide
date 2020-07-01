@@ -30,7 +30,8 @@ export class AuthenticationService {
   async login(email: string, password: string){
     try {
       await this.afAuth.signInWithEmailAndPassword(email, password);
-        this.router.navigate(['/home']);
+      if (this.isLoggedIn){
+        this.router.navigate(['home'])};
       }
       catch (error) {
         window.alert(error.message);
@@ -59,4 +60,8 @@ export class AuthenticationService {
     this.router.navigate(['home']);
   }
 
+  get isLoggedIn(): boolean {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user !== null;
+  }
 }
