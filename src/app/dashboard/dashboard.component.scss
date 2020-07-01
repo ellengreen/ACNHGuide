@@ -7,8 +7,8 @@
   height: 750px;
   overflow-y: scroll; 
 }
-.container-fluid {
-  margin-left: 20px;
+.col-sm-5 {
+  margin-left: 15px;
 }
 
 a {
@@ -34,10 +34,6 @@ h2, h3 {
   .image{
     display: none;
   }
-
-  // .card {
-  //   // width: 450px;
-  // }
 
   a {
     margin-left: 100px;
