@@ -29,17 +29,18 @@ export class CritterpediaMainComponent implements OnInit {
         this.critters = this.bugs;
         this.critterType ='bugs';
         this.vendor='Flick';
+        this.currentlyAvailable();
       })
       this.ns.getFish().subscribe(data => {
         this.fish = data;
       })
       this.load();
+      console.log(this.hour)
     }
   
     load(){
       this.db.fetchBugs().subscribe(bugs =>{
         this.loadedBugs=bugs;
-        this.currentlyAvailable();
       })
       this.db.fetchFish().subscribe(fish =>{
         this.loadedFish=fish;
@@ -53,6 +54,7 @@ export class CritterpediaMainComponent implements OnInit {
       this.fishView=true;
       this.vendor='CJ';
       this.critterType='fish';
+      this.currentlyAvailable();
     }
   
     onBugs(){
@@ -61,11 +63,12 @@ export class CritterpediaMainComponent implements OnInit {
       this.bugView=true;
       this.vendor='Flick';
       this.critterType ='bugs';
+      this.currentlyAvailable();
     }
   
     onSelect(c:any){
-      this.load()
       this.selectedCritter = c;
+      console.log(this.selectedCritter)
       this.dupe(this.selectedCritter);
       if(this.duplicate.includes(this.selectedCritter['id'])){
         this.aDupe=true 
@@ -120,9 +123,11 @@ export class CritterpediaMainComponent implements OnInit {
       Object.keys(this.critters).forEach(key=> {
         if (this.critters[key]['times']['array'].includes(this.hour) && (this.critters[key]['months']['northern']['array'].includes(this.currentMonth))){
           this.thisHour.push(this.critters[key]);
+          console.log(this.thisHour)
         }
       })
     }
+    
     aDupe: boolean;
     addFish(selectedCritter){
       this.db.addFish(selectedCritter);
