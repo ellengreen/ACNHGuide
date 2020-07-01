@@ -110,6 +110,11 @@ export class CritterpediaMainComponent implements OnInit {
     thisMonth = [];
   
     catchableCritters(){
+      if (this.fishView){
+        this.critters=this.fish;
+      } else {
+        this.critters=this.bugs;
+      }
       this.thisMonth=[];
       Object.keys(this.critters).forEach(key=> {
         if (this.critters[key]['months']['northern']['array'].includes(this.currentMonth)){
