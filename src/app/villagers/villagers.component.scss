@@ -6,6 +6,10 @@
     font-weight: 600 !important;
 }
 
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
 .table td {
     padding: .25rem;
 }
@@ -60,7 +64,7 @@ form {
 
 
 .vendor{
-    width: 14%;
+    width: 12%;
     position:fixed;
     bottom:0px;
     left:79%;
