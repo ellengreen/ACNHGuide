@@ -108,16 +108,7 @@ newID: any;
     this.http.delete(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/villagers/${newID}.json`)
     .subscribe(responseData=>{
     })
-    
   }
 
 
-
-
-
-  // deleteTodo(todo: any): void {
-  //   this.af.object('/todos/' + todo.$key).remove();
-  // }
 }
-
-// -MB68eGuv2xb7n9oZrB

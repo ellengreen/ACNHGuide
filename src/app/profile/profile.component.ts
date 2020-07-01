@@ -61,11 +61,10 @@ export class ProfileComponent implements OnInit {
 
   vID: any;
   delete(selectedVillager){
-    
     this.vID = selectedVillager['newID'];
     console.log(this.vID)
     this.db.deleteVillager(this.vID);
-    // window.location.reload();
+    window.alert('Villager successfully evicted! Refresh page to see changes')
   }
 }
 
