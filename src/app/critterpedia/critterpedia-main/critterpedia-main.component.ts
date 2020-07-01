@@ -35,7 +35,6 @@ export class CritterpediaMainComponent implements OnInit {
         this.fish = data;
       })
       this.load();
-      console.log(this.hour)
     }
   
     load(){
@@ -67,6 +66,7 @@ export class CritterpediaMainComponent implements OnInit {
     }
   
     onSelect(c:any){
+      this.load();
       this.selectedCritter = c;
       console.log(this.selectedCritter)
       this.dupe(this.selectedCritter);
@@ -143,7 +143,7 @@ export class CritterpediaMainComponent implements OnInit {
     dupe(selectedCritter:any){
       if(this.fishView){this.loaded = this.loadedFish}else {this.loaded=this.loadedBugs}
       Object.keys(this.loaded).forEach(key=>{
-        if(this.loaded[key]['id']==(this.selectedCritter['id'])){
+        if(this.loaded[key]['id']===(this.selectedCritter['id'])){
           this.duplicate.push(this.selectedCritter['id']);
         }
       })
