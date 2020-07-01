@@ -33,10 +33,13 @@ export class VillagersComponent implements OnInit {
       this.villagers = Object.keys(data).map(i => data[i]);
       this.allVillagers = this.villagers;
     });
+    this.load();
+  }
+
+  load(){
     this.db.fetchVillagers().subscribe(data=> {
-      this.myVillagers=data;
+    this.myVillagers=data;
     })
-    // this.dupe();
   }
 
   form = new FormGroup({
@@ -49,18 +52,18 @@ export class VillagersComponent implements OnInit {
     this.filter(this.form.value);
   }
 
-filteredVillagers = [];
-filter(profileForm){
+  filteredVillagers = [];
 
-   this.filteredVillagers=[];
-   Object.keys(this.allVillagers).forEach(key=>{
-     if (this.form.value['gender'].includes(this.allVillagers[key]['gender'])
-     && (this.form.value['species'].includes(this.allVillagers[key]['species']))
-    && (this.form.value['personality'].includes(this.allVillagers[key]['personality']))){
-       this.filteredVillagers.push(this.allVillagers[key]);
-   } 
-   }); this.villagers=this.filteredVillagers;
-}
+  filter(profileForm){
+    this.filteredVillagers=[];
+    Object.keys(this.allVillagers).forEach(key=>{
+      if (this.form.value['gender'].includes(this.allVillagers[key]['gender'])
+      && (this.form.value['species'].includes(this.allVillagers[key]['species']))
+      && (this.form.value['personality'].includes(this.allVillagers[key]['personality']))){
+        this.filteredVillagers.push(this.allVillagers[key]);
+      }
+    }); this.villagers=this.filteredVillagers;
+  }
 
 
   duplicate=[];
@@ -73,6 +76,7 @@ filter(profileForm){
 
   selected:any;
   onSelect(v){
+    this.load();
     this.selectedVillager = v;
     this.dupe();
     if(this.duplicate.includes(this.selectedVillager.value['id'])){
