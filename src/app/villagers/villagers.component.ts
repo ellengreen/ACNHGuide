@@ -85,7 +85,7 @@ export class VillagersComponent implements OnInit {
       this.aDupe=false;
     }
     this.http.get(
-    `http://nookipedia.com/api/villager/${this.selectedVillager.value['name']['name-en']}/?api_key=a2f61762-8c07-4aff-a16c-75ffa9e8ef8a`)
+    `https://nookipedia.com/api/villager/${this.selectedVillager.value['name']['name-en']}/?api_key=a2f61762-8c07-4aff-a16c-75ffa9e8ef8a`)
       .subscribe(data=> {
       this.selected = data;
     })
