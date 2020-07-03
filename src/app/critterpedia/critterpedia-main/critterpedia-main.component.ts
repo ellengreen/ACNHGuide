@@ -144,11 +144,12 @@ export class CritterpediaMainComponent implements OnInit {
     }
   
     duplicate = [];
-    loaded:any;
-    dupe(selectedCritter:any){
-      if(this.fishView){this.loaded = this.loadedFish}else {this.loaded=this.loadedBugs}
+    loaded: any;
+    dupe(selectedCritter: any){
+      if (this.fishView){this.loaded = this.loadedFish
+        } else {this.loaded = this.loadedBugs}
       Object.keys(this.loaded).forEach(key=>{
-        if(this.loaded[key]['id']===(this.selectedCritter['id'])){
+        if (this.loaded[key]['id']===(this.selectedCritter['id'])){
           this.duplicate.push(this.selectedCritter['id']);
         }
       })

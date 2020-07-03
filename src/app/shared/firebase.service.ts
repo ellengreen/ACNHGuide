@@ -12,64 +12,64 @@ user: any;
 id: any;
 newID: any;
 
-  constructor(private http: HttpClient, private auth: AuthenticationService) { 
-    this.user = this.auth.getUser()
-    this.id = this.user['uid'];
+  constructor(private http: HttpClient, private auth: AuthenticationService) {
+    this.user = this.auth.getUser();
+    this.id = this.user.uid;
   }
 
   addBug(selectedCritter: any){
     this.http.post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/bugs.json`, selectedCritter)
-    .subscribe(responseData=>{
-    })
+    .subscribe(responseData => {
+    });
   }
 
   addFish(selectedCritter: any){
     this.http.post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/fish.json`, selectedCritter)
-    .subscribe(responseData=>{
+    .subscribe(responseData => {
     });
   }
 
   addUserInfo(profileData: {name: string, islandName: string, nativeFruit: any, nativeFlower: any}){
     this.http.post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/profile.json`, profileData)
-    .subscribe(responseData=>{
-    })
+    .subscribe(responseData => {
+    });
   }
 
   addVillager(selectedVillager: any){
     this.http
     .post(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/villagers.json`, selectedVillager)
-    .subscribe(responseData=>{
-    })
+    .subscribe(responseData => {
+    });
   }
 
   fetchBugs(){
     return this.http
     .get(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/bugs.json`)
     .pipe(map(responseData => {
-      const loadedBugs =[];
+      const loadedBugs = [];
       for (const key in responseData) {
         if (responseData.hasOwnProperty(key)){
-          loadedBugs.push({ ...responseData[key], newID: key})
+          loadedBugs.push({ ...responseData[key], newID: key});
         }
       }
       return loadedBugs;
     })
-    )
+    );
   }
 
   fetchFish(){
     return this.http
     .get(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/fish.json`)
     .pipe(map(responseData => {
-      const loadedFish =[];
+      const loadedFish = [];
       for (const key in responseData) {
         if (responseData.hasOwnProperty(key)){
-          loadedFish.push({ ...responseData[key], newID: key})
+          loadedFish.push({ ...responseData[key], newID: key});
         }
       }
       return loadedFish;
     })
-    )
+    );
   }
 
 
@@ -77,15 +77,15 @@ newID: any;
     return this.http
     .get(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/profile.json`)
     .pipe(map(responseData => {
-      const loadedData =[];
+      const loadedData = [];
       for (const key in responseData) {
         if (responseData.hasOwnProperty(key)){
-          loadedData.push({ ...responseData[key], newID: key})
+          loadedData.push({ ...responseData[key], newID: key});
         }
       }
       return loadedData;
     })
-    )
+    );
   }
 
 
@@ -93,22 +93,20 @@ newID: any;
     return this.http
     .get(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/villagers.json`)
     .pipe(map(responseData => {
-      const loadedVillagers =[];
+      const loadedVillagers = [];
       for (const key in responseData) {
         if (responseData.hasOwnProperty(key)){
-          loadedVillagers.push({ ...responseData[key], newID: key})
+          loadedVillagers.push({ ...responseData[key], newID: key});
         }
       }
       return loadedVillagers;
     })
-    )
+    );
   }
 
   deleteVillager(newID: any){
     this.http.delete(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/villagers/${newID}.json`)
-    .subscribe(responseData=>{
-    })
+    .subscribe(responseData => {
+    });
   }
-
-
 }

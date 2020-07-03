@@ -16,13 +16,13 @@ export class AuthenticationService {
       if (user){
         this.user = user;
         localStorage.setItem(`user`, JSON.stringify(this.user));
-      } else { 
+      } else {
         localStorage.setItem('user', null);
-      } 
-    })
+      }
+    });
   }
 
-  currentUser:any;
+  currentUser: any;
   getUser(){
     return this.currentUser = JSON.parse(localStorage.getItem('user'));
   }
@@ -31,7 +31,8 @@ export class AuthenticationService {
     try {
       await this.afAuth.signInWithEmailAndPassword(email, password);
       if (this.isLoggedIn){
-        this.router.navigate(['home'])};
+        this.router.navigate(['home']);
+      }
       }
       catch (error) {
         window.alert(error.message);
@@ -41,22 +42,22 @@ export class AuthenticationService {
   signUp(email: string, password: string){
     this.afAuth.createUserWithEmailAndPassword(email, password)
     .then(result => {
-      window.alert('Thanks for creating an account!')
+      window.alert('Thanks for creating an account!');
       this.router.navigate(['login']);
     })
     .catch(error => {
-      window.alert(error.message)
-    })
+      window.alert(error.message);
+    });
   }
 
   async logout(){
     await this.afAuth.signOut();
-      localStorage.removeItem('user');
-      this.router.navigate(['login'])
+    localStorage.removeItem('user');
+    this.router.navigate(['login']);
   }
 
   async loginWithGoogle(){
-    await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider())
+    await this.afAuth.signInWithPopup(new auth.GoogleAuthProvider());
     this.router.navigate(['home']);
   }
 

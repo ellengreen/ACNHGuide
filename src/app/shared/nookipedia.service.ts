@@ -7,21 +7,20 @@ import { HttpClient } from '@angular/common/http';
 export class NookipediaService {
 
   constructor(private httpClient: HttpClient) { }
-  
   getFish(){
-    return this.httpClient.get("assets/fish.json")
+    return this.httpClient.get('assets/fish.json');
   }
 
   getBugs(){
-    return this.httpClient.get("assets/bugs.json")
+    return this.httpClient.get('assets/bugs.json');
   }
 
   getEvents(){
-    return this.httpClient.get("assets/events.json")
+    return this.httpClient.get('assets/events.json');
   }
 
   getVillagers() {
-    return this.httpClient.get("http://acnhapi.com/villagers/")
+    return this.httpClient.get('http://acnhapi.com/villagers/');
   }
 }
 

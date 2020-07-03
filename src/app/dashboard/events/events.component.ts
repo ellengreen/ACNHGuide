@@ -19,11 +19,8 @@ export class EventsComponent implements OnInit {
   currentDay = this.dateService.currentDay;
 
   ngOnInit() {
-    this.nookService.getEvents().subscribe(data=> {
+    this.nookService.getEvents().subscribe(data => {
       this.eventsList = data;
     });
   }
 }
-
-
-  
