@@ -48,21 +48,18 @@ export class ProfileComponent implements OnInit {
     })
     this.db.fetchVillagers().subscribe(data=> {
       this.villagers=data;
-      console.log(this.villagers)
     })
   }
 
   onSubmit() { this.submitted = true; }
   update(profileForm){
   this.db.addUserInfo(profileForm.value)
-  console.log(profileForm.value)
   window.location.reload();
   }
 
   vID: any;
   delete(selectedVillager){
     this.vID = selectedVillager['newID'];
-    console.log(this.vID)
     this.db.deleteVillager(this.vID);
     window.alert('Villager successfully evicted! Refresh page to see changes')
   }

@@ -68,7 +68,6 @@ export class CritterpediaMainComponent implements OnInit {
     onSelect(c:any){
       this.load();
       this.selectedCritter = c;
-      console.log(this.selectedCritter)
       this.dupe(this.selectedCritter);
       if(this.duplicate.includes(this.selectedCritter['id'])){
         this.aDupe=true 
@@ -128,7 +127,6 @@ export class CritterpediaMainComponent implements OnInit {
       Object.keys(this.critters).forEach(key=> {
         if (this.critters[key]['times']['array'].includes(this.hour) && (this.critters[key]['months']['northern']['array'].includes(this.currentMonth))){
           this.thisHour.push(this.critters[key]);
-          console.log(this.thisHour)
         }
       })
     }
