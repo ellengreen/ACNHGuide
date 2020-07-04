@@ -2,6 +2,7 @@
 ACNH Guide is a user-friendly companion site for keeping up with curernt events and tracking in-game progress in *Animal Crossing: New Horizons*. 
 
 You can check it out at [ACNH Guide](http://ac-guide.com)!
+Currently works best on Google Chrome 
 
 ## Features
 - Sign up for an account with an email and password, or login with a Google account
@@ -15,8 +16,10 @@ You can check it out at [ACNH Guide](http://ac-guide.com)!
 ## What's Next
 - Change your hemisphere, date, and time
 - Art and Fossil lists, with the ability to track collection progress
+- Sea Creatures list and collection tracking
 - Track museum donation progress for critters
 - More filtering and sorting functionality 
+- Improve responsiveness & UI 
 
 ## Technologies
 - Angular 9.1.5
