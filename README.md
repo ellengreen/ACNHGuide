@@ -1,9 +1,6 @@
 # AnimalCrossing
 ACNH Guide is a user-friendly companion site for keeping up with curernt events and tracking in-game progress in *Animal Crossing: New Horizons*. 
 
-You can check it out at [ACNH Guide](http://ac-guide.com)!
-Currently works best on Google Chrome 
-
 ## Features
 - Sign up for an account with an email and password, or login with a Google account
 - Dashboard to view villager birthdays, current events, profile info, and what critters are currently catchable
