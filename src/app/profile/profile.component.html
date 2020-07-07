@@ -61,7 +61,7 @@
               <div class="card-title">Villagers</div>
               <div class="row">
                 <div class="col-3 col-sm-3 align-items-center text-center" *ngFor="let v of villagers | slice:0:9">
-                  <img id="villager" class="icon" src="https://acnhapi.com/icons/villagers/{{v.value['id']}}">
+                  <img id="villager" class="icon" src="https://acnhapi.com/v1/icons/villagers/{{v.value['id']}}">
                     <img title="Remove Villager" (click)="delete(v)" class="minus" src="https://img.icons8.com/office/16/000000/minus.png"/>
                 </div></div>
           <hr>
