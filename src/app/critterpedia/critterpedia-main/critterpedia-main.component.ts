@@ -162,6 +162,7 @@ export class CritterpediaMainComponent implements OnInit {
     delete(selectedCritter){
       this.id = selectedCritter['newID'];
       this.db.deleteCritter(this.id, this.critterType);
+      this.aDupe = false;
     }
   }
   
