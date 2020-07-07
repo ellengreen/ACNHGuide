@@ -56,7 +56,6 @@ export class ProfileComponent implements OnInit {
         })
           } else {
             this.noUser = true;
-            console.log('no User')
       }
     });
   }

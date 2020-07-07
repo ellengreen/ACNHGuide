@@ -101,7 +101,8 @@
             <td class="text-right">{{selectedCritter['months']['southern']['text']}}</td>
         </tr>
       </table>
-      <div *ngIf="aDupe"><p class="text-left">I've already caught this!</p></div>
+      <div *ngIf="aDupe"><button (click)="delete(selectedCritter)" class="button btn-primary">Remove From My Collection</button></div>
+      <!-- <div *ngIf="aDupe"><p class="text-left">I've already caught this!</p></div> -->
       <div *ngIf="!aDupe && critterType === 'fish' && !noUser"><button (click)="addFish(selectedCritter)" class="button btn-primary">Add to My Collection!</button></div>
       <div *ngIf="!aDupe && critterType === 'bugs' && !noUser"><button (click)="addBugs(selectedCritter)" class="button btn-primary">Add to My Collection!</button></div>
       <div *ngIf="noUser"><p class="text-left">Login to add to your collection</p></div>

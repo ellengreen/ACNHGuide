@@ -105,6 +105,12 @@ export class VillagersComponent implements OnInit {
     this.db.addVillager(selectedVillager);
     this.aDupe = true;
   }
+
+  ID: any;
+  delete(selectedVillager){
+    this.ID = selectedVillager['newID'];
+    this.db.deleteVillager(this.ID);
+  }
 }
 
 

@@ -157,7 +157,12 @@ export class CritterpediaMainComponent implements OnInit {
         }
       })
     }
-   
+
+    id: any;
+    delete(selectedCritter){
+      this.id = selectedCritter['newID'];
+      this.db.deleteCritter(this.id, this.critterType);
+    }
   }
   
   

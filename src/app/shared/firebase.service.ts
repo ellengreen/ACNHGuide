@@ -113,4 +113,10 @@ newID: any;
     .subscribe(responseData => {
     });
   }
+
+  deleteCritter(id: string, critter: string){
+    this.http.delete(`https://animal-crossing-92e14.firebaseio.com/users/${this.id}/${critter}/${id}.json`)
+    .subscribe(responseData => {
+    });
+  }
 }
