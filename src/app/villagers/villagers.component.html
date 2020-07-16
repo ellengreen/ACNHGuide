@@ -43,7 +43,7 @@
                         <div class="row scroll">
                             <div class="col-4 col-sm-3 align-items-center text-center" (click)="onSelect(v)" *ngFor="let v of villagers | keyvalue">
                                 <img class="icon" src="https://acnhapi.com/v1/icons/villagers/{{v.value['id']}}">
-                                <p>{{v.value['name']['name-en']}}</p>
+                                <p>{{v.value['name']['name-USen']}}</p>
                             </div>
                         </div>
                     </div>
@@ -85,7 +85,8 @@
             <div *ngIf="selectedVillager" class="col-sm-4">
                 <div class="card card-custom my-2">
                     <div *ngIf="selectedVillager" class="card-body">
-                        <h5 class="card-title text-center name">{{selectedVillager.value['name']['name-en']}}</h5>
+                        <img class="head" src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.value['id']}}"><br>
+                        <h5 class="card-title text-center name">{{selectedVillager.value['name']['name-USen']}}</h5>
                         <table class="table">
                             <tr>
                                 <td>Gender</td>
