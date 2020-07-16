@@ -8,11 +8,15 @@ export class NookipediaService {
 
   constructor(private httpClient: HttpClient) { }
   getFish(){
-    return this.httpClient.get('assets/fish.json');
+    return this.httpClient.get(`http://acnhapi.com/v1/fish`);
   }
 
   getBugs(){
-    return this.httpClient.get('assets/bugs.json');
+    return this.httpClient.get(`http://acnhapi.com/v1/bugs`);
+  }
+
+  getSea(){
+    return this.httpClient.get(`http://acnhapi.com/v1/sea`)
   }
 
   getEvents(){
@@ -20,7 +24,8 @@ export class NookipediaService {
   }
 
   getVillagers() {
-    return this.httpClient.get('http://acnhapi.com/v1/villagers');
+    return this.httpClient.get('assets/villagers.json');
+    // return this.httpClient.get('https://acnhapi.com/villagers/');
   }
 }
 
