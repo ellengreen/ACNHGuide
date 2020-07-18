@@ -32,4 +32,3 @@ Check it out at [ACNH Guide](http://ac-guide.com)! Currently working best on Goo
 ## Credits
 Major thanks to ACNH API for the critter JSON and JSON API, as well as images and icons. 
 
-ma
