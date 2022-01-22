@@ -24,8 +24,7 @@ export class NookipediaService {
   }
 
   getVillagers() {
-    return this.httpClient.get('assets/villagers.json');
-    // return this.httpClient.get('https://acnhapi.com/villagers/');
+    return this.httpClient.get('https://acnhapi.com/v1/villagers/');
   }
 }
 
