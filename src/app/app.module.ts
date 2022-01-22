@@ -28,6 +28,7 @@ import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/crit
 import { ProfileComponent } from './profile/profile.component';
 import { VillagersComponent } from './villagers/villagers.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthenticationService, DatePipe, KeyValuePipe, HttpClientModule],
   bootstrap: [AppComponent]
