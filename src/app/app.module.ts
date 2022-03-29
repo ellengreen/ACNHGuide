@@ -7,8 +7,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
 
-import { RouterModule} from '@angular/router';
-import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DatePipe, KeyValuePipe } from '@angular/common';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
@@ -31,6 +31,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NookPhoneComponent } from './nook-phone/nook-phone.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonModule } from '@angular/material/button';
+import { CritterpediaTableComponent } from './critterpedia-table/critterpedia-table.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     CritterpediaMainComponent,
     VillagersComponent,
     WelcomeComponent,
-    NookPhoneComponent
+    NookPhoneComponent,
+    CritterpediaTableComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -62,7 +68,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     RouterModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTabsModule,
+    MatCardModule,
+    MatChipsModule,
+    MatButtonModule
   ],
   providers: [AuthenticationService, DatePipe, KeyValuePipe, HttpClientModule],
   bootstrap: [AppComponent]

@@ -1,11 +1,14 @@
 @import "src/styles.scss";
 
 header {
-    background-color: #cdddf9;
-    height: 120px;
+    // background-color: #cdddf9;
+    height: 130px;
+    background-image: url(../../../assets/banner-bg-rounded.svg);
+
 }
 
 .critter-mode {
+    margin-left: 3rem;
     button {
         background-color: lightsteelblue;
         border: 0px;
@@ -148,13 +151,12 @@ p {
     }
 }
 
-@media only screen and (max-width: 850px) {
-    .nav-link {
-        padding: 1rem 0.25rem;
-    }
 
-    .footer,
-    .vendor {
-        display: none;
-    }
+
+.critterpedia-container {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    // .critterpedia-tabs {
+    //     margin-left: 8rem;
+    // }
 }

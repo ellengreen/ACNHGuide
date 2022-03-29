@@ -24,7 +24,7 @@ export class CurrentBugsComponent implements OnInit {
     private kvPipe: KeyValuePipe) { }
 
   ngOnInit() {
-    this.nookService.getBugs().subscribe(data => {
+    this.nookService.GET('bugs').subscribe(data => {
       this.bugs = data;
       this.catchableBugs()
     })

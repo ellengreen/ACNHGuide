@@ -8,17 +8,17 @@ import { VillagersComponent } from './villagers/villagers.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  { path: '', component: WelcomeComponent },
+  // { path: '', component: WelcomeComponent },
   { path: 'home', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'critterpedia', component: CritterpediaMainComponent },
   { path: 'villagers', component: VillagersComponent},
-  {
-    path: '**',
-    redirectTo: '/welcome',
-    pathMatch: 'full'
-  }
+  // {
+  //   path: '**',
+  //   redirectTo: '/welcome',
+  //   pathMatch: 'full'
+  // }
 ];
 
 @NgModule({

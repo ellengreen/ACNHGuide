@@ -4,6 +4,7 @@ import { FirebaseService } from 'src/app/shared/firebase.service';
 import { CurrentDateService } from 'src/app/shared/current-date.service';
 import { AuthenticationService } from 'src/app/shared/authentication.service';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { MatTab, MatTabChangeEvent, MatTabLabel } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-critterpedia-main',
@@ -28,24 +29,12 @@ export class CritterpediaMainComponent implements OnInit {
   seaView: boolean;
   selectedCritter: any;
   noUser: boolean;
+  activeTab: any;
+  critterList: any;
   
     ngOnInit(){
-      this.ns.getBugs().subscribe(data=> {
-        this.bugs = data;
-        console.log(this.bugs)
-        this.critters = this.bugs;
-        this.critterType ='bugs';
-        this.vendor='Flick';
-        this.currentlyAvailable();
-      })
-      this.ns.getFish().subscribe(data => {
-        this.fish = data;
-      })
-      this.ns.getSea().subscribe(data => {
-        this.sea = data;
-      })
-      this.load();
     }
+
     load(){
       this.db.fetchBugs().subscribe(bugs =>{
         this.loadedBugs=bugs;
@@ -59,6 +48,9 @@ export class CritterpediaMainComponent implements OnInit {
       } else { this.noUser = true }})
     }
   
+    switchTabs(type) {
+      this.activeTab = type;
+    }
     onFish(){
       this.critters=this.fish;
       this.bugView=false;

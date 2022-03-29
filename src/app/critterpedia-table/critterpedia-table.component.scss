@@ -1,70 +1,66 @@
+body {
+    overflow: hidden;
+}
+
 .critterpedia-container {
     width: 100%;
-    // padding: 3rem 8rem;
-    padding-top: 0;
-    padding-bottom: 3rem;
-    // padding-left: 8rem;
-    // padding-right: 8rem;
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    .body {
+        display: grid;
+        grid-template-columns: 70% 1fr;
+        grid-column-gap: 10%;
+        overflow: hidden;
+    }
 
     .critter-grid {
-        margin-right: 5rem;
-        width: 70%;
+        overflow-y: scroll;
         height: 65vh;
+
+        p {
+            color: black;
+        }
 
         .critterpedia-filter {
             margin-bottom: 2rem;
         }
 
-        .icon-container {
-            max-height: 55vh;
-            overflow-y: scroll;
-            .icon {
-                width: 55%;
-                padding: 10px;
-                background-color: #f0f0f0;
-                border-radius: 50%;
-                border: 2px solid #5968EC;
+        .gridx {
+            display: grid;
+            grid-template-columns: repeat(6, 90px);
+            justify-items: stretch;
+            align-content: center;
+            align-items: stretch;
+            column-gap: 50px;
+
+            .innerGrid {
+                display: grid;
             }
 
-            .icon:hover {
+            img:hover {
+                transform: scale(1.1);
                 cursor: pointer;
-            }
-
-            .icon-name {
-                font-size: 0.7rem;
-                color: grey;
             }
         }
     }
 
     .selected-critter {
-        width: 30%;
+        width: 100%;
         height: 65vh;
+        margin-top: 5rem;
 
+        h1 {
+            font-weight: 600;
+        }
+
+        .table td {
+            border: 0;
+        }
         .selected-icon {
             border-radius: 50%;
-            background-color: #5968EC;
+            background-color: #5968ec;
             flex: auto;
         }
-    }
-    .vendor {
-        width: 15%;
-        position: fixed;
-        bottom: -1rem;
-        left: 86%;
-    }
-
-    .pascal {
-        width: 11%;
-        position: fixed;
-        bottom: 0px;
-        left: 88%;
-    }
-}
-
-::ng-deep {
-    .mat-card {
-        background-color: lightgray;
     }
 }

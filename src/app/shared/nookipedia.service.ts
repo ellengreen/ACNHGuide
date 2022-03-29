@@ -7,17 +7,11 @@ import { HttpClient } from '@angular/common/http';
 export class NookipediaService {
 
   constructor(private httpClient: HttpClient) { }
-  getFish(){
-    return this.httpClient.get(`http://acnhapi.com/v1/fish`);
+
+  GET(type: string) {
+    return this.httpClient.get(`http://acnhapi.com/v1/${type}`)
   }
 
-  getBugs(){
-    return this.httpClient.get(`http://acnhapi.com/v1/bugs`);
-  }
-
-  getSea(){
-    return this.httpClient.get(`http://acnhapi.com/v1/sea`)
-  }
 
   getEvents(){
     return this.httpClient.get('assets/events.json');
