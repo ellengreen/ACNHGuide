@@ -1,0 +1,70 @@
+.critterpedia-container {
+    width: 100%;
+    // padding: 3rem 8rem;
+    padding-top: 0;
+    padding-bottom: 3rem;
+    // padding-left: 8rem;
+    // padding-right: 8rem;
+    display: inline-flex;
+
+    .critter-grid {
+        margin-right: 5rem;
+        width: 70%;
+        height: 65vh;
+
+        .critterpedia-filter {
+            margin-bottom: 2rem;
+        }
+
+        .icon-container {
+            max-height: 55vh;
+            overflow-y: scroll;
+            .icon {
+                width: 55%;
+                padding: 10px;
+                background-color: #f0f0f0;
+                border-radius: 50%;
+                border: 2px solid #5968EC;
+            }
+
+            .icon:hover {
+                cursor: pointer;
+            }
+
+            .icon-name {
+                font-size: 0.7rem;
+                color: grey;
+            }
+        }
+    }
+
+    .selected-critter {
+        width: 30%;
+        height: 65vh;
+
+        .selected-icon {
+            border-radius: 50%;
+            background-color: #5968EC;
+            flex: auto;
+        }
+    }
+    .vendor {
+        width: 15%;
+        position: fixed;
+        bottom: -1rem;
+        left: 86%;
+    }
+
+    .pascal {
+        width: 11%;
+        position: fixed;
+        bottom: 0px;
+        left: 88%;
+    }
+}
+
+::ng-deep {
+    .mat-card {
+        background-color: lightgray;
+    }
+}

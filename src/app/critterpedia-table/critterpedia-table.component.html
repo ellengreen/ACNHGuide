@@ -1,0 +1,83 @@
+<div class="critterpedia-container">
+    
+    <mat-card mat-elevation-z-8 class="critter-grid">
+        <!-- Loop over, make selectable & filter -->
+        <div class="critterpedia-filter">
+            <mat-chip-list #chipList>
+                <mat-chip>Available Now</mat-chip>
+                <mat-chip>Undonated</mat-chip>
+                <mat-chip>Uncaught</mat-chip>
+            </mat-chip-list>
+        </div>
+        <!-- dont show icons until all loaded? -->
+        <!-- console error bc sea creatures only has 40? -->
+        <div class="icon-container row">
+            <div class="col-4 col-sm-3 text-center" (click)="onSelect(c)"
+                *ngFor="let c of critters | keyvalue">
+                <img class="icon" src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{c.value['id']}}">
+                <p class="icon-name">{{c.value['name']['name-USen'] | titlecase}}</p>
+            </div>
+        </div>
+    </mat-card>
+
+    <mat-card class="selected-critter">
+        <div *ngIf="selectedCritter">
+            <div style="width: 100%; display: flex;">
+                <!-- <img class="selected-icon" src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{selectedCritter.value['id']}}"> -->
+
+                <!-- <img src={{selectedCritter.value.image_uri}} style="width: 80%; flex: auto; margin-bottom: -1rem; margin-top: -2rem;"> -->
+            </div>
+            <h3 class="text-center">{{selectedCritter.value['name']['name-USen'] | titlecase}}</h3>
+      
+            <table class="table">
+                <tr>
+                  <td>Price</td>
+                  <td class="text-right">{{selectedCritter.value['price']}} bells</td>
+                </tr>
+                <tr *ngIf="critterpediaMode !== 'sea'">
+                  <td>{{vendor}}'s Price</td>
+                  <td class="text-right">{{selectedCritter.value['price']*1.5}} bells</td>
+                </tr>
+                <tr *ngIf="critterpediaMode !== 'sea'">
+                  <td>Rarity</td>
+                  <td class="text-right">{{selectedCritter.value['availability']['rarity']}}</td>
+                </tr>
+                <tr *ngIf="critterpediaMode !== 'sea'">
+                    <td>Location</td>
+                    <td class="text-right">{{selectedCritter.value['availability']['location']}}</td>
+                </tr>
+                <tr *ngIf="critterpediaMode !== 'bugs'">
+                  <td>Shadow Size</td>
+                  <td class="text-right">{{selectedCritter.value['shadow']}}</td>
+              </tr>
+                <tr *ngIf="critterpediaMode === 'sea'">
+                  <td>Speed</td>
+                  <td class="text-right">{{selectedCritter.value['speed']}}</td>
+                </tr>
+                <tr *ngIf="selectedCritter.value['availability']['isAllDay'] == false">
+                    <td>Available Times</td>
+                    <td class="text-right">{{selectedCritter.value['availability']['time']}}</td>
+                </tr>
+                <tr *ngIf="selectedCritter.value['availability']['isAllDay'] == true">
+                  <td>Available Times</td>
+                  <td class="text-right">All Day</td>
+              </tr>
+                <tr *ngIf="selectedCritter.value['availability']['isAllYear'] == false">
+                    <td>Northern Months</td>
+                    <td class="text-right">{{selectedCritter.value['availability']['month-northern']}}</td>
+                </tr>
+                <tr *ngIf="selectedCritter.value['availability']['isAllYear'] == false">
+                  <td>Southern Months</td>
+                  <td class="text-right">{{selectedCritter.value['availability']['month-southern']}}</td>
+              </tr>
+              <tr *ngIf="selectedCritter.value['availability']['isAllYear'] == true">
+                <td>Months</td>
+                <td class="text-right">All Year</td>
+              </tr>
+            </table>
+          </div>
+    </mat-card>
+
+    <img *ngIf="critterpediaMode !== 'sea'" class="vendor" src="assets/images/{{vendor}}.png">
+    <img *ngIf="critterpediaMode === 'sea'" class="pascal" src="assets/images/{{vendor}}.png">
+</div>
