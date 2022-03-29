@@ -1,13 +1,20 @@
 @import 'src/styles.scss';
 
 body {
-    background-color:$aqua;
-    height: 100vh;
+    // background-color: #F0AD53;
+    // height: 100vh;
 }
 
-img {
-    width: 50%;
-    position: fixed;
-    bottom: 0px;
+// img {
+//     width: 50%;
+//     position: fixed;
+//     bottom: 0px;
     
+// }
+
+.icon {
+    position: fixed;
+    width: 10%;
+    right: 0;
+
 }

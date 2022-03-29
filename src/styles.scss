@@ -87,3 +87,8 @@ p {
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-dialog-container {
+  background-color: #F6F4E5;
+  border-radius: 20% !important;
+}

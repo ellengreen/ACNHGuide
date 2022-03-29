@@ -29,6 +29,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { VillagersComponent } from './villagers/villagers.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NookPhoneComponent } from './nook-phone/nook-phone.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BirthdayComponent,
     CritterpediaMainComponent,
     VillagersComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    NookPhoneComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -58,7 +61,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     RouterModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [AuthenticationService, DatePipe, KeyValuePipe, HttpClientModule],
   bootstrap: [AppComponent]

@@ -1,0 +1,36 @@
+.container {
+    background-color: #f6f4e5;
+
+    h1 {
+        color: darkslategrey;
+        display: block;
+        text-align: center;
+        font-weight: 600;
+    }
+
+    .nav {
+        margin-top: 25px;
+        margin-bottom: 50px;
+        display: grid;
+        grid-template-rows: repeat(3, 90px);
+        grid-template-columns: repeat(3, 90px);
+        justify-content: center;
+        justify-items: stretch;
+        align-content: center;
+        align-items: stretch;
+        row-gap: 13px;
+        column-gap: 13px;
+
+        .icon {
+            border-radius: 35%;
+
+        }
+        .critterpedia {
+            background-color: goldenrod;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            }
+    }
+}
