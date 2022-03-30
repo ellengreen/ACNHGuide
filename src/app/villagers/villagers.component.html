@@ -1,11 +1,54 @@
-<!-- <app-nav></app-nav>
- -->
- <app-welcome></app-welcome>
-<body>
+<header>
+    <app-welcome></app-welcome>
+  </header>
+
+<div class="villagers-container">
+    <div class="body">
+        <div class="content">
+            <div class="villager-grid">
+                <div class="gridx">
+                    <div (click)="onSelect(v)" *ngFor="let v of villagers | keyvalue" class="innerGrid">
+                        <img class="icon" src="https://acnhapi.com/v1/icons/villagers/{{v.value['id']}}">
+                        <p>{{v.value['name']['name-USen']}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="selected-villager">
+            <div *ngIf="selectedVillager">
+                <h1 class="text-center">{{selectedVillager.value['name']['name-USen']}}</h1>
+                        <table class="table">
+                            <tr>
+                                <td>Gender</td>
+                                <td class="text-right">{{selectedVillager.value['gender']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Species</td>
+                                <td class="text-right">{{selectedVillager.value['species']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Birthday</td>
+                                <td class="text-right">{{selectedVillager.value['birthday-string']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Personality</td>
+                                <td class="text-right">{{selectedVillager.value['personality']}}</td>
+                            </tr>
+                            <tr>
+                                <td>Catch Phrase</td>
+                                <td class="text-right">{{selectedVillager.value['catch-phrase']}}</td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 <!-- <body> -->
-    <div class="container-fluid">
-        <div class="row">
+<!-- <div class="container-fluid">
+    <div class="row">
             <div class="col-sm-8">
                 
                 <form [formGroup]="form" (ngSubmit)="submit()">
@@ -37,93 +80,101 @@
                     
                 </form>
             </div>
-        </div>
+        </div> -->
 
-        <div class="row">
-            <div class="col-sm-8">
+    <!-- <div class="row">
+        <div class="col-sm-8">
 
-                <div class="card card-custom my-2">
-                    <div class="card-body">
-                        <div class="row scroll">
-                            <div class="col-4 col-sm-3 align-items-center text-center" (click)="onSelect(v)" *ngFor="let v of villagers | keyvalue">
-                                <img class="icon" src="https://acnhapi.com/v1/icons/villagers/{{v.value['id']}}">
-                                <p>{{v.value['name']['name-USen']}}</p>
-                            </div>
+            <div class="card card-custom my-2">
+                <div class="card-body">
+                    <div class="row scroll">
+                        <div class="col-4 col-sm-3 align-items-center text-center" (click)="onSelect(v)"
+                            *ngFor="let v of villagers | keyvalue">
+                            <img class="icon" src="https://acnhapi.com/v1/icons/villagers/{{v.value['id']}}">
+                            <p>{{v.value['name']['name-USen']}}</p>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div *ngIf="!selectedVillager" class="col-sm-4">
-                <div class="card card-custom my-2">
-                    <div class="card-body">
-                        <table class="table">
-                            <tr>
-                                <td>Gender</td>
-                        
-                            </tr>
-                            <tr>
-                                <td>Species</td>
-                            
-                            </tr>
-                            <tr>
-                                <td>Birthday</td>
-                            
-                            </tr>
-                            <tr>
-                                <td>Personality</td>
-                                
-                            </tr>
-                            <tr>
-                                <td>Catch Phrase</td>
-                               
-                            </tr>
-                        </table>
-
-                        <div *ngIf="!aDupe && !noUser"><button (click)="addVillager(selectedVillager)" class="button btn-primary">Add to My Island!</button></div>
-                    </div>
-                </div>
-            </div>
-
-
-            <div *ngIf="selectedVillager" class="col-sm-4">
-                <div class="card card-custom my-2">
-                    <div *ngIf="selectedVillager" class="card-body">
-                        <img class="head" src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.value['id']}}"><br>
-                        <h5 class="card-title text-center name">{{selectedVillager.value['name']['name-USen']}}</h5>
-                        <table class="table">
-                            <tr>
-                                <td>Gender</td>
-                                <td class="text-right">{{selectedVillager.value['gender']}}</td>
-                            </tr>
-                            <tr>
-                                <td>Species</td>
-                                <td class="text-right">{{selectedVillager.value['species']}}</td>
-                            </tr>
-                            <tr>
-                                <td>Birthday</td>
-                                <td class="text-right">{{selectedVillager.value['birthday-string']}}</td>
-                            </tr>
-                            <tr>
-                                <td>Personality</td>
-                                <td class="text-right">{{selectedVillager.value['personality']}}</td>
-                            </tr>
-                            <tr>
-                                <td>Catch Phrase</td>
-                                <td class="text-right">{{selectedVillager.value['catch-phrase']}}</td>
-                            </tr>
-                        </table>
-
-                        <div *ngIf="aDupe === true"><p class="text-left">This Villager lives on my Island! Visit your profile if you want to evict them</p></div>
-                        <div *ngIf="noUser"><p class="text-left">Login to add villager to your island</p></div>
-                        <div *ngIf="aDupe == false && !noUser"><button (click)="addVillager(selectedVillager)" class="button btn-primary">Add to My Island!</button></div>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-    <!-- <div class="footer"></div> -->
-    <!-- <img *ngIf="selectedVillager" class="vendor" src="{{this.selected?.image}}"> -->
-<!-- </body> -->
 
+        <div *ngIf="!selectedVillager" class="col-sm-4">
+            <div class="card card-custom my-2">
+                <div class="card-body">
+                    <table class="table">
+                        <tr>
+                            <td>Gender</td>
+
+                        </tr>
+                        <tr>
+                            <td>Species</td>
+
+                        </tr>
+                        <tr>
+                            <td>Birthday</td>
+
+                        </tr>
+                        <tr>
+                            <td>Personality</td>
+
+                        </tr>
+                        <tr>
+                            <td>Catch Phrase</td>
+
+                        </tr>
+                    </table>
+
+                    <div *ngIf="!aDupe && !noUser"><button (click)="addVillager(selectedVillager)"
+                            class="button btn-primary">Add to My Island!</button></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div *ngIf="selectedVillager" class="col-sm-4">
+            <div class="card card-custom my-2">
+                <div *ngIf="selectedVillager" class="card-body">
+                    <img class="head"
+                        src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.value['id']}}"><br>
+                    <h5 class="card-title text-center name">{{selectedVillager.value['name']['name-USen']}}</h5>
+                    <table class="table">
+                        <tr>
+                            <td>Gender</td>
+                            <td class="text-right">{{selectedVillager.value['gender']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Species</td>
+                            <td class="text-right">{{selectedVillager.value['species']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Birthday</td>
+                            <td class="text-right">{{selectedVillager.value['birthday-string']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Personality</td>
+                            <td class="text-right">{{selectedVillager.value['personality']}}</td>
+                        </tr>
+                        <tr>
+                            <td>Catch Phrase</td>
+                            <td class="text-right">{{selectedVillager.value['catch-phrase']}}</td>
+                        </tr>
+                    </table>
+
+                    <div *ngIf="aDupe === true">
+                        <p class="text-left">This Villager lives on my Island! Visit your profile if you want to evict
+                            them</p>
+                    </div>
+                    <div *ngIf="noUser">
+                        <p class="text-left">Login to add villager to your island</p>
+                    </div>
+                    <div *ngIf="aDupe == false && !noUser"><button (click)="addVillager(selectedVillager)"
+                            class="button btn-primary">Add to My Island!</button></div>
+                </div>
+            </div>
+        </div>
+
+    </div> -->
+<!-- </div> -->
+<!-- <div class="footer"></div> -->
+<!-- <img *ngIf="selectedVillager" class="vendor" src="{{this.selected?.image}}"> -->
+<!-- </body> -->
