@@ -1,4 +1,4 @@
-@import 'src/styles.scss';
+@import "src/styles.scss";
 
 body {
     // background-color: #F0AD53;
@@ -9,12 +9,20 @@ body {
 //     width: 50%;
 //     position: fixed;
 //     bottom: 0px;
-    
+
 // }
 
 .icon {
     position: fixed;
-    width: 10%;
-    right: 0;
+    top: 15px;
+    width: 5%;
+    right: 5px;
+    cursor: pointer;
+}
 
+img {
+    transition: transform 0.7s ease-in-out;
+}
+img:hover {
+    transform: rotate(360deg);
 }

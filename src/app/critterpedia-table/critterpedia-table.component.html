@@ -4,11 +4,11 @@
       <div class="critter-grid">
         <!-- Loop over, make selectable & filter -->
         <div class="critterpedia-filter">
-          <mat-chip-list #chipList>
+          <!-- <mat-chip-list #chipList>
             <mat-chip>Available Now</mat-chip>
             <mat-chip>Undonated</mat-chip>
             <mat-chip>Uncaught</mat-chip>
-          </mat-chip-list>
+          </mat-chip-list> -->
         </div>
         <!-- dont show icons until all loaded? -->
         <!-- console error bc sea creatures only has 40? -->
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <div class="sidebar" class="selected-critter">
+    <div class="selected-critter">
         <div *ngIf="selectedCritter">
           <div style="width: 100%; display: flex;">
             <!-- <img class="selected-icon" src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{selectedCritter.value['id']}}"> -->
@@ -76,6 +76,13 @@
               <td class="text-right">All Year</td>
             </tr>
           </table>
+
+          <!-- <button type="button" class="buttons">Caught</button>
+          <button type="button" class="buttons">Donated</button> -->
+
+          <button style="border: 0; background-color: transparent;">
+            <img style="width: 30%;" src="../../assets/stamp-fish.0474af92.png">
+          </button>
         </div>
 
     </div>

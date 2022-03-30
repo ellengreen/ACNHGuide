@@ -21,7 +21,6 @@ import { AuthenticationService } from './shared/authentication.service';
 import { CurrentCrittersComponent } from './dashboard/current-critters/current-critters.component';
 import { CurrentFishComponent } from './dashboard/current-critters/current-fish/current-fish.component';
 import { CurrentBugsComponent } from './dashboard/current-critters/current-bugs/current-bugs.component';
-import { NavComponent } from './nav/nav.component';
 import { EventsComponent } from './dashboard/events/events.component';
 import { BirthdayComponent } from './dashboard/birthday/birthday.component';
 import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
@@ -47,7 +46,6 @@ import { CritterpediaTableComponent } from './critterpedia-table/critterpedia-ta
     CurrentCrittersComponent,
     CurrentFishComponent,
     CurrentBugsComponent,
-    NavComponent,
     EventsComponent,
     BirthdayComponent,
     CritterpediaMainComponent,

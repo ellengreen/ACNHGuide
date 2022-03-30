@@ -65,12 +65,6 @@ mat-card {
     -ms-overflow-style: none;
 }
   
-// p {
-//     font-family: 'Roboto', sans-serif;
-//     color: $primary-blue;
-//     font-weight: 600;
-// }
-  
   
   @media only screen and (max-width: 700px) {
     .footer {
@@ -88,10 +82,10 @@ mat-card {
     }
   }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: "Nunito", sans-serif; }
 
 .mat-dialog-container {
   background-color: #F6F4E5;
   border-radius: 20% !important;
 }
-// body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+

@@ -2,27 +2,30 @@
 
 header {
     // background-color: #cdddf9;
+    position: relative;
     height: 130px;
     background-image: url(../../../assets/banner-bg-rounded.svg);
 
 }
 
 .critter-mode {
-    margin-left: 3rem;
+    position: absolute;
+    margin-left: 5rem;
+    margin-top: -55px;
     button {
         background-color: lightsteelblue;
         border: 0px;
         border-radius: 50%;
         margin: 10px;
-        height: 70px;
-        width: 70px;
+        height: 100px;
+        width: 100px;
 
         img {
-            width: 70%;
+            width: 80%;
         }
 
         img:hover {
-            transform: scale(1.2);
+            transform: scale(1.1);
         }
     }
 }
