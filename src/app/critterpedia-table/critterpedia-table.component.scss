@@ -39,7 +39,12 @@ body {
                 display: grid;
             }
 
-            img:hover {
+            .selected {
+                background-color: lightgoldenrodyellow;
+                border-radius: 40px;
+            }
+
+            .innerGrid:hover {
                 transform: scale(1.1);
                 cursor: pointer;
             }

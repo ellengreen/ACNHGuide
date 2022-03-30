@@ -15,7 +15,7 @@
 
         <div class="gridx">
           <div (click)="onSelect(c)" *ngFor="let c of critters | keyvalue" class="innerGrid">
-              <img class="icon" src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{c.value['id']}}">
+              <img [ngClass]="{'selected': c === selectedCritter}" class="icon" src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{c.value['id']}}">
               <p class="icon-name">{{c.value['name']['name-USen'] | titlecase}}</p>
           </div>
         </div>
