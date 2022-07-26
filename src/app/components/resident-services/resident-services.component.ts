@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { VillagerInfoDialogComponent } from '../villager-info-dialog/villager-info-dialog.component';
 
@@ -11,6 +11,8 @@ export class ResidentServicesComponent implements OnInit {
 
   @Input() villagersList: any;
   // @Output() selectedVillager: any;
+  @Output() addVillagerToCollection = new EventEmitter<any>();
+
   selectedVillager: any;
   critterpediaMode = 'villagers';
   constructor(private dialog: MatDialog) { }
@@ -18,15 +20,8 @@ export class ResidentServicesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSelect(villager) {
-    this.selectedVillager = villager;
-    console.log(villager)
-    // this.selectedVillager.emit(villager)
-    this.openVillagerInfoDialog(villager)
-  }
-
   openVillagerInfoDialog(villager) {
-    this.dialog.open(VillagerInfoDialogComponent, {
+    const dialogRef = this.dialog.open(VillagerInfoDialogComponent, {
       data: {
         selectedVillager: villager,
       },
@@ -35,5 +30,12 @@ export class ResidentServicesComponent implements OnInit {
       minWidth: '750px'
     });
 
+    const subscribeDialog = dialogRef.componentInstance.emitAddedVillager.subscribe((result) => {
+      this.addVillagerToCollection.emit(result);
+    })
+
+    dialogRef.afterClosed().subscribe(() => {
+      subscribeDialog.unsubscribe();
+    })
   }
 }

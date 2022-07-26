@@ -9,7 +9,7 @@
             <ng-container class="meta">
                 <img class="meta"
                     src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.value['id']}}">
-                <button type="button" class="meta">Resident</button>
+                <button type="button" class="meta" (click)="addVillager(selectedVillager)">I live here!</button>
                 <!-- <button type="button" class="meta">Donated</button> -->
             </ng-container>
         </div>

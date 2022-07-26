@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -7,7 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./villager-info-dialog.component.scss']
 })
 export class VillagerInfoDialogComponent implements OnInit {
-
+  @Output() emitAddedVillager = new EventEmitter();
   selectedVillager: any;
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialogRef: MatDialogRef<VillagerInfoDialogComponent> ) { }
 
@@ -15,4 +15,7 @@ export class VillagerInfoDialogComponent implements OnInit {
     this.selectedVillager = this.data.selectedVillager;
   }
 
+  addVillager(selectedVillager) {
+    this.emitAddedVillager.emit(selectedVillager)
+  }
 }
