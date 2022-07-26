@@ -1,0 +1,128 @@
+<div [ngClass]="critterpediaMode">
+        <div class="row">
+            <div class="col-sm-12">
+
+                <h1 class="text-center critter-header">{{selectedCritter.value['name']['name-USen'] | titlecase}}</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4">
+                <ng-container class="meta">
+
+                    <img class="meta"
+                        src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{selectedCritter.value['id']}}">
+
+                    <button type="button" class="meta">Caught</button>
+                    <button type="button" class="meta">Donated</button>
+                </ng-container>
+            </div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-7">
+                <table class="table">
+                    <tr>
+                        <td>Selling Price</td>
+                        <td class="text-right">{{selectedCritter.value['price']}} bells</td>
+                    </tr>
+                    <!-- <tr *ngIf="critterpediaMode !== 'sea'">
+                  <td>{{vendor}}'s Price</td>
+                  <td class="text-right">{{selectedCritter.value['price']*1.5}} bells</td>
+                </tr> -->
+                    <tr *ngIf="critterpediaMode !== 'sea'">
+                        <td>Rarity</td>
+                        <td class="text-right">{{selectedCritter.value['availability']['rarity']}}</td>
+                    </tr>
+                    <tr *ngIf="critterpediaMode !== 'sea'">
+                        <td>Location</td>
+                        <td class="text-right">{{selectedCritter.value['availability']['location']}}</td>
+                    </tr>
+                    <tr *ngIf="critterpediaMode !== 'bugs'">
+                        <td>Shadow Size</td>
+                        <td class="text-right">{{selectedCritter.value['shadow']}}</td>
+                    </tr>
+                    <tr *ngIf="critterpediaMode === 'sea'">
+                        <td>Speed</td>
+                        <td class="text-right">{{selectedCritter.value['speed']}}</td>
+                    </tr>
+                    <tr *ngIf="selectedCritter.value['availability']['isAllDay'] == false">
+                        <td>Available Times</td>
+                        <td class="text-right">{{selectedCritter.value['availability']['time']}}</td>
+                    </tr>
+                    <tr *ngIf="selectedCritter.value['availability']['isAllDay'] == true">
+                        <td>Available Times</td>
+                        <td class="text-right">All Day</td>
+                    </tr>
+                    <tr *ngIf="selectedCritter.value['availability']['isAllYear'] == false">
+                        <td>Northern Months</td>
+                        <td class="text-right">{{selectedCritter.value['availability']['month-northern']}}</td>
+                    </tr>
+                    <tr *ngIf="selectedCritter.value['availability']['isAllYear'] == false">
+                        <td>Southern Months</td>
+                        <td class="text-right">{{selectedCritter.value['availability']['month-southern']}}</td>
+                    </tr>
+                    <tr *ngIf="selectedCritter.value['availability']['isAllYear'] == true">
+                        <td>Months</td>
+                        <td class="text-right">All Year</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+<!-- 
+<div class="selected-critter">
+
+    <div style="width: 100%; display: flex;">
+    </div>
+    <h1 class="text-center">{{selectedCritter.value['name']['name-USen'] | titlecase}}</h1>
+    <img src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{selectedCritter.value['id']}}">
+
+    <table class="table">
+        <tr>
+            <td>Price</td>
+            <td class="text-right">{{selectedCritter.value['price']}} bells</td>
+        </tr>
+
+        <tr *ngIf="critterpediaMode !== 'sea'">
+            <td>Rarity</td>
+            <td class="text-right">{{selectedCritter.value['availability']['rarity']}}</td>
+        </tr>
+        <tr *ngIf="critterpediaMode !== 'sea'">
+            <td>Location</td>
+            <td class="text-right">{{selectedCritter.value['availability']['location']}}</td>
+        </tr>
+        <tr *ngIf="critterpediaMode !== 'bugs'">
+            <td>Shadow Size</td>
+            <td class="text-right">{{selectedCritter.value['shadow']}}</td>
+        </tr>
+        <tr *ngIf="critterpediaMode === 'sea'">
+            <td>Speed</td>
+            <td class="text-right">{{selectedCritter.value['speed']}}</td>
+        </tr>
+        <tr *ngIf="selectedCritter.value['availability']['isAllDay'] == false">
+            <td>Available Times</td>
+            <td class="text-right">{{selectedCritter.value['availability']['time']}}</td>
+        </tr>
+        <tr *ngIf="selectedCritter.value['availability']['isAllDay'] == true">
+            <td>Available Times</td>
+            <td class="text-right">All Day</td>
+        </tr>
+        <tr *ngIf="selectedCritter.value['availability']['isAllYear'] == false">
+            <td>Northern Months</td>
+            <td class="text-right">{{selectedCritter.value['availability']['month-northern']}}</td>
+        </tr>
+        <tr *ngIf="selectedCritter.value['availability']['isAllYear'] == false">
+            <td>Southern Months</td>
+            <td class="text-right">{{selectedCritter.value['availability']['month-southern']}}</td>
+        </tr>
+        <tr *ngIf="selectedCritter.value['availability']['isAllYear'] == true">
+            <td>Months</td>
+            <td class="text-right">All Year</td>
+        </tr>
+    </table>
+
+    <button type="button" class="buttons">Caught</button>
+    <button type="button" class="buttons">Donated</button>
+
+    <button style="border: 0; background-color: transparent;">
+        <img style="width: 30%;" src="../../assets/icons/stamp-fish.0474af92.png">
+    </button>
+</div> -->

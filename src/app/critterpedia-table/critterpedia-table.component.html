@@ -1,18 +1,7 @@
-<div class="critterpedia-container">
+<!-- <div class="critterpedia-container">
   <div class="body">
     <div class="content">
       <div class="critter-grid">
-        <!-- Loop over, make selectable & filter -->
-        <!-- <div class="critterpedia-filter">
-          <mat-chip-list #chipList>
-            <mat-chip>Available Now</mat-chip>
-            <mat-chip>Undonated</mat-chip>
-            <mat-chip>Uncaught</mat-chip>
-          </mat-chip-list> 
-        </div>-->
-        <!-- dont show icons until all loaded? -->
-        <!-- console error bc sea creatures only has 40? -->
-
         <div class="gridx">
           <div (click)="onSelect(c)" *ngFor="let c of critters | keyvalue" class="innerGrid">
               <img [ngClass]="{'selected': c === selectedCritter}" class="icon" src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{c.value['id']}}">
@@ -21,12 +10,10 @@
         </div>
       </div>
     </div>
+
     <div class="selected-critter">
         <div *ngIf="selectedCritter">
           <div style="width: 100%; display: flex;">
-            <!-- <img class="selected-icon" src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{selectedCritter.value['id']}}"> -->
-
-            <!-- <img src={{selectedCritter.value.image_uri}} style="width: 80%; flex: auto; margin-bottom: -1rem; margin-top: -2rem;"> -->
           </div>
           <h1 class="text-center">{{selectedCritter.value['name']['name-USen'] | titlecase}}</h1>
 
@@ -77,8 +64,8 @@
             </tr>
           </table>
 
-          <!-- <button type="button" class="buttons">Caught</button>
-          <button type="button" class="buttons">Donated</button> -->
+          <button type="button" class="buttons">Caught</button>
+          <button type="button" class="buttons">Donated</button> 
 
           <button style="border: 0; background-color: transparent;">
             <img style="width: 30%;" src="../../assets/icons/stamp-fish.0474af92.png">
@@ -86,5 +73,21 @@
         </div>
 
     </div>
+
   </div>
+</div> -->
+
+<div class="scrollable-container">
+
+
+  <div class="critterpedia-container container">
+    <div class="row">
+      <div class="col-sm-2" *ngFor="let c of critters | keyvalue">
+        <img [ngClass]="{'selected': c === selectedCritter}" class="icon"
+          src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{c.value['id']}}" (click)="onSelect(c)">
+        <p>{{c.value['name']['name-USen'] | titlecase}}</p>
+      </div>
+    </div>
+  </div>
+
 </div>

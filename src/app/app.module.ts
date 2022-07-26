@@ -37,6 +37,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { CritterpediaTableComponent } from './critterpedia-table/critterpedia-table.component';
 import { PassportComponent } from './passport/passport.component';
 import { MuseumComponent } from './museum/museum.component';
+import { CritterInfoDialogComponent } from './critter-info-dialog/critter-info-dialog.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { MuseumComponent } from './museum/museum.component';
     NookPhoneComponent,
     CritterpediaTableComponent,
     PassportComponent,
-    MuseumComponent
+    MuseumComponent,
+    CritterInfoDialogComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
