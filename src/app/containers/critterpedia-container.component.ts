@@ -20,8 +20,6 @@ export class CritterpediaContainerComponent implements OnInit {
   fish: any;
   sea: any;
   critters: any;
-  // critterType: CritterType;
-  vendor: any;
   loadedBugs: any;
   loadedFish: any;
   loadedSea: any;

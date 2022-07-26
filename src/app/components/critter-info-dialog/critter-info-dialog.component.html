@@ -27,10 +27,6 @@
                         <td>Selling Price</td>
                         <td class="text-right">{{selectedCritter.value['price']}} bells</td>
                     </tr>
-                    <!-- <tr *ngIf="critterpediaMode !== 'sea'">
-                  <td>{{vendor}}'s Price</td>
-                  <td class="text-right">{{selectedCritter.value['price']*1.5}} bells</td>
-                </tr> -->
                     <tr *ngIf="critterpediaMode !== critterType.sea">
                         <td>Rarity</td>
                         <td class="text-right">{{selectedCritter.value['availability']['rarity']}}</td>

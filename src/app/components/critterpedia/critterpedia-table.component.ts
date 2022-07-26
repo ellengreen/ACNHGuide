@@ -9,30 +9,18 @@ import { CritterInfoDialogComponent } from '../critter-info-dialog/critter-info-
   templateUrl: './critterpedia-table.component.html',
   styleUrls: ['./critterpedia-table.component.scss']
 })
-export class CritterpediaTableComponent implements OnInit, OnChanges {
+export class CritterpediaTableComponent implements OnInit {
 
   @Input() critterpediaMode: CritterType;
   @Input() critters: CritterType;
 
   // critters: any;
   selectedCritter: any;
-  vendor: string;
 
   constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
     this.critterpediaMode = CritterType.bugs;
-    this.vendor = 'Flick'
-  }
-
-  ngOnChanges(): void {
-    if (this.critterpediaMode === CritterType.fish) {
-      this.vendor = 'CJ';
-    } else if (this.critterpediaMode === CritterType.sea) {
-      this.vendor = 'Pascal';
-    } else {
-      this.vendor = 'Flick'
-    }
   }
 
   onSelect(selectedCritter) {
