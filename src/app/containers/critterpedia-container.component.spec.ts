@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { CritterpediaMainComponent } from './critterpedia-main.component';
+import { CritterpediaContainerComponent } from './critterpedia-container.component';
 
 describe('CritterpediaMainComponent', () => {
-  let component: CritterpediaMainComponent;
-  let fixture: ComponentFixture<CritterpediaMainComponent>;
+  let component: CritterpediaContainerComponent;
+  let fixture: ComponentFixture<CritterpediaContainerComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ CritterpediaMainComponent ]
+      declarations: [ CritterpediaContainerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CritterpediaMainComponent);
+    fixture = TestBed.createComponent(CritterpediaContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

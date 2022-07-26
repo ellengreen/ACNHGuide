@@ -23,7 +23,6 @@ import { CurrentFishComponent } from './dashboard/current-critters/current-fish/
 import { CurrentBugsComponent } from './dashboard/current-critters/current-bugs/current-bugs.component';
 import { EventsComponent } from './dashboard/events/events.component';
 import { BirthdayComponent } from './dashboard/birthday/birthday.component';
-import { CritterpediaMainComponent } from './critterpedia/critterpedia-main/critterpedia-main.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VillagersComponent } from './villagers/villagers.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -34,13 +33,14 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
-import { CritterpediaTableComponent } from './critterpedia-table/critterpedia-table.component';
+import { CritterpediaTableComponent } from './components/critterpedia/critterpedia-table.component';
 import { PassportComponent } from './passport/passport.component';
 import { MuseumComponent } from './museum/museum.component';
-import { CritterInfoDialogComponent } from './critter-info-dialog/critter-info-dialog.component';
+import { CritterInfoDialogComponent } from './components/critter-info-dialog/critter-info-dialog.component';
 import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
 import { ResidentServicesComponent } from './components/resident-services/resident-services.component';
 import { VillagerInfoDialogComponent } from './components/villager-info-dialog/villager-info-dialog.component';
+import { CritterpediaContainerComponent } from './containers/critterpedia-container.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,7 @@ import { VillagerInfoDialogComponent } from './components/villager-info-dialog/v
     CurrentBugsComponent,
     EventsComponent,
     BirthdayComponent,
-    CritterpediaMainComponent,
+    CritterpediaContainerComponent,
     VillagersComponent,
     WelcomeComponent,
     NookPhoneComponent,

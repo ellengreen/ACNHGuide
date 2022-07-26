@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NookipediaService } from './nookipedia.service';
+import { DataService } from './data.service';
 
-describe('NookipediaService', () => {
-  let service: NookipediaService;
+describe('DataService', () => {
+  let service: DataService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NookipediaService);
+    service = TestBed.inject(DataService);
   });
 
   it('should be created', () => {

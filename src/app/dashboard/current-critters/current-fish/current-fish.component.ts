@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NookipediaService } from 'src/app/shared/nookipedia.service';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe, KeyValuePipe } from '@angular/common';
 import { CurrentDateService } from 'src/app/shared/current-date.service';
@@ -21,7 +20,6 @@ export class CurrentFishComponent implements OnInit {
   new = [];
 
   constructor(
-    private nookService: NookipediaService, 
     private dateService: CurrentDateService,
     private httpClient: HttpClient, 
     private datePipe: DatePipe, 

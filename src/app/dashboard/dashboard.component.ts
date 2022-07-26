@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentDateService } from '../shared/current-date.service';
-import { NookipediaService } from '../shared/nookipedia.service';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +10,7 @@ import { NookipediaService } from '../shared/nookipedia.service';
 export class DashboardComponent implements OnInit {
 
   constructor(
-    public nookService: NookipediaService,
+    public dataService: DataService,
     public dateService: CurrentDateService
   ) { }
 

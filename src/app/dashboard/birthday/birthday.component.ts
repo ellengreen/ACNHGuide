@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CurrentDateService } from 'src/app/shared/current-date.service';
-import { NookipediaService } from 'src/app/shared/nookipedia.service';
+import { DataService } from 'src/app/shared/data.service';
 import { KeyValuePipe } from '@angular/common';
 
 @Component({
@@ -11,7 +11,7 @@ import { KeyValuePipe } from '@angular/common';
 export class BirthdayComponent implements OnInit {
 
   constructor(
-    public nookService: NookipediaService,
+    public dataService: DataService,
     public dateService: CurrentDateService,
     public kvPipe: KeyValuePipe
   ) { }
@@ -26,7 +26,7 @@ export class BirthdayComponent implements OnInit {
   bdays = [];
 
   ngOnInit() {
-    this.nookService.getVillagers().subscribe(data => {
+    this.dataService.getVillagers().subscribe(data => {
       this.villagers = data;
       this.kvPipe.transform(this.villagers);
       this.birthday();

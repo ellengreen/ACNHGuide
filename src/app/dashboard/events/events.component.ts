@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NookipediaService } from 'src/app/shared/nookipedia.service';
+import { DataService } from 'src/app/shared/data.service';
 import { CurrentDateService } from 'src/app/shared/current-date.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { CurrentDateService } from 'src/app/shared/current-date.service';
 export class EventsComponent implements OnInit {
 
   constructor(
-    public nookService: NookipediaService,
+    public dataService: DataService,
     public dateService: CurrentDateService
   ) { }
 
@@ -19,7 +19,7 @@ export class EventsComponent implements OnInit {
   currentDay = this.dateService.currentDay;
 
   ngOnInit() {
-    this.nookService.getEvents().subscribe(data => {
+    this.dataService.getEvents().subscribe(data => {
       this.eventsList = data;
     });
   }

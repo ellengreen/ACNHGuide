@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { NookipediaService } from 'src/app/shared/nookipedia.service';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe, KeyValuePipe } from '@angular/common';
 import { CurrentDateService } from 'src/app/shared/current-date.service';
+import { DataService } from 'src/app/shared/data.service';
 
 @Component({
   selector: 'app-current-bugs',
@@ -18,13 +18,13 @@ export class CurrentBugsComponent implements OnInit {
 
 
   constructor(
-    private nookService: NookipediaService,
+    private dataService: DataService,
     private dateService: CurrentDateService,
     private httpClient: HttpClient,
     private kvPipe: KeyValuePipe) { }
 
   ngOnInit() {
-    this.nookService.GET('bugs').subscribe(data => {
+    this.dataService.GET('bugs').subscribe(data => {
       this.bugs = data;
       this.catchableBugs()
     })

@@ -1,4 +1,8 @@
-<div [ngClass]="critterpediaMode">
+<div [ngClass]="{
+    'sea': critterpediaMode == critterType.sea,
+    'fish': critterpediaMode == critterType.fish,
+    'bugs': critterpediaMode == critterType.bugs
+  }">
         <div class="row">
             <div class="col-sm-12">
 
@@ -27,19 +31,19 @@
                   <td>{{vendor}}'s Price</td>
                   <td class="text-right">{{selectedCritter.value['price']*1.5}} bells</td>
                 </tr> -->
-                    <tr *ngIf="critterpediaMode !== 'sea'">
+                    <tr *ngIf="critterpediaMode !== critterType.sea">
                         <td>Rarity</td>
                         <td class="text-right">{{selectedCritter.value['availability']['rarity']}}</td>
                     </tr>
-                    <tr *ngIf="critterpediaMode !== 'sea'">
+                    <tr *ngIf="critterpediaMode !== critterType.sea">
                         <td>Location</td>
                         <td class="text-right">{{selectedCritter.value['availability']['location']}}</td>
                     </tr>
-                    <tr *ngIf="critterpediaMode !== 'bugs'">
+                    <tr *ngIf="critterpediaMode !== critterType.bugs">
                         <td>Shadow Size</td>
                         <td class="text-right">{{selectedCritter.value['shadow']}}</td>
                     </tr>
-                    <tr *ngIf="critterpediaMode === 'sea'">
+                    <tr *ngIf="critterpediaMode === critterType.sea">
                         <td>Speed</td>
                         <td class="text-right">{{selectedCritter.value['speed']}}</td>
                     </tr>

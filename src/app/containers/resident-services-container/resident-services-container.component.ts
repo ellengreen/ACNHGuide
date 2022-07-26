@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NookipediaService } from 'src/app/shared/nookipedia.service';
+import { DataService } from 'src/app/shared/data.service';
 
 @Component({
   selector: 'app-resident-services-container',
@@ -10,10 +10,10 @@ import { NookipediaService } from 'src/app/shared/nookipedia.service';
 export class ResidentServicesContainerComponent implements OnInit {
   villagersList: [any];
   getMode = 'villagers'
-  constructor(private nookipediaService: NookipediaService, private dialog: MatDialog) { }
+  constructor(private dataService: DataService, private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.nookipediaService.GET(this.getMode).subscribe((villagersList: any) => {
+    this.dataService.GET(this.getMode).subscribe((villagersList: any) => {
       this.villagersList = villagersList;
     });
   }
