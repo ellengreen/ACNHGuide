@@ -1,7 +1,7 @@
-import { Component, Input, OnChanges, OnInit } from '@angular/core';
-import { MatChipSelectionChange } from '@angular/material/chips';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CritterType } from 'src/app/shared/enums/critter-type.enum';
+import { Critter } from 'src/app/shared/interfaces/critter';
 import { CritterInfoDialogComponent } from '../critter-info-dialog/critter-info-dialog.component';
 
 @Component({
@@ -11,29 +11,17 @@ import { CritterInfoDialogComponent } from '../critter-info-dialog/critter-info-
 })
 export class CritterpediaTableComponent implements OnInit {
 
-  @Input() critterpediaMode: CritterType;
-  @Input() critters: CritterType;
+  @Input() critterpediaMode: CritterType = CritterType.bugs;
+  @Input() critterList: Critter[];
 
-  // critters: any;
-  selectedCritter: any;
+  selectedCritter: Critter;
 
   constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
-    this.critterpediaMode = CritterType.bugs;
   }
 
-  onSelect(selectedCritter) {
-    this.selectedCritter = selectedCritter;
-    this.openCritterInfoDialog(selectedCritter);
-
-  }
-
-  onFilterSelected(event: MatChipSelectionChange) {
-    console.log(event)
-  }
-
-  openCritterInfoDialog(critter) {
+  openCritterInfoDialog(critter: Critter) {
     this.dialog.open(CritterInfoDialogComponent, {
       data: {
         selectedCritter: critter,

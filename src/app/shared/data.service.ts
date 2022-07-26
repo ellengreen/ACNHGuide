@@ -10,7 +10,7 @@ export class DataService {
   constructor(private httpClient: HttpClient) { }
 
   GET(type: CritterType | any) {
-    return this.httpClient.get(`http://acnhapi.com/v1/${type}`)
+    return this.httpClient.get(`http://acnhapi.com/v1/${type}`);
   }
 
 

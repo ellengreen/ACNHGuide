@@ -1,10 +1,10 @@
 <div class="scrollable-container">
   <div class="critterpedia-container container">
     <div class="row">
-      <div class="col-sm-2" *ngFor="let c of critters | keyvalue">
-        <img [ngClass]="{'selected': c === selectedCritter}" class="icon"
-          src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{c.value['id']}}" (click)="onSelect(c)">
-        <p>{{c.value['name']['name-USen'] | titlecase}}</p>
+      <div class="col-sm-2" *ngFor="let critter of critterList | keyvalue">
+        <img [ngClass]="{'selected': critter === selectedCritter}" class="icon"
+          src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{critter.value['id']}}" (click)="openCritterInfoDialog(critter)">
+        <p>{{critter.value['name'] | titlecase}}</p>
       </div>
     </div>
   </div>

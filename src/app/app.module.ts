@@ -41,6 +41,7 @@ import { ResidentServicesContainerComponent } from './containers/resident-servic
 import { ResidentServicesComponent } from './components/resident-services/resident-services.component';
 import { VillagerInfoDialogComponent } from './components/villager-info-dialog/villager-info-dialog.component';
 import { CritterpediaContainerComponent } from './containers/critterpedia-container.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { CritterpediaContainerComponent } from './containers/critterpedia-contai
     MatTabsModule,
     MatCardModule,
     MatChipsModule,
-    MatButtonModule
+    MatButtonModule,
+    NgbModule,
   ],
   providers: [AuthenticationService, DatePipe, KeyValuePipe, HttpClientModule],
   bootstrap: [AppComponent]
