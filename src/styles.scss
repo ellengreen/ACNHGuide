@@ -1,5 +1,5 @@
 $primary-blue: #007bff;
-$aqua: #8DDAC1;
+$aqua: #8ddac1;
 $icon-grey: #f0f0f0;
 
 .footer {
@@ -16,7 +16,7 @@ $icon-grey: #f0f0f0;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
 }
-  
+
 .card-custom .card-title {
   margin-bottom: 2rem;
   font-weight: 300;
@@ -26,12 +26,12 @@ $icon-grey: #f0f0f0;
 .card-custom .card-body {
   padding: 2rem;
 }
-  
+
 .form-signin .btn {
   font-size: 80%;
   border-radius: 5rem;
   border: none;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   font-weight: bold;
   padding: 1rem;
   transition: all 0.2s;
@@ -45,52 +45,65 @@ p {
   font-weight: 600;
 }
 
-
 mat-card {
   background-color: #fff !important;
 }
-  
-  
-.scroll { 
-    overflow-y: scroll; 
+
+.scroll {
+  overflow-y: scroll;
 }
-    
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scroll::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
-    
+
 /* Hide scrollbar for IE and Edge */
 .scroll {
-    -ms-overflow-style: none;
+  -ms-overflow-style: none;
 }
-  
-  
-  @media only screen and (max-width: 700px) {
-    .footer {
-      display: none;
-    }
-  
-    .key {
-      margin-left: 0px;
-    }
-  
-    .dot, .dot1, .dot2 {
-      height: 1em;
-      width: 1em;
-      margin: 10px;
-    }
+
+@media only screen and (max-width: 700px) {
+  .footer {
+    display: none;
   }
-html, body { height: 100%; }
-body { margin: 0; font-family: "Nunito", sans-serif; }
+
+  .key {
+    margin-left: 0px;
+  }
+
+  .dot,
+  .dot1,
+  .dot2 {
+    height: 1em;
+    width: 1em;
+    margin: 10px;
+  }
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Nunito", sans-serif;
+}
 
 .mat-dialog-container {
-  background-color: #F6F4E5;
+  background-color: #f6f4e5;
   border-radius: 20% !important;
 }
 
 .critter-dialog .mat-dialog-container {
-  background-color: #F6F4E5;
+  background-color: #f6f4e5;
+  // background-color: #BBEAE0;
+  padding: 1rem;
+  color: white;
+  border-radius: 1% !important;
+}
+
+.villager-dialog .mat-dialog-container {
+  background-color: #f6f4e5;
   // background-color: #BBEAE0;
   padding: 1rem;
   color: white;

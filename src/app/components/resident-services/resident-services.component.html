@@ -1,0 +1,11 @@
+<div class="scrollable-container">
+    <div class="critterpedia-container container">
+        <div class="row">
+            <div class="col-sm-2" *ngFor="let villager of villagersList | keyvalue">
+                <img [ngClass]="{'selected': villager === selectedVillager}" class="icon"
+                    src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{villager.value['id']}}" (click)="onSelect(villager)">
+                <p>{{villager.value['name']['name-USen'] | titlecase}}</p>
+            </div>
+        </div>
+    </div>
+</div>

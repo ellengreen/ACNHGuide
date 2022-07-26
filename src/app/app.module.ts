@@ -38,6 +38,9 @@ import { CritterpediaTableComponent } from './critterpedia-table/critterpedia-ta
 import { PassportComponent } from './passport/passport.component';
 import { MuseumComponent } from './museum/museum.component';
 import { CritterInfoDialogComponent } from './critter-info-dialog/critter-info-dialog.component';
+import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
+import { ResidentServicesComponent } from './components/resident-services/resident-services.component';
+import { VillagerInfoDialogComponent } from './components/villager-info-dialog/villager-info-dialog.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { CritterInfoDialogComponent } from './critter-info-dialog/critter-info-d
     CritterpediaTableComponent,
     PassportComponent,
     MuseumComponent,
-    CritterInfoDialogComponent
+    CritterInfoDialogComponent,
+    ResidentServicesContainerComponent,
+    ResidentServicesComponent,
+    VillagerInfoDialogComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

@@ -9,6 +9,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { PassportComponent } from './passport/passport.component';
 import { MuseumComponent } from './museum/museum.component';
 import { EventsComponent } from './dashboard/events/events.component';
+import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -16,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'critterpedia', component: CritterpediaMainComponent },
-  { path: 'villagers', component: VillagersComponent},
+  { path: 'villagers', component: ResidentServicesContainerComponent},
   { path: 'passport', component: PassportComponent},
   { path: 'events', component: EventsComponent},
   { path: 'museum', component: MuseumComponent}

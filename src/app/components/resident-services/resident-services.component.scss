@@ -1,0 +1,84 @@
+// body {
+//     overflow: hidden;
+// }
+.scrollable-container {
+    overflow-y: scroll;
+    height: 70vh;
+    .container {
+        max-width: 100%;
+    }
+    .icon {
+        margin-left: 22.5%;
+        cursor: pointer;
+    }
+}
+// .critterpedia-container {
+//     margin-top: 90px;
+//     width: 100%;
+//     display: grid;
+//     grid-template-columns: 1fr;
+
+//     .body {
+//         display: grid;
+//         grid-template-columns: 90% 1fr;
+//         grid-column-gap: 10%;
+//         overflow: hidden;
+//     }
+
+//     .critter-grid {
+//         overflow-y: scroll;
+//         height: 65vh;
+
+//         p {
+//             color: black;
+//         }
+
+//         .critterpedia-filter {
+//             margin-bottom: 2rem;
+//         }
+
+//         .gridx {
+//             display: grid;
+//             grid-template-columns: repeat(6, 90px);
+//             justify-items: stretch;
+//             align-content: center;
+//             align-items: stretch;
+//             column-gap: 50px;
+
+//             .innerGrid {
+//                 display: grid;
+//             }
+
+.selected {
+    background-color: lightgoldenrodyellow;
+    border-radius: 40px;
+}
+
+//             .innerGrid:hover {
+//                 transform: scale(1.1);
+//                 cursor: pointer;
+//             }
+//         }
+//     }
+
+//     .selected-critter {
+//         width: 100%;
+//         height: 65vh;
+//         margin-top: 5rem;
+
+//         h1 {
+//             font-weight: 600;
+//             font-family: "Nunito",sans-serif;
+//         }
+
+//         .table td {
+//             border: 0;
+//         }
+//         .selected-icon {
+//             border-radius: 50%;
+//             background-color: #5968ec;
+//             flex: auto;
+//         }
+
+//     }
+// }

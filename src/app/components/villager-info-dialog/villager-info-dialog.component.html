@@ -1,0 +1,42 @@
+<div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center critter-header">{{selectedVillager.value['name']['name-USen'] | titlecase}}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <ng-container class="meta">
+                <img class="meta"
+                    src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.value['id']}}">
+                <button type="button" class="meta">Resident</button>
+                <!-- <button type="button" class="meta">Donated</button> -->
+            </ng-container>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-7">
+            <table class="table">
+                <tr>
+                    <td>Species</td>
+                    <td class="text-right">{{selectedVillager.value['species']}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td class="text-right">{{selectedVillager.value['gender']}}</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td class="text-right">{{selectedVillager.value['birthday-string']}}</td>
+                </tr>
+                <tr>
+                    <td>Personality</td>
+                    <td class="text-right">{{selectedVillager.value['personality']}}</td>
+                </tr>
+                <tr>
+                    <td>Catch Phrase</td>
+                    <td class="text-right">{{selectedVillager.value['catch-phrase']}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
