@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Critter } from '../shared/interfaces/critter';
+import { Villager } from '../shared/interfaces/villager';
 
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,27 @@ export class TransformService {
     });
 
     return newCritters
+  }
+
+  convertToVillager(villagers: any): Villager[] {
+    let villagerList: Villager[] = [];
+    Object.keys(villagers).forEach(key => {
+      villagerList.push({
+        id: villagers[key]['id'],
+        name: villagers[key]['name']['name-USen'],
+        birthday: villagers[key]['birthday'],
+        birthdayString: villagers[key]['birthday-string'],
+        catchPhrase: villagers[key]['catch-phrase'],
+        gender: villagers[key]['gender'],
+        hobby: villagers[key]['hobby'],
+        iconURI: villagers[key]['icon_uri'],
+        imageURI: villagers[key]['image_uri'],
+        personality: villagers[key]['personality'],
+        saying: villagers[key]['saying'],
+        species: villagers[key]['species']
+      })
+    });
+
+    return villagerList;
   }
 }

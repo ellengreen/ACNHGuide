@@ -1,14 +1,14 @@
 <div class="bg-image">
     <div class="row">
         <div class="col-sm-12">
-            <h1 class="text-center critter-header">{{selectedVillager.value['name']['name-USen'] | titlecase}}</h1>
+            <h1 class="text-center critter-header">{{selectedVillager.name | titlecase}}</h1>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4">
             <ng-container class="meta">
                 <img class="meta"
-                    src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.value['id']}}">
+                    src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.id}}">
                 <button type="button" class="meta" (click)="addVillager(selectedVillager)">I live here!</button>
                 <!-- <button type="button" class="meta">Donated</button> -->
             </ng-container>
@@ -18,23 +18,31 @@
             <table class="table">
                 <tr>
                     <td>Species</td>
-                    <td class="text-right">{{selectedVillager.value['species']}}</td>
+                    <td class="text-right">{{selectedVillager.species}}</td>
                 </tr>
                 <tr>
                     <td>Gender</td>
-                    <td class="text-right">{{selectedVillager.value['gender']}}</td>
+                    <td class="text-right">{{selectedVillager.gender}}</td>
                 </tr>
                 <tr>
                     <td>Birthday</td>
-                    <td class="text-right">{{selectedVillager.value['birthday-string']}}</td>
+                    <td class="text-right">{{selectedVillager.birthdayString}}</td>
                 </tr>
                 <tr>
                     <td>Personality</td>
-                    <td class="text-right">{{selectedVillager.value['personality']}}</td>
+                    <td class="text-right">{{selectedVillager.personality}}</td>
                 </tr>
                 <tr>
                     <td>Catch Phrase</td>
-                    <td class="text-right">{{selectedVillager.value['catch-phrase']}}</td>
+                    <td class="text-right">{{selectedVillager.catchPhrase}}</td>
+                </tr>
+                <tr>
+                    <td>Saying</td>
+                    <td class="text-right">{{selectedVillager.saying}}</td>
+                </tr>
+                <tr>
+                    <td>Hobby</td>
+                    <td class="text-right">{{selectedVillager.hobby}}</td>
                 </tr>
             </table>
         </div>

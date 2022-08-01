@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Villager } from 'src/app/shared/interfaces/villager';
 import { VillagerInfoDialogComponent } from '../villager-info-dialog/villager-info-dialog.component';
 
 @Component({
@@ -9,18 +10,18 @@ import { VillagerInfoDialogComponent } from '../villager-info-dialog/villager-in
 })
 export class ResidentServicesComponent implements OnInit {
 
-  @Input() villagersList: any;
+  @Input() villagersList: Villager[];
   // @Output() selectedVillager: any;
   @Output() addVillagerToCollection = new EventEmitter<any>();
 
-  selectedVillager: any;
+  selectedVillager: Villager;
   critterpediaMode = 'villagers';
   constructor(private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  openVillagerInfoDialog(villager) {
+  openVillagerInfoDialog(villager: Villager) {
     const dialogRef = this.dialog.open(VillagerInfoDialogComponent, {
       data: {
         selectedVillager: villager,

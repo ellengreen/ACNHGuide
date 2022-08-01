@@ -4,7 +4,7 @@
             <div class="col-sm-2" *ngFor="let villager of villagersList | keyvalue">
                 <img [ngClass]="{'selected': villager === selectedVillager}" class="icon"
                     src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{villager.value['id']}}" (click)="openVillagerInfoDialog(villager)">
-                <p>{{villager.value['name']['name-USen'] | titlecase}}</p>
+                <p>{{villager.value['name'] | titlecase}}</p>
             </div>
         </div>
     </div>

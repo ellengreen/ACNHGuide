@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TransformService } from 'src/app/services/transform.service';
 import { DataService } from 'src/app/shared/data.service';
+import { Villager } from 'src/app/shared/interfaces/villager';
 
 @Component({
   selector: 'app-resident-services-container',
@@ -8,13 +10,14 @@ import { DataService } from 'src/app/shared/data.service';
   styleUrls: ['./resident-services-container.component.scss']
 })
 export class ResidentServicesContainerComponent implements OnInit {
-  villagersList: [any];
+  villagersList: Villager[];
   getMode = 'villagers'
-  constructor(private dataService: DataService, private dialog: MatDialog) { }
+  constructor(private dataService: DataService, private dialog: MatDialog, private transformService: TransformService) { }
 
   ngOnInit() {
-    this.dataService.GET(this.getMode).subscribe((villagersList: any) => {
-      this.villagersList = villagersList;
+    this.dataService.GET('villagers').subscribe((villagersList: any) => {
+      this.villagersList = this.transformService.convertToVillager(villagersList);
+      console.log(this.villagersList)
     });
   }
   // villagers: any;

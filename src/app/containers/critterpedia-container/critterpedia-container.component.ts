@@ -3,9 +3,9 @@ import { DataService } from 'src/app/shared/data.service';
 import { FirebaseService } from 'src/app/shared/firebase.service';
 import { CurrentDateService } from 'src/app/shared/current-date.service';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { CritterType } from '../shared/enums/critter-type.enum';
-import { Critter } from '../shared/interfaces/critter';
-import { TransformService } from '../services/transform.service';
+import { CritterType } from '../../shared/enums/critter-type.enum';
+import { Critter } from '../../shared/interfaces/critter';
+import { TransformService } from '../../services/transform.service';
 
 @Component({
   selector: 'app-critterpedia-container',

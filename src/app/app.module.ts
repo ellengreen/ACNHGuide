@@ -40,8 +40,8 @@ import { CritterInfoDialogComponent } from './components/critter-info-dialog/cri
 import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
 import { ResidentServicesComponent } from './components/resident-services/resident-services.component';
 import { VillagerInfoDialogComponent } from './components/villager-info-dialog/villager-info-dialog.component';
-import { CritterpediaContainerComponent } from './containers/critterpedia-container.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CritterpediaContainerComponent } from './containers/critterpedia-container/critterpedia-container.component';
 
 @NgModule({
   declarations: [

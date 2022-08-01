@@ -8,7 +8,7 @@ import { PassportComponent } from './passport/passport.component';
 import { MuseumComponent } from './museum/museum.component';
 import { EventsComponent } from './dashboard/events/events.component';
 import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
-import { CritterpediaContainerComponent } from './containers/critterpedia-container.component';
+import { CritterpediaContainerComponent } from './containers/critterpedia-container/critterpedia-container.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
