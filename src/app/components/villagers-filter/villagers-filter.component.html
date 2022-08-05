@@ -1,0 +1,32 @@
+<form [formGroup]="myForm">
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Species
+    </button>
+    <div class="species-dropdown-menu dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="form-check" *ngFor="let species of speciesList">
+                <input class="form-check-input" type="checkbox" value="species" id="species" formArrayName="species" (click)="updateForm()"/>
+                <label class="form-check-label" for="defaultCheck1">
+                    {{species}}
+                </label>
+            </div>
+    </div>
+</div>
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        Gender
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div class="form-check" *ngFor="let gender of gendersList">
+                <input class="form-check-input" type="checkbox" value="gender" id="gender" formArrayName="gender" (click)="updateForm()"/>
+                <label class="form-check-label" for="defaultCheck1">
+                    {{gender}}
+                </label>
+            </div>
+    </div>
+</div>
+</form>

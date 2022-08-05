@@ -42,6 +42,7 @@ import { ResidentServicesComponent } from './components/resident-services/reside
 import { VillagerInfoDialogComponent } from './components/villager-info-dialog/villager-info-dialog.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CritterpediaContainerComponent } from './containers/critterpedia-container/critterpedia-container.component';
+import { VillagersFilterComponent } from './components/villagers-filter/villagers-filter.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { CritterpediaContainerComponent } from './containers/critterpedia-contai
     CritterInfoDialogComponent,
     ResidentServicesContainerComponent,
     ResidentServicesComponent,
-    VillagerInfoDialogComponent
+    VillagerInfoDialogComponent,
+    VillagersFilterComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

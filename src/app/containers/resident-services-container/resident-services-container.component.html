@@ -2,7 +2,7 @@
     <app-welcome></app-welcome>
 </header>
 
-
+<app-villagers-filter (filterChanged)="onFilter($event)"></app-villagers-filter>
 <div class="villager-container">
     <app-resident-services [villagersList]="villagersList"></app-resident-services>
 </div>

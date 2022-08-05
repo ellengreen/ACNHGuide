@@ -70,6 +70,9 @@ export class ResidentServicesContainerComponent implements OnInit {
 
   // filteredVillagers = [];
 
+  onFilter(filter) {
+    console.log(filter)
+  }
   // filter(profileForm){
   //   this.filteredVillagers=[];
   //   Object.keys(this.allVillagers).forEach(key=>{
