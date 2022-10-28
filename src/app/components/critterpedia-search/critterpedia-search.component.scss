@@ -1,0 +1,31 @@
+.critterpedia-search-container {
+    display: inline-block;
+    margin-top: -3rem;
+    position: absolute;
+
+    .critter-mode {
+        display: inline-block;
+        margin-left: 1.5rem;
+        button {
+            background-color: lightsteelblue;
+            border: 0px;
+            border-radius: 50%;
+            margin: 10px;
+            height: 100px;
+            width: 100px;
+
+            img {
+                width: 80%;
+            }
+
+            img:hover {
+                transform: scale(1.1);
+            }
+        }
+    }
+
+    .critter-search {
+        display: inline-block;
+        margin-left: 2rem;
+    }
+}

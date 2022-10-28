@@ -1,4 +1,4 @@
-<div [ngClass]="{
+<!-- <div [ngClass]="{
     'sea': critterpediaMode == critterType.sea,
     'fish': critterpediaMode == critterType.fish,
     'bugs': critterpediaMode == critterType.bugs
@@ -11,7 +11,7 @@
     <div class="row">
         <div class="col-sm-4">
             <ng-container class="meta">
-                <img class="meta" src="{{selectedCritter.iconURI}}">
+                <img class="critter-icon" src="{{selectedCritter.imageURI}}">
                 <button type="button" class="meta">Caught</button>
                 <button type="button" class="meta">Donated</button>
             </ng-container>
@@ -21,44 +21,114 @@
             <table class="table">
                 <tr>
                     <td>Selling Price</td>
-                    <td class="text-right">{{selectedCritter.price}} bells</td>
+                    <td>{{selectedCritter.price}} bells</td>
                 </tr>
                 <tr *ngIf="critterpediaMode !== critterType.sea">
                     <td>Rarity</td>
-                    <td class="text-right">{{selectedCritter['availability']['rarity']}}</td>
+                    <td>{{selectedCritter['availability']['rarity']}}</td>
                 </tr>
                 <tr *ngIf="critterpediaMode !== critterType.sea">
                     <td>Location</td>
-                    <td class="text-right">{{selectedCritter['availability']['location']}}</td>
+                    <td>{{selectedCritter['availability']['location']}}</td>
                 </tr>
                 <tr *ngIf="critterpediaMode !== critterType.bugs">
                     <td>Shadow Size</td>
-                    <td class="text-right">{{selectedCritter['shadow']}}</td>
+                    <td>{{selectedCritter['shadow']}}</td>
                 </tr>
                 <tr *ngIf="critterpediaMode === critterType.sea">
                     <td>Speed</td>
-                    <td class="text-right">{{selectedCritter['speed']}}</td>
+                    <td>{{selectedCritter['speed']}}</td>
                 </tr>
                 <tr *ngIf="!selectedCritter['availability']['isAllDay']">
                     <td>Available Times</td>
-                    <td class="text-right">{{selectedCritter['availability']['time']}}</td>
+                    <td>{{selectedCritter['availability']['time']}}</td>
                 </tr>
                 <tr *ngIf="selectedCritter['availability']['isAllDay']">
                     <td>Available Times</td>
-                    <td class="text-right">All Day</td>
+                    <td>All Day</td>
                 </tr>
                 <tr *ngIf="!selectedCritter['availability']['isAllYear']">
                     <td>Northern Months</td>
-                    <td class="text-right">{{selectedCritter['availability']['northernMonthString']}}</td>
+                    <td>{{selectedCritter['availability']['northernMonthString']}}</td>
                 </tr>
                 <tr *ngIf="!selectedCritter['availability']['isAllYear']">
                     <td>Southern Months</td>
-                    <td class="text-right">{{selectedCritter['availability']['southernMonthString']}}</td>
+                    <td>{{selectedCritter['availability']['southernMonthString']}}</td>
                 </tr>
                 <tr *ngIf="selectedCritter['availability']['isAllYear']">
                     <td>Months</td>
-                    <td class="text-right">All Year</td>
+                    <td>All Year</td>
                 </tr>
+            </table>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+
+    <!-- <div class="row"> -->
+    <!-- <div class="header">
+        <h1 class="text-center critter-header">{{selectedCritter.name | titlecase}}</h1>
+    </div> -->
+
+    <div class="x">
+        <div class="critter-icon">
+            <img class="critter-icon" src="{{selectedCritter.iconURI}}">
+            <div class="row">
+                <button type="button" class="btn">Caught</button>
+                <button type="button" class="btn">Donated</button>
+
+            </div>
+        </div>
+
+        <div>
+            <div class="header">
+                <h1 class="text-center critter-header">{{selectedCritter.name | titlecase}}</h1>
+            </div>
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th>Selling Price</th>
+                        <td>{{selectedCritter.price}} bells</td>
+                    </tr>
+                    <tr *ngIf="critterpediaMode !== critterType.sea">
+                        <th>Rarity</th>
+                        <td>{{selectedCritter['availability']['rarity']}}</td>
+                    </tr>
+                    <tr *ngIf="critterpediaMode !== critterType.sea">
+                        <th>Location</th>
+                        <td>{{selectedCritter['availability']['location']}}</td>
+                    </tr>
+                    <tr *ngIf="critterpediaMode !== critterType.bugs">
+                        <th>Shadow Size</th>
+                        <td>{{selectedCritter['shadow']}}</td>
+                    </tr>
+                    <tr *ngIf="critterpediaMode === critterType.sea">
+                        <th>Speed</th>
+                        <td>{{selectedCritter['speed']}}</td>
+                    </tr>
+                    <tr *ngIf="!selectedCritter['availability']['isAllDay']">
+                        <th>Available Times</th>
+                        <td>{{selectedCritter['availability']['time']}}</td>
+                    </tr>
+                    <tr *ngIf="selectedCritter['availability']['isAllDay']">
+                        <th>Available Times</th>
+                        <td>All Day</td>
+                    </tr>
+                    <tr *ngIf="!selectedCritter['availability']['isAllYear']">
+                        <th>Northern Months</th>
+                        <td>{{selectedCritter['availability']['northernMonthString']}}</td>
+                        <!-- <td>{{split(selectedCritter['availability']['northernMonthArray'])}}</td> -->
+                    </tr>
+                    <tr *ngIf="!selectedCritter['availability']['isAllYear']">
+                        <th>Southern Months</th>
+                        <td>{{selectedCritter['availability']['southernMonthString']}}</td>
+                    </tr>
+                    <tr *ngIf="selectedCritter['availability']['isAllYear']">
+                        <th>Months</th>
+                        <td>All Year</td>
+                    </tr>
+                </tbody>
             </table>
         </div>
     </div>

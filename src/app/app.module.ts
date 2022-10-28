@@ -43,6 +43,12 @@ import { VillagerInfoDialogComponent } from './components/villager-info-dialog/v
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CritterpediaContainerComponent } from './containers/critterpedia-container/critterpedia-container.component';
 import { VillagersFilterComponent } from './components/villagers-filter/villagers-filter.component';
+import { CritterpediaSearchComponent } from './components/critterpedia-search/critterpedia-search.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatOptionModule } from '@angular/material/core';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -67,7 +73,8 @@ import { VillagersFilterComponent } from './components/villagers-filter/villager
     ResidentServicesContainerComponent,
     ResidentServicesComponent,
     VillagerInfoDialogComponent,
-    VillagersFilterComponent
+    VillagersFilterComponent,
+    CritterpediaSearchComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -86,7 +93,11 @@ import { VillagersFilterComponent } from './components/villagers-filter/villager
     MatCardModule,
     MatChipsModule,
     MatButtonModule,
-    NgbModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatAutocompleteModule,
+    MatInputModule,
+    NgbTypeaheadModule
   ],
   providers: [AuthenticationService, DatePipe, KeyValuePipe, HttpClientModule],
   bootstrap: [AppComponent]

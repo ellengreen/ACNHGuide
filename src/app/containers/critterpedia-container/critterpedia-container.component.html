@@ -2,19 +2,10 @@
   <app-welcome></app-welcome>
 </header>
 
-<div class="critter-mode">
-  <button class="critter-button" (click)="switchTabs(critterType.bugs)">
-    <img class="iconx" src="assets/icons/bug-transparent.png">
-  </button>
-  <button class="critter-button" (click)="switchTabs(critterType.fish)">
-    <img class="iconx" src="assets/icons/fish-transparent.png">
-  </button>
-
-  <button class="critter-button" (click)="switchTabs(critterType.sea)">
-    <img class="iconx" src="assets/icons/deep-transparent.png">
-  </button>
-</div>
+<app-critterpedia-search [critterList]="critterList" (critterTypeClicked)="onTabsSwitched($event)">
+</app-critterpedia-search>
 
 <div class="critterpedia-container">
-  <app-critterpedia-table [critterpediaMode]="critterpediaMode" [critterList]="critterList"></app-critterpedia-table>
+  <app-critterpedia-table [critterpediaMode]="critterpediaMode" [critterList]="critterList">
+  </app-critterpedia-table>
 </div>

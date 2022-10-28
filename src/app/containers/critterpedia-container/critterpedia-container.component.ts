@@ -42,7 +42,7 @@ export class CritterpediaContainerComponent implements OnInit {
     })
   }
 
-  switchTabs(critterType: CritterType) {
+  onTabsSwitched(critterType: CritterType) {
     this.critterpediaMode = critterType;
     this.getCritterList(critterType);
   }
