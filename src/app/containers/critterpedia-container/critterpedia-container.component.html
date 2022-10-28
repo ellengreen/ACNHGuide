@@ -2,10 +2,11 @@
   <app-welcome></app-welcome>
 </header>
 
-<app-critterpedia-search [critterList]="critterList" (critterTypeClicked)="onTabsSwitched($event)">
+<app-critterpedia-search [critterList]="filteredCritterList" (critterTypeClicked)="onTabsSwitched($event)"
+  (availableNowClicked)="onAvailableNowClicked($event)">
 </app-critterpedia-search>
 
 <div class="critterpedia-container">
-  <app-critterpedia-table [critterpediaMode]="critterpediaMode" [critterList]="critterList">
+  <app-critterpedia-table [critterpediaMode]="critterpediaMode" [critterList]="filteredCritterList">
   </app-critterpedia-table>
 </div>

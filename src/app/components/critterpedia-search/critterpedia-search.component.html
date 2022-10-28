@@ -1,13 +1,15 @@
 <div class="critterpedia-search-container">
     <div class="critter-mode">
-        <button class="critter-button" (click)="switchTabs(critterType.bugs)">
-            <img class="iconx" src="assets/icons/bug-transparent.png">
-        </button>
-        <button class="critter-button" (click)="switchTabs(critterType.fish)">
+        <button [ngClass]="{'activeMode': critterType == 'fish'}" class="critter-button" (click)="switchTabs('fish')"
+            matTooltip="fish" [matTooltipPosition]="'above'">
             <img class="iconx" src="assets/icons/fish-transparent.png">
         </button>
-
-        <button class="critter-button" (click)="switchTabs(critterType.sea)">
+        <button [ngClass]="{'activeMode': critterType == 'bugs'}" class="critter-button" (click)="switchTabs('bugs')"
+            matTooltip="bugs" [matTooltipPosition]="'above'">
+            <img class="iconx" src="assets/icons/bug-transparent.png">
+        </button>
+        <button [ngClass]="{'activeMode': critterType == 'sea'}" class="critter-button" (click)="switchTabs('sea')"
+            matTooltip="sea creatures" [matTooltipPosition]="'above'">
             <img class="iconx" src="assets/icons/deep-transparent.png">
         </button>
     </div>
@@ -15,5 +17,12 @@
     <div class="critter-search">
         <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search"
             placeholder="search" />
+
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                (change)="availableNow($event)">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Available Now</label>
+        </div>
     </div>
+
 </div>

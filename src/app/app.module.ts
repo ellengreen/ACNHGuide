@@ -49,6 +49,8 @@ import { MatOptionModule } from '@angular/material/core';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -97,7 +99,11 @@ import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
     MatOptionModule,
     MatAutocompleteModule,
     MatInputModule,
-    NgbTypeaheadModule
+    NgbTypeaheadModule,
+    MatButtonToggleModule,
+    MatTooltipModule
+
+    // MAKE MATERIAL MODULE 
   ],
   providers: [AuthenticationService, DatePipe, KeyValuePipe, HttpClientModule],
   bootstrap: [AppComponent]

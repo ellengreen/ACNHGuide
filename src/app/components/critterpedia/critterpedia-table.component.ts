@@ -11,7 +11,7 @@ import { CritterInfoDialogComponent } from '../critter-info-dialog/critter-info-
 })
 export class CritterpediaTableComponent implements OnInit {
 
-  @Input() critterpediaMode: CritterType = CritterType.bugs;
+  @Input() critterpediaMode: CritterType = CritterType.fish;
   @Input() critterList: Critter[];
 
   selectedCritter: Critter;

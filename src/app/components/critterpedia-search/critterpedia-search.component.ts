@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Observable, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-import { CritterType } from 'src/app/shared/enums/critter-type.enum';
 import { Critter } from 'src/app/shared/interfaces/critter';
 
 @Component({
@@ -12,9 +11,10 @@ import { Critter } from 'src/app/shared/interfaces/critter';
 export class CritterpediaSearchComponent implements OnChanges, OnInit {
   @Input() critterList: Critter[];
 
-  @Output() critterTypeClicked: EventEmitter<CritterType> = new EventEmitter<CritterType>();
+  @Output() critterTypeClicked: EventEmitter<string> = new EventEmitter<string>();
+  @Output() availableNowClicked: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  critterType = CritterType;
+  critterType: string = 'fish';
   searchableCritterNames: string[] = []
   model: string;
 
@@ -26,8 +26,11 @@ export class CritterpediaSearchComponent implements OnChanges, OnInit {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.critterList) { this.searchableCritterNames = this.extractCritterNames(this.critterList) };
+
   }
 
+  // "1 result available" etc showing up??
+  // still need to actually filter results with the outcome of this
 
   search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
     text$.pipe(
@@ -44,11 +47,12 @@ export class CritterpediaSearchComponent implements OnChanges, OnInit {
     });
   }
 
-  onTabsSwitched(critterType: CritterType) {
-    console.log(critterType)
+  switchTabs(critterType: string) {
+    this.critterType = critterType;
+    this.critterTypeClicked.emit(critterType);
   }
 
-  switchTabs(critterType: CritterType) {
-    this.critterTypeClicked.emit(critterType);
+  availableNow(event) {
+    this.availableNowClicked.emit(event.target.checked);
   }
 }

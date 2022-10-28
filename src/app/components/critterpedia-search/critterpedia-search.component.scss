@@ -7,7 +7,7 @@
         display: inline-block;
         margin-left: 1.5rem;
         button {
-            background-color: lightsteelblue;
+            background-color: darkseagreen;
             border: 0px;
             border-radius: 50%;
             margin: 10px;
@@ -22,10 +22,19 @@
                 transform: scale(1.1);
             }
         }
+        .activeMode {
+            background-color: ivory;
+            border: solid 3px darkseagreen;
+        }
     }
 
     .critter-search {
         display: inline-block;
         margin-left: 2rem;
+
+        .form-check-input:checked {
+            background-color: darkseagreen;
+            border-color: darkseagreen;
+        }
     }
 }

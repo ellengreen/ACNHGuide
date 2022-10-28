@@ -16,82 +16,64 @@ export class CritterpediaContainerComponent implements OnInit {
 
   constructor(private dataService: DataService, private db: FirebaseService, private ds: CurrentDateService, private afAuth: AngularFireAuth, private transformService: TransformService) { }
 
-  critterList: Critter[];
+  allCrittersList: Critter[];
+  filteredCritterList: Critter[];
 
   selectedCritter: Critter;
-  noUser: boolean;
-  critterpediaMode: CritterType = CritterType.bugs;
-  critterType = CritterType;
+  // noUser: boolean;
+  critterpediaMode: CritterType = CritterType.fish;
 
   ngOnInit(): void {
-    this.getCritterList(CritterType.bugs);
+    this.getCritterList(CritterType.fish);
   }
 
   getCritterList(critterType: CritterType): void {
     this.dataService.GET(critterType).subscribe((critters: any) => {
-      this.critterList = this.transformService.convertToCritter(critters);
+      this.allCrittersList = this.filteredCritterList = this.transformService.convertToCritter(critters);
     });
-
   }
 
-  load() {
-    this.afAuth.authState.subscribe(user => {
-      if (user) {
-        this.noUser = false;
-      } else { this.noUser = true }
-    })
-  }
+  // load() {
+  //   this.afAuth.authState.subscribe(user => {
+  //     if (user) {
+  //       this.noUser = false;
+  //     } else { this.noUser = true }
+  //   })
+  // }
 
   onTabsSwitched(critterType: CritterType) {
     this.critterpediaMode = critterType;
     this.getCritterList(critterType);
   }
 
-
-  showCurrent() {
-    this.catchableCritters();
-    this.critterList = this.thisMonth
+  onAvailableNowClicked(switchState: boolean) {
+    if (switchState) {
+      this.filteredCritterList = this.currentlyAvailable()
+    } else {
+      this.filteredCritterList = this.allCrittersList;
+    };
   }
 
-  hourMethod(id) {
-    return this.thisHour.some((item) => item.id == id);
+  currentlyAvailable(): Critter[] {
+    const currentMonth = this.ds.currentMonth;
+    const currentHour = this.ds.thisHour;
+    return this.allCrittersList.filter((critter: Critter) => {
+      return critter.availability.northernMonthArray.includes(currentMonth) && critter.availability.timeArray.includes(currentHour);
+    });
   }
 
-  currentMonth = this.ds.currentMonth;
-  hour = this.ds.thisHour;
-  thisHour = [];
-  thisMonth = [];
+  // aDupe: boolean;
+  // addFish(selectedCritter) {
+  //   this.db.addFish(selectedCritter);
+  //   this.aDupe = true;
+  // }
+  // addBugs(selectedCritter) {
+  //   this.db.addBug(selectedCritter);
+  //   this.aDupe = true;
+  // }
 
-  catchableCritters() {
-    this.thisMonth = [];
-    Object.keys(this.critterList).forEach(key => {
-      if (this.critterList[key]['availability']['month-array-northern'].includes(this.currentMonth)) {
-        this.thisMonth.push(this.critterList[key]);
-      }
-    })
-  }
-
-  currentlyAvailable() {
-    this.thisHour = [];
-    Object.keys(this.critterList).forEach(key => {
-      if (this.critterList[key]['availability']['time-array'].includes(this.hour) && (this.critterList[key]['availability']['month-array-northern'].includes(this.currentMonth))) {
-        this.thisHour.push(this.critterList[key]);
-      }
-    })
-  }
-
-  aDupe: boolean;
-  addFish(selectedCritter) {
-    this.db.addFish(selectedCritter);
-    this.aDupe = true;
-  }
-  addBugs(selectedCritter) {
-    this.db.addBug(selectedCritter);
-    this.aDupe = true;
-  }
-
-  duplicate = [];
-  loaded: any;
+  // duplicate = [];
+  // loaded: any;
   // dupe(selectedCritter: any) {
   //   if (this.fishView) {
   //     this.loaded = this.loadedFish
@@ -103,7 +85,7 @@ export class CritterpediaContainerComponent implements OnInit {
   //   })
   // }
 
-  id: any;
+  // id: any;
   // delete(selectedCritter) {
   //   this.id = selectedCritter['newID'];
   //   this.db.deleteCritter(this.id, this.critterType);
