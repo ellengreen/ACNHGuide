@@ -2,9 +2,17 @@
   <app-welcome></app-welcome>
 </header>
 
-<app-critterpedia-search [critterList]="filteredCritterList" (critterTypeClicked)="onTabsSwitched($event)"
-  (availableNowClicked)="onAvailableNowClicked($event)">
-</app-critterpedia-search>
+<div class="critterpedia-header-container">
+  <div class="banner">
+      <img src="./../../../assets/icons/chy.webp">
+      <span>Critterpedia</span>
+  </div>
+  
+  <app-critterpedia-search [critterList]="filteredCritterList" (critterTypeClicked)="onTabsSwitched($event)"
+    (availableNowClicked)="onAvailableNowClicked($event)">
+  </app-critterpedia-search>
+</div>
+
 
 <div class="critterpedia-container">
   <app-critterpedia-table [critterpediaMode]="critterpediaMode" [critterList]="filteredCritterList">

@@ -1,6 +1,6 @@
 .critterpedia-search-container {
     display: inline-block;
-    margin-top: -3rem;
+    margin-top: 0.5rem;
     position: absolute;
 
     .critter-mode {
@@ -35,6 +35,15 @@
         .form-check-input:checked {
             background-color: darkseagreen;
             border-color: darkseagreen;
+        }
+
+        .searchbar {
+            display: inline-block;
+            width: 15rem;
+            margin-right: 1rem;
+            background-color: ivory;
+            border-color: darkseagreen;
+            color: green;
         }
     }
 }

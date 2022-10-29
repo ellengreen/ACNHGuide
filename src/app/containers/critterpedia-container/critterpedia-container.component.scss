@@ -6,6 +6,31 @@ header {
     background-image: url(../../../assets/icons/banner-bg-rounded.png);
 }
 
+.critterpedia-header-container {
+    .banner {
+        display: inline-block;
+        width: 40%;
+        background-color: darkseagreen;
+        height: 8rem;
+        color: ivory;
+        border-radius: 0px 65px 65px 0px;
+
+        img {
+            height: 10rem;
+            margin-left: 2rem;
+        }
+
+        span {
+            font-size: 3rem;
+            margin-left: 3rem;
+        }
+    }
+
+    // .villager-filter {
+    //     display: inline-block;
+    //     margin-left: 5rem;
+    // }
+}
 .critterpedia-container {
     margin-left: 3rem;
     margin-right: 3rem;
