@@ -1,17 +1,52 @@
 <div class="bg-image">
     <div class="row">
-        <div class="col-sm-12">
-            <h1 class="text-center critter-header">{{selectedVillager.name | titlecase}}</h1>
+        <div class="col-4 left-side">
+            <img class="meta" src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.id}}">
+            <div class="critter-saying">{{selectedVillager.saying}}</div>
+            <!-- <ng-container class="meta">
+                <button type="button" class="meta" (click)="addVillager(selectedVillager)">I live here!</button>
+            </ng-container> -->
+        </div>
+        <div class="col-8 right-side">
+            <div class="banner">
+                <div class="critter-header">{{selectedVillager.name | titlecase}}</div>
+            </div>
+            <table class="table">
+                <tr>
+                    <td>Species</td>
+                    <td class="text-right">{{selectedVillager.species}}</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td class="text-right">{{selectedVillager.gender}}</td>
+                </tr>
+                <tr>
+                    <td>Birthday</td>
+                    <td class="text-right">{{selectedVillager.birthdayString}}</td>
+                </tr>
+                <tr>
+                    <td>Personality</td>
+                    <td class="text-right">{{selectedVillager.personality}}</td>
+                </tr>
+                <tr>
+                    <td>Catch Phrase</td>
+                    <td class="text-right">{{selectedVillager.catchPhrase}}</td>
+                </tr>
+                <!-- <tr>
+                    <td>Saying</td>
+                    <td class="text-right">{{selectedVillager.saying}}</td>
+                </tr> -->
+                <tr>
+                    <td>Hobby</td>
+                    <td class="text-right">{{selectedVillager.hobby}}</td>
+                </tr>
+            </table>
         </div>
     </div>
-    <div class="row">
+
+
+    <!-- <div class="row">
         <div class="col-sm-4">
-            <ng-container class="meta">
-                <img class="meta"
-                    src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.id}}">
-                <button type="button" class="meta" (click)="addVillager(selectedVillager)">I live here!</button>
-                <!-- <button type="button" class="meta">Donated</button> -->
-            </ng-container>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-7">
@@ -39,12 +74,12 @@
                 <tr>
                     <td>Saying</td>
                     <td class="text-right">{{selectedVillager.saying}}</td>
-                </tr>
+                </tr> 
                 <tr>
                     <td>Hobby</td>
                     <td class="text-right">{{selectedVillager.hobby}}</td>
                 </tr>
             </table>
         </div>
-    </div>
+    </div> -->
 </div>

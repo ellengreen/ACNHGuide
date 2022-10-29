@@ -2,7 +2,17 @@
     <app-welcome></app-welcome>
 </header>
 
-<app-villagers-filter (filterChanged)="onFilter($event)"></app-villagers-filter>
+<div class="resident-services-container">
+    <div class="banner">
+        <img src="./../../../assets/icons/giphy.gif">
+        <span>Resident Services</span>
+    </div>
+
+    <div class="villager-filter">
+        <app-villagers-filter (filterChanged)="onFilter($event)"></app-villagers-filter>
+    </div>
+</div>
+
 <div class="villager-container">
     <app-resident-services [villagersList]="villagersList"></app-resident-services>
 </div>

@@ -2,3 +2,41 @@
     height: 15rem;
     overflow: scroll;
 }
+
+.form {
+    display: inline-block;
+
+    button {
+        background-color: ivory;
+        border: none;
+        color: #febec7;
+    }
+    .dropdown {
+        display: inline-block;
+        margin-right: 1rem;
+    }
+
+    .dropdown-menu.show {
+        border: none;
+        background-color: ivory;
+    }
+
+    .dropdown-item {
+        color: pink;
+        cursor: pointer;
+    }
+    .searchbar {
+        display: inline-block;
+        width: 15rem;
+        margin-right: 1rem;
+        background-color: ivory;
+        border-color: #febec7;
+        color: palevioletred;
+    }
+
+    .clearButton {
+        display: inline-block;
+        background-color: #febec7;
+        color: ivory;
+    }
+}

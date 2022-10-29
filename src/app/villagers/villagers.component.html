@@ -2,48 +2,6 @@
     <app-welcome></app-welcome>
   </header>
 
-<div class="villagers-container">
-    <div class="body">
-        <div class="content">
-            <div class="villager-grid">
-                <div class="gridx">
-                    <div (click)="onSelect(v)" *ngFor="let v of villagers | keyvalue" class="innerGrid">
-                        <img class="icon" src="https://acnhapi.com/v1/icons/villagers/{{v.value['id']}}">
-                        <p>{{v.value['name']['name-USen']}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="selected-villager">
-            <div *ngIf="selectedVillager">
-                <h1 class="text-center">{{selectedVillager.value['name']['name-USen']}}</h1>
-                        <table class="table">
-                            <tr>
-                                <td>Gender</td>
-                                <td class="text-right">{{selectedVillager.value['gender']}}</td>
-                            </tr>
-                            <tr>
-                                <td>Species</td>
-                                <td class="text-right">{{selectedVillager.value['species']}}</td>
-                            </tr>
-                            <tr>
-                                <td>Birthday</td>
-                                <td class="text-right">{{selectedVillager.value['birthday-string']}}</td>
-                            </tr>
-                            <tr>
-                                <td>Personality</td>
-                                <td class="text-right">{{selectedVillager.value['personality']}}</td>
-                            </tr>
-                            <tr>
-                                <td>Catch Phrase</td>
-                                <td class="text-right">{{selectedVillager.value['catch-phrase']}}</td>
-                            </tr>
-                        </table>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 <!-- <body> -->

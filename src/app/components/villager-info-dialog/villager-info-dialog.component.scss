@@ -1,52 +1,75 @@
 // .container {
 
-        // background-color: #cdddf9;
-        // position: relative;
-        // height: 130px;
-        // padding: 1rem;
-        .bg-image {
-            background-color: #BBEAE0;
-            background-image: url(../../../assets/icons/bg-negative-large.png);
-        }
-        // .fish {
-        //     background-color: #BBEAE0;
-        //     background-image: url(../../assets/icons/bg-fish-large.png);
-        // }
+// background-color: #cdddf9;
+// position: relative;
+// height: 130px;
+// padding: 1rem;
+// .bg-image {
+//     background-color: #BBEAE0;
+//     background-image: url(../../../assets/icons/bg-negative-large.png);
+// }
+// .fish {
+//     background-color: #BBEAE0;
+//     background-image: url(../../assets/icons/bg-fish-large.png);
+// }
 
-        // .bugs {
-        //     background-color: #F8F9B4;
-        //     background-image: url(../../assets/icons/bg-insect-large.png);
-        // }
-        // padding-left: .25rem;
-        // padding-bottom: .25rem;
-        // padding-right: 0;
-        //     position: relative;
-        
-    
-    
-    .critter-header {
+// .bugs {
+//     background-color: #F8F9B4;
+//     background-image: url(../../assets/icons/bg-insect-large.png);
+// }
+// padding-left: .25rem;
+// padding-bottom: .25rem;
+// padding-right: 0;
+//     position: relative;
+.left-side {
+    .critter-saying {
+        color: palevioletred;
         font-family: "Nunito", sans-serif;
-        color: black;
         margin-top: 1rem;
+        text-align: center;
+        // position: fixed;
+        // margin-top: 5rem;
+        // margin-left: 6rem;
     }
-
-    .meta {
-        margin-left: 12.5%;
-    }
-
-    table {
-        // background-color: lightsteelblue;
-        border-radius: 1rem;
-        margin-bottom: 0;
-        font-family: "Nunito", sans-serif;
-        // color: lightsteelblue;
-
-        td {
-            border-style: none;
+}
+.right-side {
+    display: inline-block;
+    padding-right: 0;
+    .banner {
+        width: 80%;
+        margin-left: auto;
+        background-color: ivory;
+        height: 8rem;
+        color: pink;
+        border-radius: 65px 0 0 65px;
+        .critter-header {
+            font-family: "Nunito", sans-serif;
+            color: pink;
+            font-size: 3rem;
+            padding-right: 2rem;
+            padding-top: 3.5rem;
+            text-align: right;
         }
-
-        .text-right {
-            font-weight: 800;
-        }
     }
+}
+
+// .meta {
+//     margin-left: 12.5%;
+// }
+
+table {
+    // background-color: lightsteelblue;
+    border-radius: 1rem;
+    margin-bottom: 0;
+    font-family: "Nunito", sans-serif;
+    // color: lightsteelblue;
+
+    td {
+        border-style: none;
+    }
+
+    .text-right {
+        font-weight: 800;
+    }
+}
 // }

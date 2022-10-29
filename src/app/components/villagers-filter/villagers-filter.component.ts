@@ -36,10 +36,10 @@ export class VillagersFilterComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
   ngOnInit(): void {
-    this.myForm = this.fb.group({
-      gender: ['', null],
-      species: new FormArray([]),
-    });
+    // this.myForm = this.fb.group({
+    //   gender: ['', null],
+    //   species: new FormArray([]),
+    // });
   }
 
   updateForm() {

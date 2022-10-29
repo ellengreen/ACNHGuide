@@ -10,6 +10,11 @@
     .icon {
         margin-left: 22.5%;
         cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .icon:hover {
+        transform: scale(0.75);
     }
 }
 // .critterpedia-container {
