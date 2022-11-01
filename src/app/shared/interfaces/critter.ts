@@ -1,4 +1,5 @@
-import { CritterAvailability } from "src/app/shared/interfaces/critter-availability";
+import { CritterAvailability } from "./critter-availability";
+
 
 export interface Critter {
     id: number,

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './user-auth/login/login.component';
 import { RegisterComponent } from './user-auth/register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -12,7 +11,7 @@ import { EventsContainerComponent } from './containers/events-container/events-c
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'home', component: DashboardComponent },
+  { path: 'home', component: WelcomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'critterpedia', component: CritterpediaContainerComponent },

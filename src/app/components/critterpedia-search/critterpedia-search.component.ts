@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Critter } from 'app/shared/interfaces/critter';
 import { Observable, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
-import { Critter } from 'src/app/shared/interfaces/critter';
 
 @Component({
   selector: 'app-critterpedia-search',

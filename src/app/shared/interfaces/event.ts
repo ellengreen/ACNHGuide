@@ -1,4 +1,4 @@
-import { EventType } from "./event-type";
+import { EventType } from "../enums/event-type";
 
 export interface Event {
     monthInt: number,

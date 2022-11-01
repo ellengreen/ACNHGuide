@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Villager } from 'src/app/shared/interfaces/villager';
+import { Villager } from 'app/shared/interfaces/villager';
 import { VillagerInfoDialogComponent } from '../villager-info-dialog/villager-info-dialog.component';
 
 @Component({

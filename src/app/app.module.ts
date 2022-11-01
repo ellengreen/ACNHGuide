@@ -14,14 +14,9 @@ import { DatePipe, KeyValuePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './user-auth/login/login.component';
 import { RegisterComponent } from './user-auth/register/register.component';
 import { AuthenticationService } from './shared/authentication.service';
-import { CurrentCrittersComponent } from './dashboard/current-critters/current-critters.component';
-import { CurrentFishComponent } from './dashboard/current-critters/current-fish/current-fish.component';
-import { CurrentBugsComponent } from './dashboard/current-critters/current-bugs/current-bugs.component';
-import { BirthdayComponent } from './dashboard/birthday/birthday.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VillagersComponent } from './villagers/villagers.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -57,13 +52,8 @@ import { EventCardComponent } from './components/event-card/event-card.component
   declarations: [
     AppComponent,
     ProfileComponent,
-    DashboardComponent,
     LoginComponent,
     RegisterComponent,
-    CurrentCrittersComponent,
-    CurrentFishComponent,
-    CurrentBugsComponent,
-    BirthdayComponent,
     CritterpediaContainerComponent,
     VillagersComponent,
     WelcomeComponent,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from 'src/app/shared/firebase.service';
-import { AuthenticationService } from 'src/app/shared/authentication.service';
+import { AuthenticationService } from 'app/shared/authentication.service';
+import { FirebaseService } from 'app/shared/firebase.service';
 
 @Component({
   selector: 'app-profile',

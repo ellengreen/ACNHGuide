@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/shared/data.service';
-import { FirebaseService } from 'src/app/shared/firebase.service';
-import { CurrentDateService } from 'src/app/shared/current-date.service';
 import { CritterType } from '../../shared/enums/critter-type.enum';
 import { Critter } from '../../shared/interfaces/critter';
 import { TransformService } from '../../services/transform.service';
+import { DataService } from 'app/shared/data.service';
+import { FirebaseService } from 'app/shared/firebase.service';
+import { CurrentDateService } from 'app/shared/current-date.service';
 
 @Component({
   selector: 'app-critterpedia-container',

@@ -1,5 +1,5 @@
-import { Event } from "src/app/shared/interfaces/event";
-import { EventType } from "src/app/shared/interfaces/event-type";
+import { EventType } from "app/shared/enums/event-type";
+import { Event } from "app/shared/interfaces/event";
 
 export function getEventsList(): Event[] {
     return [

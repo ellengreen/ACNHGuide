@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { CritterType } from 'src/app/shared/enums/critter-type.enum';
-import { Critter } from 'src/app/shared/interfaces/critter';
+import { CritterType } from 'app/shared/enums/critter-type.enum';
+import { Critter } from 'app/shared/interfaces/critter';
 import { CritterInfoDialogComponent } from '../critter-info-dialog/critter-info-dialog.component';
 
 @Component({

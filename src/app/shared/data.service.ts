@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CritterType } from './enums/critter-type.enum';
-import { getEventsList } from 'src/assets/eventList';
+import { getEventsList } from 'assets/eventList';
 
 @Injectable({
   providedIn: 'root'
