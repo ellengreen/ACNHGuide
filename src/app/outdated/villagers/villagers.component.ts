@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { FirebaseService } from '../shared/firebase.service';
+import { FirebaseService } from '../firebase.service';
 import { KeyValuePipe } from '@angular/common';
+import { DataService } from 'app/shared/services/data.service';
 // import { AngularFireAuth } from '@angular/fire/auth';
-import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-villagers',

@@ -14,11 +14,10 @@ import { DatePipe, KeyValuePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './user-auth/login/login.component';
-import { RegisterComponent } from './user-auth/register/register.component';
-import { AuthenticationService } from './shared/authentication.service';
-import { ProfileComponent } from './profile/profile.component';
-import { VillagersComponent } from './villagers/villagers.component';
+import { LoginComponent } from './outdated/user-auth/login/login.component';
+import { RegisterComponent } from './outdated/user-auth/register/register.component';
+import { ProfileComponent } from './outdated/profile/profile.component';
+import { VillagersComponent } from './outdated/villagers/villagers.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NookPhoneComponent } from './nook-phone/nook-phone.component';
@@ -28,8 +27,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { CritterpediaTableComponent } from './components/critterpedia/critterpedia-table.component';
-import { PassportComponent } from './passport/passport.component';
-import { MuseumComponent } from './museum/museum.component';
+import { PassportComponent } from './outdated/passport/passport.component';
+import { MuseumComponent } from './components/museum/museum.component';
 import { CritterInfoDialogComponent } from './components/critter-info-dialog/critter-info-dialog.component';
 import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
 import { ResidentServicesComponent } from './components/resident-services/resident-services.component';
@@ -47,6 +46,8 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { EventsContainerComponent } from './containers/events-container/events-container.component';
 import { EventCardComponent } from './components/event-card/event-card.component';
+import { MuseumContainerComponent } from './containers/museum-container/museum-container.component';
+import { AuthenticationService } from './outdated/authentication.service';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { EventCardComponent } from './components/event-card/event-card.component
     VillagersFilterComponent,
     CritterpediaSearchComponent,
     EventsContainerComponent,
-    EventCardComponent
+    EventCardComponent,
+    MuseumContainerComponent
   ],
   imports: [
     // AngularFireModule.initializeApp(environment.firebase),

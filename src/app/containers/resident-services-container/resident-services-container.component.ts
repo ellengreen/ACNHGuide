@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TransformService } from 'app/services/transform.service';
-import { DataService } from 'app/shared/data.service';
+import { TransformService } from 'app/shared/services/transform.service';
 import { Villager } from 'app/shared/interfaces/villager';
+import { DataService } from 'app/shared/services/data.service';
 
 @Component({
   selector: 'app-resident-services-container',

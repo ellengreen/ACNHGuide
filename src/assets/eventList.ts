@@ -36,9 +36,36 @@ export function getEventsList(): Event[] {
             dateStr: 'February 14th'
         },
         {
+            monthInt: 2,
+            monthStr: 'February',
+            eventType: EventType.special,
+            name: "Setsubun",
+            dateArr: [1, 2, 3],
+            dateStr: 'February 1st - 3rd'
+        },
+        {
+            monthInt: 2,
+            monthStr: 'February',
+            eventType: EventType.special,
+            name: "Festivale",
+            dateArr: [20],
+            dateStr: 'February 20th'
+        },
+        {
             monthInt: 3,
             monthStr: 'March',
-            noEvent: true
+            eventType: EventType.special,
+            name: 'Shamrock Day',
+            dateArr: [17],
+            dateStr: 'March 17th'
+        },
+        {
+            monthInt: 3,
+            monthStr: 'March',
+            eventType: EventType.zodiac,
+            name: 'Aries Season',
+            dateArr: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+            dateStr: 'March 21st - April 19th'
         },
         {
             monthInt: 4,
@@ -47,6 +74,22 @@ export function getEventsList(): Event[] {
             name: 'Bunny Day',
             dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
             dateStr: 'April 1st - 12th'
+        },
+        {
+            monthInt: 4,
+            monthStr: 'April',
+            eventType: EventType.zodiac,
+            name: 'Aries Season',
+            dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+            dateStr: 'March 21st - April 19th'
+        },
+        {
+            monthInt: 4,
+            monthStr: 'April',
+            eventType: EventType.zodiac,
+            name: 'Taurus Season',
+            dateArr: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+            dateStr: 'April 20th - May 20th'
         },
         {
             monthInt: 4,
@@ -65,28 +108,28 @@ export function getEventsList(): Event[] {
             dateStr: 'April 11th'
         },
         {
-            monthInt: 4,
-            monthStr: 'April',
-            eventType: EventType.special,
-            name: 'Nature Day',
-            dateArr: [23, 24, 25, 26, 27, 28, 29, 30, 31],
-            dateStr: 'April 23rd - May 4th'
-        },
-        {
-            monthInt: 5,
-            monthStr: 'May',
-            eventType: EventType.special,
-            name: 'Nature Day',
-            dateArr: [1, 2, 3, 4],
-            dateStr: 'April 23rd - May 4th'
-        },
-        {
             monthInt: 5,
             monthStr: 'May',
             eventType: EventType.special,
             name: 'May Day',
             dateArr: [1, 2, 3, 4, 5, 6, 7],
             dateStr: 'May 1st - 7th'
+        },
+        {
+            monthInt: 5,
+            monthStr: 'May',
+            eventType: EventType.zodiac,
+            name: 'Taurus Season',
+            dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+            dateStr: 'April 20th - May 20th'
+        },
+        {
+            monthInt: 5,
+            monthStr: 'May',
+            eventType: EventType.zodiac,
+            name: 'Gemini Season',
+            dateArr: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+            dateStr: 'May 21st - June 21st'
         },
         {
             monthInt: 5,
@@ -137,6 +180,14 @@ export function getEventsList(): Event[] {
         {
             monthInt: 6,
             monthStr: 'June',
+            eventType: EventType.zodiac,
+            name: 'Gemini Season',
+            dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
+            dateStr: 'May 21st - June 21st'
+        },
+        {
+            monthInt: 6,
+            monthStr: 'June',
             eventType: EventType.season,
             name: 'Wedding Season',
             dateArr: [
@@ -182,6 +233,22 @@ export function getEventsList(): Event[] {
             dateStr: 'June 27th'
         },
         {
+            monthInt: 6,
+            monthStr: 'June',
+            eventType: EventType.zodiac,
+            name: 'Cancer Season',
+            dateArr: [22, 23, 24, 25, 26, 27, 28, 29, 30],
+            dateStr: 'June 22nd - July 22nd'
+        },
+        {
+            monthInt: 7,
+            monthStr: 'July',
+            eventType: EventType.zodiac,
+            name: 'Cancer Season',
+            dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
+            dateStr: 'June 22nd - July 22nd'
+        },
+        {
             monthInt: 7,
             monthStr: 'July',
             eventType: EventType.tournament,
@@ -196,6 +263,14 @@ export function getEventsList(): Event[] {
             name: 'Bug Off',
             dateArr: [25],
             dateStr: 'July 25th'
+        },
+        {
+            monthInt: 7,
+            monthStr: 'July',
+            eventType: EventType.special,
+            name: "Fireworks Show",
+            dateArr: [4],
+            dateStr: 'July 4th'
         },
         {
             monthInt: 8,
@@ -271,7 +346,7 @@ export function getEventsList(): Event[] {
             monthInt: 11,
             monthStr: 'November',
             eventType: EventType.special,
-            name: 'Harvest Festival',
+            name: 'Turkey Day',
             dateArr: [24],
             dateStr: 'November 24th',
         },
@@ -295,7 +370,7 @@ export function getEventsList(): Event[] {
             monthInt: 12,
             monthStr: 'December',
             eventType: EventType.special,
-            name: "New Year's Eve", 
+            name: "Countdown",
             dateArr: [31],
             dateStr: 'December 31st',
         }

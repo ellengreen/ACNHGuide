@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Critter } from '../shared/interfaces/critter';
-import { Villager } from '../shared/interfaces/villager';
+import { Critter } from '../interfaces/critter';
+import { Villager } from '../interfaces/villager';
 
 @Injectable({
   providedIn: 'root'

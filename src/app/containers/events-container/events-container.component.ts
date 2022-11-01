@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { CurrentDateService } from 'app/shared/current-date.service';
-import { DataService } from 'app/shared/data.service';
 import { Event } from 'app/shared/interfaces/event';
+import { CurrentDateService } from 'app/shared/services/current-date.service';
+import { DataService } from 'app/shared/services/data.service';
 
 @Component({
   selector: 'app-events-container',

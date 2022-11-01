@@ -6,7 +6,7 @@ export interface CritterAvailability {
     isAllYear: boolean,
     location: string,
     rarity: string,
-    northernMonthArray: [Number],
-    southernMonthArray: [Number],
-    timeArray: [number]
+    northernMonthArray: Number[],
+    southernMonthArray: Number[],
+    timeArray: number[]
 }
