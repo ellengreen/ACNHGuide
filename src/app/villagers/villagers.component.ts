@@ -4,7 +4,7 @@ import { FormControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { FirebaseService } from '../shared/firebase.service';
 import { KeyValuePipe } from '@angular/common';
-import { AngularFireAuth } from '@angular/fire/auth';
+// import { AngularFireAuth } from '@angular/fire/auth';
 import { DataService } from '../shared/data.service';
 
 @Component({
@@ -27,28 +27,29 @@ export class VillagersComponent implements OnInit {
   personalities = ['Cranky', 'Jock', 'Lazy', 'Normal', 'Peppy',
         'Smug', 'Snooty', 'Uchi'];
 
-  constructor(private dataService: DataService, public fb: FormBuilder, private http: HttpClient, private db:FirebaseService, private afAuth: AngularFireAuth) { }
+  constructor(private dataService: DataService, public fb: FormBuilder, private http: HttpClient, private db:FirebaseService) { }
+  // constructor(private dataService: DataService, public fb: FormBuilder, private http: HttpClient, private db:FirebaseService, private afAuth: AngularFireAuth) { }
   myVillagers: any;
   noUser: boolean;
   ngOnInit(): void {
-    this.dataService.getVillagers().subscribe(data=> {
-      this.villagers = Object.keys(data).map(i => data[i]);
-      this.allVillagers = this.villagers;
-    });
-    this.load();
-    this.afAuth.authState.subscribe(user => {
-      if (user){
-        this.noUser = false;
-      } else { 
-        this.noUser = true;
-      }
-    })
+    // this.dataService.getVillagers().subscribe(data=> {
+    //   this.villagers = Object.keys(data).map(i => data[i]);
+    //   this.allVillagers = this.villagers;
+    // });
+    // this.load();
+    // this.afAuth.authState.subscribe(user => {
+    //   if (user){
+    //     this.noUser = false;
+    //   } else { 
+    //     this.noUser = true;
+    //   }
+    // })
   }
 
   load(){
-    this.db.fetchVillagers().subscribe(data=> {
-    this.myVillagers=data;
-    })
+    // this.db.fetchVillagers().subscribe(data=> {
+    // this.myVillagers=data;
+    // })
   }
 
   form = new FormGroup({
@@ -85,32 +86,32 @@ export class VillagersComponent implements OnInit {
 
   selected:any;
   onSelect(v){
-    this.load();
-    this.selectedVillager = v;
-    this.dupe();
-    if(this.duplicate.includes(this.selectedVillager.value['id'])){
-      this.aDupe=true;
-    } else {
-      this.aDupe=false;
-    }
-    this.http.get(
-    `https://nookipedia.com/api/villager/${this.selectedVillager.value['name']['name-USen']}/?api_key=a2f61762-8c07-4aff-a16c-75ffa9e8ef8a`)
-      .subscribe(data=> {
-      this.selected = data;
-    })
+    // this.load();
+    // this.selectedVillager = v;
+    // this.dupe();
+    // if(this.duplicate.includes(this.selectedVillager.value['id'])){
+    //   this.aDupe=true;
+    // } else {
+    //   this.aDupe=false;
+    // }
+    // this.http.get(
+    // `https://nookipedia.com/api/villager/${this.selectedVillager.value['name']['name-USen']}/?api_key=a2f61762-8c07-4aff-a16c-75ffa9e8ef8a`)
+    //   .subscribe(data=> {
+    //   this.selected = data;
+    // })
   }
 
-  aDupe: boolean;
-  addVillager(selectedVillager){
-    this.db.addVillager(selectedVillager);
-    this.aDupe = true;
-  }
+  // aDupe: boolean;
+  // addVillager(selectedVillager){
+  //   this.db.addVillager(selectedVillager);
+  //   this.aDupe = true;
+  // }
 
-  ID: any;
-  delete(selectedVillager){
-    this.ID = selectedVillager['newID'];
-    this.db.deleteVillager(this.ID);
-  }
+  // ID: any;
+  // delete(selectedVillager){
+  //   this.ID = selectedVillager['newID'];
+  //   this.db.deleteVillager(this.ID);
+  // }
 }
 
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FirebaseService } from 'src/app/shared/firebase.service';
 import { AuthenticationService } from 'src/app/shared/authentication.service';
-import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +9,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(private db: FirebaseService, private auth: AuthenticationService, private afAuth: AngularFireAuth) { }
+  constructor(private db: FirebaseService, private auth: AuthenticationService) { }
+  // constructor(private db: FirebaseService, private auth: AuthenticationService, private afAuth: AngularFireAuth) { }
 
   savedFish=[];
   savedBugs=[];
@@ -32,46 +32,46 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     
-    this.afAuth.authState.subscribe(user => {
-      if (user){
-        this.noUser = false;
-        this.db.fetchFish().subscribe(fish =>{
-          this.savedFish=fish;
-          this.fishWidth = (this.savedFish.length/80)*100;
-        })
-        this.db.fetchBugs().subscribe(bugs=> {
-          this.savedBugs=bugs;
-          this.bugWidth = (this.savedBugs.length/80)*100;
-        })
-        this.db.fetchUserInfo().subscribe(data=> {
-          this.userInfo=data;
-            if (this.userInfo.length < 1){
-            this.new = true;
-            } else {
-              this.new = false;
-            }
-          })
-        this.db.fetchVillagers().subscribe(data=> {
-          this.villagers=data;
-        })
-          } else {
-            this.noUser = true;
-      }
-    });
+    // this.afAuth.authState.subscribe(user => {
+    //   if (user){
+    //     this.noUser = false;
+    //     this.db.fetchFish().subscribe(fish =>{
+    //       this.savedFish=fish;
+    //       this.fishWidth = (this.savedFish.length/80)*100;
+    //     })
+    //     this.db.fetchBugs().subscribe(bugs=> {
+    //       this.savedBugs=bugs;
+    //       this.bugWidth = (this.savedBugs.length/80)*100;
+    //     })
+    //     this.db.fetchUserInfo().subscribe(data=> {
+    //       this.userInfo=data;
+    //         if (this.userInfo.length < 1){
+    //         this.new = true;
+    //         } else {
+    //           this.new = false;
+    //         }
+    //       })
+    //     this.db.fetchVillagers().subscribe(data=> {
+    //       this.villagers=data;
+    //     })
+    //       } else {
+    //         this.noUser = true;
+    //   }
+    // });
   }
 
-  onSubmit() { this.submitted = true; }
-  update(profileForm){
-  this.db.addUserInfo(profileForm.value)
-  window.location.reload();
-  }
+  // onSubmit() { this.submitted = true; }
+  // update(profileForm){
+  // this.db.addUserInfo(profileForm.value)
+  // window.location.reload();
+  // }
 
-  vID: any;
-  delete(selectedVillager){
-    this.vID = selectedVillager['newID'];
-    this.db.deleteVillager(this.vID);
-    window.alert('Villager successfully evicted! Refresh page to see changes')
-  }
+  // vID: any;
+  // delete(selectedVillager){
+  //   this.vID = selectedVillager['newID'];
+  //   this.db.deleteVillager(this.vID);
+  //   window.alert('Villager successfully evicted! Refresh page to see changes')
+  // }
 }
 
 
