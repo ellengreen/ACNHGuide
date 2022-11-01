@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CritterType } from './enums/critter-type.enum';
+import { getEventsList } from 'src/assets/eventList';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,8 @@ export class DataService {
 
 
   getEvents(){
-    return this.httpClient.get('assets/events.json');
+    // return this.httpClient.get('assets/eventList.ts');
+    return getEventsList();
   }
 
   getVillagers() {

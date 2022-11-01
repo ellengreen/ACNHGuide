@@ -1,0 +1,38 @@
+<!-- <div *ngFor="let event of eventsList | keyvalue">
+    <div *ngIf="event.key == currentMonth">
+      <span class="events" *ngFor="let e of event.value | keyvalue">
+          <h5>{{e.value['name']}}</h5>
+          <p>{{e.value['date-str']}}</p>
+      </span>
+    </div>
+  </div>
+   -->
+
+<header>
+    <app-welcome></app-welcome>
+</header>
+
+<div class="events-container">
+    <div class="banner">
+        <img src="./../../../assets/icons/giphy.gif">
+        <span>Events</span>
+    </div>
+
+    <!-- <div class="villager-filter">
+        <app-villagers-filter (filterChanged)="onFilter($event)"></app-villagers-filter>
+    </div> -->
+</div>
+
+<!-- <div *ngFor="let event of eventsList | keyvalue">
+    {{event.value | json}}
+</div> -->
+
+<app-event-card [eventsList]="monthlyEvents"></app-event-card>
+
+<h1>DISPLAY:</h1>
+<h3>Crafting Season</h3>
+<h3>Zodiac Season</h3>
+<h3>Special Events</h3>
+<!-- <div class="villager-container">
+    <app-resident-services [villagersList]="villagersList"></app-resident-services>
+</div> -->

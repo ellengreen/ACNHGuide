@@ -6,9 +6,9 @@ import { RegisterComponent } from './user-auth/register/register.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PassportComponent } from './passport/passport.component';
 import { MuseumComponent } from './museum/museum.component';
-import { EventsComponent } from './dashboard/events/events.component';
 import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
 import { CritterpediaContainerComponent } from './containers/critterpedia-container/critterpedia-container.component';
+import { EventsContainerComponent } from './containers/events-container/events-container.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'critterpedia', component: CritterpediaContainerComponent },
   { path: 'villagers', component: ResidentServicesContainerComponent},
   { path: 'passport', component: PassportComponent},
-  { path: 'events', component: EventsComponent},
+  { path: 'events', component: EventsContainerComponent},
   { path: 'museum', component: MuseumComponent}
   // {
   //   path: '**',

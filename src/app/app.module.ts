@@ -21,7 +21,6 @@ import { AuthenticationService } from './shared/authentication.service';
 import { CurrentCrittersComponent } from './dashboard/current-critters/current-critters.component';
 import { CurrentFishComponent } from './dashboard/current-critters/current-fish/current-fish.component';
 import { CurrentBugsComponent } from './dashboard/current-critters/current-bugs/current-bugs.component';
-import { EventsComponent } from './dashboard/events/events.component';
 import { BirthdayComponent } from './dashboard/birthday/birthday.component';
 import { ProfileComponent } from './profile/profile.component';
 import { VillagersComponent } from './villagers/villagers.component';
@@ -51,6 +50,8 @@ import { MatInputModule } from '@angular/material/input';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { EventsContainerComponent } from './containers/events-container/events-container.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     CurrentCrittersComponent,
     CurrentFishComponent,
     CurrentBugsComponent,
-    EventsComponent,
     BirthdayComponent,
     CritterpediaContainerComponent,
     VillagersComponent,
@@ -76,7 +76,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ResidentServicesComponent,
     VillagerInfoDialogComponent,
     VillagersFilterComponent,
-    CritterpediaSearchComponent
+    CritterpediaSearchComponent,
+    EventsContainerComponent,
+    EventCardComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

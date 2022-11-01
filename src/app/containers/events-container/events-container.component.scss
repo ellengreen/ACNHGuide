@@ -1,0 +1,46 @@
+@import "src/styles.scss";
+
+// header {
+//     // // background-color: #cdddf9;
+//     // position: relative;
+//     // height: 130px;
+//     // background-image: url(../../../assets/icons/banner-bg-rounded.png);
+//     padding-bottom: 5rem;
+// }
+header {
+    position: relative;
+    height: 130px;
+    background-image: url(../../../assets/icons/banner-bg-rounded.png);
+}
+
+.events-container {
+    .banner {
+        display: inline-block;
+        width: 45%;
+        background-color: rgb(254, 190, 199);
+        height: 8rem;
+        color: ivory;
+        border-radius: 0px 65px 65px 0px;
+
+        img {
+            height: 10rem;
+            margin-left: 2rem;
+        }
+
+        span {
+            font-size: 3rem;
+            margin-left: 3rem;
+        }
+    }
+
+    .villager-filter {
+        display: inline-block;
+        margin-left: 5rem;
+    }
+}
+
+.villager-container {
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 5rem;
+}
