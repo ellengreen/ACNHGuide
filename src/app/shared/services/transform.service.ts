@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
+import { MuseumType } from '../enums/museum-type.enum';
+import { Art } from '../interfaces/art';
 import { Critter } from '../interfaces/critter';
+import { Fossil } from '../interfaces/fossil';
 import { Villager } from '../interfaces/villager';
 
 @Injectable({
@@ -60,5 +63,44 @@ export class TransformService {
     });
 
     return villagerList;
+  }
+
+  convertMuseum(museumType, museumStuff): Art[] | Fossil[] {
+    if (museumType == MuseumType.art) {
+      return this.convertArt(museumStuff);
+    } else if (museumType == MuseumType.fossils) {
+      return this.convertFossils(museumStuff);
+    }
+  }
+
+  convertArt(artJSON: any): Art[] {
+    let artList: Art[] = [];
+    Object.keys(artJSON).forEach(key => {
+      artList.push({
+        id: artJSON[key]['id'],
+        name: artJSON[key]['name']['name-USen'],
+        hasFake: artJSON[key]['hasFake'],
+        imageURI: artJSON[key]['imageURI'],
+        buyPrice: artJSON[key]['buy-price'],
+        sellPrice: artJSON[key]['sell-price'],
+        phrase: artJSON[key]['museum-desc']
+      })
+    });
+
+    return artList;
+  }
+
+  convertFossils(fossilJSON: any): Fossil[] {
+    let fossilList: Fossil[] = [];
+    Object.keys(fossilJSON).forEach(key => {
+      fossilList.push({
+        name: fossilJSON[key]['name']['name-USen'],
+        imageURI: fossilJSON[key]['imageURI'],
+        price: fossilJSON[key]['price'],
+        phrase: fossilJSON[key]['museum-phrase']
+      })
+    });
+
+    return fossilList;
   }
 }

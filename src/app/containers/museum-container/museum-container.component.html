@@ -1,1 +1,18 @@
-<p>museum-container works!</p>
+<header>
+    <app-welcome></app-welcome>
+</header>
+
+<!-- <div class="resident-services-container">
+    <div class="banner">
+        <img src="./../../../assets/icons/giphy.gif">
+        <span>Resident Services</span>
+    </div>
+
+    <div class="villager-filter">
+        <app-villagers-filter (filterChanged)="onFilter($event)"></app-villagers-filter>
+    </div>
+</div> -->
+
+<div class="museum-container">
+    <app-museum [museumList]="museumList"></app-museum>
+</div>

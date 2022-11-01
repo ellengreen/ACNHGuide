@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-museum',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./museum.component.scss']
 })
 export class MuseumComponent implements OnInit {
-
+  @Input() museumList: any;
   constructor() { }
 
   ngOnInit(): void {

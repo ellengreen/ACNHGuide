@@ -1,0 +1,24 @@
+.scrollable-container {
+    overflow-y: scroll;
+    height: 70vh;
+
+    .container {
+        max-width: 100%;
+    }
+
+    .icon {
+        margin-left: 19.5%;
+        cursor: pointer;
+        transition: transform .3s ease-in-out;
+    }
+
+    .icon:hover {
+        transform: scale(0.75);
+    }
+}
+
+.selected {
+    background-color: lightgoldenrodyellow;
+    border-radius: 40px;
+}
+

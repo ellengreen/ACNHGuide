@@ -31,7 +31,6 @@ export class CritterpediaTableComponent implements OnInit {
       maxHeight: '450px',
       minWidth: '750px'
     });
-
   }
 
 }

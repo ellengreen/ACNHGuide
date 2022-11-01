@@ -48,6 +48,9 @@ import { EventsContainerComponent } from './containers/events-container/events-c
 import { EventCardComponent } from './components/event-card/event-card.component';
 import { MuseumContainerComponent } from './containers/museum-container/museum-container.component';
 import { AuthenticationService } from './outdated/authentication.service';
+import { MuseumTableComponent } from './components/museum-table/museum-table.component';
+import { ArtDialogComponent } from './components/art-dialog/art-dialog.component';
+import { MuseumDialogComponent } from './components/museum-dialog/museum-dialog.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +73,10 @@ import { AuthenticationService } from './outdated/authentication.service';
     CritterpediaSearchComponent,
     EventsContainerComponent,
     EventCardComponent,
-    MuseumContainerComponent
+    MuseumContainerComponent,
+    MuseumTableComponent,
+    ArtDialogComponent,
+    MuseumDialogComponent
   ],
   imports: [
     // AngularFireModule.initializeApp(environment.firebase),
