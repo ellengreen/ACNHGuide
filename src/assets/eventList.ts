@@ -8,24 +8,30 @@ export function getEventsList(): Event[] {
             monthStr: 'January',
             eventType: EventType.special,
             name: 'New Years Day',
+            imagePath: '../assets/images/event-characters/hat.png',
             dateArr: [1],
-            dateStr: 'January 1st'
+            dateStr: 'January 1st',
+            description: 'Happy New Years! Head to the Nook Stop to claim 500 Nook Miles to celebrate the new year and enjoy unique music all day in place of the standard hourly music.'
         },
         {
             monthInt: 1,
             monthStr: 'January',
             eventType: EventType.season,
             name: 'Festive Season',
+            imagePath: '../assets/images/event-characters/jingle.png',
             dateArr: [1, 2, 3, 4, 5, 6],
-            dateStr: 'December 15th - January 6th'
+            dateStr: 'December 15th - January 6th',
+            description: "Get in the Festive mood and shake some trees! Decorated cedar trees will drop ornaments to help you make items from the Festive Series. If you visit a crafting villager, you make be lucky enough to recieve a DIY recipe from them!"
         },
         {
             monthInt: 1,
             monthStr: 'January',
             eventType: EventType.tournament,
             name: 'Fishing Tournament',
+            imagePath: '../assets/images/characters/CJ.png',
             dateArr: [9],
-            dateStr: 'January 9th'
+            dateStr: 'January 9th',
+            description: "Yes! Rack up points with CJ during this month’s Fishing Tourney. Catch as many fish as possible within three minutes until 6 PM. Exchange your points for some fish swag, or maybe even a trophy! CJ will be around until 8 PM to buy fish." 
         },
         {
             monthInt: 2,
@@ -33,63 +39,39 @@ export function getEventsList(): Event[] {
             eventType: EventType.special,
             name: "Valentine's Day",
             dateArr: [14],
-            dateStr: 'February 14th'
-        },
-        {
-            monthInt: 2,
-            monthStr: 'February',
-            eventType: EventType.special,
-            name: "Setsubun",
-            dateArr: [1, 2, 3],
-            dateStr: 'February 1st - 3rd'
+            imagePath: '../assets/images/event-characters/heart.png',
+            dateStr: 'February 14th',
+            description: "Happy Valentine’s Day! If you have a high friendship with any villagers, check your mailbox to receive a Chocolate Heart or a Heart-Shaped Bouquet; or buy one for yourself from Nook Shopping! Be sure to go visit Brewster for some hot chocolate as well."
         },
         {
             monthInt: 2,
             monthStr: 'February',
             eventType: EventType.special,
             name: "Festivale",
+            imagePath: '../assets/images/event-characters/pave.png',
             dateArr: [20],
-            dateStr: 'February 20th'
+            dateStr: 'February 20th',
+            description: "Pavés here, so collect some feathers around your island to exchange them for a Festival float! Nook’s Cranny will be selling some Festivale furniture and the Viva Festivale Reaction Set, and the Able Sisters have special clothing."
         },
         {
             monthInt: 3,
             monthStr: 'March',
             eventType: EventType.special,
             name: 'Shamrock Day',
+            imagePath: '../assets/images/event-characters/shamrock.png',
             dateArr: [17],
-            dateStr: 'March 17th'
-        },
-        {
-            monthInt: 3,
-            monthStr: 'March',
-            eventType: EventType.zodiac,
-            name: 'Aries Season',
-            dateArr: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
-            dateStr: 'March 21st - April 19th'
+            dateStr: 'March 17th',
+            description: "Fáilte! Celebrate Shamrock Day with some shopping; Nook Shopping has a doorplate, rug, and special Shamrock soda, and the Able Sisters are selling a whole Shamrock Getup. Pop some balloons and maybe you’ll find a Shamrock Wand recipe!"
         },
         {
             monthInt: 4,
             monthStr: 'April',
             eventType: EventType.special,
             name: 'Bunny Day',
+            imagePath: '../assets/images/event-characters/zipper.png',
             dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-            dateStr: 'April 1st - 12th'
-        },
-        {
-            monthInt: 4,
-            monthStr: 'April',
-            eventType: EventType.zodiac,
-            name: 'Aries Season',
-            dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
-            dateStr: 'March 21st - April 19th'
-        },
-        {
-            monthInt: 4,
-            monthStr: 'April',
-            eventType: EventType.zodiac,
-            name: 'Taurus Season',
-            dateArr: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
-            dateStr: 'April 20th - May 20th'
+            dateStr: 'April 1st - 12th',
+            description: "Zipper’s back. The evil creature will task you with collecting 6 different types of eggs and construct all the Bunny Day furniture in enhance for the Bunny Day Bed recipe."
         },
         {
             monthInt: 4,
@@ -97,99 +79,46 @@ export function getEventsList(): Event[] {
             eventType: EventType.crafting,
             name: 'Cherry Blossom Season',
             dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            dateStr: 'April 1st - 10th'
+            dateStr: 'April 1st - 10th',
+            imagePath: '../assets/images/event-characters/cherryblossom.webp',
+            description: "Cherry Blossom trees are in bloom, and their pink petals are falling around the island. Catch some with your net to create items, like the Cherry Blossom Bonsai."
         },
         {
             monthInt: 4,
             monthStr: 'April',
             eventType: EventType.tournament,
             name: 'Fishing Tournament',
+            imagePath: '../assets/images/characters/CJ.png',
             dateArr: [11],
-            dateStr: 'April 11th'
+            dateStr: 'April 11th',
+            description: "Yes! Rack up points with CJ during this month’s Fishing Tourney. Catch as many fish as possible within three minutes until 6 PM. Exchange your points for some fish swag, or maybe even a trophy! CJ will be around until 8 PM to buy fish."
         },
         {
             monthInt: 5,
             monthStr: 'May',
             eventType: EventType.special,
             name: 'May Day',
+            imagePath: '../assets/images/event-characters/rover.png',
             dateArr: [1, 2, 3, 4, 5, 6, 7],
-            dateStr: 'May 1st - 7th'
-        },
-        {
-            monthInt: 5,
-            monthStr: 'May',
-            eventType: EventType.zodiac,
-            name: 'Taurus Season',
-            dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-            dateStr: 'April 20th - May 20th'
-        },
-        {
-            monthInt: 5,
-            monthStr: 'May',
-            eventType: EventType.zodiac,
-            name: 'Gemini Season',
-            dateArr: [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
-            dateStr: 'May 21st - June 21st'
-        },
-        {
-            monthInt: 5,
-            monthStr: 'May',
-            eventType: EventType.special,
-            name: "Mother's Day",
-            dateArr: [1,
-                2,
-                3,
-                4,
-                5,
-                6,
-                7,
-                8,
-                9,
-                10,
-                11,
-                12,
-                13,
-                14,
-                15,
-                16,
-                17,
-                18,
-                19,
-                20,
-                21,
-                22,
-                23,
-                24,
-                25,
-                26,
-                27,
-                28,
-                29,
-                30,
-                31],
-            dateStr: 'Entire Month of May'
+            dateStr: 'May 1st - 7th',
+            description: "Talk to Tom Nook and he’ll give you a May Day Ticket to use at the airport. Make your way through the May Day Tour maze and be rewarded by Rover at the end!"
         },
         {
             monthInt: 5,
             monthStr: 'May',
             eventType: EventType.special,
             name: 'International Museum Day',
+            imagePath: '../assets/images/characters/blathers.png',
             dateArr: [18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
-            dateStr: 'May 18th - 31st'
-        },
-        {
-            monthInt: 6,
-            monthStr: 'June',
-            eventType: EventType.zodiac,
-            name: 'Gemini Season',
-            dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21],
-            dateStr: 'May 21st - June 21st'
+            dateStr: 'May 18th - 31st',
+            description: "Traverse through the beautiful museum to stamp your museum card! Blathers will reward you with a plaque for each area of the museum."
         },
         {
             monthInt: 6,
             monthStr: 'June',
             eventType: EventType.season,
             name: 'Wedding Season',
+            imagePath: '../assets/images/event-characters/reese.png',
             dateArr: [
                 1,
                 2,
@@ -222,93 +151,95 @@ export function getEventsList(): Event[] {
                 29,
                 30
             ],
-            dateStr: 'Entire Month of June'
+            dateStr: 'Entire Month of June',
+            description: "Live out your event planner dreams and help Cyrus and Reese have the perfect wedding photo shoot! You’ll be rewarded with items from the Wedding System and Heart Crystals."
         },
         {
             monthInt: 6,
             monthStr: 'June',
             eventType: EventType.tournament,
             name: 'Bug Off',
+            imagePath: '../assets/images/characters/Flick.png',
             dateArr: [27],
-            dateStr: 'June 27th'
-        },
-        {
-            monthInt: 6,
-            monthStr: 'June',
-            eventType: EventType.zodiac,
-            name: 'Cancer Season',
-            dateArr: [22, 23, 24, 25, 26, 27, 28, 29, 30],
-            dateStr: 'June 22nd - July 22nd'
-        },
-        {
-            monthInt: 7,
-            monthStr: 'July',
-            eventType: EventType.zodiac,
-            name: 'Cancer Season',
-            dateArr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22],
-            dateStr: 'June 22nd - July 22nd'
+            dateStr: 'June 27th',
+            description: "Yes! Rack up points with Flick during this month’s Bug Off. Catch as many bugs as possible within three minutes until 6 PM. Exchange your points for some bug swag, or maybe even a trophy! Flick will be around until 8 PM to buy fish."
         },
         {
             monthInt: 7,
             monthStr: 'July',
             eventType: EventType.tournament,
             name: 'Fishing Tournament',
+            imagePath: '../assets/images/characters/CJ.png',
             dateArr: [11],
-            dateStr: 'July 11th'
+            dateStr: 'July 11th',
+            description: "Yes! Rack up points with CJ during this month’s Fishing Tourney. Catch as many fish as possible within three minutes until 6 PM. Exchange your points for some fish swag, or maybe even a trophy! CJ will be around until 8 PM to buy fish."
         },
         {
             monthInt: 7,
             monthStr: 'July',
             eventType: EventType.tournament,
             name: 'Bug Off',
+            imagePath: '../assets/images/characters/Flick.png',
             dateArr: [25],
-            dateStr: 'July 25th'
+            dateStr: 'July 25th',
+            description: "Yes! Rack up points with Flick during this month’s Bug Off. Catch as many bugs as possible within three minutes until 6 PM. Exchange your points for some bug swag, or maybe even a trophy! Flick will be around until 8 PM to buy fish."
         },
         {
             monthInt: 7,
             monthStr: 'July',
             eventType: EventType.special,
             name: "Fireworks Show",
+            imagePath: '../assets/images/event-characters/bopper.png',
             dateArr: [4],
-            dateStr: 'July 4th'
+            dateStr: 'July 4th',
+            description: "It’s the annual Fireworks Show! Submit custom designs to be used as fireworks and watch them with all of the other villagers. Or visit Redd’s raffle stand for some accessories!"
         },
         {
             monthInt: 8,
             monthStr: 'August',
             eventType: EventType.tournament,
             name: 'Bug Off',
+            imagePath: '../assets/images/characters/Flick.png',
             dateArr: [22],
-            dateStr: 'August 22nd'
+            dateStr: 'August 22nd',
+            description: "Yes! Rack up points with Flick during this month’s Bug Off. Catch as many bugs as possible within three minutes until 6 PM. Exchange your points for some bug swag, or maybe even a trophy! Flick will be around until 8 PM to buy fish."
         },
         {
             monthInt: 9,
             monthStr: 'September',
             eventType: EventType.tournament,
             name: 'Bug Off',
+            imagePath: '../assets/images/characters/Flick.png',
             dateArr: [26],
-            dateStr: 'September 26th'
+            dateStr: 'September 26th',
+            description: "Yes! Rack up points with Flick during this month’s Bug Off. Catch as many bugs as possible within three minutes until 6 PM. Exchange your points for some bug swag, or maybe even a trophy! Flick will be around until 8 PM to buy fish."
         },
         {
             monthInt: 10,
             monthStr: 'October',
             eventType: EventType.tournament,
             name: 'Fishing Tournament',
+            imagePath: '../assets/images/characters/CJ.png',
             dateArr: [10],
-            dateStr: 'October 10th'
+            dateStr: 'October 10th',
+            description: "Yes! Rack up points with CJ during this month’s Fishing Tourney. Catch as many fish as possible within three minutes until 6 PM. Exchange your points for some fish swag, or maybe even a trophy! CJ will be around until 8 PM to buy fish."
         },
         {
             monthInt: 10,
             monthStr: 'October',
             eventType: EventType.special,
             name: 'Halloween',
+            imagePath: '../assets/images/event-characters/jack.png',
             dateArr: [31],
-            dateStr: 'October 31st'
+            dateStr: 'October 31st',
+            description: "Happy Halloween! Decorate your island with items from the Spooky Series and visit the Able Sisters for a new costume! Trick or Treat with the villagers and Jack may give you something special."
         },
         {
             monthInt: 11,
             monthStr: 'November',
             eventType: EventType.crafting,
             name: 'Mushrooming Season',
+            imagePath: '../assets/images/event-characters/mushroom.webp',
             dateArr: [1,
                 2,
                 3,
@@ -340,48 +271,50 @@ export function getEventsList(): Event[] {
                 29,
                 30,
                 31],
-            dateStr: 'Entire Month of November'
+            dateStr: 'Entire Month of November',
+            description: "Fungi are abundant through the island and you can pick them up to create some DIYs. There are 5 types; round, skinny, flat, elegant, and rare!"
         },
         {
             monthInt: 11,
             monthStr: 'November',
             eventType: EventType.special,
             name: 'Turkey Day',
+            imagePath: '../assets/images/event-characters/franklin.png',
             dateArr: [24],
             dateStr: 'November 24th',
+            description: "Time to feast! Franklin is in the plaza from 9AM to 12AM and needs your help creating some signature dishes. You’ll be rewarded with Turkey Day decor and maybe a Cornucopia!"
         },
         {
             monthInt: 12,
             monthStr: 'December',
             eventType: EventType.special,
+            imagePath: '../assets/images/event-characters/jingle.png',
             name: 'Festive Season',
             dateArr: [15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
             dateStr: 'December 15th - January 6th',
+            description: "Get in the Festive mood and shake some trees! Decorated cedar trees will drop ornaments to help you make items from the Festive Series. If you visit a crafting villager, you make be lucky enough to recieve a DIY recipe from them!"
         },
         {
             monthInt: 12,
             monthStr: 'December',
             eventType: EventType.special,
+            imagePath: '../assets/images/event-characters/jingle.png',
             name: 'Toy Day',
             dateArr: [24],
             dateStr: 'December 24th',
+            description: "Dress in your holiday best and greet Jingle outside of Resident Services. You can play Santa and deliver presents to villagers; they may even give you a git back!"
         },
         {
             monthInt: 12,
             monthStr: 'December',
             eventType: EventType.special,
             name: "Countdown",
+            imagePath: '../assets/images/event-characters/hat.png',
             dateArr: [31],
             dateStr: 'December 31st',
+            description: "Happy New Years Eve! Resident Services is closed for the occasion and at 11PM join the villagers for the new year Countdown."
         }
     ]
 }
 
-// {
-//     monthInt: ,
-//     monthStr: ,
-//     eventType: ,
-//     name: ,
-//     dateArr: [],
-//     dateStr: [],
-// }
+// ADD MORE CRAFTING SEASONS & ZODIAC

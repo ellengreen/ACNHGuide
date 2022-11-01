@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Event } from 'app/shared/interfaces/event';
 
 @Component({
   selector: 'app-event-card',

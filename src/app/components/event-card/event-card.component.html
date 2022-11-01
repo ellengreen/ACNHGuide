@@ -3,7 +3,7 @@
 
 <div *ngFor="let event of eventsList">
   <div class="card" style="width: 18rem;">
-    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <img [src]=event.imagePath class="card-img-top">
     <div class="card-body">
       <h5 class="card-title">{{event.name}}</h5>
       <h5 class="card-title">{{event.dateStr}}</h5>

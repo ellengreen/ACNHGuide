@@ -4,5 +4,5 @@ export enum EventType {
     special = 'SPECIAL',
     season = 'SEASON',
     zodiac = 'ZODIAC',
-    birthday = 'BIRTHDAY'
+    // birthday = 'BIRTHDAY'
 }
