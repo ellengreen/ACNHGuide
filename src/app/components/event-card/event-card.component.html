@@ -1,13 +1,30 @@
-<p>event-card works!</p>
+<div class="events-card-container">
 
+  <div *ngFor="let birthday of birthdayList" class="birthday-cards">
+    <div class="card" style="width: 18rem;">
+      <img [src]=birthday.imageURI class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{birthday.name | titlecase}}</h5>
+        <h5 class="card-title">{{birthday.catchPhrase}}</h5>
+        <h5 class="card-title">{{birthday.saying}}</h5>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <p-carousel [value]="eventsList" [numVisible]="3" [numScroll]="1">
+    <ng-template let-event >
+        Content to display
+    </ng-template>
+</p-carousel> -->
 
-<div *ngFor="let event of eventsList">
-  <div class="card" style="width: 18rem;">
-    <img [src]=event.imagePath class="card-img-top">
-    <div class="card-body">
-      <h5 class="card-title">{{event.name}}</h5>
-      <h5 class="card-title">{{event.dateStr}}</h5>
-      <h5 class="card-title">{{event?.description}}</h5>
+  <div *ngFor="let event of eventsList" class="event-cards">
+    <div class="card" style="width: 18rem;">
+      <img [src]=event.imagePath class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">{{event.name}}</h5>
+        <h5 class="card-title">{{event.dateStr}}</h5>
+        <h5 class="card-title">{{event?.description}}</h5>
+      </div>
     </div>
   </div>
 </div>

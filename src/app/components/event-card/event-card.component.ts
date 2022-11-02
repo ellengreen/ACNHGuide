@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Event } from 'app/shared/interfaces/event';
+import { Villager } from 'app/shared/interfaces/villager';
 
 @Component({
   selector: 'app-event-card',
@@ -9,6 +10,7 @@ import { Event } from 'app/shared/interfaces/event';
 export class EventCardComponent implements OnInit {
 
   @Input() eventsList: Event[];
+  @Input() birthdayList: Villager[]
 
   constructor() { }
 
