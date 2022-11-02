@@ -8,8 +8,9 @@ describe('EventCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventCardComponent ]
-    })
+    declarations: [EventCardComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

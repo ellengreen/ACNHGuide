@@ -8,8 +8,9 @@ describe('VillagersFilterComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VillagersFilterComponent ]
-    })
+    declarations: [VillagersFilterComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

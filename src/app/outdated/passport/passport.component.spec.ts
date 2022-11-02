@@ -8,8 +8,9 @@ describe('PassportComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PassportComponent ]
-    })
+    declarations: [PassportComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

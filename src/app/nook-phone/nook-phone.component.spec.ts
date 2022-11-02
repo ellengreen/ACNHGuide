@@ -8,8 +8,9 @@ describe('NookPhoneComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NookPhoneComponent ]
-    })
+    declarations: [NookPhoneComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

@@ -8,8 +8,9 @@ describe('VillagersComponent', () => {
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ VillagersComponent ]
-    })
+    declarations: [VillagersComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   }));
 

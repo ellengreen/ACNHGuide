@@ -8,8 +8,9 @@ describe('VillagerInfoDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VillagerInfoDialogComponent ]
-    })
+    declarations: [VillagerInfoDialogComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

@@ -8,8 +8,9 @@ describe('MuseumDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MuseumDialogComponent ]
-    })
+    declarations: [MuseumDialogComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

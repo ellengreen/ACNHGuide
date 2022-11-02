@@ -8,8 +8,9 @@ describe('CritterpediaTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CritterpediaTableComponent ]
-    })
+    declarations: [CritterpediaTableComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

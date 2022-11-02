@@ -8,8 +8,9 @@ describe('ArtDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ArtDialogComponent ]
-    })
+    declarations: [ArtDialogComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

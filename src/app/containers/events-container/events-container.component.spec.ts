@@ -8,8 +8,9 @@ describe('EventsContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventsContainerComponent ]
-    })
+    declarations: [EventsContainerComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

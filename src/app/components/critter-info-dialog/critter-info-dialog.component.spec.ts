@@ -8,8 +8,9 @@ describe('CritterInfoDialogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CritterInfoDialogComponent ]
-    })
+    declarations: [CritterInfoDialogComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 

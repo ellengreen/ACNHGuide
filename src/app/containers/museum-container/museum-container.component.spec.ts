@@ -8,8 +8,9 @@ describe('MuseumContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MuseumContainerComponent ]
-    })
+    declarations: [MuseumContainerComponent],
+    teardown: { destroyAfterEach: false }
+})
     .compileComponents();
   });
 
