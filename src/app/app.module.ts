@@ -33,7 +33,6 @@ import { CritterInfoDialogComponent } from './components/critter-info-dialog/cri
 import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
 import { ResidentServicesComponent } from './components/resident-services/resident-services.component';
 import { VillagerInfoDialogComponent } from './components/villager-info-dialog/villager-info-dialog.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CritterpediaContainerComponent } from './containers/critterpedia-container/critterpedia-container.component';
 import { VillagersFilterComponent } from './components/villagers-filter/villagers-filter.component';
 import { CritterpediaSearchComponent } from './components/critterpedia-search/critterpedia-search.component';
@@ -51,6 +50,9 @@ import { AuthenticationService } from './outdated/authentication.service';
 import { MuseumTableComponent } from './components/museum-table/museum-table.component';
 import { ArtDialogComponent } from './components/art-dialog/art-dialog.component';
 import { MuseumDialogComponent } from './components/museum-dialog/museum-dialog.component';
+import { CarouselModule } from 'primeng/carousel';
+import { EventFilterComponent } from './components/event-filter/event-filter.component';
+import { HomeContainerComponent } from './containers/home-container/home-container.component';
 
 @NgModule({
   declarations: [
@@ -76,7 +78,9 @@ import { MuseumDialogComponent } from './components/museum-dialog/museum-dialog.
     MuseumContainerComponent,
     MuseumTableComponent,
     ArtDialogComponent,
-    MuseumDialogComponent
+    MuseumDialogComponent,
+    EventFilterComponent,
+    HomeContainerComponent
   ],
   imports: [
     // AngularFireModule.initializeApp(environment.firebase),
@@ -101,7 +105,8 @@ import { MuseumDialogComponent } from './components/museum-dialog/museum-dialog.
     MatInputModule,
     NgbTypeaheadModule,
     MatButtonToggleModule,
-    MatTooltipModule
+    MatTooltipModule,
+    CarouselModule
 
     // MAKE MATERIAL MODULE 
   ],

@@ -4,12 +4,13 @@ import { CritterpediaContainerComponent } from './containers/critterpedia-contai
 import { EventsContainerComponent } from './containers/events-container/events-container.component';
 import { MuseumContainerComponent } from './containers/museum-container/museum-container.component';
 import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
+import { HomeContainerComponent } from './containers/home-container/home-container.component';
 import { PassportComponent } from './outdated/passport/passport.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
-  { path: 'home', component: WelcomeComponent },
+  { path: 'home', component: HomeContainerComponent },
   // { path: 'login', component: LoginComponent },
   // { path: 'register', component: RegisterComponent },
   { path: 'critterpedia', component: CritterpediaContainerComponent },

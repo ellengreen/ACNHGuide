@@ -7,12 +7,48 @@
         width: 24%;
     }
 
+
+
     .event-cards {
         width: 70%;
         display: inline-block;
 
+        // #pr_id_1 .p-carousel-item {
+        //     flex: 1 0 35%;
+        // }
+
         .card {
             display: inline-block;
+
+            .card-title{
+                font-family: "Nunito", sans-serif;
+                font-size: 1.5rem;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .card-date{
+                font-family: "Nunito", sans-serif;
+                font-size: 1rem;
+                text-align: center;
+                // font-weight: 600;
+            }
+
+            .card-desc {
+                font-family: "Nunito", sans-serif;
+            }
+
+            img {
+                // float: left;
+                // width:  100px;
+                // height: 100px;
+                padding: 1.5rem;
+                width: 250px;
+                height: 250px;
+                object-fit: scale-down;
+                margin-left: 10%;
+                // object-fit: cover;
+            }
         }
     }
 }

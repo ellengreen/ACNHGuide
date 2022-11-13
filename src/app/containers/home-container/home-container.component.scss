@@ -1,0 +1,61 @@
+.nav {
+    padding-top: 10rem;
+    margin-bottom: 50px;
+    justify-content: center;
+    justify-items: stretch;
+    align-content: center;
+    align-items: stretch;
+    grid-template-rows: repeat(3, 90px);
+    grid-template-columns: repeat(3, 90px);
+    row-gap: 13px;
+    column-gap: 3rem;
+
+    .wrapper {
+        height: 250px;
+        border-radius: 5%;
+        margin-left: 2rem;
+        background-color: palegoldenrod;
+
+        .icon {
+            height: 200px;
+            width: 200px;
+            border-radius: 5% 5% 0% 0%;
+        }
+
+        .critterpedia {
+            background-color: darksalmon;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-top: 0.75rem;
+        }
+    }
+
+    .critterpedia1 {
+        transform: scale(1) rotate(-14deg) translateY(80px);
+    }
+
+    .museum {
+        transform: scale(1) rotate(-7deg) translateY(15px);
+    }
+
+    .villagers {
+        transform: scale(1) rotate(0deg) translateY(0px);
+    }
+
+    .passport {
+        transform: scale(1) rotate(7deg) translateY(15px);
+    }
+    .events {
+        transform: scale(1) rotate(14deg) translateY(80px);
+    }
+}
+
+.user-info {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: darkkhaki;
+    height: 12rem;
+}

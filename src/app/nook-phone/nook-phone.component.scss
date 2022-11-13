@@ -11,7 +11,7 @@
     }
 
     .nav {
-        margin-top: 25px;
+        margin-top: 3rem;
         margin-bottom: 50px;
         display: grid;
         grid-template-rows: repeat(3, 90px);
@@ -20,7 +20,7 @@
         justify-items: stretch;
         align-content: center;
         align-items: stretch;
-        row-gap: 13px;
+        row-gap: 20px;
         column-gap: 13px;
 
         .icon {
@@ -28,7 +28,7 @@
 
         }
         .critterpedia {
-            background-color: goldenrod;
+            background-color: darksalmon;
         }
 
         img:hover {

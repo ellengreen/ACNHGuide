@@ -10,21 +10,37 @@
       </div>
     </div>
   </div>
-  
-  <!-- <p-carousel [value]="eventsList" [numVisible]="3" [numScroll]="1">
-    <ng-template let-event >
-        Content to display
-    </ng-template>
-</p-carousel> -->
 
-  <div *ngFor="let event of eventsList" class="event-cards">
-    <div class="card" style="width: 18rem;">
-      <img [src]=event.imagePath class="card-img-top">
-      <div class="card-body">
-        <h5 class="card-title">{{event.name}}</h5>
-        <h5 class="card-title">{{event.dateStr}}</h5>
-        <h5 class="card-title">{{event?.description}}</h5>
-      </div>
-    </div>
+  <div class="event-cards">
+    <p-carousel [value]="eventsList" [numVisible]="3" [numScroll]="1" [circular]="true">
+      <ng-template let-event pTemplate="item">
+        <div class="event-item">
+          <div class="event-item-content">
+            <div class="p-mb-3">
+            </div>
+            <div class="card" style="width: 18rem; height: 30rem;">
+              <img [src]=event.imagePath class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">{{event.name}}</h5>
+                <h5 class="card-date">{{event.dateStr}}</h5>
+                <h5 class="card-desc">{{event?.description}}</h5>
+              </div>
+            </div>
+            <!-- <h4 class="p-mb-1">{{event.name}}</h4>
+                      <h5 class="card-title">{{event.dateStr}}</h5>
+                      <h5 class="card-title">{{event?.description}}</h5> -->
+            <!-- <h6 class="p-mt-0 p-mb-3">${{event.price}}</h6>
+                      <span [class]="'event-badge status-'+event.inventoryStatus.toLowerCase()">{{event.inventoryStatus}}</span>
+                      <div class="car-buttons p-mt-5">
+                          <p-button type="button" styleClass="p-button p-button-rounded p-mr-2" icon="pi pi-search"></p-button>
+                          <p-button type="button" styleClass="p-button-success p-button-rounded p-mr-2" icon="pi pi-star"></p-button>
+                          <p-button type="button" styleClass="p-button-help p-button-rounded" icon="pi pi-cog"></p-button>
+                      </div> -->
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+
   </div>
+
 </div>
