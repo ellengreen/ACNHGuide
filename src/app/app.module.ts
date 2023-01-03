@@ -27,7 +27,6 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { CritterpediaTableComponent } from './components/critterpedia/critterpedia-table.component';
-import { PassportComponent } from './outdated/passport/passport.component';
 import { MuseumComponent } from './components/museum/museum.component';
 import { CritterInfoDialogComponent } from './components/critter-info-dialog/critter-info-dialog.component';
 import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
@@ -53,6 +52,8 @@ import { MuseumDialogComponent } from './components/museum-dialog/museum-dialog.
 import { CarouselModule } from 'primeng/carousel';
 import { EventFilterComponent } from './components/event-filter/event-filter.component';
 import { HomeContainerComponent } from './containers/home-container/home-container.component';
+import { PassportContainerComponent } from './containers/passport-container/passport-container.component';
+import { PassportImageComponent } from './components/passport-image/passport-image.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,6 @@ import { HomeContainerComponent } from './containers/home-container/home-contain
     WelcomeComponent,
     NookPhoneComponent,
     CritterpediaTableComponent,
-    PassportComponent,
     MuseumComponent,
     CritterInfoDialogComponent,
     ResidentServicesContainerComponent,
@@ -80,7 +80,9 @@ import { HomeContainerComponent } from './containers/home-container/home-contain
     ArtDialogComponent,
     MuseumDialogComponent,
     EventFilterComponent,
-    HomeContainerComponent
+    HomeContainerComponent,
+    PassportContainerComponent,
+    PassportImageComponent
   ],
   imports: [
     // AngularFireModule.initializeApp(environment.firebase),
