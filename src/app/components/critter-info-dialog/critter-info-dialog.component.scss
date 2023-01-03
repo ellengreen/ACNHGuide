@@ -56,37 +56,60 @@
 // // }
 
 .container {
-
-
-    .header {
-        font-family: "Nunito", sans-serif !important;
-        color: black;
-        margin-top: 1rem;
-    }
+    padding: 0;
     .x {
         width: 100%;
         display: inline-flex;
-        .critter-icon {
-            margin: auto;
-            width: 50%;
-            img {
-                // width: 75%;
-                background-color: white;
-                border-radius: 50%;
+        .critter-box {
+            width: 40%;
+            .critter-icon {
+                margin: auto;
+                width: 50%;
                 margin-bottom: 2rem;
-            }
+                margin-top: 20%;
+                display: block;
 
-            button {
-                padding: .25rem 1rem;
-                border-radius: 1.5rem;
-                background-color: lightsteelblue;
-                color: white;
-                margin-left: 1rem;
+            }
+            .row {
+                display: block;
+                .btn {
+                    padding: 0.25rem 1rem;
+                    border-radius: 1.5rem;
+                    background-color: lightsteelblue;
+                    color: white;
+                    margin-left: 1rem;
+                    width: initial;
+                }
             }
         }
 
-        table {
-            // width: 50%;
+        .info-box {
+            width: 60%;
+            .banner {
+                width: 80%;
+                margin-left: auto;
+                background-color: ivory;
+                height: 5rem;
+                // color: pink;
+                border-radius: 65px 0 0 65px;
+                margin-bottom: 1rem;
+                .critter-header {
+                    font-family: "Nunito", sans-serif;
+                    color: darkseagreen;
+                    // font-size: 2rem;
+                    // padding-right: 2rem;
+                    padding-top: 1.75rem;
+                    text-align: right;
+                }
+            }
+            .header {
+                font-family: "Nunito", sans-serif !important;
+                color: black;
+                margin-top: 1rem;
+            }
+            // table {
+            //     // width: 50%;
+            // }
         }
     }
 }
