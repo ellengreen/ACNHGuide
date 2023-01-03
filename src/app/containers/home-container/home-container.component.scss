@@ -1,5 +1,5 @@
 .nav {
-    padding-top: 10rem;
+    padding-top: 15rem;
     margin-bottom: 50px;
     justify-content: center;
     justify-items: stretch;
@@ -8,18 +8,19 @@
     grid-template-rows: repeat(3, 90px);
     grid-template-columns: repeat(3, 90px);
     row-gap: 13px;
-    column-gap: 3rem;
+    column-gap: 5rem;
 
     .wrapper {
         height: 250px;
         border-radius: 5%;
         margin-left: 2rem;
-        background-color: palegoldenrod;
+        background-color: moccasin;
 
         .icon {
             height: 200px;
             width: 200px;
             border-radius: 5% 5% 0% 0%;
+            cursor: pointer;
         }
 
         .critterpedia {
@@ -32,23 +33,38 @@
         }
     }
 
+    .critterpedia1:hover {
+        transform: scale(1.1) rotate(-14deg) translateY(80px);
+    }
     .critterpedia1 {
         transform: scale(1) rotate(-14deg) translateY(80px);
     }
 
+    .museum:hover {
+        transform: scale(1.1) rotate(-7deg) translateY(15px);
+    }
     .museum {
         transform: scale(1) rotate(-7deg) translateY(15px);
     }
 
+    .villagers:hover {
+        transform: scale(1.1) rotate(0deg) translateY(0px);
+    }
     .villagers {
         transform: scale(1) rotate(0deg) translateY(0px);
     }
 
+    .passport:hover {
+        transform: scale(1.1) rotate(7deg) translateY(15px);
+    }
     .passport {
         transform: scale(1) rotate(7deg) translateY(15px);
     }
     .events {
         transform: scale(1) rotate(14deg) translateY(80px);
+    }
+    .events:hover {
+        transform: scale(1.1) rotate(14deg) translateY(80px);
     }
 }
 
