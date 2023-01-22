@@ -10,16 +10,16 @@ export class NookPhoneComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<NookPhoneComponent>) { }
   title = '';
-
+  today: number = Date.now();
   ngOnInit(): void {
-    this.title = "Main Menu"
+    this.title = 'Main Menu';
   }
 
-  over(id?) {
-    this.title = id;
+  mouseOver(routeTitle: string) {
+    this.title = routeTitle;
   }
 
-  out() {
+  mouseOut() {
     this.title = 'Main Menu'
   }
 }

@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DatePipe, KeyValuePipe } from '@angular/common';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
-
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './archive/user-auth/login/login.component';
@@ -108,7 +108,8 @@ import { PassportImageComponent } from './v2-components/passport-image/passport-
     NgbTypeaheadModule,
     MatButtonToggleModule,
     MatTooltipModule,
-    CarouselModule
+    CarouselModule,
+    MatIconModule
 
     // MAKE MATERIAL MODULE 
   ],

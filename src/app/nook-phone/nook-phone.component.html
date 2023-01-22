@@ -1,15 +1,36 @@
-<div class="container">
-    <h1>{{title}}</h1>
+<div class="phone-container">
+    <div id="phone-header">
+        <div class="header-flex">
+            <mat-icon>signal_cellular_alt</mat-icon>
+        </div>
 
-    <div class="nav">
-        <img (mouseover)='over("Home")' (mouseout)='out()' class="icon" routerLink="/" src="../../assets/icons/nook-phone/68747470733a2f2f692e696d6775722e636f6d2f303853774643322e706e67.png" mat-dialog-close>
-        <img (mouseover)='over("Critterpedia")' (mouseout)='out()' class="icon critterpedia" routerLink="/critterpedia" src="../../assets/icons/nook-phone/Menu_Critterpedia_NH_Icon.png" mat-dialog-close>
-        <!-- <img (mouseover)='over("Museum")' (mouseout)='out()' class="icon" routerLink="/museum" src="../../assets/icons/nook-phone/ReddsFlag.png" mat-dialog-close> -->
-        <!-- <img (mouseover)='over("Passport")' (mouseout)='out()' class="icon" routerLink="/passport" src="../../assets/icons/nook-phone/Passport.png" mat-dialog-close> -->
-        <!-- <img (mouseover)='over("Resident Services")' (mouseout)='out()' class="icon" routerLink="/villagers" src="../../assets/icons/nook-phone/Isabelle.jpg" mat-dialog-close> -->
-        <!-- <img (mouseover)='over("Events")' (mouseout)='out()' class="icon" routerLink="/events" src="../../assets/icons/nook-phone/Calendar.png" mat-dialog-close> -->
-        <!-- <img (mouseover)='over("About")' (mouseout)='out()' class="icon" src="assets/icons//Mail.png" mat-dialog-close> -->
+        <div id="date">
+            {{today | date:'medium'}}
+        </div>
+
+        <div class="header-flex">
+            <mat-icon>sentiment_satisfied</mat-icon>
+        </div>
+    </div>
+
+    <h1 id="routeTitle">{{title}}</h1>
+
+    <!-- TODO: uncomment as other features are implemented -->
+    <div id="phone-apps">
+        <img (mouseover)='mouseOver("Home")' (mouseout)='mouseOut()' class="phone-icon" routerLink="/"
+            src="../../assets/icons/nook-phone/68747470733a2f2f692e696d6775722e636f6d2f303853774643322e706e67.png"
+            mat-dialog-close>
+        <img (mouseover)='mouseOver("Critterpedia")' (mouseout)='mouseOut()' class="phone-icon" id="critterpedia-icon"
+            routerLink="/critterpedia" src="../../assets/icons/nook-phone/Menu_Critterpedia_NH_Icon.png"
+            mat-dialog-close>
+        <!-- <img (mouseover)='mouseOver("Museum")' (mouseout)='mouseOut()' class="phone-icon" routerLink="/museum"
+            src="../../assets/icons/nook-phone/ReddsFlag.png" mat-dialog-close> -->
+        <img (mouseover)='mouseOver("Passport")' (mouseout)='mouseOut()' class="phone-icon" routerLink="/passport"
+            src="../../assets/icons/nook-phone/Passport.png" mat-dialog-close>
+        <!-- <img (mouseover)='mouseOver("Resident Services")' (mouseout)='mouseOut()' class="phone-icon"
+            routerLink="/villagers" src="../../assets/icons/nook-phone/Isabelle.jpg" mat-dialog-close>
+        <img (mouseover)='mouseOver("Events")' (mouseout)='mouseOut()' class="phone-icon" routerLink="/events"
+            src="../../assets/icons/nook-phone/Calendar.png" mat-dialog-close> -->
+        <!-- <img (mouseover)='over("About")' (mouseout)='mouseOut()' class="phone-icon" src="assets/icons//Mail.png" mat-dialog-close> -->
     </div>
 </div>
-
-

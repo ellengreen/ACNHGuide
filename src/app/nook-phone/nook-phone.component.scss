@@ -1,38 +1,48 @@
-.container {
-    background-color: #f6f4e5;
+.phone-container {
 
-    h1 {
-        color: darkslategrey;
+    #phone-header {
+        margin-bottom: 3rem;
+        display: flex;
+        font-size: 0.85rem;
+        color: #e0dbc8;
+        align-items: center;
+
+        .header-flex {
+            flex: 1 1 0px;
+            text-align: center;
+        }
+
+        #date {
+            font-family: "Nunito", sans-serif;
+        }
+    }
+    
+    #routeTitle {
+        color: #5f4d3a;
         display: block;
         text-align: center;
-        font-weight: 800;
         font-family: "Nunito", sans-serif;
-
     }
 
-    .nav {
+    #phone-apps {
         margin-top: 3rem;
-        margin-bottom: 50px;
         display: grid;
         grid-template-rows: repeat(3, 90px);
         grid-template-columns: repeat(3, 90px);
-        justify-content: center;
-        justify-items: stretch;
-        align-content: center;
         align-items: stretch;
         row-gap: 20px;
         column-gap: 13px;
 
-        .icon {
+        .phone-icon {
             border-radius: 35%;
-
-        }
-        .critterpedia {
-            background-color: darksalmon;
         }
 
-        img:hover {
+        .phone-icon:hover {
             transform: scale(1.1);
-            }
+        }
+
+        #critterpedia-icon {
+            background-color: #efa8b2;
+        }
     }
 }

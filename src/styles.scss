@@ -90,22 +90,22 @@ body {
 }
 
 .mat-dialog-container {
-  background-color: #f6f4e5;
-  border-radius: 20% !important;
-  max-height: 25rem !important;
+  background-color: #f6f4e7;
+  border-radius: 15% !important;
+  max-height: 30rem !important;
   min-height: 25rem !important;
+  overflow: hidden !important;
 }
 
 .critter-dialog .mat-dialog-container {
-  background-color: #f6f4e5;
-  // background-color: #BBEAE0;
+  background-color: #f6f4e7;
   padding: 1rem;
   color: white;
   border-radius: 1% !important;
 }
 
 .villager-dialog .mat-dialog-container {
-  background-color: #f6f4e5;
+  background-color: #f6f4e7;
   // background-color: #BBEAE0;
   padding: 1rem;
   color: white;
