@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseService } from 'app/outdated/firebase.service';
+import { FirebaseService } from 'app/archive/firebase.service';
 import { AuthenticationService } from '../authentication.service';
 
 @Component({
