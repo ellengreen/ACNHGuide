@@ -1,69 +1,63 @@
-.nav {
-    padding-top: 15rem;
-    margin-bottom: 50px;
-    justify-content: center;
-    justify-items: stretch;
-    align-content: center;
-    align-items: stretch;
-    grid-template-rows: repeat(3, 90px);
-    grid-template-columns: repeat(3, 90px);
-    row-gap: 13px;
-    column-gap: 5rem;
+@import 'src/styles.scss';
 
-    .wrapper {
-        height: 250px;
-        border-radius: 5%;
-        margin-left: 2rem;
-        background-color: moccasin;
+.home-container {
+    .nav {
+        padding-top: 15%;
+        justify-content: center;
+        column-gap: 7rem;
 
-        .icon {
-            height: 200px;
-            width: 200px;
-            border-radius: 5% 5% 0% 0%;
-            cursor: pointer;
+        .wrapper {
+            border-radius: 5%;
+            margin-left: 2rem;
+            background-color: moccasin;
+
+            .icon {
+                height: 11rem;
+                width: 11rem;
+                border-radius: 5% 5% 0% 0%;
+                cursor: pointer;
+            }
+
+            p {
+                font-size: 1.5rem;
+                margin-top: 0.75rem;
+                color: $primary-text;
+            }
         }
 
-        .critterpedia {
-            background-color: darksalmon;
+        // TODO: is there a way to clean this up using SCSS? consolidate?
+        #critterpedia:hover {
+            transform: scale(1.1) rotate(-14deg) translateY(80px);
+        }
+        #critterpedia {
+            transform: scale(1) rotate(-14deg) translateY(80px);
         }
 
-        p {
-            font-size: 1.5rem;
-            margin-top: 0.75rem;
+        #museum:hover {
+            transform: scale(1.1) rotate(-7deg) translateY(15px);
         }
-    }
+        #museum {
+            transform: scale(1) rotate(-7deg) translateY(15px);
+        }
 
-    .critterpedia1:hover {
-        transform: scale(1.1) rotate(-14deg) translateY(80px);
-    }
-    .critterpedia1 {
-        transform: scale(1) rotate(-14deg) translateY(80px);
-    }
+        #villagers:hover {
+            transform: scale(1.1) rotate(0deg) translateY(0px);
+        }
+        #villagers {
+            transform: scale(1) rotate(0deg) translateY(0px);
+        }
 
-    .museum:hover {
-        transform: scale(1.1) rotate(-7deg) translateY(15px);
-    }
-    .museum {
-        transform: scale(1) rotate(-7deg) translateY(15px);
-    }
-
-    .villagers:hover {
-        transform: scale(1.1) rotate(0deg) translateY(0px);
-    }
-    .villagers {
-        transform: scale(1) rotate(0deg) translateY(0px);
-    }
-
-    .passport:hover {
-        transform: scale(1.1) rotate(7deg) translateY(15px);
-    }
-    .passport {
-        transform: scale(1) rotate(7deg) translateY(15px);
-    }
-    .events {
-        transform: scale(1) rotate(14deg) translateY(80px);
-    }
-    .events:hover {
-        transform: scale(1.1) rotate(14deg) translateY(80px);
+        #passport:hover {
+            transform: scale(1.1) rotate(7deg) translateY(15px);
+        }
+        #passport {
+            transform: scale(1) rotate(7deg) translateY(15px);
+        }
+        #events {
+            transform: scale(1) rotate(14deg) translateY(80px);
+        }
+        #events:hover {
+            transform: scale(1.1) rotate(14deg) translateY(80px);
+        }
     }
 }
