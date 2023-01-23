@@ -89,14 +89,24 @@ body {
   font-family: "Nunito", sans-serif;
 }
 
+// TODO: replace !importants with custom material theme
+.mat-mini-fab.mat-accent {
+  border: 1px solid #5F4D3A;
+  background-color: #f6f4e7;
+}
+
 .mat-dialog-container {
   background-color: #f6f4e7;
   border-radius: 15% !important;
   max-height: 30rem !important;
   min-height: 25rem !important;
   overflow: hidden !important;
+  position: relative !important;
 }
 
+.mat-mini-fab .mat-button-wrapper>* {
+vertical-align: baseline !important;
+}
 .critter-dialog .mat-dialog-container {
   background-color: #f6f4e7;
   padding: 1rem;

@@ -1,5 +1,17 @@
 .phone-container {
+    .close-fab-container {
+        position: absolute;
+        right: 45px;
+        top: 0;
 
+        #close-dialog-fab {
+            position: fixed;
+
+            mat-icon {
+                color: #5f4d3a;
+            }
+        }
+    }
     #phone-header {
         margin-bottom: 3rem;
         display: flex;
@@ -16,7 +28,7 @@
             font-family: "Nunito", sans-serif;
         }
     }
-    
+
     #routeTitle {
         color: #5f4d3a;
         display: block;
