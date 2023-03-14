@@ -1,63 +1,80 @@
 // @import 'src/styles.scss';
 
 .home-container {
+    background-color: #e4e2d0;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
     .nav {
         padding-top: 15%;
         justify-content: center;
-        column-gap: 7rem;
+        column-gap: 5rem;
 
         .wrapper {
             border-radius: 5%;
-            margin-left: 2rem;
-            background-color: moccasin;
+            // margin-left: 2rem;
+            padding: 0.5rem 0.5rem 1.5rem;
+            background-color: #fcf6de;
 
             .icon {
                 height: 11rem;
                 width: 11rem;
-                border-radius: 5% 5% 0% 0%;
                 cursor: pointer;
+
+                border: 0.5rem solid #e4e2d0;
+                border-radius: 10%;
             }
 
             p {
                 font-size: 1.5rem;
-                margin-top: 0.75rem;
-                color: #5F4D3A;
+                margin-top: 1.5rem;
+                color: #5f4d3a;
             }
         }
 
         // TODO: is there a way to clean this up using SCSS? consolidate?
-        #critterpedia:hover {
-            transform: scale(1.1) rotate(-14deg) translateY(80px);
-        }
-        #critterpedia {
-            transform: scale(1) rotate(-14deg) translateY(80px);
-        }
+        // #critterpedia:hover {
+        //     transform: scale(1.1) rotate(-14deg) translateY(80px);
+        // }
+        // #critterpedia {
+        //     transform: scale(1) rotate(-14deg) translateY(80px);
+        // }
 
-        #museum:hover {
-            transform: scale(1.1) rotate(-7deg) translateY(15px);
-        }
-        #museum {
-            transform: scale(1) rotate(-7deg) translateY(15px);
-        }
+        // #museum:hover {
+        //     transform: scale(1.1) rotate(-7deg) translateY(15px);
+        // }
+        // #museum {
+        //     transform: scale(1) rotate(-7deg) translateY(15px);
+        // }
 
-        #villagers:hover {
-            transform: scale(1.1) rotate(0deg) translateY(0px);
-        }
-        #villagers {
-            transform: scale(1) rotate(0deg) translateY(0px);
-        }
+        // #villagers:hover {
+        //     transform: scale(1.1) rotate(0deg) translateY(0px);
+        // }
+        // #villagers {
+        //     transform: scale(1) rotate(0deg) translateY(0px);
+        // }
 
-        #passport:hover {
-            transform: scale(1.1) rotate(7deg) translateY(15px);
-        }
-        #passport {
-            transform: scale(1) rotate(7deg) translateY(15px);
-        }
-        #events {
-            transform: scale(1) rotate(14deg) translateY(80px);
-        }
-        #events:hover {
-            transform: scale(1.1) rotate(14deg) translateY(80px);
-        }
+        // #passport:hover {
+        //     transform: scale(1.1) rotate(7deg) translateY(15px);
+        // }
+        // #passport {
+        //     transform: scale(1) rotate(7deg) translateY(15px);
+        // }
+        // #events {
+        //     transform: scale(1) rotate(14deg) translateY(80px);
+        // }
+        // #events:hover {
+        //     transform: scale(1.1) rotate(14deg) translateY(80px);
+        // }
+    }
+
+    .banner {
+        background-image: url(../../../assets/backgrounds/banner-bg-rounded.png);
+        transform: rotate(180deg);
+        height: 100%;
+        bottom: 0px;
+        position: sticky;
+        background-repeat: repeat-x;
+        background-size: auto;
     }
 }
