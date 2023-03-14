@@ -29,7 +29,7 @@ export class CritterpediaTableComponent implements OnInit {
       },
       panelClass: 'critter-dialog',
       maxHeight: '450px',
-      minWidth: '750px'
+      maxWidth: '400px',
     });
   }
 

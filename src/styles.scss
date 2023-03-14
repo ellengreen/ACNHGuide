@@ -108,10 +108,13 @@ body {
 vertical-align: baseline !important;
 }
 .critter-dialog .mat-dialog-container {
-  background-color: #f6f4e7;
+  background-color: #98BB93;
   padding: 1rem;
   color: white;
-  border-radius: 1% !important;
+  border-radius: 15% !important;
+  h1 {
+    font-family: "Nunito", sans-serif !important;
+  }
 }
 
 .villager-dialog .mat-dialog-container {

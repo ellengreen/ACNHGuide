@@ -17,6 +17,7 @@ export class CritterInfoDialogComponent implements OnInit {
   ngOnInit(): void {
     this.selectedCritter = this.data.selectedCritter.value;
     this.critterpediaMode = this.data.critterpediaMode;
+    console.log(this.selectedCritter)
   }
 
 }

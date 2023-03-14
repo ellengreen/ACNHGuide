@@ -109,7 +109,9 @@ import { PassportImageComponent } from './v2-components/passport-image/passport-
     MatButtonToggleModule,
     MatTooltipModule,
     CarouselModule,
-    MatIconModule
+    MatIconModule,
+    MatChipsModule,
+    MatOptionModule
 
     // MAKE MATERIAL MODULE 
   ],
