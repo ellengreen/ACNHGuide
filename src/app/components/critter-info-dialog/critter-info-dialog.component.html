@@ -18,81 +18,12 @@
 </div>
 
 <div class="action-buttons">
-    <button mat-fab extended>
-        <mat-icon>done</mat-icon>
+    <button (click)="onCaughtClicked()">
+        <!-- <mat-icon>done</mat-icon> -->
         Caught
       </button>
-      <button mat-fab extended>
+      <!-- <button mat-fab extended> -->
         <!-- <mat-icon>favorite</mat-icon> -->
-        Donated
-      </button>
+        <!-- Donated -->
+      <!-- </button> -->
 </div>
-
-
-
-<!-- 
-<div class="container">
-
-
-
-    <div class="x">
-        <div class="critter-box">
-            <img class="critter-icon" src="{{selectedCritter.iconURI}}">
-            <div class="row">
-                <button type="button" class="btn">Caught</button><br>
-                <button type="button" class="btn">Donated</button>
-            </div>
-        </div>
-
-        <div class="info-box">
-            <div class="banner">
-                <h1 class="text-center critter-header">{{selectedCritter.name | titlecase}}</h1>
-            </div>
-            <table class="table table-hover">
-                <tbody>
-                    <tr>
-                        <th>Selling Price</th>
-                        <td>{{selectedCritter.price}} bells</td>
-                    </tr>
-                    <tr *ngIf="critterpediaMode !== critterType.sea">
-                        <th>Rarity</th>
-                        <td>{{selectedCritter['availability']['rarity']}}</td>
-                    </tr>
-                    <tr *ngIf="critterpediaMode !== critterType.sea">
-                        <th>Location</th>
-                        <td>{{selectedCritter['availability']['location']}}</td>
-                    </tr>
-                    <tr *ngIf="critterpediaMode !== critterType.bugs">
-                        <th>Shadow Size</th>
-                        <td>{{selectedCritter['shadow']}}</td>
-                    </tr>
-                    <tr *ngIf="critterpediaMode === critterType.sea">
-                        <th>Speed</th>
-                        <td>{{selectedCritter['speed']}}</td>
-                    </tr>
-                    <tr *ngIf="!selectedCritter['availability']['isAllDay']">
-                        <th>Available Times</th>
-                        <td>{{selectedCritter['availability']['time']}}</td>
-                    </tr>
-                    <tr *ngIf="selectedCritter['availability']['isAllDay']">
-                        <th>Available Times</th>
-                        <td>All Day</td>
-                    </tr>
-                    <tr *ngIf="!selectedCritter['availability']['isAllYear']">
-                        <th>Northern Months</th>
-                        <td>{{selectedCritter['availability']['northernMonthString']}}</td>
-<td>{{split(selectedCritter['availability']['northernMonthArray'])}}</td> 
-                    </tr>
-                    <tr *ngIf="!selectedCritter['availability']['isAllYear']">
-                        <th>Southern Months</th>
-                        <td>{{selectedCritter['availability']['southernMonthString']}}</td>
-                    </tr>
-                    <tr *ngIf="selectedCritter['availability']['isAllYear']">
-                        <th>Months</th>
-                        <td>All Year</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div> -->

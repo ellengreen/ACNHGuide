@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from './archive/authentication.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'animalCrossing';
 
-  constructor(){
+  constructor(private authService: AuthenticationService){
+  }
+
+  ngOnInit() {
+    this.authService.getUser();
   }
 }

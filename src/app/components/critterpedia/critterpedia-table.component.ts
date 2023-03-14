@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CritterType } from 'app/shared/enums/critter-type.enum';
 import { Critter } from 'app/shared/interfaces/critter';
@@ -13,6 +13,9 @@ export class CritterpediaTableComponent implements OnInit {
 
   @Input() critterpediaMode: CritterType = CritterType.fish;
   @Input() critterList: Critter[];
+
+  @Output() caughtClicked: EventEmitter<any> = new EventEmitter<any>();
+  @Output() removeClicked: EventEmitter<any> = new EventEmitter<any>();
 
   selectedCritter: Critter;
 
@@ -30,7 +33,11 @@ export class CritterpediaTableComponent implements OnInit {
       panelClass: 'critter-dialog',
       maxHeight: '450px',
       maxWidth: '400px',
-    });
+    }).componentInstance.caughtClicked.subscribe(selectedCritter => {
+      this.caughtClicked.emit(selectedCritter);
+    })
+
+    // Will need to use dialog ref, for deleting etc
   }
 
 }

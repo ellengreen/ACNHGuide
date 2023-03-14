@@ -14,8 +14,6 @@ import { DatePipe, KeyValuePipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './archive/user-auth/login/login.component';
-import { RegisterComponent } from './archive/user-auth/register/register.component';
 import { ProfileComponent } from './archive/profile/profile.component';
 import { VillagersComponent } from './archive/villagers/villagers.component';
 import { WelcomeComponent } from './welcome/welcome.component';
@@ -59,8 +57,6 @@ import { PassportImageComponent } from './v2-components/passport-image/passport-
   declarations: [
     AppComponent,
     ProfileComponent,
-    LoginComponent,
-    RegisterComponent,
     CritterpediaContainerComponent,
     VillagersComponent,
     WelcomeComponent,

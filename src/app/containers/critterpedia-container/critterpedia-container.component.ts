@@ -5,6 +5,7 @@ import { TransformService } from '../../shared/services/transform.service';
 import { FirebaseService } from 'app/archive/firebase.service';
 import { CurrentDateService } from 'app/shared/services/current-date.service';
 import { DataService } from 'app/shared/services/data.service';
+import { DatabaseService } from 'app/shared/services/database.service';
 
 @Component({
   selector: 'app-critterpedia-container',
@@ -13,7 +14,7 @@ import { DataService } from 'app/shared/services/data.service';
 })
 export class CritterpediaContainerComponent implements OnInit {
 
-  constructor(private dataService: DataService, private db: FirebaseService, private ds: CurrentDateService, private transformService: TransformService) { }
+  constructor(private dataService: DataService, private db: FirebaseService, private ds: CurrentDateService, private transformService: TransformService, private databaseService: DatabaseService) { }
 
   allCrittersList: Critter[];
   filteredCritterList: Critter[];
@@ -61,13 +62,16 @@ export class CritterpediaContainerComponent implements OnInit {
     });
   }
 
+  addCritterToDB(critter: Critter) {
+    this.databaseService.POST(this.critterpediaMode, critter);
+  }
+
+  removeCritterFromDB(critter: Critter) {
+    // this.dataService.DELETE(this.critterpediaMode, critter);
+  }
   // aDupe: boolean;
   // addFish(selectedCritter) {
   //   this.db.addFish(selectedCritter);
-  //   this.aDupe = true;
-  // }
-  // addBugs(selectedCritter) {
-  //   this.db.addBug(selectedCritter);
   //   this.aDupe = true;
   // }
 
