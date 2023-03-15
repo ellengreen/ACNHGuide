@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthenticationService } from './archive/authentication.service';
+import { AuthenticationService } from './shared/services/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +9,10 @@ import { AuthenticationService } from './archive/authentication.service';
 export class AppComponent implements OnInit {
   title = 'animalCrossing';
 
-  constructor(private authService: AuthenticationService){
+  constructor(private authService: AuthenticationService) {
   }
 
   ngOnInit() {
-    this.authService.getUser();
+    this.authService.getCurrentUser();
   }
 }

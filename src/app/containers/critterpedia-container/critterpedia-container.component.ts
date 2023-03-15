@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CritterType } from '../../shared/enums/critter-type.enum';
 import { Critter } from '../../shared/interfaces/critter';
 import { TransformService } from '../../shared/services/transform.service';
-import { FirebaseService } from 'app/archive/firebase.service';
 import { CurrentDateService } from 'app/shared/services/current-date.service';
 import { DataService } from 'app/shared/services/data.service';
 import { DatabaseService } from 'app/shared/services/database.service';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-critterpedia-container',
@@ -14,17 +14,25 @@ import { DatabaseService } from 'app/shared/services/database.service';
 })
 export class CritterpediaContainerComponent implements OnInit {
 
-  constructor(private dataService: DataService, private db: FirebaseService, private ds: CurrentDateService, private transformService: TransformService, private databaseService: DatabaseService) { }
+  constructor(private dataService: DataService, private ds: CurrentDateService, private transformService: TransformService, private databaseService: DatabaseService) { }
 
+  // TODO: change to list in state?
   allCrittersList: Critter[];
   filteredCritterList: Critter[];
+  collectedCritterList:Critter[];
+  userCollectedListSubject: BehaviorSubject<any> = new BehaviorSubject<any>([]);
+  userCollectedList$: Observable<[]> = this.userCollectedListSubject.asObservable();
 
   selectedCritter: Critter;
-  // noUser: boolean;
   critterpediaMode: CritterType = CritterType.fish;
 
   ngOnInit(): void {
     this.getCritterList(CritterType.fish);
+    this.getUserCritters();
+
+    this.userCollectedList$.subscribe((res) => {
+      this.collectedCritterList = res;
+    });
   }
 
   getCritterList(critterType: CritterType): void {
@@ -33,14 +41,6 @@ export class CritterpediaContainerComponent implements OnInit {
     });
   }
 
-  // load() {
-  //   this.afAuth.authState.subscribe(user => {
-  //     if (user) {
-  //       this.noUser = false;
-  //     } else { this.noUser = true }
-  //   })
-  // }
-
   onTabsSwitched(critterType: CritterType) {
     this.critterpediaMode = critterType;
     this.getCritterList(critterType);
@@ -48,7 +48,7 @@ export class CritterpediaContainerComponent implements OnInit {
 
   onAvailableNowClicked(switchState: boolean) {
     if (switchState) {
-      this.filteredCritterList = this.currentlyAvailable()
+      this.filteredCritterList = this.currentlyAvailable();
     } else {
       this.filteredCritterList = this.allCrittersList;
     };
@@ -62,8 +62,20 @@ export class CritterpediaContainerComponent implements OnInit {
     });
   }
 
-  addCritterToDB(critter: Critter) {
+  addCritterToDB(critter: Critter): void {
     this.databaseService.POST(this.critterpediaMode, critter);
+  }
+
+  getUserCritters() {
+    this.databaseService.GET(this.critterpediaMode).snapshotChanges().pipe(
+      map(changes =>
+        changes.map(c =>
+          ({ key: c.payload.key, ...c.payload.val() })
+        )
+      )
+    ).subscribe(data => {
+      this.userCollectedListSubject.next(data);
+    });
   }
 
   removeCritterFromDB(critter: Critter) {

@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DatePipe, KeyValuePipe } from '@angular/common';
-// import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -43,7 +43,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { EventsContainerComponent } from './v2-containers/events-container/events-container.component';
 import { EventCardComponent } from './v2-components/event-card/event-card.component';
 import { MuseumContainerComponent } from './v2-containers/museum-container/museum-container.component';
-import { AuthenticationService } from './archive/authentication.service';
 import { MuseumTableComponent } from './v2-components/museum-table/museum-table.component';
 import { ArtDialogComponent } from './v2-components/art-dialog/art-dialog.component';
 import { MuseumDialogComponent } from './v2-components/museum-dialog/museum-dialog.component';
@@ -52,6 +51,10 @@ import { EventFilterComponent } from './v2-components/event-filter/event-filter.
 import { HomeContainerComponent } from './containers/home-container/home-container.component';
 import { PassportContainerComponent } from './v2-containers/passport-container/passport-container.component';
 import { PassportImageComponent } from './v2-components/passport-image/passport-image.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'environments/environment';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AuthenticationService } from './shared/services/authentication.service';
 
 @NgModule({
   declarations: [
@@ -81,7 +84,9 @@ import { PassportImageComponent } from './v2-components/passport-image/passport-
     PassportImageComponent
   ],
   imports: [
-    // AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireDatabaseModule,
     // AngularFireModule,
     // AngularFireAuthModule,
     BrowserModule,
