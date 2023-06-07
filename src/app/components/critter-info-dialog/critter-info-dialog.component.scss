@@ -1,153 +1,61 @@
-// header{
-//     text-align: center;
-//     margin-bottom: 2rem;
-//     margin-top: 1rem;
-//     display: inline-block;
-//     width: 100%;
 
-//     h1 {
-//         display: inline-block;
-//     }
-// }
+    // [TODO]: Nunito font or Arial Rounded MT Bold
+    // [TECH-DEBT]: Scss stylesheet
+    mat-card {
+        background-color: #e6dfc2 !important;
+        color: #815821;
 
-// .action-buttons {
-//     margin-top: 2rem;
-//     text-align: center;
+        #header {
+            display: flex;
+            align-items: center;
 
-//     button {
-//         margin-right: 1rem;
-//     }
-// }
-// .example-button-row button,
-// .example-button-row a {
-//   margin-right: 8px;
-// }// // .container {
+            .mat-icon {
+                font-size: 2rem;
+                height: auto;
+                width: auto;
+            }
+            #title {
+                font-size: 1.75rem;
+            }
 
-// //         // background-color: #cdddf9;
-// //         // position: relative;
-// //         // height: 130px;
-// //         // padding: 1rem;
-// //         .sea {
-// //             background-color: #BBEAE0;
-// //             background-image: url(../../../assets/icons/bg-fish-large.png);
-// //         }
-// //         .fish {
-// //             background-color: #BBEAE0;
-// //             background-image: url(../../../assets/icons/bg-fish-large.png);
-// //         }
+            #right-aligned {
+                margin-left: auto;
+                display: inline-block;
 
-// //         .bugs {
-// //             background-color: #F8F9B4;
-// //             background-color: url(../../../assets/icons/bg-insect-large.png);
-// //         }
-// //         // padding-left: .25rem;
-// //         // padding-bottom: .25rem;
-// //         // padding-right: 0;
-// //         //     position: relative;
+                img {
+                    width: 25%;
+                    margin-right: 0.25rem;
+                    vertical-align: bottom;
+                }
+            }
+        }
 
-// //     .critter-header {
-// //         font-family: "Nunito", sans-serif;
-// //         color: black;
-// //         margin-top: 1rem;
-// //     }
+        #museum-info {
+            background-color: #eee5c5;
+            border-radius: 20px;
+            p {
+                text-align: left;
+                padding: 1rem;
+            }
+        }
 
-// //     .meta {
-// //         margin-left: 12.5%;
+        table {
+            margin-top: 1rem;
+            color: #815821;
 
-// //         .critter-icon {
-// //             background-color: white;
-// //             border-radius: 50%;
-// //             width: 75%;
-// //         }
-// //     }
+            th,
+            td,
+            tr {
+                color: #815821;
+            }
+        }
 
-// //     table {
-// //         // background-color: lightsteelblue;
-// //         // border-radius: 1rem;
-// //         // margin-bottom: 0;
-// //         // font-family: "Nunito", sans-serif;
-// //         // // color: lightsteelblue;
-
-// //         // td {
-// //         //     border-style: none;
-// //         // }
-
-// //         // .text-right {
-// //         //     font-weight: 800;
-// //         // }
-// //     }
-// // // }
-
-// .container {
-//     padding: 0;
-//     .x {
-//         width: 100%;
-//         display: inline-flex;
-//         .critter-box {
-//             width: 40%;
-//             .critter-icon {
-//                 margin: auto;
-//                 width: 50%;
-//                 margin-bottom: 2rem;
-//                 margin-top: 20%;
-//                 display: block;
-
-//             }
-//             .row {
-//                 display: block;
-//                 .btn {
-//                     padding: 0.25rem 1rem;
-//                     border-radius: 1.5rem;
-//                     background-color: lightsteelblue;
-//                     color: white;
-//                     margin-left: 1rem;
-//                     width: initial;
-//                 }
-//             }
-//         }
-
-//         .info-box {
-//             width: 60%;
-//             .banner {
-//                 width: 80%;
-//                 margin-left: auto;
-//                 background-color: ivory;
-//                 height: 5rem;
-//                 // color: pink;
-//                 border-radius: 65px 0 0 65px;
-//                 margin-bottom: 1rem;
-//                 .critter-header {
-//                     font-family: "Nunito", sans-serif;
-//                     color: darkseagreen;
-//                     // font-size: 2rem;
-//                     // padding-right: 2rem;
-//                     padding-top: 1.75rem;
-//                     text-align: right;
-//                 }
-//             }
-//             .header {
-//                 font-family: "Nunito", sans-serif !important;
-//                 color: black;
-//                 margin-top: 1rem;
-//             }
-//             // table {
-//             //     // width: 50%;
-//             // }
-//         }
-//     }
-// }
-
-.dialog-title {
-    font-family: "Nunito", sans-serif;
-}
-.dialog-container {
-    background-color: #e7e0c2;
-    padding: 1rem;
-    font-family: "Nunito", sans-serif !important;
-
-    .left {
+        #action-buttons {
+            text-align: end;
+            button {
+                background-color: darkseagreen;
+                border: none;
+                margin-left: 1rem;
+            }
+        }
     }
-
-    .right {
-    }
-}

@@ -1,42 +1,69 @@
-<!-- <header>
-    <img class="critter-icon" src="{{selectedCritter.iconURI}}">
-    <h1>{{selectedCritter.name | titlecase}}</h1>
-</header>
-
-<div class="critter-info">
-    <mat-chip-list aria-label="Fish selection">
-        <mat-chip *ngIf="selectedCritter['availability']['isAllYear']">All Year</mat-chip>
-        <mat-chip *ngIf="selectedCritter['availability']['isAllDay']">All Day</mat-chip>
-        <mat-chip *ngIf="!selectedCritter['availability']['isAllDay']">{{selectedCritter['availability']['time']}}</mat-chip>
-        <mat-chip *ngIf="!selectedCritter['availability']['isAllYear']">{{selectedCritter['availability']['northernMonthString']}}</mat-chip>
-        <mat-chip>{{selectedCritter.price}} bells</mat-chip>
-        <mat-chip *ngIf="critterpediaMode !== critterType.sea">{{selectedCritter['availability']['rarity']}}</mat-chip>
-        <mat-chip *ngIf="critterpediaMode !== critterType.sea">{{selectedCritter['availability']['location']}}</mat-chip>
-        <mat-chip *ngIf="critterpediaMode !== critterType.bugs">{{selectedCritter['shadow']}} shadow</mat-chip>
-        <mat-chip *ngIf="critterpediaMode === critterType.sea">{{selectedCritter['speed']}}</mat-chip>
-    </mat-chip-list>
-</div>
-
-<div class="action-buttons">
-    <button (click)="onCaughtClicked()">
-        Caught
-      </button>
-
-</div> -->
-
-<div class="dialog-container">
-    <div class="left">
-        <div class="dialog-title">
-            <h3>{{selectedCritter.name | titlecase}}</h3>
-            <hr style="border: none; border-top: 2px dashed #825A27;" />
-            <h3>more info here</h3>
-        </div>
-        <div class="image-container">
-            <img class="critter-icon" src="{{selectedCritter.iconURI}}">
+<mat-card>
+    <div id="header">
+        <mat-icon>phishing</mat-icon>
+        <span id="title">{{selectedCritter.name | titlecase}}</span>
+        <div id="right-aligned">
+            <img src="./../../../assets/icons/bells.png">
+            <span>{{selectedCritter.price}} bells</span>
         </div>
     </div>
 
-    <div class="right">
+    <hr>
+
+    <div id="museum-info">
+        <p>{{selectedCritter.museumPhrase}}</p>
     </div>
 
-</div>
+    <!-- [TECH-DEBT]: critterType.sea doesn't seem to be working -->
+    <table class="table table-striped">
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">months available</th>
+                <td>....................</td>
+                <td *ngIf="selectedCritter['availability']['isAllYear']">all year</td>
+                <td *ngIf="!selectedCritter['availability']['isAllYear']">
+                    {{selectedCritter['availability']['northernMonthString']}}</td>
+            </tr>
+            <tr>
+                <th scope="row">times available</th>
+                <td>....................</td>
+                <td *ngIf="selectedCritter['availability']['isAllDay']">all day</td>
+                <td *ngIf="!selectedCritter['availability']['isAllDay']">{{selectedCritter['availability']['time']}}
+                </td>
+            </tr>
+            <tr *ngIf="critterpediaMode !== critterType.sea">
+                <th scope="row">location</th>
+                <td>....................</td>
+                <td>{{selectedCritter['availability']['location']}}</td>
+            </tr>
+            <tr *ngIf="critterpediaMode !== critterType.sea">
+                <th scope="row">rarity</th>
+                <td>....................</td>
+                <td>{{selectedCritter['availability']['rarity']}}</td>
+            </tr>
+            <tr *ngIf="critterpediaMode == critterType.fish">
+                <th scope="row">shadow</th>
+                <td>....................</td>
+                <td>{{selectedCritter['shadow']}}</td>
+            </tr>
+            <tr *ngIf="critterpediaMode == critterType.sea">
+                <th scope="row">speed</th>
+                <td>....................</td>
+                <td>{{selectedCritter['speed']}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="action-buttons">
+        <button type="button" class="btn btn-primary" (click)="onCaughtClicked()">
+            Caught
+        </button>
+
+        <button type="button" class="btn btn-primary">
+            Donated
+        </button>
+    </div>
+
+</mat-card>

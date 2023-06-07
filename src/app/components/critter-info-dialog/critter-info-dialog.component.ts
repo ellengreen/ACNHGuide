@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CritterType } from 'app/shared/enums/critter-type.enum';
 import { Critter } from 'app/shared/interfaces/critter';
 
@@ -9,17 +8,16 @@ import { Critter } from 'app/shared/interfaces/critter';
   styleUrls: ['./critter-info-dialog.component.scss']
 })
 export class CritterInfoDialogComponent implements OnInit {
+  @Input() selectedCritter: Critter;
+  @Input() critterpediaMode: CritterType;
+
   @Output() caughtClicked = new EventEmitter<any>();
 
-  selectedCritter: Critter;
-  critterpediaMode: CritterType;
   critterType = CritterType;
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialogRef: MatDialogRef<CritterInfoDialogComponent>) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.selectedCritter = this.data.selectedCritter.value;
-    this.critterpediaMode = this.data.critterpediaMode;
   }
 
   onCaughtClicked() {
