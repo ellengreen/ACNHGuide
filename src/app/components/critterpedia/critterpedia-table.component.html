@@ -1,11 +1,86 @@
-<div class="scrollable-container">
-  <div class="critterpedia-container container">
-    <div class="row">
-      <div class="col-sm-2" *ngFor="let critter of critterList | keyvalue">
-        <img [ngClass]="{'selected': critter === selectedCritter}" class="icon"
-          src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{critter.value['id']}}" (click)="openCritterInfoDialog(critter)">
-        <p>{{critter.value['name'] | titlecase}}</p>
+<!-- [TECH-DEBT]: Are all of these containers necessary? -->
+<div class="parent-container">
+  <div class="scrollable-container">
+    <div class="critterpedia-container container">
+      <div class="row">
+        <div class="col-sm-2" *ngFor="let critter of critterList | keyvalue">
+          <img [ngClass]="{'selected': critter.value === selectedCritter}" class="icon"
+            src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{critter.value['id']}}"
+            (click)="selectCritter(critter.value)">
+        </div>
       </div>
     </div>
+  </div>
+
+  <!-- [TECH-DEBT]: Re-use dialog component for this card -->
+  <div class="details" *ngIf="selectedCritter">
+    <mat-card>
+      <div id="header">
+        <mat-icon>phishing</mat-icon>
+        <span id="title">{{selectedCritter.name | titlecase}}</span>
+        <div id="right-aligned">
+          <img src="./../../../assets/icons/bells.png">
+          <span>{{selectedCritter.price}} bells</span>
+        </div>
+      </div>
+      
+      <hr>
+
+      <div id="museum-info">
+        <p>{{selectedCritter.museumPhrase}}</p>
+      </div>
+
+      <!-- [TECH-DEBT]: critterType.sea doesn't seem to be working -->
+      <table class="table table-striped">
+        <thead>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">months available</th>
+            <td>....................</td>
+            <td *ngIf="selectedCritter['availability']['isAllYear']">all year</td>
+            <td *ngIf="!selectedCritter['availability']['isAllYear']">
+              {{selectedCritter['availability']['northernMonthString']}}</td>
+          </tr>
+          <tr>
+            <th scope="row">times available</th>
+            <td>....................</td>
+            <td *ngIf="selectedCritter['availability']['isAllDay']">all day</td>
+            <td *ngIf="!selectedCritter['availability']['isAllDay']">{{selectedCritter['availability']['time']}}</td>
+          </tr>
+          <tr *ngIf="critterpediaMode !== critterType.sea">
+            <th scope="row">location</th>
+            <td>....................</td>
+            <td>{{selectedCritter['availability']['location']}}</td>
+          </tr>
+          <tr *ngIf="critterpediaMode !== critterType.sea">
+            <th scope="row">rarity</th>
+            <td>....................</td>
+            <td>{{selectedCritter['availability']['rarity']}}</td>
+          </tr>
+          <tr *ngIf="critterpediaMode == critterType.fish">
+            <th scope="row">shadow</th>
+            <td>....................</td>
+            <td>{{selectedCritter['shadow']}}</td>
+          </tr>
+          <tr *ngIf="critterpediaMode == critterType.sea">
+            <th scope="row">speed</th>
+            <td>....................</td>
+            <td>{{selectedCritter['speed']}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div id="action-buttons">
+        <button type="button" class="btn btn-primary">
+          Caught
+        </button>
+
+        <button type="button" class="btn btn-primary">
+          Donated
+        </button>
+      </div>
+
+    </mat-card>
   </div>
 </div>

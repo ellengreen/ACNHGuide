@@ -91,7 +91,7 @@ body {
 
 // TODO: replace !importants with custom material theme
 .mat-mini-fab.mat-accent {
-  border: 1px solid #5F4D3A;
+  border: 1px solid #5f4d3a;
   background-color: #f6f4e7;
 }
 
@@ -104,14 +104,14 @@ body {
   position: relative !important;
 }
 
-.mat-mini-fab .mat-button-wrapper>* {
-vertical-align: baseline !important;
+.mat-mini-fab .mat-button-wrapper > * {
+  vertical-align: baseline !important;
 }
 .critter-dialog .mat-dialog-container {
-  background-color: #98BB93;
+  background-color: #ebe6ca;
   padding: 1rem;
-  color: white;
-  border-radius: 15% !important;
+  color: #825a27;
+  border-radius: 5% !important;
   h1 {
     font-family: "Nunito", sans-serif !important;
   }
@@ -126,10 +126,13 @@ vertical-align: baseline !important;
 }
 
 .mat-chip.mat-standard-chip {
-  background-color: #F6F4E7 !important;
-  color:#5F4D3A !important;
+  background-color: #f6f4e7 !important;
+  color: #5f4d3a !important;
   font-family: "Nunito", sans-serif !important;
+}
 
+.mat-card {
+  font-family: "Nunito", sans-serif !important;
 }
 /* Importing Bootstrap SCSS file. */
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";

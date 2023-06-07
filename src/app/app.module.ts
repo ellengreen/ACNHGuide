@@ -11,7 +11,6 @@ import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DatePipe, KeyValuePipe } from '@angular/common';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './archive/profile/profile.component';
@@ -19,11 +18,21 @@ import { VillagersComponent } from './archive/villagers/villagers.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NookPhoneComponent } from './nook-phone/nook-phone.component';
+
+import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatOptionModule } from '@angular/material/core';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 import { CritterpediaTableComponent } from './components/critterpedia/critterpedia-table.component';
 import { MuseumComponent } from './v2-components/museum/museum.component';
 import { CritterInfoDialogComponent } from './components/critter-info-dialog/critter-info-dialog.component';
@@ -33,13 +42,9 @@ import { VillagerInfoDialogComponent } from './v2-components/villager-info-dialo
 import { CritterpediaContainerComponent } from './containers/critterpedia-container/critterpedia-container.component';
 import { VillagersFilterComponent } from './v2-components/villagers-filter/villagers-filter.component';
 import { CritterpediaSearchComponent } from './components/critterpedia-search/critterpedia-search.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatOptionModule } from '@angular/material/core';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatInputModule } from '@angular/material/input';
+
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatTooltipModule } from '@angular/material/tooltip';
+
 import { EventsContainerComponent } from './v2-containers/events-container/events-container.component';
 import { EventCardComponent } from './v2-components/event-card/event-card.component';
 import { MuseumContainerComponent } from './v2-containers/museum-container/museum-container.component';
@@ -112,7 +117,8 @@ import { AuthenticationService } from './shared/services/authentication.service'
     CarouselModule,
     MatIconModule,
     MatChipsModule,
-    MatOptionModule
+    MatOptionModule,
+    MatTableModule
 
     // MAKE MATERIAL MODULE 
   ],

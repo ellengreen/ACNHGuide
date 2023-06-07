@@ -1,4 +1,4 @@
-<header>
+<!-- <header>
     <img class="critter-icon" src="{{selectedCritter.iconURI}}">
     <h1>{{selectedCritter.name | titlecase}}</h1>
 </header>
@@ -19,11 +19,24 @@
 
 <div class="action-buttons">
     <button (click)="onCaughtClicked()">
-        <!-- <mat-icon>done</mat-icon> -->
         Caught
       </button>
-      <!-- <button mat-fab extended> -->
-        <!-- <mat-icon>favorite</mat-icon> -->
-        <!-- Donated -->
-      <!-- </button> -->
+
+</div> -->
+
+<div class="dialog-container">
+    <div class="left">
+        <div class="dialog-title">
+            <h3>{{selectedCritter.name | titlecase}}</h3>
+            <hr style="border: none; border-top: 2px dashed #825A27;" />
+            <h3>more info here</h3>
+        </div>
+        <div class="image-container">
+            <img class="critter-icon" src="{{selectedCritter.iconURI}}">
+        </div>
+    </div>
+
+    <div class="right">
+    </div>
+
 </div>
