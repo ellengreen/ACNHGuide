@@ -1,23 +1,27 @@
-<div class="critterpedia-header-container">
-  <div class="banner">
+<ng-container *ngIf="stateService.activeCritterList$ | async as critterList">
+
+  <div class="critterpedia-header-container">
+    <div class="banner">
       <img src="./../../../assets/icons/chy.webp">
       <span>Critterpedia</span>
+    </div>
+
+    <app-critterpedia-search 
+      [critterList]="critterList" 
+      (critterTypeClicked)="onTabsSwitched($event)"
+      (availableNowClicked)="onAvailableNowClicked($event)">
+    </app-critterpedia-search>
   </div>
-  
-  <app-critterpedia-search
-    [critterList]="filteredCritterList" 
-    (critterTypeClicked)="onTabsSwitched($event)"
-    (availableNowClicked)="onAvailableNowClicked($event)">
-  </app-critterpedia-search>
-</div>
 
 
-<div class="critterpedia-container" *ngIf="filteredCritterList">
-  <app-critterpedia-table 
-    [critterpediaMode]="critterpediaMode" 
-    [critterList]="filteredCritterList" 
-    (caughtClicked)="addCritterToDB($event)" 
-    (removeClicked)="removeCritterFromDB($event)"
-    [caughtCritters]="stateService.userCollectedList$ | async">
-  </app-critterpedia-table>
-</div>
+  <div class="critterpedia-container">
+    <app-critterpedia-table   
+      [critterpediaMode]="critterpediaMode" 
+      [critterList]="critterList"
+      (caughtClicked)="addCritterToDB($event)" 
+      (removeClicked)="removeCritterFromDB($event)"
+      [caughtCritters]="stateService.userCollectedList$ | async">
+    </app-critterpedia-table>
+  </div>
+
+</ng-container>

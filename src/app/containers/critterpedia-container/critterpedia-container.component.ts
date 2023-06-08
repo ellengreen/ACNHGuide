@@ -17,10 +17,7 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
 
   constructor(private dataService: DataService, private ds: CurrentDateService, private transformService: TransformService, private databaseService: DatabaseService, public stateService: StateService) { }
 
-  // TODO: change to list in state?
-  allCrittersList: Critter[]; // doesn't change, and therefore doesn't need to be set in state?
-  filteredCritterList: Critter[];
-
+  allCrittersList: Critter[];
   selectedCritter: Critter;
   critterpediaMode: CritterType = CritterType.fish;
 
@@ -35,7 +32,8 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
 
   getCritterList(critterType: CritterType): void {
     this.dataService.GET(critterType).subscribe((critters: any) => {
-      this.allCrittersList = this.filteredCritterList = this.transformService.convertToCritter(critters);
+      this.allCrittersList = this.transformService.convertToCritter(critters);
+      this.stateService.setActiveCritterList(this.allCrittersList);
     });
   }
 
@@ -43,11 +41,12 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
   onTabsSwitched(critterType: CritterType) {
     this.critterpediaMode = critterType;
     this.getCritterList(critterType);
+    // this.stateService.setSelectedCritter(this.allCrittersList[0]);
     // change selectedCritter in state
   }
 
   onAvailableNowClicked(switchState: boolean): void {
-    this.filteredCritterList = switchState ? this.currentlyAvailable() : this.allCrittersList;
+    this.stateService.setActiveCritterList(switchState ? this.currentlyAvailable() : this.allCrittersList);
   }
 
   currentlyAvailable(): Critter[] {

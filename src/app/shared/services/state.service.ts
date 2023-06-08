@@ -16,6 +16,9 @@ export class StateService {
     activeCritterListSubject: BehaviorSubject<Critter[]> = new BehaviorSubject<Critter[]>(undefined);
     activeCritterList$: Observable<Critter[]> = this.activeCritterListSubject.asObservable();
 
+    selectedCritterSubject: BehaviorSubject<Critter> = new BehaviorSubject<Critter>(undefined);
+    selectedCritter$: Observable<Critter> = this.selectedCritterSubject.asObservable();
+
     constructor() { }
 
     setUserCritterList(critterList: Critter[]): void {
@@ -28,6 +31,9 @@ export class StateService {
 
     setActiveCritterList(critterList: Critter[]): void {
         this.activeCritterListSubject.next(critterList);
-        console.log('setList');
+    }
+
+    setSelectedCritter(critter: Critter): void {
+        this.selectedCritterSubject.next(critter);
     }
 }
