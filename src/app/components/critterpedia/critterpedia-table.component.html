@@ -1,23 +1,16 @@
-<!-- [TECH-DEBT]: Are all of these containers necessary? -->
-<div class="parent-container">
+<div class="table-container">
   <div class="scrollable-container">
-    <div class="critterpedia-container container">
-      <div class="row">
-        <div class="col-sm-2" *ngFor="let critter of critterList | keyvalue">
-          <img [ngClass]="{'selected': critter.value === selectedCritter}" class="icon"
-            src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{critter.value['id']}}"
-            (click)="selectCritter(critter.value)">
-        </div>
+    <div class="row">
+      <div class="col-sm-2" *ngFor="let critter of critterList | keyvalue">
+        <img [ngClass]="{'selected': critter.value === selectedCritter}" class="critter-icon"
+          src="https://acnhapi.com/v1/icons/{{critterpediaMode}}/{{critter.value['id']}}"
+          (click)="selectCritter(critter.value)">
       </div>
     </div>
   </div>
 
-  <div class="details" *ngIf="selectedCritter">
-    <app-critter-info-dialog 
-      [selectedCritter]="selectedCritter"
-      [critterpediaMode]="critterpediaMode">
-
-    </app-critter-info-dialog>
-    
+  <div class="info-panel" *ngIf="selectedCritter">
+    <app-critter-info-dialog [selectedCritter]="selectedCritter" [critterpediaMode]="critterpediaMode"></app-critter-info-dialog>
   </div>
+
 </div>

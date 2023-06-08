@@ -1,35 +1,29 @@
-.parent-container {
+.table-container {
     display: inline-flex;
     width: 100%;
+
     .scrollable-container {
         overflow-y: scroll;
         height: 70vh;
         width: 70%;
-        .container {
-            max-width: 100%;
+        margin-right: 5%;
 
-            .col-sm-2 {
-                width: 15%;
-            }
-        }
-
-        .icon {
-            // margin-left: 27%;
+        .critter-icon {
             cursor: pointer;
             transition: transform 0.3s ease-in-out;
         }
 
-        .icon:hover {
+        .critter-icon:hover {
             transform: scale(0.75);
+        }
+
+        .selected {
+            background-color: #e6dfc2;
+            border-radius: 45%;
         }
     }
 
-    .selected {
-        background-color: #e6dfc2;
-        border-radius: 45%;
-    }
-
-    .details {
+    .info-panel {
         width: 30%;
         margin-right: 5%;
     }
