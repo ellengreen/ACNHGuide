@@ -2,28 +2,29 @@
     <div class="critter-mode">
         <!-- [TODO]: customize tooltips -->
         <!-- [TODO]: cleanup dynamic classes, switching tabs could be cleaner -->
-        <button [ngClass]="{'activeMode': critterType == 'fish'}" class="critter-button" (click)="switchTabs('fish')"
-            matTooltip="fish" [matTooltipPosition]="'above'">
+        <button [ngClass]="{'activeMode': critterType === 'fish'}" class="critter-button" (click)="switchTabs('fish')"
+            matTooltip="Fish" matTooltipPosition="above">
             <img src="assets/icons/fish-transparent.png">
         </button>
-        <button [ngClass]="{'activeMode': critterType == 'bugs'}" class="critter-button" (click)="switchTabs('bugs')"
-            matTooltip="bugs" [matTooltipPosition]="'above'">
+        <button [ngClass]="{'activeMode': critterType === 'bugs'}" class="critter-button" (click)="switchTabs('bugs')"
+            matTooltip="Bugs" matTooltipPosition="above">
             <img src="assets/icons/bug-transparent.png">
         </button>
-        <button [ngClass]="{'activeMode': critterType == 'sea'}" class="critter-button" (click)="switchTabs('sea')"
-            matTooltip="sea creatures" [matTooltipPosition]="'above'">
+        <button [ngClass]="{'activeMode': critterType === 'sea'}" class="critter-button" (click)="switchTabs('sea')"
+            matTooltip="Sea Creatures" matTooltipPosition="above">
             <img src="assets/icons/deep-transparent.png">
         </button>
     </div>
 
     <!-- [TODO]: needs more thought into design -->
     <div class="critter-search">
-        <input id="typeahead-basic" type="text" class="form-control searchbar" [(ngModel)]="model" [ngbTypeahead]="search"
-            placeholder="search" />
+        <!-- <input id="typeahead-basic" type="text" class="form-control searchbar" [(ngModel)]="model"
+            [ngbTypeahead]="search" placeholder="search" /> -->
 
         <mat-chip-list class="filter-chips">
-            <mat-chip (click)="state1=!state1" [selected]="state1"(selectionChange)="availableNow($event)">Available Now</mat-chip>
-          </mat-chip-list>
+            <mat-chip (click)="state1=!state1" [selected]="state1" (selectionChange)="availableNow($event)">Available
+                Now</mat-chip>
+        </mat-chip-list>
     </div>
 
 </div>

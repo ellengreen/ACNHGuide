@@ -16,35 +16,35 @@ export class CritterpediaSearchComponent implements OnChanges, OnInit {
 
   critterType: string = 'fish';
   searchableCritterNames: string[] = []
-  model: string;
+  // model: string;
   state1: any;
   constructor() { }
 
   ngOnInit() {
-    if (this.critterList) { this.searchableCritterNames = this.extractCritterNames(this.critterList) };
+    // if (this.critterList) { this.searchableCritterNames = this.extractCritterNames(this.critterList) };
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.critterList) { this.searchableCritterNames = this.extractCritterNames(this.critterList) };
+    // if (this.critterList) { this.searchableCritterNames = this.extractCritterNames(this.critterList) };
   }
 
   // "1 result available" etc showing up??
   // still need to actually filter results with the outcome of this
 
-  search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
-    text$.pipe(
-      debounceTime(200),
-      distinctUntilChanged(),
-      map((term) =>
-        term.length < 2 ? [] : this.searchableCritterNames.filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10),
-      ),
-    );
+  // search: OperatorFunction<string, readonly string[]> = (text$: Observable<string>) =>
+  //   text$.pipe(
+  //     debounceTime(200),
+  //     distinctUntilChanged(),
+  //     map((term) =>
+  //       term.length < 2 ? [] : this.searchableCritterNames.filter((v) => v.toLowerCase().indexOf(term.toLowerCase()) > -1).slice(0, 10),
+  //     ),
+  //   );
 
-  extractCritterNames(critterList: Critter[]): string[] {
-    return critterList.map(critter => critter.name).map((c) => {
-      return c.toLowerCase();
-    });
-  }
+  // extractCritterNames(critterList: Critter[]): string[] {
+  //   return critterList.map(critter => critter.name).map((c) => {
+  //     return c.toLowerCase();
+  //   });
+  // }
 
   switchTabs(critterType: string) {
     this.critterType = critterType;

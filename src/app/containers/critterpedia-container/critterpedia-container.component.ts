@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { CritterType } from '../../shared/enums/critter-type.enum';
 import { Critter } from '../../shared/interfaces/critter';
 import { TransformService } from '../../shared/services/transform.service';
@@ -29,22 +29,21 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
     this.getAndSetUserCritters();
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
+  ngOnChanges(): void {
     // this.getAndSetUserCritters();
   }
-
   getCritterList(critterType: CritterType): void {
     this.dataService.GET(critterType).subscribe((critters: any) => {
       this.allCrittersList = this.transformService.convertToCritter(critters);
       this.stateService.setActiveCritterList(this.allCrittersList);
+      // this.selectedCritter = this.allCrittersList[0];
     });
   }
 
-  onTabsSwitched(critterType: CritterType): void {
+  onCritterTypeSwitched(critterType: CritterType): void {
     this.stateService.setCritterpediaMode(critterType);
     this.getCritterList(critterType);
-    // this.stateService.setSelectedCritter(this.allCrittersList[0]);
-    // change selectedCritter in state
+    // this.selectedCritter = this.allCrittersList[0];
   }
 
   onAvailableNowClicked(switchState: boolean): void {
