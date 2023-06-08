@@ -31,8 +31,7 @@
     }
 
     .critter-search {
-        display: inline-block;
-        margin-left: 2rem;
+        display: inline-flex;
 
         .form-check-input:checked {
             background-color: darkseagreen;
@@ -40,12 +39,16 @@
         }
 
         .searchbar {
-            display: inline-block;
+            align-self: center;
             width: 15rem;
             margin-right: 1rem;
             background-color: ivory;
             border-color: darkseagreen;
             color: green;
+        }
+
+        .filter-chips {
+            align-self: center;
         }
     }
 }

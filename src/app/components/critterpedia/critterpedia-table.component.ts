@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { CritterType } from 'app/shared/enums/critter-type.enum';
 import { Critter } from 'app/shared/interfaces/critter';
 
@@ -7,7 +7,7 @@ import { Critter } from 'app/shared/interfaces/critter';
   templateUrl: './critterpedia-table.component.html',
   styleUrls: ['./critterpedia-table.component.scss']
 })
-export class CritterpediaTableComponent implements OnChanges {
+export class CritterpediaTableComponent implements OnChanges, OnInit {
 
   @Input() critterpediaMode: CritterType = CritterType.fish;
   @Input() critterList: Critter[];
@@ -22,7 +22,11 @@ export class CritterpediaTableComponent implements OnChanges {
 
   constructor() { }
 
+  ngOnInit(): void {
+    
+  }
   ngOnChanges(): void {
+    // this needs to change - makes bitterling selected after each change
     if (this.critterList) {
       this.selectedCritter = this.critterList[0];
     }

@@ -26,6 +26,10 @@
                 (change)="availableNow($event)">
             <label class="form-check-label" for="flexSwitchCheckDefault">Available Now</label>
         </div>
+
+        <mat-chip-list class="filter-chips">
+            <mat-chip (click)="state1=!state1" [selected]="state1"(selectionChange)="availableNow($event)">Available Now</mat-chip>
+          </mat-chip-list>
     </div> -->
 
 </div>

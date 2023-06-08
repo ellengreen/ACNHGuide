@@ -17,7 +17,7 @@ export class CritterpediaSearchComponent implements OnChanges, OnInit {
   critterType: string = 'fish';
   searchableCritterNames: string[] = []
   model: string;
-
+  // state1: any;
   constructor() { }
 
   ngOnInit() {
@@ -53,6 +53,6 @@ export class CritterpediaSearchComponent implements OnChanges, OnInit {
   }
 
   availableNow(event) {
-    this.availableNowClicked.emit(event.target.checked);
+    this.availableNowClicked.emit(event.selected);
   }
 }
