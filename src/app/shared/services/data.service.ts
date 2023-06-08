@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { getEventsList } from 'assets/eventList';
 import { CritterType } from '../enums/critter-type.enum';
 import { MuseumType } from '../enums/museum-type.enum';
-import { Villager } from '../interfaces/villager';
 
 @Injectable({
   providedIn: 'root'

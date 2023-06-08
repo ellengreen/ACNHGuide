@@ -29,7 +29,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './archive/profile/profile.component';
 import { VillagersComponent } from './archive/villagers/villagers.component';
-import { NookPhoneComponent } from './nook-phone/nook-phone.component';
+import { NookPhoneComponent } from './components/nook-phone/nook-phone.component';
 import { CritterpediaTableComponent } from './components/critterpedia/critterpedia-table.component';
 import { MuseumComponent } from './v2-components/museum/museum.component';
 import { CritterInfoDialogComponent } from './components/critter-info-dialog/critter-info-dialog.component';

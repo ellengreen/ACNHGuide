@@ -17,7 +17,7 @@ export class ResidentServicesContainerComponent implements OnInit {
   ngOnInit() {
     this.dataService.GET('villagers').subscribe((villagersList: any) => {
       this.villagersList = this.transformService.convertToVillager(villagersList);
-      console.log(this.villagersList)
+      // console.log(this.villagersList)
     });
   }
   // villagers: any;
@@ -71,7 +71,7 @@ export class ResidentServicesContainerComponent implements OnInit {
   // filteredVillagers = [];
 
   onFilter(filter) {
-    console.log(filter)
+    // console.log(filter)
   }
   // filter(profileForm){
   //   this.filteredVillagers=[];

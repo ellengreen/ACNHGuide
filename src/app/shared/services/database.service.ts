@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CritterType } from '../enums/critter-type.enum';
 import { Critter } from '../interfaces/critter';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../environments/environment';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/compat/database';
 import { AuthenticationService } from './authentication.service';
 
@@ -21,6 +19,7 @@ export class DatabaseService {
     });
   }
 
+  // [TODO]: need to rename/repurpose for more than just critters
   POST(type: CritterType, critter: Critter) {
     return this.db.list(`${this.currentUserId}/${type}`).set(JSON.stringify(critter.id), this.replaceUndefinedValues(critter));
     // this.httpClient.post(`${this.dbPath}/${this.currentUserId}/${type}.json`, critter).subscribe();

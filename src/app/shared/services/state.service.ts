@@ -28,6 +28,6 @@ export class StateService {
 
     setActiveCritterList(critterList: Critter[]): void {
         this.activeCritterListSubject.next(critterList);
-        // console.log('set')
+        console.log('setList');
     }
 }

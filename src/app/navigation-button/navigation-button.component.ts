@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { NookPhoneComponent } from '../nook-phone/nook-phone.component';
+import { NookPhoneComponent } from '../components/nook-phone/nook-phone.component';
 
 @Component({
   selector: 'app-navigation-button',

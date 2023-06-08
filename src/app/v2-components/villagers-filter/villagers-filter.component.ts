@@ -43,7 +43,7 @@ export class VillagersFilterComponent implements OnInit {
   }
 
   updateForm() {
-    console.log(this.myForm.value)
+    // console.log(this.myForm.value)
     // console.log('SPECIES', this.myForm.controls);
     // console.log('GENDER', this.myForm['gender'].value)
   }

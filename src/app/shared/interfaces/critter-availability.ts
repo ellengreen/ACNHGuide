@@ -8,5 +8,5 @@ export interface CritterAvailability {
     rarity: string,
     northernMonthArray: Number[],
     southernMonthArray: Number[],
-    timeArray: number[]
+    timeArray: Number[]
 }

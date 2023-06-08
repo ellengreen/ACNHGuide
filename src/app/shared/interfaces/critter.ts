@@ -1,6 +1,5 @@
 import { CritterAvailability } from "./critter-availability";
 
-
 export interface Critter {
     id: number,
     name: string,
