@@ -17,7 +17,7 @@ export class CritterpediaSearchComponent implements OnChanges, OnInit {
   critterType: string = 'fish';
   searchableCritterNames: string[] = []
   model: string;
-  // state1: any;
+  state1: any;
   constructor() { }
 
   ngOnInit() {
@@ -26,7 +26,6 @@ export class CritterpediaSearchComponent implements OnChanges, OnInit {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.critterList) { this.searchableCritterNames = this.extractCritterNames(this.critterList) };
-
   }
 
   // "1 result available" etc showing up??

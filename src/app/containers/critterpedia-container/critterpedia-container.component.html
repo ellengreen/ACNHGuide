@@ -12,7 +12,7 @@
 </div>
 
 
-<div class="critterpedia-container">
+<div class="critterpedia-container" *ngIf="filteredCritterList">
   <app-critterpedia-table 
     [critterpediaMode]="critterpediaMode" 
     [critterList]="filteredCritterList" 

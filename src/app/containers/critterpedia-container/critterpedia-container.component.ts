@@ -30,7 +30,7 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.getAndSetUserCritters();
+    // this.getAndSetUserCritters();
   }
 
   getCritterList(critterType: CritterType): void {
@@ -43,32 +43,29 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
   onTabsSwitched(critterType: CritterType) {
     this.critterpediaMode = critterType;
     this.getCritterList(critterType);
+    // change selectedCritter in state
   }
 
-  onAvailableNowClicked(switchState: boolean) {
-    if (switchState) {
-      this.filteredCritterList = this.currentlyAvailable();
-    } else {
-      this.filteredCritterList = this.allCrittersList;
-    };
+  onAvailableNowClicked(switchState: boolean): void {
+    this.filteredCritterList = switchState ? this.currentlyAvailable() : this.allCrittersList;
   }
 
   currentlyAvailable(): Critter[] {
-    const currentMonth = this.ds.currentMonth;
-    const currentHour = this.ds.thisHour;
-    return this.allCrittersList.filter((critter: Critter) => {
-      return critter.availability.northernMonthArray.includes(currentMonth) && critter.availability.timeArray.includes(currentHour);
-    });
+    const { currentMonth, thisHour } = this.ds;
+    return this.allCrittersList.filter((critter: Critter) =>
+      critter.availability.northernMonthArray.includes(currentMonth) &&
+      critter.availability.timeArray.includes(thisHour)
+    );
   }
 
   addCritterToDB(critter: Critter): void {
     this.databaseService.POST(this.critterpediaMode, critter);
   }
 
-  removeCritterFromDB(critter: Critter) {
+  removeCritterFromDB(critter: Critter): void {
     this.databaseService.DELETE(this.critterpediaMode, critter);
   }
-  
+
   getAndSetUserCritters(): void {
     this.databaseService.GET(this.critterpediaMode).snapshotChanges().pipe(
       map(changes =>
@@ -80,15 +77,6 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
       this.stateService.setUserCritterList(critterList);
     });
   }
-
-
-
-  // id: any;
-  // delete(selectedCritter) {
-  //   this.id = selectedCritter['newID'];
-  //   this.db.deleteCritter(this.id, this.critterType);
-  //   this.aDupe = false;
-  // }
 }
 
 

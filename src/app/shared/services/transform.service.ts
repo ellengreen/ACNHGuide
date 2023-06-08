@@ -13,94 +13,70 @@ export class TransformService {
   constructor() { }
 
   convertToCritter(critterList: any): Critter[] {
-    let newCritters: Critter[] = []
-    Object.keys(critterList).forEach(key => {
-      newCritters.push({
-        id: critterList[key]['id'],
-        name: critterList[key]['name']['name-USen'],
-        availability: {
-          northernMonthString: critterList[key]['availability']['month-northern'],
-          southernMonthString: critterList[key]['availability']['month-southern'],
-          time: critterList[key]['availability']['time'],
-          isAllDay: critterList[key]['availability']['isAllDay'],
-          isAllYear: critterList[key]['availability']['isAllYear'],
-          location: critterList[key]['availability']['location'],
-          rarity: critterList[key]['availability']['rarity'],
-          northernMonthArray: critterList[key]['availability']['month-array-northern'],
-          southernMonthArray: critterList[key]['availability']['month-array-southern'],
-          timeArray: critterList[key]['availability']['time-array']
-        },
-        shadow: critterList[key]['shadow'],
-        speed: critterList[key]['speed'],
-        price: critterList[key]['price'],
-        catchPhrase: critterList[key]['catch-phrase'],
-        museumPhrase: critterList[key]['museum-phrase'],
-        imageURI: critterList[key]['image_uri'],
-        iconURI: critterList[key]['icon_uri']
-      });
-    });
-
-    return newCritters
+    return Object.entries(critterList).map(([key, critter]) => ({
+      id: critter['id'],
+      name: critter['name']['name-USen'],
+      availability: {
+        northernMonthString: critter['availability']['month-northern'],
+        southernMonthString: critter['availability']['month-southern'],
+        time: critter['availability']['time'],
+        isAllDay: critter['availability']['isAllDay'],
+        isAllYear: critter['availability']['isAllYear'],
+        location: critter['availability']['location'],
+        rarity: critter['availability']['rarity'],
+        northernMonthArray: critter['availability']['month-array-northern'],
+        southernMonthArray: critter['availability']['month-array-southern'],
+        timeArray: critter['availability']['time-array']
+      },
+      shadow: critter['shadow'],
+      speed: critter['speed'],
+      price: critter['price'],
+      catchPhrase: critter['catch-phrase'],
+      museumPhrase: critter['museum-phrase'],
+      imageURI: critter['image_uri'],
+      iconURI: critter['icon_uri']
+    }));
   }
 
   convertToVillager(villagers: any): Villager[] {
-    let villagerList: Villager[] = [];
-    Object.keys(villagers).forEach(key => {
-      villagerList.push({
-        id: villagers[key]['id'],
-        name: villagers[key]['name']['name-USen'],
-        birthday: villagers[key]['birthday'],
-        birthdayString: villagers[key]['birthday-string'],
-        catchPhrase: villagers[key]['catch-phrase'],
-        gender: villagers[key]['gender'],
-        hobby: villagers[key]['hobby'],
-        iconURI: villagers[key]['icon_uri'],
-        imageURI: villagers[key]['image_uri'],
-        personality: villagers[key]['personality'],
-        saying: villagers[key]['saying'],
-        species: villagers[key]['species']
-      })
-    });
-
-    return villagerList;
+    return Object.entries(villagers).map(([key, villager]) => ({
+      id: villager['id'],
+      name: villager['name']['name-USen'],
+      birthday: villager['birthday'],
+      birthdayString: villager['birthday-string'],
+      catchPhrase: villager['catch-phrase'],
+      gender: villager['gender'],
+      hobby: villager['hobby'],
+      iconURI: villager['icon_uri'],
+      imageURI: villager['image_uri'],
+      personality: villager['personality'],
+      saying: villager['saying'],
+      species: villager['species']
+    }));
   }
 
-  convertMuseum(museumType, museumStuff): Art[] | Fossil[] {
-    if (museumType == MuseumType.art) {
-      return this.convertArt(museumStuff);
-    } else if (museumType == MuseumType.fossils) {
-      return this.convertFossils(museumStuff);
-    }
+  convertMuseum(museumType: MuseumType, museumStuff: any): Art[] | Fossil[] {
+    return museumType === MuseumType.art ? this.convertArt(museumStuff) : this.convertFossils(museumStuff);
   }
 
   convertArt(artJSON: any): Art[] {
-    let artList: Art[] = [];
-    Object.keys(artJSON).forEach(key => {
-      artList.push({
-        id: artJSON[key]['id'],
-        name: artJSON[key]['name']['name-USen'],
-        hasFake: artJSON[key]['hasFake'],
-        imageURI: artJSON[key]['imageURI'],
-        buyPrice: artJSON[key]['buy-price'],
-        sellPrice: artJSON[key]['sell-price'],
-        phrase: artJSON[key]['museum-desc']
-      })
-    });
-
-    return artList;
+    return Object.entries(artJSON).map(([key, art]) => ({
+      id: art['id'],
+      name: art['name']['name-USen'],
+      hasFake: art['hasFake'],
+      imageURI: art['imageURI'],
+      buyPrice: art['buy-price'],
+      sellPrice: art['sell-price'],
+      phrase: art['museum-desc']
+    }));
   }
 
   convertFossils(fossilJSON: any): Fossil[] {
-    let fossilList: Fossil[] = [];
-    Object.keys(fossilJSON).forEach(key => {
-      fossilList.push({
-        name: fossilJSON[key]['name']['name-USen'],
-        imageURI: fossilJSON[key]['imageURI'],
-        price: fossilJSON[key]['price'],
-        phrase: fossilJSON[key]['museum-phrase']
-      })
-    });
-
-    return fossilList;
+    return Object.entries(fossilJSON).map(([key, fossil]) => ({
+      name: fossil['name']['name-USen'],
+      imageURI: fossil['imageURI'],
+      price: fossil['price'],
+      phrase: fossil['museum-phrase']
+    }));
   }
 }

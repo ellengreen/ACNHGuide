@@ -7,13 +7,12 @@ import { Critter } from 'app/shared/interfaces/critter';
   templateUrl: './critterpedia-table.component.html',
   styleUrls: ['./critterpedia-table.component.scss']
 })
-export class CritterpediaTableComponent implements OnChanges, OnInit {
+export class CritterpediaTableComponent implements OnInit {
 
   @Input() critterpediaMode: CritterType = CritterType.fish;
   @Input() critterList: Critter[];
   @Input() caughtCritters: Critter[];
 
-  
   @Output() caughtClicked: EventEmitter<any> = new EventEmitter<any>();
   @Output() removeClicked: EventEmitter<any> = new EventEmitter<any>();
   
@@ -23,15 +22,10 @@ export class CritterpediaTableComponent implements OnChanges, OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
-  }
-  ngOnChanges(): void {
-    // this needs to change - makes bitterling selected after each change
-    if (this.critterList) {
       this.selectedCritter = this.critterList[0];
-    }
   }
 
+  // TODO: set selected critter in state ??
   selectCritter(critter: Critter): void {
     this.selectedCritter = critter;
   }
@@ -39,7 +33,7 @@ export class CritterpediaTableComponent implements OnChanges, OnInit {
   onCaughtClicked(critter: Critter) {
     this.caughtClicked.emit(critter);
   }
-// TODO: set selected critter in state ??
+
   onRemoveClicked(critter: Critter) {
     this.removeClicked.emit(critter);
   }

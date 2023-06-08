@@ -4,10 +4,10 @@
     .banner {
         display: inline-block;
         width: 35%;
-        background-color: #e6dfc2;
         height: 6rem;
+        background-color: #e6dfc2;
         color: #815821;
-        border-radius: 0px 65px 65px 0px;
+        border-radius: 0 65px 65px 0;
 
         img {
             height: 8rem;
@@ -22,7 +22,5 @@
 }
 
 .critterpedia-container {
-    margin-left: 3rem;
-    margin-right: 3rem;
-    margin-top: 4rem;
+    margin: 4rem 3rem;
 }
