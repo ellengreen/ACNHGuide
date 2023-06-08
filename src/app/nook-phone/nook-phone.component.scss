@@ -6,17 +6,17 @@
 
         #close-dialog-fab {
             position: fixed;
-
             mat-icon {
-                color: #5f4d3a;
+                color: #815821;
             }
         }
     }
+    
     #phone-header {
         margin-bottom: 3rem;
         display: flex;
         font-size: 0.85rem;
-        color: #e0dbc8;
+        opacity: 25%;
         align-items: center;
 
         .header-flex {
@@ -30,7 +30,6 @@
     }
 
     #routeTitle {
-        color: #5f4d3a;
         display: block;
         text-align: center;
         font-family: "Nunito", sans-serif;

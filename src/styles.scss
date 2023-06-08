@@ -2,15 +2,6 @@ $primary-blue: #007bff;
 $aqua: #8ddac1;
 $icon-grey: #f0f0f0;
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 13%;
-  background-color: $aqua;
-}
-
 .card-custom {
   border: 0;
   border-radius: 1rem;
@@ -27,21 +18,10 @@ $icon-grey: #f0f0f0;
   padding: 2rem;
 }
 
-.form-signin .btn {
-  font-size: 80%;
-  border-radius: 5rem;
-  border: none;
-  letter-spacing: 0.1rem;
-  font-weight: bold;
-  padding: 1rem;
-  transition: all 0.2s;
-}
-
 p {
   margin-top: 3px;
   font-size: 13px;
   text-align: center;
-  // color: $primary-blue;
   font-weight: 600;
 }
 
@@ -91,27 +71,28 @@ body {
 
 // TODO: replace !importants with custom material theme
 .mat-mini-fab.mat-accent {
-  border: 1px solid #5f4d3a;
-  background-color: #f6f4e7;
+  border: 1px solid #815821;
+  background-color: #fcf6de;
 }
 
 .mat-dialog-container {
-  background-color: #f6f4e7;
-  border-radius: 15% !important;
+  background-color: #fcf6de;
+  border-radius: 75px !important;
   max-height: 30rem !important;
   min-height: 25rem !important;
   overflow: hidden !important;
   position: relative !important;
+  color: #815821;
 }
 
 .mat-mini-fab .mat-button-wrapper > * {
   vertical-align: baseline !important;
 }
 .critter-dialog .mat-dialog-container {
-  background-color: #ebe6ca;
+  background-color: #e6dfc2;
   padding: 1rem;
-  color: #825a27;
-  border-radius: 5% !important;
+  color: #815821;
+  border-radius: 75px !important;
   h1 {
     font-family: "Nunito", sans-serif !important;
   }
