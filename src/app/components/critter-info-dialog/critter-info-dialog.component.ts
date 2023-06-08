@@ -17,7 +17,7 @@ export class CritterInfoDialogComponent implements OnInit, OnChanges {
 
   critterType = CritterType;
   isCaught: boolean = false;
-  isDonated: boolean = false;
+  // isDonated: boolean = false;
 
   constructor() { }
 
