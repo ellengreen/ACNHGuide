@@ -13,6 +13,7 @@ export class CritterInfoDialogComponent implements OnInit, OnChanges {
   @Input() caughtCritters: Critter[];
 
   @Output() caughtClicked = new EventEmitter<any>();
+  @Output() removeClicked = new EventEmitter<any>();
 
   critterType = CritterType;
   isCaught: boolean = false;
@@ -35,8 +36,13 @@ export class CritterInfoDialogComponent implements OnInit, OnChanges {
     }
   }
 
-  onCaughtClicked() {
+  onCaughtClicked(): void {
     this.caughtClicked.emit(this.selectedCritter);
     this.isCaught = true;
+  }
+
+  onRemoveClicked(): void {
+    this.removeClicked.emit(this.selectedCritter);
+    this.isCaught = false;
   }
 }

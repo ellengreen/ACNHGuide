@@ -35,6 +35,10 @@ export class CritterpediaTableComponent implements OnChanges {
   onCaughtClicked(critter: Critter) {
     this.caughtClicked.emit(critter);
   }
+// TODO: set selected critter in state ??
+  onRemoveClicked(critter: Critter) {
+    this.removeClicked.emit(critter);
+  }
 
 }
 

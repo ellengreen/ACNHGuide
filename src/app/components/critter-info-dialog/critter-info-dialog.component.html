@@ -58,8 +58,13 @@
 
     <!-- [TODO]: maybe change to checkbox or something more intuitive for adding/removing -->
     <div id="action-buttons">
-        <button type="button" class="btn btn-primary" (click)="onCaughtClicked()">
-            <mat-icon *ngIf="isCaught">verified</mat-icon>
+        <button *ngIf="isCaught" type="button" class="btn btn-primary" (click)="onRemoveClicked()">
+            <mat-icon>verified</mat-icon>
+            Caught
+        </button>
+
+        <button *ngIf="!isCaught" type="button" class="btn btn-primary" (click)="onCaughtClicked()">
+            <!-- <mat-icon>verified</mat-icon> -->
             Caught
         </button>
 

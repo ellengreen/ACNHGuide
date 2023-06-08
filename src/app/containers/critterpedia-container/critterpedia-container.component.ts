@@ -18,7 +18,7 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
   constructor(private dataService: DataService, private ds: CurrentDateService, private transformService: TransformService, private databaseService: DatabaseService, public stateService: StateService) { }
 
   // TODO: change to list in state?
-  allCrittersList: Critter[];
+  allCrittersList: Critter[]; // doesn't change, and therefore doesn't need to be set in state?
   filteredCritterList: Critter[];
 
   selectedCritter: Critter;
@@ -39,6 +39,7 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
     });
   }
 
+  // maybe set this in state somewhere???
   onTabsSwitched(critterType: CritterType) {
     this.critterpediaMode = critterType;
     this.getCritterList(critterType);
@@ -64,6 +65,10 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
     this.databaseService.POST(this.critterpediaMode, critter);
   }
 
+  removeCritterFromDB(critter: Critter) {
+    this.databaseService.DELETE(this.critterpediaMode, critter);
+  }
+  
   getAndSetUserCritters(): void {
     this.databaseService.GET(this.critterpediaMode).snapshotChanges().pipe(
       map(changes =>
@@ -76,9 +81,7 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
     });
   }
 
-  removeCritterFromDB(critter: Critter) {
-    // this.dataService.DELETE(this.critterpediaMode, critter);
-  }
+
 
   // id: any;
   // delete(selectedCritter) {

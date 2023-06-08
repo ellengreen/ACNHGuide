@@ -26,14 +26,18 @@ export class DatabaseService {
     // this.httpClient.post(`${this.dbPath}/${this.currentUserId}/${type}.json`, critter).subscribe();
   }
 
-  
   GET(type: CritterType): AngularFireList<any> {
     return this.db.list(`/${this.currentUserId}/${type}`);
+  }
+
+  DELETE(type: CritterType, critter: Critter) {
+    return this.db.list(`/${this.currentUserId}/${type}/${critter.id}`).remove();
   }
 
   private replaceUndefinedValues(critter: Critter): any {
     return JSON.parse(JSON.stringify(critter, function (k, x) {
       if (x === undefined) { return null; } return x;
-    }))
+    }));
   }
+
 }
