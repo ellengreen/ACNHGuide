@@ -19,10 +19,13 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
 
   allCrittersList: Critter[];
   selectedCritter: Critter;
-  critterpediaMode: CritterType = CritterType.fish;
+  critterpediaMode: CritterType;
 
   ngOnInit(): void {
-    this.getCritterList(CritterType.fish);
+    this.stateService.critterpediaMode$.subscribe((mode: CritterType) => {
+      this.critterpediaMode = mode;
+    });
+    this.getCritterList(this.critterpediaMode);
     this.getAndSetUserCritters();
   }
 
@@ -37,9 +40,8 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
     });
   }
 
-  // maybe set this in state somewhere???
-  onTabsSwitched(critterType: CritterType) {
-    this.critterpediaMode = critterType;
+  onTabsSwitched(critterType: CritterType): void {
+    this.stateService.setCritterpediaMode(critterType);
     this.getCritterList(critterType);
     // this.stateService.setSelectedCritter(this.allCrittersList[0]);
     // change selectedCritter in state

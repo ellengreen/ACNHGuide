@@ -9,14 +9,13 @@ import { Critter } from 'app/shared/interfaces/critter';
 })
 export class CritterpediaTableComponent implements OnInit {
 
-  @Input() critterpediaMode: CritterType = CritterType.fish;
+  @Input() critterpediaMode: CritterType;
   @Input() critterList: Critter[];
   @Input() caughtCritters: Critter[];
 
   @Output() caughtClicked: EventEmitter<any> = new EventEmitter<any>();
   @Output() removeClicked: EventEmitter<any> = new EventEmitter<any>();
   
-  critterType = CritterType;
   selectedCritter: Critter;
 
   constructor() { }
