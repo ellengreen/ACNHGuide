@@ -1,38 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { CritterType } from '../../shared/enums/critter-type.enum';
 import { Critter } from '../../shared/interfaces/critter';
 import { TransformService } from '../../shared/services/transform.service';
 import { CurrentDateService } from 'app/shared/services/current-date.service';
 import { DataService } from 'app/shared/services/data.service';
 import { DatabaseService } from 'app/shared/services/database.service';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { map } from 'rxjs';
+import { StateService } from 'app/shared/services/state.service';
 
 @Component({
   selector: 'app-critterpedia-container',
   templateUrl: './critterpedia-container.component.html',
   styleUrls: ['./critterpedia-container.component.scss']
 })
-export class CritterpediaContainerComponent implements OnInit {
+export class CritterpediaContainerComponent implements OnInit, OnChanges {
 
-  constructor(private dataService: DataService, private ds: CurrentDateService, private transformService: TransformService, private databaseService: DatabaseService) { }
+  constructor(private dataService: DataService, private ds: CurrentDateService, private transformService: TransformService, private databaseService: DatabaseService, public stateService: StateService) { }
 
   // TODO: change to list in state?
   allCrittersList: Critter[];
   filteredCritterList: Critter[];
-  collectedCritterList:Critter[];
-  userCollectedListSubject: BehaviorSubject<any> = new BehaviorSubject<any>([]);
-  userCollectedList$: Observable<[]> = this.userCollectedListSubject.asObservable();
 
   selectedCritter: Critter;
   critterpediaMode: CritterType = CritterType.fish;
 
   ngOnInit(): void {
     this.getCritterList(CritterType.fish);
-    this.getUserCritters();
+    this.getAndSetUserCritters();
+  }
 
-    this.userCollectedList$.subscribe((res) => {
-      this.collectedCritterList = res;
-    });
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getAndSetUserCritters();
   }
 
   getCritterList(critterType: CritterType): void {
@@ -66,39 +64,21 @@ export class CritterpediaContainerComponent implements OnInit {
     this.databaseService.POST(this.critterpediaMode, critter);
   }
 
-  getUserCritters() {
+  getAndSetUserCritters(): void {
     this.databaseService.GET(this.critterpediaMode).snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
           ({ key: c.payload.key, ...c.payload.val() })
         )
       )
-    ).subscribe(data => {
-      this.userCollectedListSubject.next(data);
+    ).subscribe((critterList: Critter[]) => {
+      this.stateService.setUserCritterList(critterList);
     });
   }
 
   removeCritterFromDB(critter: Critter) {
     // this.dataService.DELETE(this.critterpediaMode, critter);
   }
-  // aDupe: boolean;
-  // addFish(selectedCritter) {
-  //   this.db.addFish(selectedCritter);
-  //   this.aDupe = true;
-  // }
-
-  // duplicate = [];
-  // loaded: any;
-  // dupe(selectedCritter: any) {
-  //   if (this.fishView) {
-  //     this.loaded = this.loadedFish
-  //   } else { this.loaded = this.loadedBugs }
-  //   Object.keys(this.loaded).forEach(key => {
-  //     if (this.loaded[key]['id'] === (this.selectedCritter['id'])) {
-  //       this.duplicate.push(this.selectedCritter['id']);
-  //     }
-  //   })
-  // }
 
   // id: any;
   // delete(selectedCritter) {

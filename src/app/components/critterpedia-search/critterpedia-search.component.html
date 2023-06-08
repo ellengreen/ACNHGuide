@@ -1,6 +1,7 @@
 <div class="critterpedia-search-container">
     <div class="critter-mode">
         <!-- [TODO]: customize tooltips -->
+        <!-- [TODO]: cleanup dynamic classes, switching tabs could be cleaner -->
         <button [ngClass]="{'activeMode': critterType == 'fish'}" class="critter-button" (click)="switchTabs('fish')"
             matTooltip="fish" [matTooltipPosition]="'above'">
             <img src="assets/icons/fish-transparent.png">

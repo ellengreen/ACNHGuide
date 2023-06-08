@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { CritterType } from 'app/shared/enums/critter-type.enum';
 import { Critter } from 'app/shared/interfaces/critter';
 
@@ -7,20 +7,36 @@ import { Critter } from 'app/shared/interfaces/critter';
   templateUrl: './critter-info-dialog.component.html',
   styleUrls: ['./critter-info-dialog.component.scss']
 })
-export class CritterInfoDialogComponent implements OnInit {
+export class CritterInfoDialogComponent implements OnInit, OnChanges {
   @Input() selectedCritter: Critter;
   @Input() critterpediaMode: CritterType;
+  @Input() caughtCritters: Critter[];
 
   @Output() caughtClicked = new EventEmitter<any>();
 
   critterType = CritterType;
+  isCaught: boolean = false;
+  isDonated: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  ngOnChanges() {
+    let matches = this.caughtCritters?.filter((critter: Critter) => {
+      return critter.id === this.selectedCritter.id;
+    });
+
+    if (matches.length) {
+      this.isCaught = true;
+    } else {
+      this.isCaught = false;
+    }
+  }
+
   onCaughtClicked() {
     this.caughtClicked.emit(this.selectedCritter);
+    this.isCaught = true;
   }
 }

@@ -11,6 +11,7 @@ export class CritterpediaTableComponent implements OnChanges {
 
   @Input() critterpediaMode: CritterType = CritterType.fish;
   @Input() critterList: Critter[];
+  @Input() caughtCritters: Critter[];
 
   
   @Output() caughtClicked: EventEmitter<any> = new EventEmitter<any>();
@@ -29,6 +30,10 @@ export class CritterpediaTableComponent implements OnChanges {
 
   selectCritter(critter: Critter): void {
     this.selectedCritter = critter;
+  }
+
+  onCaughtClicked(critter: Critter) {
+    this.caughtClicked.emit(critter);
   }
 
 }

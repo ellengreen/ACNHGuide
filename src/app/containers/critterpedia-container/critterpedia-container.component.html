@@ -21,6 +21,7 @@
     [critterpediaMode]="critterpediaMode" 
     [critterList]="filteredCritterList" 
     (caughtClicked)="addCritterToDB($event)" 
-    (removeClicked)="removeCritterFromDB($event)">
+    (removeClicked)="removeCritterFromDB($event)"
+    [caughtCritters]="stateService.userCollectedList$ | async">
   </app-critterpedia-table>
 </div>

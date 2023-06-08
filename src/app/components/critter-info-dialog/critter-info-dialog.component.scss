@@ -55,6 +55,10 @@ mat-card {
             background-color: darkseagreen;
             border: none;
             margin-left: 1rem;
+
+            .mat-icon {
+                vertical-align: top;
+            }
         }
 
         .btn:active {

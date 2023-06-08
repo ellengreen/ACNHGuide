@@ -56,12 +56,15 @@
         </tbody>
     </table>
 
+    <!-- [TODO]: maybe change to checkbox or something more intuitive for adding/removing -->
     <div id="action-buttons">
         <button type="button" class="btn btn-primary" (click)="onCaughtClicked()">
+            <mat-icon *ngIf="isCaught">verified</mat-icon>
             Caught
         </button>
 
         <button type="button" class="btn btn-primary">
+            <mat-icon *ngIf="isDonated">verified</mat-icon>
             Donated
         </button>
     </div>

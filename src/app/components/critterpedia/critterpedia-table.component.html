@@ -10,7 +10,11 @@
   </div>
 
   <div class="info-panel" *ngIf="selectedCritter">
-    <app-critter-info-dialog [selectedCritter]="selectedCritter" [critterpediaMode]="critterpediaMode"></app-critter-info-dialog>
+    <app-critter-info-dialog 
+      [selectedCritter]="selectedCritter" 
+      [critterpediaMode]="critterpediaMode"
+      [caughtCritters]="caughtCritters"
+      (caughtClicked)="onCaughtClicked($event)"></app-critter-info-dialog>
   </div>
 
 </div>
