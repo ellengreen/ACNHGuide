@@ -3,20 +3,20 @@
 header {
     position: relative;
     height: 111px;
-    // background-image: url(../../../assets/icons/banner-bg-rounded.png);
+    // background-image: url(./../../../assets/backgrounds/banner-bg-rounded.png);
 }
 
 .critterpedia-header-container {
     .banner {
         display: inline-block;
-        width: 40%;
-        background-color: darkseagreen;
-        height: 8rem;
-        color: ivory;
+        width: 35%;
+        background-color: #e6dfc2;
+        height: 6rem;
+        color: #815821;
         border-radius: 0px 65px 65px 0px;
 
         img {
-            height: 10rem;
+            height: 8rem;
             margin-left: 2rem;
         }
 
@@ -25,12 +25,8 @@ header {
             margin-left: 3rem;
         }
     }
-
-    // .villager-filter {
-    //     display: inline-block;
-    //     margin-left: 5rem;
-    // }
 }
+
 .critterpedia-container {
     margin-left: 3rem;
     margin-right: 3rem;

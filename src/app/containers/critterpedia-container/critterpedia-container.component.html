@@ -8,13 +8,19 @@
       <span>Critterpedia</span>
   </div>
   
-  <app-critterpedia-search [critterList]="filteredCritterList" (critterTypeClicked)="onTabsSwitched($event)"
+  <app-critterpedia-search
+    [critterList]="filteredCritterList" 
+    (critterTypeClicked)="onTabsSwitched($event)"
     (availableNowClicked)="onAvailableNowClicked($event)">
   </app-critterpedia-search>
 </div>
 
 
 <div class="critterpedia-container">
-  <app-critterpedia-table [critterpediaMode]="critterpediaMode" [critterList]="filteredCritterList" (caughtClicked)="addCritterToDB($event)" (removeClicked)="removeCritterFromDB($event)">
+  <app-critterpedia-table 
+    [critterpediaMode]="critterpediaMode" 
+    [critterList]="filteredCritterList" 
+    (caughtClicked)="addCritterToDB($event)" 
+    (removeClicked)="removeCritterFromDB($event)">
   </app-critterpedia-table>
 </div>

@@ -1,20 +1,22 @@
 <div class="critterpedia-search-container">
     <div class="critter-mode">
+        <!-- [TODO]: customize tooltips -->
         <button [ngClass]="{'activeMode': critterType == 'fish'}" class="critter-button" (click)="switchTabs('fish')"
             matTooltip="fish" [matTooltipPosition]="'above'">
-            <img class="iconx" src="assets/icons/fish-transparent.png">
+            <img src="assets/icons/fish-transparent.png">
         </button>
         <button [ngClass]="{'activeMode': critterType == 'bugs'}" class="critter-button" (click)="switchTabs('bugs')"
             matTooltip="bugs" [matTooltipPosition]="'above'">
-            <img class="iconx" src="assets/icons/bug-transparent.png">
+            <img src="assets/icons/bug-transparent.png">
         </button>
         <button [ngClass]="{'activeMode': critterType == 'sea'}" class="critter-button" (click)="switchTabs('sea')"
             matTooltip="sea creatures" [matTooltipPosition]="'above'">
-            <img class="iconx" src="assets/icons/deep-transparent.png">
+            <img src="assets/icons/deep-transparent.png">
         </button>
     </div>
 
-    <div class="critter-search">
+    <!-- [TODO]: needs more thought into design -->
+    <!-- <div class="critter-search">
         <input id="typeahead-basic" type="text" class="form-control searchbar" [(ngModel)]="model" [ngbTypeahead]="search"
             placeholder="search" />
 
@@ -23,6 +25,6 @@
                 (change)="availableNow($event)">
             <label class="form-check-label" for="flexSwitchCheckDefault">Available Now</label>
         </div>
-    </div>
+    </div> -->
 
 </div>
