@@ -7,7 +7,6 @@ import { AuthenticationService } from './shared/services/authentication.service'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'animalCrossing';
 
   constructor(private authService: AuthenticationService) {
   }

@@ -1,13 +1,11 @@
-.x {
-    // background-image: url(../assets/bg.jpg);
+// [TECH-DEBT]: global styles
+div {
     background-color: cornsilk;
-    // height: 100vh;
     background-size: cover;
     font-family: "Nunito", sans-serif;
-    // padding-left: 8rem;
-    // padding-right: 8rem;
 
-    y {
-        padding-left: 8rem;
+    header {
+        position: relative;
+        height: 111px;
     }
 }

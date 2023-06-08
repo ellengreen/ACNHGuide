@@ -1,28 +1,14 @@
 @import "src/styles.scss";
 
-body {
-    // background-color: #F0AD53;
-    // height: 100vh;
-}
-
-// img {
-//     width: 50%;
-//     position: fixed;
-//     bottom: 0px;
-
-// }
-
-.icon {
+img {
     position: fixed;
     top: 15px;
     width: 80px;
     right: 5px;
     cursor: pointer;
-}
-
-img {
     transition: transform 0.7s ease-in-out;
 }
+
 img:hover {
     transform: rotate(360deg);
 }

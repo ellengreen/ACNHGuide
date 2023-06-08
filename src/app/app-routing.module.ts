@@ -9,8 +9,6 @@ import { PassportContainerComponent } from './v2-containers/passport-container/p
 
 const routes: Routes = [
   { path: '', component: HomeContainerComponent },
-  // { path: 'login', component: LoginComponent },
-  // { path: 'register', component: RegisterComponent },
   { path: 'critterpedia', component: CritterpediaContainerComponent },
   { path: 'villagers', component: ResidentServicesContainerComponent},
   { path: 'passport', component: PassportContainerComponent},

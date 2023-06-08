@@ -1,5 +1,7 @@
-<!-- <app-nav *ngIf="router != '/' && router != '/login'"></app-nav> -->
-<div class="x">
-
-    <router-outlet></router-outlet>
+<div>
+    <router-outlet>
+        <header>
+            <app-navigation-button></app-navigation-button>
+        </header>
+    </router-outlet>
 </div>
