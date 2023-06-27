@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CritterpediaContainerComponent } from './containers/critterpedia-container/critterpedia-container.component';
 import { EventsContainerComponent } from './v2-containers/events-container/events-container.component';
 import { MuseumContainerComponent } from './v2-containers/museum-container/museum-container.component';
-import { ResidentServicesContainerComponent } from './v2-containers/resident-services-container/resident-services-container.component';
+import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
 import { HomeContainerComponent } from './containers/home-container/home-container.component';
 import { PassportContainerComponent } from './v2-containers/passport-container/passport-container.component';
 

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Critter } from '../interfaces/critter';
 import { CritterType } from '../enums/critter-type.enum';
+import { Villager } from '../interfaces/villager';
 
 @Injectable({
     providedIn: 'root'
@@ -19,6 +20,9 @@ export class StateService {
     selectedCritterSubject: BehaviorSubject<Critter> = new BehaviorSubject<Critter>(undefined);
     selectedCritter$: Observable<Critter> = this.selectedCritterSubject.asObservable();
 
+    residentsListSubject: BehaviorSubject<Villager[]> = new BehaviorSubject<any>([]);
+    residentsList$: Observable<Villager[]> = this.residentsListSubject.asObservable();
+
     constructor() { }
 
     setUserCritterList(critterList: Critter[]): void {
@@ -35,5 +39,9 @@ export class StateService {
 
     setSelectedCritter(critter: Critter): void {
         this.selectedCritterSubject.next(critter);
+    }
+
+    setResidentsList(residents: Villager[]): void {
+        this.residentsListSubject.next(residents);
     }
 }

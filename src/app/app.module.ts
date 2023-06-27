@@ -33,11 +33,7 @@ import { NookPhoneComponent } from './components/nook-phone/nook-phone.component
 import { CritterpediaTableComponent } from './components/critterpedia/critterpedia-table.component';
 import { MuseumComponent } from './v2-components/museum/museum.component';
 import { CritterInfoDialogComponent } from './components/critter-info-dialog/critter-info-dialog.component';
-import { ResidentServicesContainerComponent } from './v2-containers/resident-services-container/resident-services-container.component';
-import { ResidentServicesComponent } from './v2-components/resident-services/resident-services.component';
-import { VillagerInfoDialogComponent } from './v2-components/villager-info-dialog/villager-info-dialog.component';
 import { CritterpediaContainerComponent } from './containers/critterpedia-container/critterpedia-container.component';
-import { VillagersFilterComponent } from './v2-components/villagers-filter/villagers-filter.component';
 import { CritterpediaSearchComponent } from './components/critterpedia-search/critterpedia-search.component';
 import { EventsContainerComponent } from './v2-containers/events-container/events-container.component';
 import { EventCardComponent } from './v2-components/event-card/event-card.component';
@@ -51,9 +47,14 @@ import { PassportContainerComponent } from './v2-containers/passport-container/p
 import { PassportImageComponent } from './v2-components/passport-image/passport-image.component';
 import { AuthenticationService } from './shared/services/authentication.service';
 import { NavigationButtonComponent } from './navigation-button/navigation-button.component';
+import { ResidentServicesContainerComponent } from './containers/resident-services-container/resident-services-container.component';
+import { ResidentServicesComponent } from './components/resident-services/resident-services.component';
+import { VillagerInfoDialogComponent } from './components/villager-info-dialog/villager-info-dialog.component';
+import { VillagersFilterComponent } from './components/villagers-filter/villagers-filter.component';
 
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'primeng/carousel';
+
 
 @NgModule({
   declarations: [
@@ -68,8 +69,6 @@ import { CarouselModule } from 'primeng/carousel';
     CritterInfoDialogComponent,
     ResidentServicesContainerComponent,
     ResidentServicesComponent,
-    VillagerInfoDialogComponent,
-    VillagersFilterComponent,
     CritterpediaSearchComponent,
     EventsContainerComponent,
     EventCardComponent,
@@ -80,7 +79,10 @@ import { CarouselModule } from 'primeng/carousel';
     EventFilterComponent,
     HomeContainerComponent,
     PassportContainerComponent,
-    PassportImageComponent
+    PassportImageComponent,
+    VillagersComponent,
+    VillagerInfoDialogComponent,
+    VillagersFilterComponent
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),

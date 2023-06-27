@@ -4,13 +4,13 @@
     .banner {
         display: inline-block;
         width: 45%;
-        background-color: rgb(254, 190, 199);
-        height: 8rem;
-        color: ivory;
-        border-radius: 0px 65px 65px 0px;
+        height: 6rem;
+        background-color: #e6dfc2;
+        color: #815821;
+        border-radius: 0 65px 65px 0;
 
         img {
-            height: 10rem;
+            height: 8rem;
             margin-left: 2rem;
         }
 
@@ -27,7 +27,5 @@
 }
 
 .villager-container {
-    margin-left: 3rem;
-    margin-right: 3rem;
-    margin-top: 5rem;
+    margin: 4rem 3rem;
 }

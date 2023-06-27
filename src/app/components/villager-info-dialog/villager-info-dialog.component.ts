@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { Villager } from 'app/shared/interfaces/villager';
 
 @Component({
@@ -8,12 +7,13 @@ import { Villager } from 'app/shared/interfaces/villager';
   styleUrls: ['./villager-info-dialog.component.scss']
 })
 export class VillagerInfoDialogComponent implements OnInit {
+  @Input() selectedVillager: Villager
   @Output() emitAddedVillager = new EventEmitter();
-  selectedVillager: Villager;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, public dialogRef: MatDialogRef<VillagerInfoDialogComponent> ) { }
+
+  // selectedVillager: Villager;
+  constructor() { }
 
   ngOnInit(): void {
-    this.selectedVillager = this.data.selectedVillager.value;
   }
 
   addVillager(selectedVillager: Villager) {
