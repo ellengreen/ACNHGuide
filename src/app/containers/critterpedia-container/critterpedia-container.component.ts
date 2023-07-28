@@ -46,6 +46,7 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
     // this.selectedCritter = this.allCrittersList[0];
   }
 
+  // TODO: this isn't updated until a click, may need to look at ChangeDetection?
   onAvailableNowClicked(switchState: boolean): void {
     this.stateService.setActiveCritterList(switchState ? this.currentlyAvailable() : this.allCrittersList);
   }

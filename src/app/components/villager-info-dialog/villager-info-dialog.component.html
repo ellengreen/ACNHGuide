@@ -1,90 +1,50 @@
-<!-- <div class="bg-image">
-    <div class="row">
-        <div class="col-5 left-side">
-            <img class="meta" src="https://acnhapi.com/v1/images/villagers/{{selectedVillager.id}}">
-            <div class="critter-saying">{{selectedVillager.saying}}</div>
-            <ng-container class="meta">
-                <button type="button" class="meta" (click)="addVillager(selectedVillager)">I live here!</button>
-            </ng-container>
+<mat-card *ngIf="selectedVillager">
+    <div id="header">
+        <mat-icon *ngIf="selectedVillager.gender == 'Male'">male</mat-icon>
+        <mat-icon *ngIf="selectedVillager.gender == 'Female'">female</mat-icon>
+        <span id="title">{{selectedVillager.name | titlecase}}</span>
+        <div id="right-aligned">
+            <span>{{selectedVillager.birthdayString}}</span>
         </div>
+    </div>
 
-        
-        <div class="col-7 right-side">
-            <div class="banner">
-                <div class="critter-header">{{selectedVillager.name | titlecase}}</div>
-            </div>
-            <table class="table table-hover">
-                <tbody>
-                <tr>
-                    <th>Species</th>
-                    <td class="text-right">{{selectedVillager.species}}</td>
-                </tr>
-                <tr>
-                    <th>Gender</th>
-                    <td class="text-right">{{selectedVillager.gender}}</td>
-                </tr>
-                <tr>
-                    <th>Birthday</th>
-                    <td class="text-right">{{selectedVillager.birthdayString}}</td>
-                </tr>
-                <tr>
-                    <th>Personality</th>
-                    <td class="text-right">{{selectedVillager.personality}}</td>
-                </tr>
-                <tr>
-                    <th>Catch Phrase</th>
-                    <td class="text-right">{{selectedVillager.catchPhrase}}</td>
-                </tr>
-                <tr>
-                    <th>Saying</th>
-                    <td class="text-right">{{selectedVillager.saying}}</td>
-                </tr>
-                <tr>
-                    <th>Hobby</th>
-                    <td class="text-right">{{selectedVillager.hobby}}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div> -->
+    <hr>
 
+    <div id="museum-info">
+        <p>{{selectedVillager.saying}}</p>
+    </div>
 
+    <table class="table table-striped">
+        <thead>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">species</th>
+                <td>....................</td>
+                <td>{{selectedVillager.species}}</td>
+            </tr>
+            <tr>
+                <th scope="row">personality</th>
+                <td>....................</td>
+                <td>{{selectedVillager.personality}}</td>
+            </tr>
+            <tr>
+                <th scope="row">hobby</th>
+                <td>....................</td>
+                <td>{{selectedVillager.hobby}}</td>
+            </tr>
+        </tbody>
+    </table>
 
-    <!-- <div class="row">
-        <div class="col-sm-4">
-        </div>
-        <div class="col-sm-1"></div>
-        <div class="col-sm-7">
-            <table class="table">
-                <tr>
-                    <td>Species</td>
-                    <td class="text-right">{{selectedVillager.species}}</td>
-                </tr>
-                <tr>
-                    <td>Gender</td>
-                    <td class="text-right">{{selectedVillager.gender}}</td>
-                </tr>
-                <tr>
-                    <td>Birthday</td>
-                    <td class="text-right">{{selectedVillager.birthdayString}}</td>
-                </tr>
-                <tr>
-                    <td>Personality</td>
-                    <td class="text-right">{{selectedVillager.personality}}</td>
-                </tr>
-                <tr>
-                    <td>Catch Phrase</td>
-                    <td class="text-right">{{selectedVillager.catchPhrase}}</td>
-                </tr>
-                <tr>
-                    <td>Saying</td>
-                    <td class="text-right">{{selectedVillager.saying}}</td>
-                </tr> 
-                <tr>
-                    <td>Hobby</td>
-                    <td class="text-right">{{selectedVillager.hobby}}</td>
-                </tr>
-            </table>
-        </div>
-    </div> -->
-<!-- </div> -->
+    <div id="action-buttons">
+        <button *ngIf="isAdded" type="button" class="btn btn-primary" (click)="onRemoveClicked()">
+            <mat-icon>verified</mat-icon>
+            On Island
+        </button>
+
+        <button *ngIf="!isAdded" type="button" class="btn btn-primary" (click)="onAddedClicked()">
+            Add to Island
+        </button>
+    </div>
+
+</mat-card>

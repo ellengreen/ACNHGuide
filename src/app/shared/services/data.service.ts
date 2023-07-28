@@ -11,8 +11,8 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  GET(type: CritterType | MuseumType | any) {
-    return this.httpClient.get(`http://acnhapi.com/v1/${type}`);
+  GET(type: CritterType | MuseumType | 'villagers') {
+    return this.httpClient.get(`http://acnhapi.com/v1a/${type}`);
   }
 
   getEvents(){

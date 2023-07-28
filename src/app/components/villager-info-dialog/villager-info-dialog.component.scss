@@ -1,77 +1,67 @@
-// .container {
+// [TECH-DEBT]: Scss stylesheet
+mat-card {
+    background-color: #e6dfc2 !important;
+    color: #815821;
 
-// background-color: #cdddf9;
-// position: relative;
-// height: 130px;
-// padding: 1rem;
-// .bg-image {
-//     background-color: #BBEAE0;
-//     background-image: url(../../../assets/icons/bg-negative-large.png);
-// }
-// .fish {
-//     background-color: #BBEAE0;
-//     background-image: url(../../assets/icons/bg-fish-large.png);
-// }
+    #header {
+        display: flex;
+        align-items: center;
 
-// .bugs {
-//     background-color: #F8F9B4;
-//     background-image: url(../../assets/icons/bg-insect-large.png);
-// }
-// padding-left: .25rem;
-// padding-bottom: .25rem;
-// padding-right: 0;
-//     position: relative;
-.left-side {
-    .critter-saying {
-        color: palevioletred;
-        font-family: "Nunito", sans-serif;
-        margin-top: 1rem;
-        text-align: center;
-        // position: fixed;
-        // margin-top: 5rem;
-        // margin-left: 6rem;
+        .mat-icon {
+            font-size: 2rem;
+            height: auto;
+            width: auto;
+        }
+        #title {
+            font-size: 1.75rem;
+        }
+
+        #right-aligned {
+            margin-left: auto;
+            display: inline-block;
+
+            img {
+                width: 25%;
+                margin-right: 0.25rem;
+                vertical-align: bottom;
+            }
+        }
     }
-}
-.right-side {
-    display: inline-block;
-    padding-right: 0;
-    .banner {
-        width: 80%;
-        margin-left: auto;
-        background-color: ivory;
-        height: 8rem;
-        color: pink;
-        border-radius: 65px 0 0 65px;
-        .critter-header {
-            font-family: "Nunito", sans-serif;
-            color: pink;
-            font-size: 3rem;
-            padding-right: 2rem;
-            padding-top: 3.5rem;
-            text-align: right;
+
+    #museum-info {
+        background-color: #eee5c5;
+        border-radius: 20px;
+        p {
+            text-align: left;
+            padding: 1rem;
+        }
+    }
+
+    table {
+        margin-top: 1rem;
+        color: #815821;
+
+        th,
+        td,
+        tr {
+            color: #815821;
+        }
+    }
+
+    #action-buttons {
+        text-align: end;
+        .btn {
+            background-color: darkseagreen;
+            border: none;
+            margin-left: 1rem;
+
+            .mat-icon {
+                vertical-align: top;
+            }
+        }
+
+        .btn:active {
+            transform: translateY(4px);
         }
     }
 }
-
-// .meta {
-//     margin-left: 12.5%;
-// }
-
-table {
-    // background-color: lightsteelblue;
-    border-radius: 1rem;
-    margin-bottom: 0;
-    margin-left: auto;
-    width: 70%;
-    font-family: "Nunito", sans-serif;
-    // color: lightsteelblue;
-
-    td {
-        border-style: none;
-    }
-
-    .text-right {
-        font-weight: 800;
-    }
-}
-// }

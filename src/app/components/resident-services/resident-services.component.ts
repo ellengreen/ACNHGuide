@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Villager } from 'app/shared/interfaces/villager';
 
@@ -7,7 +7,7 @@ import { Villager } from 'app/shared/interfaces/villager';
   templateUrl: './resident-services.component.html',
   styleUrls: ['./resident-services.component.scss']
 })
-export class ResidentServicesComponent implements OnInit {
+export class ResidentServicesComponent implements OnInit, OnChanges {
 
   @Input() villagersList: Villager[];
   @Input() residentsList: Villager[];
@@ -20,10 +20,21 @@ export class ResidentServicesComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
-  selectVillager(villager: Villager): void {
-    this.selectedVillager = villager;
+  ngOnChanges(changes: SimpleChanges): void {
+
+    if (this.villagersList && !this.selectedVillager) {
+      this.selectedVillager = this.villagersList[0];
+    }
+
+  }
+
+  selectVillager(villager: any): void {
+    this.selectedVillager = villager.value;
+
+    console.log(villager.value)
   }
 
   onAddClicked(villager: Villager): void {

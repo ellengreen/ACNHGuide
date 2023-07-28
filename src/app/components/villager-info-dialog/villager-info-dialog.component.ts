@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Villager } from 'app/shared/interfaces/villager';
 
 @Component({
@@ -8,15 +8,30 @@ import { Villager } from 'app/shared/interfaces/villager';
 })
 export class VillagerInfoDialogComponent implements OnInit {
   @Input() selectedVillager: Villager
-  @Output() emitAddedVillager = new EventEmitter();
+  @Input() addedVillagers: Villager[];
 
-  // selectedVillager: Villager;
+  @Output() addClicked = new EventEmitter();
+  @Output() removeClicked = new EventEmitter<any>();
+
+  isAdded: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  addVillager(selectedVillager: Villager) {
-    this.emitAddedVillager.emit(selectedVillager)
+  ngOnChanges(): void {
+    let matches = this.addedVillagers?.filter(villager => villager.id === this.selectedVillager.id) ?? [];
+    this.isAdded = matches.length > 0;
+  }
+
+  onAddedClicked(): void {
+    this.addClicked.emit(this.selectedVillager);
+    this.isAdded = true;
+  }
+
+  onRemoveClicked(): void {
+    this.removeClicked.emit(this.selectedVillager);
+    this.isAdded = false;
   }
 }
