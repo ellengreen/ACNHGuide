@@ -48,16 +48,20 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
 
   // TODO: this isn't updated until a click, may need to look at ChangeDetection?
   onAvailableNowClicked(switchState: boolean): void {
-    // this.stateService.setActiveCritterList(switchState ? this.currentlyAvailable() : this.allCrittersList);
+    this.currentlyAvailable();
+    // console.log(this.allCrittersList)
+    // this.stateService.se`qedq`tActiveCritterList(switchState ? this.currentlyAvailable() : this.allCrittersList);
   }
 
-  // currentlyAvailable(): Critter[] {
-  //   const { currentMonth, thisHour } = this.ds;
-  //   return this.allCrittersList.filter((critter: Critter) =>
-  //     critter.availability.northernMonthArray.includes(currentMonth) &&
-  //     critter.availability.timeArray.includes(thisHour)
-  //   );
-  // }
+  currentlyAvailable(): Critter[] {
+    this.dataService.getCurrent(this.critterpediaMode).subscribe((critters: any) => {
+      console.log(critters)
+      this.allCrittersList = this.transformService.convertToCritter(critters.north);
+      this.stateService.setActiveCritterList(this.allCrittersList);
+      this.selectedCritter = this.allCrittersList[0];
+    });
+    return this.allCrittersList;
+  }
 
   addCritterToDB(critter: Critter): void {
     this.databaseService.POST(this.critterpediaMode, critter);

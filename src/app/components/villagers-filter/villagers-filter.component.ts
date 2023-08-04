@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, } from '@angular/forms';
 
 @Component({
   selector: 'app-villagers-filter',
@@ -8,8 +8,10 @@ import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
 })
 export class VillagersFilterComponent implements OnInit {
 
+  isSubmitted = false;
+  personalityList = ['Big sister', 'Cranky', 'Jock', 'Lazy', 'Normal', 'Peppy', 'Sisterly', 'Smug', 'Snooty'];
   speciesList = [
-    'Alligator', 'Anteater', 'Bear', 'Bird', 'Bull', 'Cat',
+    'Alligator', 'Anteater', 'Bear', 'Bear Cub', 'Bird', 'Bull', 'Cat', 'Chicken',
     'Cow', 'Cub', 'Deer', 'Dog', 'Duck', 'Eagle',
     'Elephant', 'Frog', 'Goat', 'Gorilla', 'Hamster', 'Hippo',
     'Horse', 'Kangaroo', 'Koala', 'Lion', 'Monkey', 'Mouse',
@@ -17,37 +19,30 @@ export class VillagersFilterComponent implements OnInit {
     'Sheep', 'Squirrel', 'Tiger', 'Wolf'
   ];
 
-  gendersList = [
-    'Male',
-    'Female'
-  ];
-
-  personalityList = [
-    'Cranky', 'Jock', 'Lazy', 'Normal', 'Peppy', 'Smug', 'Snooty', 'Uchi'
-  ]
-
   @Output() filterChanged = new EventEmitter<any>();
 
-  myForm;
-  // myForm: FormGroup = new FormGroup({
-  //   species: new FormControl(''),
-  //   gender: new FormControl('')
-  // });
-
   constructor(private fb: FormBuilder) { }
-  ngOnInit(): void {
-    // this.myForm = this.fb.group({
-    //   gender: ['', null],
-    //   species: new FormArray([]),
-    // });
+
+  ngOnInit(): void { }
+
+  filterForm = this.fb.group({
+    species: [''],
+    personality: ['']
+  });
+
+  filter(): void {
+    this.filterChanged.emit(this.filterForm.value)
   }
 
-  updateForm() {
-    // console.log(this.myForm.value)
-    // console.log('SPECIES', this.myForm.controls);
-    // console.log('GENDER', this.myForm['gender'].value)
-  }
-  filter(x) {
-    this.filterChanged.emit(x)
+  // TODO: not working
+  onClear(): void {
+    // this.filterForm.reset(this.filterForm.value);
+    // this.filterForm.markAsPristine()
+    // this.filterForm.get('personality').setValue('');
+    // this.filterForm.get('species').setValue('');
+    // this.filterForm.reset();
+    // this.filterForm.updateValueAndValidity();
+    // this.filterChanged.emit(this.filterForm.value)
+
   }
 }

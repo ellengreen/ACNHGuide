@@ -1,39 +1,25 @@
-<!-- <form [formGroup]="myForm"> -->
+<div class="container mt-5">
+    <div class="form">
+        <form [formGroup]="filterForm">
+            <div class="dropdown">
+                <select class="btn btn-secondary dropdown-toggle" (change)="filter()" formControlName="species">
+                    <option value="">Species</option>
+                    <option *ngFor="let species of speciesList" [ngValue]="species">
+                        {{ species }}
+                    </option>
+                </select>
 
-<div class="form">
+                <select class="btn btn-secondary dropdown-toggle" (change)="filter()" formControlName="personality">
+                    <option value="">Personality</option>
+                    <option *ngFor="let personality of personalityList" [ngValue]="personality">
+                        {{ personality }}
+                    </option>
+                </select>
 
+                 {{filterForm.value | json}}
 
-
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Gender
-        </button>
-        <ul class="dropdown-menu">
-            <li *ngFor="let gender of gendersList"><a class="dropdown-item">{{gender}}</a></li>
-        </ul>
+                <button class="btn btn-secondary" click="onClear()" type="button">clear</button>
+            </div>
+        </form>
     </div>
-
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Species
-        </button>
-        <ul class="dropdown-menu species-dropdown-menu">
-            <li *ngFor="let species of speciesList"><a class="dropdown-item">{{species}}</a></li>
-        </ul>
-    </div>
-
-    <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Personality
-        </button>
-        <ul class="dropdown-menu">
-            <li *ngFor="let personality of personalityList"><a class="dropdown-item">{{personality}}</a></li>
-        </ul>
-    </div>
-
-    <input id=" typeahead-basic" type="text" class="form-control searchbar" placeholder="search" />
-
-    <button class="btn btn-secondary clearButton" type="button">Clear
-    </button>
 </div>
-<!-- </form> -->

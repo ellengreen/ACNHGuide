@@ -1,0 +1,1 @@
+export type CritterType = 'fish' | 'bugs' | 'sea'

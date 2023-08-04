@@ -6,6 +6,7 @@ import { StateService } from 'app/shared/services/state.service';
 import { DatabaseService } from 'app/shared/services/database.service';
 import { DatabaseTypes } from 'app/shared/enums/db-types.enum';
 import { map } from 'rxjs';
+import { VillagerFilter } from 'app/shared/interfaces/villager-filter';
 
 @Component({
   selector: 'app-resident-services-container',
@@ -34,8 +35,10 @@ export class ResidentServicesContainerComponent implements OnInit {
     })
   }
 
-  onFilter(filter) {
-    // console.log(filter)
+  onFilter(filter: VillagerFilter) {
+    this.dataService.filterVillagers(filter).subscribe((villagers: Villager[]) => {
+      this.villagersList = this.transformService.convertToVillager(villagers);
+    });
   }
 
   addVillagerToDB(villager: Villager): void {
