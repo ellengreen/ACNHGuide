@@ -3,7 +3,7 @@
         <div class="critterpedia-container container">
             <div class="row">
                 <div class="col-sm-2" *ngFor="let villager of villagersList | keyvalue">
-                    <img [ngClass]="{'selected': villager === selectedVillager}" class="icon"
+                    <img [ngClass]="{'selected': villager.value === selectedVillager}" class="icon"
                         src="{{villager.value['iconURI']}}"
                         (click)="selectVillager(villager)">
                 </div>
