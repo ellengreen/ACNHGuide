@@ -14,27 +14,29 @@ export class TransformService {
 
   convertToCritter(critterList: any): Critter[] {
     return Object.entries(critterList).map(([key, critter]) => ({
-      id: critter['id'],
-      name: critter['name']['name-USen'],
-      availability: {
-        northernMonthString: critter['availability']['month-northern'],
-        southernMonthString: critter['availability']['month-southern'],
-        time: critter['availability']['time'],
-        isAllDay: critter['availability']['isAllDay'],
-        isAllYear: critter['availability']['isAllYear'],
-        location: critter['availability']['location'],
-        rarity: critter['availability']['rarity'],
-        northernMonthArray: critter['availability']['month-array-northern'],
-        southernMonthArray: critter['availability']['month-array-southern'],
-        timeArray: critter['availability']['time-array']
+      id: critter['number'],
+      name: critter['name'],
+      north: {
+        rarity: critter['rarity'],
+        location: critter['location'],
+        availabilityArray: critter['north']['availability_array'],
+        timesByMonth: critter['north']['times_by_month'],
+        months: critter['north']['months']
       },
-      shadow: critter['shadow'],
+      south: {
+        location: critter['location'],
+        rarity: critter['rarity'],
+        availabilityArray: critter['south']['availability_array'],
+        timesByMonth: critter['south']['times_by_month'],
+        months: critter['south']['months']
+      },
+      shadow: critter['shadow_size'],
       speed: critter['speed'],
-      price: critter['price'],
-      catchPhrase: critter['catch-phrase'],
-      museumPhrase: critter['museum-phrase'],
-      imageURI: critter['image_uri'],
-      iconURI: critter['icon_uri']
+      price: critter['sell_nook'],
+      catchPhrase: critter['catchphrases'][0],
+      // museumPhrase: critter['museum-phrase'],
+      imageURI: critter['render_url'],
+      iconURI: critter['image_url']
     }));
   }
 

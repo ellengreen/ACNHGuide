@@ -11,7 +11,7 @@
     <hr>
 
     <div id="museum-info">
-        <p>{{selectedCritter.museumPhrase}}</p>
+        <!-- <p>{{selectedCritter.museumPhrase}}</p> -->
     </div>
 
     <!-- [TECH-DEBT]: critterType.sea doesn't seem to be working -->
@@ -22,26 +22,22 @@
             <tr>
                 <th scope="row">months available</th>
                 <td>....................</td>
-                <td *ngIf="selectedCritter['availability']['isAllYear']">all year</td>
-                <td *ngIf="!selectedCritter['availability']['isAllYear']">
-                    {{selectedCritter['availability']['northernMonthString']}}</td>
+                <td>{{selectedCritter['north']['months']}}</td>
             </tr>
             <tr>
                 <th scope="row">times available</th>
                 <td>....................</td>
-                <td *ngIf="selectedCritter['availability']['isAllDay']">all day</td>
-                <td *ngIf="!selectedCritter['availability']['isAllDay']">{{selectedCritter['availability']['time']}}
-                </td>
+                <td>{{selectedCritter['north']['availabilityArray'][0]['time']}}</td>
             </tr>
             <tr *ngIf="critterpediaMode !== critterType.sea">
                 <th scope="row">location</th>
                 <td>....................</td>
-                <td>{{selectedCritter['availability']['location']}}</td>
+                <td>{{selectedCritter['north']['location']}}</td>
             </tr>
             <tr *ngIf="critterpediaMode !== critterType.sea">
                 <th scope="row">rarity</th>
                 <td>....................</td>
-                <td>{{selectedCritter['availability']['rarity']}}</td>
+                <td>{{selectedCritter['north']['rarity']}}</td>
             </tr>
             <tr *ngIf="critterpediaMode == critterType.fish">
                 <th scope="row">shadow</th>
