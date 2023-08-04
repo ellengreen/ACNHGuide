@@ -19,8 +19,8 @@ export class MuseumContainerComponent implements OnInit {
   }
 
   getMuseumList(museumType: MuseumType): void {
-    this.dataService.GET(museumType).subscribe((museumStuff: any) => {
-      this.museumList = this.transformService.convertMuseum(museumType, museumStuff);
-    });
+    // this.dataService.GET(museumType).subscribe((museumStuff: any) => {
+    //   this.museumList = this.transformService.convertMuseum(museumType, museumStuff);
+    // });
   }
 }

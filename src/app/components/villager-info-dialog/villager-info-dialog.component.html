@@ -4,7 +4,7 @@
         <mat-icon *ngIf="selectedVillager.gender == 'Female'">female</mat-icon>
         <span id="title">{{selectedVillager.name | titlecase}}</span>
         <div id="right-aligned">
-            <span>{{selectedVillager.birthdayString}}</span>
+            <span>{{selectedVillager.birthday}}</span>
         </div>
     </div>
 
@@ -27,6 +27,17 @@
                 <th scope="row">personality</th>
                 <td>....................</td>
                 <td>{{selectedVillager.personality}}</td>
+            </tr>
+            <!-- maybe instead, do a tooltip on hover with each catch phrase -->
+            <!-- <tr>
+                <th scope="row">catch phrase</th>
+                <td>....................</td>
+                <td>{{selectedVillager.catchPhrase}}</td>
+            </tr> -->
+            <tr>
+                <th scope="row">sign</th>
+                <td>....................</td>
+                <td>{{selectedVillager.sign}}</td>
             </tr>
             <tr>
                 <th scope="row">hobby</th>

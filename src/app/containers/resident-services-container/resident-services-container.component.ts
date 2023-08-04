@@ -19,7 +19,7 @@ export class ResidentServicesContainerComponent implements OnInit {
   constructor(private dataService: DataService, private databaseService: DatabaseService, private transformService: TransformService, public stateService: StateService) { }
 
   ngOnInit() {
-    this.dataService.GET('villagers').subscribe((villagersList: any) => {
+    this.dataService.getVillagers().subscribe((villagersList: any) => {
       this.villagersList = this.transformService.convertToVillager(villagersList);
     });
   }

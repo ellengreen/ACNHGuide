@@ -41,17 +41,24 @@ export class TransformService {
   convertToVillager(villagers: any): Villager[] {
     return Object.entries(villagers).map(([key, villager]) => ({
       id: villager['id'],
-      name: villager['name']['name-USen'],
-      birthday: villager['birthday'],
-      birthdayString: villager['birthday-string'],
-      catchPhrase: villager['catch-phrase'],
+      name: villager['name'],
+      birthday: this.transformBirthday(villager['birthday_month'], villager['birthday_day']),
+      catchPhrase: villager['phrase'],
       gender: villager['gender'],
-      hobby: villager['hobby'],
-      iconURI: villager['icon_uri'],
-      imageURI: villager['image_uri'],
+      hobby: villager['nh_details']['hobby'],
+      iconURI: villager['nh_details']['icon_url'],
+      imageURI: villager['image_url'],
       personality: villager['personality'],
-      saying: villager['saying'],
-      species: villager['species']
+      saying: villager['quote'],
+      species: villager['species'],
+      clothing: villager['nh_details']['clothing'],
+      sign: villager['sign'],
+      favColors: villager['nh_details']['fav_colors'],
+      favStyles: villager['nh_details']['fav_styles'],
+      houseExterior: villager['nh_details']['house_exterior_url'],
+      houseInterior: villager['nh_details']['house_interior_url'],
+      houseMusic: villager['nh_details']['house_music'],
+      photoURL: villager['nh_details']['photo_url']
     }));
   }
 
@@ -78,5 +85,9 @@ export class TransformService {
       price: fossil['price'],
       phrase: fossil['museum-phrase']
     }));
+  }
+
+  private transformBirthday(birthdayMonth: string, birthdayDay: string): string {
+    return `${birthdayMonth} ${birthdayDay}`
   }
 }

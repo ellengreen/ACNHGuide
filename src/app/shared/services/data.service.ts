@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { getEventsList } from 'assets/eventList';
 import { CritterType } from '../enums/critter-type.enum';
 import { MuseumType } from '../enums/museum-type.enum';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,17 +12,25 @@ export class DataService {
 
   constructor(private httpClient: HttpClient) { }
 
-  GET(type: CritterType | MuseumType | 'villagers') {
-    return this.httpClient.get(`http://acnhapi.com/v1a/${type}`);
+  httpOptions = {
+    headers: new HttpHeaders({
+      'X-API-KEY': 'ad6f7d8b-8865-4019-a10f-a4a38945e2b7'
+    })
+  };
+
+  apiUrl = `https://api.nookipedia.com/nh`
+
+  GET(type: CritterType | MuseumType | 'villagers'): Observable<any> {
+    return this.httpClient.get(`${this.apiUrl}/${type}`, this.httpOptions);
   }
 
-  getEvents(){
+  getEvents() {
     // return this.httpClient.get('assets/eventList.ts');
     return getEventsList();
   }
 
   getVillagers() {
-    return this.httpClient.get('https://acnhapi.com/v1/villagers/');
+    return this.httpClient.get('https://api.nookipedia.com/villagers?game=nh&nhdetails=true', this.httpOptions);
   }
 
   getFossils() {

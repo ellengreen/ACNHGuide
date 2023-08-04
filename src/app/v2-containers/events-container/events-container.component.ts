@@ -37,12 +37,12 @@ export class EventsContainerComponent implements OnInit {
 
   getBirthdays(): void {
     let villagers: Villager[];
-    this.dataService.GET('villagers').subscribe((villagersList: any) => {
-      villagers = this.transformService.convertToVillager(villagersList);
-      this.birthdayList = villagers.filter((villager: Villager) => {
-        return villager.birthday == this.dateService.bdayFormat;
-      });
-    });
+    // this.dataService.GET('villagers').subscribe((villagersList: any) => {
+    //   villagers = this.transformService.convertToVillager(villagersList);
+    //   this.birthdayList = villagers.filter((villager: Villager) => {
+    //     return villager.birthday == this.dateService.bdayFormat;
+    //   });
+    // });
   }
 
 }

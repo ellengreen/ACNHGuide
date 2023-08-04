@@ -1,8 +1,8 @@
 export interface Villager {
     id: number,
     birthday: string,
-    birthdayString: string,
     catchPhrase: string,
+    clothing: string,
     gender: string,
     hobby: string,
     iconURI: string,
@@ -10,5 +10,12 @@ export interface Villager {
     name: string,
     personality: string,
     saying: string,
-    species: string
+    species: string,
+    sign: string,
+    favColors: string[],
+    favStyles: string[],
+    houseExterior: string,
+    houseInterior: string,
+    houseMusic: string,
+    photoURL: string
 }
