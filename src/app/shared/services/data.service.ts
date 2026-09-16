@@ -15,7 +15,7 @@ export class DataService {
 
   httpOptions = {
     headers: new HttpHeaders({
-      'X-API-KEY': 'ad6f7d8b-8865-4019-a10f-a4a38945e2b7'
+      'x-api-key': 'ad6f7d8b-8865-4019-a10f-a4a38945e2b7'
     })
   };
 
@@ -39,11 +39,11 @@ export class DataService {
   }
 
   getFossils() {
-    return this.httpClient.get('http://acnhapi.com/v1/fossils/');
+    return this.httpClient.get('http://acnhapi.com/v1/fossils/', this.httpOptions);
   }
 
   getArt() {
-    return this.httpClient.get('http://acnhapi.com/v1/art/');
+    return this.httpClient.get('http://acnhapi.com/v1/art/', this.httpOptions);
   }
 
   filterVillagers(filterValue: VillagerFilter): Observable<any> {

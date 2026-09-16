@@ -12,6 +12,7 @@
 
     <div id="museum-info">
         <!-- <p>{{selectedCritter.museumPhrase}}</p> -->
+        <p>{{selectedCritter.catchPhrase}}</p>
     </div>
 
     <!-- [TECH-DEBT]: critterType.sea doesn't seem to be working -->
@@ -20,12 +21,17 @@
         </thead>
         <tbody>
             <tr>
-                <th scope="row">months available</th>
+                <th scope="row">northern months</th>
                 <td>....................</td>
                 <td>{{selectedCritter['north']['months']}}</td>
             </tr>
             <tr>
-                <th scope="row">times available</th>
+                <th scope="row">southern months</th>
+                <td>....................</td>
+                <td>{{selectedCritter['south']['months']}}</td>
+            </tr>
+            <tr>
+                <th scope="row">times</th>
                 <td>....................</td>
                 <td>{{selectedCritter['north']['availabilityArray'][0]['time']}}</td>
             </tr>
@@ -34,11 +40,11 @@
                 <td>....................</td>
                 <td>{{selectedCritter['north']['location']}}</td>
             </tr>
-            <tr *ngIf="critterpediaMode !== critterType.sea">
+            <!-- <tr *ngIf="critterpediaMode !== critterType.sea">
                 <th scope="row">rarity</th>
                 <td>....................</td>
                 <td>{{selectedCritter['north']['rarity']}}</td>
-            </tr>
+            </tr> -->
             <tr *ngIf="critterpediaMode == critterType.fish">
                 <th scope="row">shadow</th>
                 <td>....................</td>
