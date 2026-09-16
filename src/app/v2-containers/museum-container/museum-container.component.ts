@@ -6,6 +6,7 @@ import { DataService } from 'app/shared/services/data.service';
 import { TransformService } from 'app/shared/services/transform.service';
 
 @Component({
+  standalone: false,
   selector: 'app-museum-container',
   templateUrl: './museum-container.component.html',
   styleUrls: ['./museum-container.component.scss']

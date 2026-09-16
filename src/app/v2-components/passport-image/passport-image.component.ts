@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-passport-image',
   templateUrl: './passport-image.component.html',
   styleUrls: ['./passport-image.component.scss']

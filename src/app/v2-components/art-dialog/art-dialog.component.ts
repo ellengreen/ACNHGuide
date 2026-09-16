@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Art } from 'app/shared/interfaces/art';
 
 @Component({
+  standalone: false,
   selector: 'app-art-dialog',
   templateUrl: './art-dialog.component.html',
   styleUrls: ['./art-dialog.component.scss']

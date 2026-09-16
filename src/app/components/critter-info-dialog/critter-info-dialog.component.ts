@@ -3,6 +3,7 @@ import { CritterType } from 'app/shared/enums/critter-type.enum';
 import { Critter } from 'app/shared/interfaces/critter';
 
 @Component({
+  standalone: false,
   selector: 'app-critter-info-dialog',
   templateUrl: './critter-info-dialog.component.html',
   styleUrls: ['./critter-info-dialog.component.scss']

@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { Critter } from 'app/shared/interfaces/critter';
+import { CritterType } from 'app/shared/enums/critter-type.enum';
 import { Observable, OperatorFunction } from 'rxjs';
 import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 
 @Component({
+  standalone: false,
   selector: 'app-critterpedia-search',
   templateUrl: './critterpedia-search.component.html',
   styleUrls: ['./critterpedia-search.component.scss']
@@ -11,7 +13,7 @@ import { debounceTime, distinctUntilChanged, map } from 'rxjs/operators';
 export class CritterpediaSearchComponent implements OnChanges, OnInit {
   @Input() critterList: Critter[];
 
-  @Output() critterTypeClicked: EventEmitter<string> = new EventEmitter<string>();
+  @Output() critterTypeClicked: EventEmitter<CritterType> = new EventEmitter<CritterType>();
   @Output() availableNowClicked: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   critterType: string = 'fish';
@@ -46,9 +48,9 @@ export class CritterpediaSearchComponent implements OnChanges, OnInit {
   //   });
   // }
 
-  switchTabs(critterType: string) {
+  switchTabs(critterType: keyof typeof CritterType): void {
     this.critterType = critterType;
-    this.critterTypeClicked.emit(critterType);
+    this.critterTypeClicked.emit(CritterType[critterType]);
   }
 
   availableNow(event) {

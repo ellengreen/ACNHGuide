@@ -3,6 +3,7 @@ import { Event } from 'app/shared/interfaces/event';
 import { Villager } from 'app/shared/interfaces/villager';
 
 @Component({
+  standalone: false,
   selector: 'app-event-card',
   templateUrl: './event-card.component.html',
   styleUrls: ['./event-card.component.scss']

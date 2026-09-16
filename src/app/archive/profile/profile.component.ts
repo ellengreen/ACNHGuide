@@ -3,6 +3,7 @@ import { FirebaseService } from 'app/archive/firebase.service';
 import { AuthenticationService } from 'app/shared/services/authentication.service';
 
 @Component({
+  standalone: false,
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']

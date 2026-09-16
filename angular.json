@@ -28,8 +28,6 @@
             ],
             "styles": [
               "node_modules/primeicons/primeicons.css",
-              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
@@ -79,18 +77,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "animalCrossing:build"
+            "buildTarget": "animalCrossing:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "animalCrossing:build:production"
+              "buildTarget": "animalCrossing:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "animalCrossing:build"
+            "buildTarget": "animalCrossing:build"
           }
         },
         "test": {
@@ -138,6 +136,5 @@
         }
       }
     }
-  },
-  "defaultProject": "animalCrossing"
+  }
 }

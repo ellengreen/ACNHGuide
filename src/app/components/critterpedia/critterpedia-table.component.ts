@@ -3,6 +3,7 @@ import { CritterType } from 'app/shared/enums/critter-type.enum';
 import { Critter } from 'app/shared/interfaces/critter';
 
 @Component({
+  standalone: false,
   selector: 'app-critterpedia-table',
   templateUrl: './critterpedia-table.component.html',
   styleUrls: ['./critterpedia-table.component.scss']
@@ -25,7 +26,7 @@ export class CritterpediaTableComponent implements OnInit {
   }
 
   // TODO: set selected critter in state ??
-  selectCritter(critter: Critter): void {
+  selectCritter(critter: any): void {
     this.selectedCritter = critter;
   }
 
@@ -38,4 +39,3 @@ export class CritterpediaTableComponent implements OnInit {
   }
 
 }
-

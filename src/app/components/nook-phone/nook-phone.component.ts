@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
+  standalone: false,
   selector: 'app-nook-phone',
   templateUrl: './nook-phone.component.html',
   styleUrls: ['./nook-phone.component.scss']

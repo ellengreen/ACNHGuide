@@ -8,6 +8,7 @@ import { DataService } from 'app/shared/services/data.service';
 // import { AngularFireAuth } from '@angular/fire/auth';
 
 @Component({
+  standalone: false,
   selector: 'app-villagers',
   templateUrl: './villagers.component.html',
   styleUrls: ['./villagers.component.scss']
@@ -113,5 +114,4 @@ export class VillagersComponent implements OnInit {
   //   this.db.deleteVillager(this.ID);
   // }
 }
-
 

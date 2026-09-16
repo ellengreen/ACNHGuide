@@ -9,6 +9,7 @@ import { map } from 'rxjs';
 import { VillagerFilter } from 'app/shared/interfaces/villager-filter';
 
 @Component({
+  standalone: false,
   selector: 'app-resident-services-container',
   templateUrl: './resident-services-container.component.html',
   styleUrls: ['./resident-services-container.component.scss']
@@ -28,7 +29,7 @@ export class ResidentServicesContainerComponent implements OnInit {
   getSavedVillagers(): void {
     this.databaseService.GET(DatabaseTypes.villagers).snapshotChanges().pipe(
       map(changes => changes.map(c => ({
-        key: c.payload.key, ...c.payload.val()
+        key: c.key, ...c.payload.val()
       })))
     ).subscribe((villagerList: Villager[]) => {
       this.stateService.setResidentsList(villagerList);

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Villager } from 'app/shared/interfaces/villager';
 
 @Component({
+  standalone: false,
   selector: 'app-resident-services',
   templateUrl: './resident-services.component.html',
   styleUrls: ['./resident-services.component.scss']
@@ -37,7 +38,7 @@ export class ResidentServicesComponent implements OnInit, OnChanges {
     console.log(villager.value)
   }
 
-  onAddClicked(villager: Villager): void {
+  onAddClicked(villager: any): void {
     this.addClicked.emit(villager);
   }
 

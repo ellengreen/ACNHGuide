@@ -6,6 +6,7 @@ import { Fossil } from 'app/shared/interfaces/fossil';
 import { ArtDialogComponent } from '../art-dialog/art-dialog.component';
 
 @Component({
+  standalone: false,
   selector: 'app-museum-table',
   templateUrl: './museum-table.component.html',
   styleUrls: ['./museum-table.component.scss']
@@ -14,7 +15,7 @@ export class MuseumTableComponent implements OnInit {
   @Input() museumMode: MuseumType = MuseumType.art;
   @Input() museumList: any[]
 
-  selectedMuseumPiece: Art;
+  selectedMuseumPiece: any;
   constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {

@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, } from '@angular/forms';
 
 @Component({
+  standalone: false,
   selector: 'app-villagers-filter',
   templateUrl: './villagers-filter.component.html',
   styleUrls: ['./villagers-filter.component.scss']

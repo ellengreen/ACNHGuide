@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Villager } from 'app/shared/interfaces/villager';
 
 @Component({
+  standalone: false,
   selector: 'app-villager-info-dialog',
   templateUrl: './villager-info-dialog.component.html',
   styleUrls: ['./villager-info-dialog.component.scss']

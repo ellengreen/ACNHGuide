@@ -9,6 +9,7 @@ import { map } from 'rxjs';
 import { StateService } from 'app/shared/services/state.service';
 
 @Component({
+  standalone: false,
   selector: 'app-critterpedia-container',
   templateUrl: './critterpedia-container.component.html',
   styleUrls: ['./critterpedia-container.component.scss']
@@ -75,7 +76,7 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
     this.databaseService.GET(this.critterpediaMode).snapshotChanges().pipe(
       map(changes =>
         changes.map(c =>
-          ({ key: c.payload.key, ...c.payload.val() })
+          ({ key: c.key, ...c.payload.val() })
         )
       )
     ).subscribe((critterList: Critter[]) => {
@@ -83,6 +84,4 @@ export class CritterpediaContainerComponent implements OnInit, OnChanges {
     });
   }
 }
-
-
 

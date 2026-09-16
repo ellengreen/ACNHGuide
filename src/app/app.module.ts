@@ -52,10 +52,6 @@ import { ResidentServicesComponent } from './components/resident-services/reside
 import { VillagerInfoDialogComponent } from './components/villager-info-dialog/villager-info-dialog.component';
 import { VillagersFilterComponent } from './components/villagers-filter/villagers-filter.component';
 
-import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
-import { CarouselModule } from 'primeng/carousel';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -104,10 +100,8 @@ import { CarouselModule } from 'primeng/carousel';
     MatOptionModule,
     MatAutocompleteModule,
     MatInputModule,
-    NgbTypeaheadModule,
     MatButtonToggleModule,
     MatTooltipModule,
-    CarouselModule,
     MatIconModule,
     MatTableModule
     // MAKE MATERIAL MODULE 

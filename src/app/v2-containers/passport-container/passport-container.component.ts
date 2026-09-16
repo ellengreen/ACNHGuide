@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: false,
   selector: 'app-passport-container',
   templateUrl: './passport-container.component.html',
   styleUrls: ['./passport-container.component.scss']

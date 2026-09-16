@@ -6,6 +6,7 @@ import { DataService } from 'app/shared/services/data.service';
 import { TransformService } from 'app/shared/services/transform.service';
 
 @Component({
+  standalone: false,
   selector: 'app-events-container',
   templateUrl: './events-container.component.html',
   styleUrls: ['./events-container.component.scss']

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { NookPhoneComponent } from '../components/nook-phone/nook-phone.component';
 
 @Component({
+  standalone: false,
   selector: 'app-navigation-button',
   templateUrl: './navigation-button.component.html',
   styleUrls: ['./navigation-button.component.scss']
